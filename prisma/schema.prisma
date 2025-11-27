@@ -1,0 +1,292 @@
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id                  String                @id @default(cuid())
+  name                String?
+  firstName           String?
+  lastName            String?
+  email               String                @unique
+  emailVerified       DateTime?
+  image               String?
+  password            String?
+  companyName         String?
+  role                UserRole              @default(USER)
+  isAdmin             Boolean               @default(false)
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @updatedAt
+  
+  // Relations
+  accounts            Account[]
+  sessions            Session[]
+  subscriptions       Subscription[]
+  formSubmissions     ContactFormSubmission[]
+  ebookProgress       EbookProgress[]
+  orders              Order[]
+  userTrainings       UserTraining[]
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Subscription {
+  id              String            @id @default(cuid())
+  userId          String
+  type            SubscriptionType  @default(EBOOK_ACCESS)
+  status          SubscriptionStatus @default(INACTIVE)
+  paymentProvider String?           @default("przelewy24")
+  externalId      String?
+  amount          Decimal?
+  currency        String?           @default("PLN")
+  startDate       DateTime?
+  endDate         DateTime?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("subscriptions")
+}
+
+model ContactFormSubmission {
+  id          String                    @id @default(cuid())
+  userId      String?
+  name        String
+  email       String
+  companyName String?
+  phone       String?
+  subject     String
+  message     String
+  formType    ContactFormType           @default(GENERAL_INQUIRY)
+  status      ContactFormStatus         @default(NEW)
+  source      String?
+  createdAt   DateTime                  @default(now())
+  updatedAt   DateTime                  @updatedAt
+  
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  
+  @@map("contact_form_submissions")
+}
+
+model EbookChapter {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  content         String   @db.Text
+  excerpt         String?
+  orderIndex      Int
+  isPublished     Boolean  @default(true)
+  estimatedReadTime Int?   @default(5)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  progress        EbookProgress[]
+  
+  @@map("ebook_chapters")
+}
+
+model EbookProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  chapterId   String
+  isCompleted Boolean  @default(false)
+  readAt      DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  user    User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapter EbookChapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, chapterId])
+  @@map("ebook_progress")
+}
+
+model Training {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  shortDescription String  @db.Text
+  fullDescription  String  @db.Text
+  price           Decimal
+  duration        String
+  level           TrainingLevel @default(BEGINNER)
+  imageUrl        String?
+  isActive        Boolean  @default(true)
+  orderIndex      Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  orders          Order[]
+  userTrainings   UserTraining[]
+  
+  @@map("trainings")
+}
+
+model Ebook {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  author          String
+  shortDescription String  @db.Text
+  fullDescription  String  @db.Text
+  price           Decimal
+  pages           Int?
+  coverUrl        String?
+  tableOfContents String?  @db.Text
+  isActive        Boolean  @default(true)
+  orderIndex      Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("ebooks")
+}
+
+model BlogPost {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  excerpt         String?  @db.Text
+  content         String   @db.Text
+  featuredImage   String?
+  author          String   @default("Administrator")
+  publishedAt     DateTime?
+  isPublished     Boolean  @default(false)
+  tags            String[] @default([])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("blog_posts")
+}
+
+model PageContent {
+  id              String   @id @default(cuid())
+  pageKey         String   @unique
+  title           String?
+  content         String   @db.Text
+  metadata        Json?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("page_contents")
+}
+
+// Enums
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum SubscriptionType {
+  EBOOK_ACCESS
+  PREMIUM_MEMBERSHIP
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  INACTIVE
+  EXPIRED
+  CANCELLED
+  PENDING_PAYMENT
+}
+
+enum ContactFormType {
+  GENERAL_INQUIRY
+  CONSULTATION_REQUEST
+  PARTNERSHIP
+  SUPPORT
+}
+
+enum ContactFormStatus {
+  NEW
+  IN_PROGRESS
+  COMPLETED
+  CLOSED
+}
+
+enum TrainingLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+model Order {
+  id            String   @id @default(cuid())
+  payuOrderId   String   @unique
+  amount        Decimal
+  currency      String   @default("PLN")
+  status        String   // PENDING, COMPLETED, CANCELED
+  description   String?
+  customerEmail String
+  userId        String?
+  trainingId    String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user     User?     @relation(fields: [userId], references: [id])
+  training Training? @relation(fields: [trainingId], references: [id])
+
+  @@map("orders")
+}
+
+model UserTraining {
+  id         String   @id @default(cuid())
+  userId     String
+  trainingId String
+  isActive   Boolean  @default(true)
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  training Training @relation(fields: [trainingId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, trainingId])
+  @@map("user_trainings")
+}

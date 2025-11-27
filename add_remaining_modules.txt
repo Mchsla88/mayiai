@@ -1,0 +1,13 @@
+Potrzebuję dodać jeszcze około 28 modułów z pełną treścią z dokumentu 78KB.
+
+Struktura do dodania:
+- Rozdział 2: Etyczny Kompas (2-3 moduły)
+- Rozdział 3: Prompt Engineering (3-4 moduły z tabelą)
+- Rozdział 4: Krytyczna Ocena (3 moduły)
+- Rozdział 5: Bank Lekcji (5 scenariuszy = 5 modułów)
+- Rozdział 6: Podstawa 2026 (5-8 modułów - KAŻDA KLASA osobno!)
+- Rozdział 7: Współpraca (3 moduły)
+- Zakończenie (2-3 moduły)
+
+To jest DUŻO pracy - około 20000+ linii kodu do dodania.
+Z uwagi na ograniczenia będę musiał to zrobić etapami.

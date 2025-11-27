@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompty AI - Przewodnik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #6B21A8;
+            text-align: center;
+            border-bottom: 3px solid #6B21A8;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #7C3AED;
+            margin-top: 30px;
+            border-left: 5px solid #7C3AED;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #059669;
+            margin-top: 20px;
+        }
+        .prompt-box {
+            background: #F3F4F6;
+            border-left: 4px solid #6B21A8;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .explanation {
+            background: #EFF6FF;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .how-to {
+            background: #F0FDF4;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prompty AI - Przewodnik do Szkolenia</h1>
+
+    <h2>Moduł 1: Tworzenie Materiałów Edukacyjnych z Claude.ai</h2>
+
+    <h3>Prompt 1: Generowanie zagadnień z podstawy programowej</h3>
+    <div class="prompt-box">
+        Jesteś ekspertem od polskiego systemu edukacji. Znajdź i przedstaw w punktach kluczowe zagadnienia 
+        z podstawy programowej Ministerstwa Edukacji Narodowej (MEN) dla przedmiotu [wpisz przedmiot, np. Historia] 
+        dla klasy [wpisz klasę, np. 4 szkoły podstawowej] na temat [wpisz temat, np. Mieszko I i początki Polski].
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Ten prompt instruuje Claude, aby działał jako ekspert edukacyjny i wydobył 
+        kluczowe informacje z podstawy programowej MEN. Dzięki temu otrzymasz listę zagadnień dostosowaną do 
+        poziomu edukacyjnego ucznia.
+    </div>
+    <div class="how-to">
+        <strong>Jak używać:</strong>
+        <ul>
+            <li>Wpisz konkretny przedmiot (np. Historia, Matematyka, Biologia)</li>
+            <li>Podaj klasę ucznia (np. 4 klasa szkoły podstawowej, II klasa liceum)</li>
+            <li>Określ szczegółowy temat lekcji</li>
+        </ul>
+    </div>
+
+    <h3>Prompt 2: Przekształcanie w materiał przyjazny dziecku</h3>
+    <div class="prompt-box">
+        Na podstawie powyższych zagadnień, stwórz rozszerzoną listę punktów, które trzeba zapamiętać. 
+        Przedstaw je w sposób niezwykle łatwy do zapamiętania dla [wpisz wiek dziecka, np. 10-latka]. 
+        Użyj prostego języka, porównań, metafor, a nawet mnemotechnik. Każdy kluczowy termin lub data 
+        muszą być jasno wytłumaczone.
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Ten prompt przekształca suche fakty z podstawy programowej w przystępny, 
+        zrozumiały materiał. Claude użyje prostego języka, analogii i technik zapamiętywania, aby ułatwić naukę.
+    </div>
+    <div class="how-to">
+        <strong>Jak używać:</strong>
+        <ul>
+            <li>Podaj dokładny wiek dziecka dla lepszego dopasowania języka</li>
+            <li>Ten prompt działa w kontekście - użyj go po pierwszym prompcie</li>
+            <li>Claude automatycznie dostosuje poziom trudności</li>
+        </ul>
+    </div>
+
+    <h2>Moduł 2: Interaktywne Sprawdzanie Wiedzy z Gemini</h2>
+
+    <h3>Prompt 3: Inicjalizacja testu wiedzy (na komputerze)</h3>
+    <div class="prompt-box">
+        Przygotuj interaktywny test wiedzy na podstawie załączonego pliku PDF. Test powinien być prowadzony 
+        w trybie głosowym lub tekstowym. Zadawaj pytania jedno po drugim, sprawdzając zrozumienie materiału. 
+        Po każdej odpowiedzi ucznia udziel konstruktywnej informacji zwrotnej. Dostosuj poziom trudności 
+        do wieku ucznia.
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Ten prompt przygotowuje Gemini do roli nauczyciela, który będzie zadawał 
+        pytania na podstawie przesłanego materiału PDF. Gemini dostosuje się do trybu komunikacji (głos/tekst).
+    </div>
+    <div class="how-to">
+        <strong>Jak używać:</strong>
+        <ul>
+            <li>Najpierw prześlij plik PDF z materiałem do nauki</li>
+            <li>Wpisz ten prompt w oknie czatu Gemini</li>
+            <li>Określ wiek ucznia dla lepszego dostosowania</li>
+        </ul>
+    </div>
+
+    <h3>Prompt 4: Rozpoczęcie testu (na telefonie - tryb głosowy)</h3>
+    <div class="prompt-box">
+        Rozpocznij nowy test
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Prosta komenda uruchamiająca interaktywny test wiedzy w trybie głosowym. 
+        Gemini rozpocznie zadawać pytania na podstawie wcześniej przesłanego materiału.
+    </div>
+    <div class="how-to">
+        <strong>Jak używać:</strong>
+        <ul>
+            <li>Użyj po przełączeniu na telefon i aktywacji trybu głosowego</li>
+            <li>Powiedz tę komendę wyraźnie do mikrofonu</li>
+            <li>Gemini odpowie: "Czy możemy zacząć?"</li>
+        </ul>
+    </div>
+
+    <h2>Dodatkowe Prompty i Wskazówki</h2>
+
+    <h3>Prompt 5: Modyfikacja stylu pytań</h3>
+    <div class="prompt-box">
+        Zadawaj pytania w formie [wybierz: wielokrotnego wyboru / prawda-fałsz / otwarte]. 
+        Dostosuj trudność do poziomu [określ poziom].
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Pozwala zmienić format pytań w trakcie testu, aby urozmaicić naukę 
+        lub dostosować do preferencji ucznia.
+    </div>
+
+    <h3>Prompt 6: Dodanie elementów grywalizacji</h3>
+    <div class="prompt-box">
+        Prowadź test w formie gry, przyznając punkty za poprawne odpowiedzi. Utrzymuj pozytywną atmosferę 
+        i motywuj do dalszej nauki. Po zakończeniu podsumuj wyniki.
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Wprowadza elementy gry do procesu testowania, co zwiększa motywację 
+        i zaangażowanie ucznia.
+    </div>
+
+    <h3>Prompt 7: Powtórzenie trudnych zagadnień</h3>
+    <div class="prompt-box">
+        Zidentyfikuj zagadnienia, z którymi uczeń miał trudności, i stwórz dodatkowe ćwiczenia z wyjaśnieniami.
+    </div>
+    <div class="explanation">
+        <strong>Wyjaśnienie:</strong> Po teście Gemini może wygenerować dodatkowe materiały do zagadnień, 
+        które sprawiły uczniowi problemy.
+    </div>
+
+    <h2>Najlepsze Praktyki</h2>
+    <div class="how-to">
+        <ol>
+            <li><strong>Kontekst jest kluczem</strong> - Im więcej szczegółów podasz w prompcie, tym lepsze będą rezultaty</li>
+            <li><strong>Iteracja</strong> - Nie bój się modyfikować promptów i dostosowywać ich do swoich potrzeb</li>
+            <li><strong>Weryfikacja</strong> - Zawsze sprawdzaj wygenerowane materiały pod kątem poprawności</li>
+            <li><strong>Personalizacja</strong> - Dostosuj język i przykłady do zainteresowań dziecka</li>
+            <li><strong>Bezpieczeństwo</strong> - Nadzoruj sesje z młodszymi dziećmi</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        Dokument przygotowany dla szkolenia "Wykorzystanie AI do Efektywnej Nauki" - May I AI Family Expert
+    </div>
+</body>
+</html>
