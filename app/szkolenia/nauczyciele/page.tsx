@@ -19,37 +19,10 @@ import { trainingModules } from './training-modules-data'
 export default function TeachersTrainingPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeModule, setActiveModule] = useState('wstep-1')
-  const [completedModules, setCompletedModules] = useState<Set<string>>(new Set())
-
-  useEffect(() => {
-    const authStatus = localStorage.getItem('teachersTrainingAuth')
-    setIsAuthenticated(authStatus === 'true')
-    
-    const saved = localStorage.getItem('teachersCompletedModules')
-    if (saved) {
-      setCompletedModules(new Set(JSON.parse(saved)))
-    }
-  }, [])
-
   const handleAuthSuccess = () => {
     setIsAuthenticated(true)
     localStorage.setItem('teachersTrainingAuth', 'true')
   }
-
-  const toggleCompleted = (id: string) => {
-    const newCompleted = new Set(completedModules)
-    if (newCompleted.has(id)) {
-      newCompleted.delete(id)
-      toast('Moduł oznaczony jako nieukończony')
-    } else {
-      newCompleted.add(id)
-      toast.success('Gratulacje! Moduł ukończony pomyślnie 🎉')
-    }
-    setCompletedModules(newCompleted)
-    localStorage.setItem('teachersCompletedModules', JSON.stringify([...newCompleted]))
-  }
-
-  const progress = Math.round((completedModules.size / trainingModules.length) * 100)
 
   if (!isAuthenticated) {
     return <SimpleLoginForm onLogin={handleAuthSuccess} title="Szkolenie AI dla Nauczycieli" />
@@ -73,20 +46,6 @@ export default function TeachersTrainingPage() {
           <p className="text-xl text-gray-600 mb-4">
             Kompleksowy Przewodnik 2024-2026
           </p>
-          
-          {/* Progress Bar */}
-          <div className="max-w-md mx-auto">
-            <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
-              <span>{completedModules.size} z {trainingModules.length} modułów</span>
-              <span>{progress}%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-3">
-              <div 
-                className="bg-gradient-to-r from-purple-600 to-pink-600 h-3 rounded-full transition-all duration-500"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-4 gap-6">
@@ -103,7 +62,7 @@ export default function TeachersTrainingPage() {
                       activeModule === module.id
                         ? 'bg-purple-100 border-2 border-purple-500 text-purple-900'
                         : 'hover:bg-gray-50 border border-gray-200'
-                    } ${completedModules.has(module.id) ? 'bg-green-50' : ''}`}
+                    }`}
                   >
                     <div className="flex items-start gap-2">
                       <div className={`mt-0.5 ${activeModule === module.id ? 'text-purple-600' : 'text-gray-500'}`}>
@@ -116,9 +75,7 @@ export default function TeachersTrainingPage() {
                           {module.duration}
                         </div>
                       </div>
-                      {completedModules.has(module.id) && (
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                      )}
+
                     </div>
                   </button>
                 ))}
@@ -156,26 +113,9 @@ export default function TeachersTrainingPage() {
                           </div>
                         </div>
                       </div>
-                      <Button
-                        onClick={() => toggleCompleted(currentModule.id)}
-                        variant={completedModules.has(currentModule.id) ? "default" : "outline"}
-                        className="flex-shrink-0"
-                      >
-                        {completedModules.has(currentModule.id) ? (
-                          <>
-                            <CheckCircle className="w-4 h-4 mr-2" />
-                            Ukończono
-                          </>
-                        ) : (
-                          "Oznacz jako ukończone"
-                        )}
-                      </Button>
                     </div>
 
-                    {currentModule.id === 'zakonczenie-2' ? (
-                      <CertificateGenerator />
-                    ) : (
-                      typeof currentModule.content === 'string' ? (
+                    {typeof currentModule.content === 'string' ? (
                         <div 
                           className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-purple-600 prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700"
                           dangerouslySetInnerHTML={{ __html: currentModule.content }}
@@ -184,8 +124,7 @@ export default function TeachersTrainingPage() {
                         <div className="modern-module-wrapper">
                           {currentModule.content}
                         </div>
-                      )
-                    )}
+                      )}
 
                     {/* Navigation */}
                     <div className="flex items-center justify-between mt-8 pt-6 border-t">
@@ -207,9 +146,6 @@ export default function TeachersTrainingPage() {
                           const currentIndex = trainingModules.findIndex(m => m.id === activeModule)
                           if (currentIndex < trainingModules.length - 1) {
                             setActiveModule(trainingModules[currentIndex + 1].id)
-                            if (!completedModules.has(currentModule.id)) {
-                              toggleCompleted(currentModule.id)
-                            }
                           }
                         }}
                         disabled={trainingModules.findIndex(m => m.id === activeModule) === trainingModules.length - 1}

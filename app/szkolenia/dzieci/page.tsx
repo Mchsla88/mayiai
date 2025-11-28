@@ -35,10 +35,7 @@ import { trainingModules } from './training-modules-data'
 // Training Content Component
 function TrainingContent() {
   const [activeModule, setActiveModule] = useState(trainingModules[0].id)
-  const [completedModules, setCompletedModules] = useState<string[]>([])
-  const [showEndVideo, setShowEndVideo] = useState(false)
   const moduleRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
-  const endVideoRef = useRef<HTMLVideoElement | null>(null)
 
   const scrollToModule = (moduleId: string) => {
     const element = moduleRefs.current[moduleId]
@@ -52,36 +49,6 @@ function TrainingContent() {
       setActiveModule(moduleId)
     }
   }
-
-  const markAsCompleted = (moduleId: string) => {
-    if (!completedModules.includes(moduleId)) {
-      const newCompleted = [...completedModules, moduleId]
-      setCompletedModules(newCompleted)
-      toast({
-        title: "Moduł ukończony! ✅",
-        description: "Gratulacje! Możesz przejść do następnego modułu.",
-      })
-      
-      // Check if all modules are completed
-      if (newCompleted.length === trainingModules.length) {
-        setTimeout(() => {
-          setShowEndVideo(true)
-          if (endVideoRef.current) {
-            endVideoRef.current.play()
-          }
-        }, 1000)
-      }
-    } else {
-      // Allow unchecking
-      setCompletedModules(completedModules.filter(id => id !== moduleId))
-    }
-  }
-
-  const handleVideoEnd = () => {
-    setShowEndVideo(false)
-  }
-
-  const progress = (completedModules.length / trainingModules.length) * 100
 
   const handleLogout = () => {
     localStorage.removeItem('training_auth')
@@ -126,26 +93,6 @@ function TrainingContent() {
               <p className="text-xl text-white/90 mb-6">
                 Kompleksowe szkolenie z wykorzystania Claude i Gemini w edukacji
               </p>
-
-              {/* Progress Bar */}
-              <div className="max-w-2xl mx-auto">
-                <div className="flex items-center justify-between text-sm mb-2">
-                  <span>Postęp szkolenia</span>
-                  <span className="font-bold">{Math.round(progress)}%</span>
-                </div>
-                <div className="h-3 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    transition={{ duration: 0.5 }}
-                    className="h-full bg-gradient-to-r from-green-400 to-emerald-400 rounded-full"
-                  />
-                </div>
-                <div className="flex items-center gap-2 justify-center mt-3 text-sm">
-                  <CheckCircle className="w-4 h-4" />
-                  <span>{completedModules.length} z {trainingModules.length} modułów ukończonych</span>
-                </div>
-              </div>
             </motion.div>
           </div>
         </section>
@@ -183,17 +130,11 @@ function TrainingContent() {
                           >
                             <div className="flex items-center gap-3">
                               <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                                completedModules.includes(module.id)
-                                  ? 'bg-green-500 text-white'
-                                  : activeModule === module.id
+                                activeModule === module.id
                                   ? 'bg-white/20'
                                   : 'bg-purple-100 text-purple-600'
                               }`}>
-                                {completedModules.includes(module.id) ? (
-                                  <CheckCircle className="w-4 h-4" />
-                                ) : (
-                                  <span className="text-sm font-bold">{index + 1}</span>
-                                )}
+                                <span className="text-sm font-bold">{index + 1}</span>
                               </div>
                               <div className="flex-1 min-w-0">
                                 <div className="text-sm font-medium truncate">
@@ -282,12 +223,6 @@ function TrainingContent() {
                                     <Clock className="w-4 h-4" />
                                     {module.duration}
                                   </span>
-                                  {completedModules.includes(module.id) && (
-                                    <span className="flex items-center gap-1 text-green-300">
-                                      <CheckCircle className="w-4 h-4" />
-                                      Ukończono
-                                    </span>
-                                  )}
                                 </div>
                               </div>
                               
@@ -405,29 +340,6 @@ function TrainingContent() {
                                 <GraduationCap className="w-5 h-5" />
                                 <span>Moduł {index + 1} z {trainingModules.length}</span>
                               </div>
-                              
-                              <label className="flex items-center gap-3 cursor-pointer group">
-                                <input
-                                  type="checkbox"
-                                  checked={completedModules.includes(module.id)}
-                                  onChange={() => markAsCompleted(module.id)}
-                                  className="w-6 h-6 rounded border-2 border-purple-400 text-purple-600 focus:ring-purple-500 focus:ring-offset-0 cursor-pointer"
-                                />
-                                <span className={`text-sm font-medium transition-colors ${
-                                  completedModules.includes(module.id) 
-                                    ? 'text-green-600' 
-                                    : 'text-gray-700 group-hover:text-purple-600'
-                                }`}>
-                                  {completedModules.includes(module.id) ? (
-                                    <>
-                                      <CheckCircle className="w-4 h-4 inline mr-1" />
-                                      Oznacz jako ukończone
-                                    </>
-                                  ) : (
-                                    'Oznacz jako ukończone'
-                                  )}
-                                </span>
-                              </label>
                             </div>
                           </div>
                         </CardContent>
@@ -446,26 +358,7 @@ function TrainingContent() {
       <Footer />
 
       {/* End Video Modal - Full Screen */}
-      <AnimatePresence>
-        {showEndVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
-          >
-            <video
-              ref={endVideoRef}
-              className="w-full h-full object-contain"
-              onEnded={handleVideoEnd}
-              autoPlay
-            >
-              <source src="/koniec.mp4" type="video/mp4" />
-              Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-            </video>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
     </div>
   )
 }

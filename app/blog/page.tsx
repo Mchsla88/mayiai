@@ -1,3 +1,4 @@
+'use client'
 
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
@@ -18,6 +19,7 @@ import {
   Brain,
   Sparkles
 } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const categories = [
   { name: 'Wszystkie', slug: 'wszystkie', count: 24 },
@@ -328,6 +330,55 @@ export default function BlogPage() {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Atos Gallery Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+                  <Sparkles className="w-4 h-4" />
+                  Maskotka May I AI
+                </div>
+                <h2 className="text-4xl font-bold mb-4">Galeria Atosa</h2>
+                <p className="text-xl text-gray-600">
+                  Zobacz jak nasz czworonożny ekspert wspiera nas w codziennej pracy!
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  '/dog-1.png',
+                  '/dog-2.png',
+                  '/dog-3.png',
+                  '/dog-4.png',
+                  '/dog-5.png',
+                  '/dog-6.png',
+                  '/dog-7.png',
+                  '/dog-0.png'
+                ].map((src, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className={`relative rounded-2xl overflow-hidden shadow-lg ${
+                      index === 0 || index === 7 ? 'md:col-span-2 md:row-span-2 h-96' : 'h-48'
+                    }`}
+                  >
+                    <Image
+                      src={src}
+                      alt={`Atos - zdjęcie ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>

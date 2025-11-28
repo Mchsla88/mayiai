@@ -33,6 +33,7 @@ import { FloatingElement } from '@/components/animations/FloatingElement'
 import { GlassmorphCard } from '@/components/animations/GlassmorphCard'
 import { MagneticButton } from '@/components/animations/MagneticButton'
 import { useRef } from 'react'
+import { TrainingSlider } from '@/components/training-slider'
 
 export default function HomePage() {
   const ref = useRef<HTMLDivElement>(null)
@@ -362,7 +363,7 @@ export default function HomePage() {
                 },
                 {
                   icon: Heart,
-                  title: 'Wsparcie dla Świadomych Rodziców',
+                  title: 'Dostęp do Społeczności',
                   description: 'Praktyczne porady, sprawdzone narzędzia i społeczność wspierająca dla rodziców, którzy chcą aktywnie uczestniczyć w cyfrowej edukacji dzieci.',
                   color: 'from-red-500 to-orange-500',
                   bgColor: 'bg-red-50',
@@ -416,121 +417,7 @@ export default function HomePage() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.2}>
-              <div className="">
-                <motion.div
-                  whileHover={{ y: -10, rotateY: 2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="perspective-1000"
-                >
-                  <GlassmorphCard className="overflow-hidden border-2 border-purple-200/50 hover:border-purple-400/50" hoverScale={false}>
-                    <div className="grid md:grid-cols-2 gap-0">
-                      {/* Left side - Dog Image with animation */}
-                      <motion.div 
-                        className="relative overflow-hidden"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-600"
-                          animate={{
-                            background: [
-                              'linear-gradient(to bottom right, rgb(168, 85, 247), rgb(236, 72, 153))',
-                              'linear-gradient(to bottom right, rgb(147, 51, 234), rgb(219, 39, 119))',
-                              'linear-gradient(to bottom right, rgb(168, 85, 247), rgb(236, 72, 153))'
-                            ]
-                          }}
-                          transition={{ duration: 3, repeat: Infinity }}
-                        />
-                        <FloatingElement duration={3} delay={0.5}>
-                          <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
-                            <Image
-                              src="/atosik.png"
-                              alt="Szkolenia z AI - Profesjonalny Pies"
-                              fill
-                              className="object-contain drop-shadow-2xl p-8"
-                            />
-                          </div>
-                        </FloatingElement>
-                      </motion.div>
-                      
-                      {/* Right side - Content */}
-                      <CardContent className="p-8 md:p-12 space-y-6 flex flex-col justify-center backdrop-blur-sm">
-                        <motion.div
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.6 }}
-                        >
-                          <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">
-                            Szkolenia z AI
-                          </h3>
-                          <p className="text-lg text-gray-600 leading-relaxed">
-                            Interaktywne szkolenia dla rodzin. Naucz się, jak bezpiecznie wprowadzać AI w życie dziecka.
-                          </p>
-                        </motion.div>
-
-                        <ul className="space-y-3">
-                          {[
-                            { text: 'Szkolenia o różnej tematyce', icon: BookOpen },
-                            { text: 'Praktyczne ćwiczenia i zadania', icon: Target },
-                            { text: 'Ilustracje i infografiki', icon: Lightbulb },
-                            { text: 'Dostęp do społeczności', icon: Users },
-                            { text: '12 miesięczny dostęp do zakupionych kursów', icon: Star }
-                          ].map((feature, idx) => (
-                            <motion.li 
-                              key={idx} 
-                              className="flex items-center gap-3 group"
-                              initial={{ opacity: 0, x: 20 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.4, delay: idx * 0.1 }}
-                              whileHover={{ x: 5 }}
-                            >
-                              <motion.div
-                                className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center flex-shrink-0"
-                                whileHover={{ rotate: 360, scale: 1.1 }}
-                                transition={{ duration: 0.5 }}
-                              >
-                                <feature.icon className="w-5 h-5 text-white" />
-                              </motion.div>
-                              <span className="text-gray-700 font-medium group-hover:text-purple-600 transition-colors">
-                                {feature.text}
-                              </span>
-                            </motion.li>
-                          ))}
-                        </ul>
-
-                        <motion.div 
-                          className="pt-4"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.6, delay: 0.5 }}
-                        >
-                          <MagneticButton className="w-full">
-                            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full">
-                              <Button asChild size="lg" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg py-6 shadow-2xl hover:shadow-purple-500/50 transition-all group relative overflow-hidden">
-                                <Link href="/oferta">
-                                  <motion.span
-                                    className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600"
-                                    initial={{ x: '-100%' }}
-                                    whileHover={{ x: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                  />
-                                  <span className="relative z-10 flex items-center justify-center">
-                                    Sprawdź szczegóły
-                                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                                  </span>
-                                </Link>
-                              </Button>
-                            </motion.div>
-                          </MagneticButton>
-                        </motion.div>
-                      </CardContent>
-                    </div>
-                  </GlassmorphCard>
-                </motion.div>
-              </div>
+              <TrainingSlider />
             </ScrollReveal>
           </div>
         </section>

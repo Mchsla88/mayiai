@@ -148,34 +148,28 @@ function ONasContent() {
                   <h2 className="text-4xl font-bold">Nasza Historia</h2>
                   <div className="space-y-4 text-gray-600 leading-relaxed">
                     <p>
-                      AI Family Expert powstał z potrzeby. Jako rodzice i pedagodzy zauważyliśmy 
-                      rosnący niepokój wokół wpływu sztucznej inteligencji na dzieci. 69% rodziców 
-                      obawia się negatywnego wpływu AI, a 75% nauczycieli nie ma żadnego szkolenia 
-                      w tym obszarze.
+                      MayIAI powstał z potrzeby. 
                     </p>
                     <p>
-                      Postanowiliśmy to zmienić. W 2024 roku zebraliśmy zespół ekspertów z dziedziny 
-                      AI, pedagogiki i psychologii dziecięcej, aby stworzyć pierwsze w Polsce 
-                      kompleksowe rozwiązanie edukacyjne.
+                      Jako rodzice zauważyliśmy jak Nasze dzieci usiłują zrozumieć na czym polega to całe AI, zastanawiali się jak może im to pomóc w lekcjach oraz odpowiadać na pytania które ich ciekawią.
                     </p>
                     <p>
-                      Dziś jesteśmy dumni, że pomagamy już ponad 280,000 polskim rodzinom 
-                      w bezpiecznym odkrywaniu świata sztucznej inteligencji.
+                      Mimo prób nie znaleźliśmy niczego co mogłyby pomóc Naszym dzieciom w poznaniu tego świata. 
+                      Dlatego postanowiliśmy stworzyć coś, co pomoże im wykorzystywać AI, ale jednocześnie nie zastępować im samodzielnego myślenia, kreatywności.
                     </p>
-                  </div>
-                  <div className="flex flex-wrap gap-8 pt-6">
-                    <div>
-                      <div className="text-4xl font-bold text-blue-600">280,000+</div>
-                      <div className="text-gray-600">Rodzin</div>
-                    </div>
-                    <div>
-                      <div className="text-4xl font-bold text-purple-600">15+</div>
-                      <div className="text-gray-600">Szkoleń</div>
-                    </div>
-                    <div>
-                      <div className="text-4xl font-bold text-pink-600">4.9/5</div>
-                      <div className="text-gray-600">Ocena</div>
-                    </div>
+                    <p>
+                      Na bazie Naszych doświadczeń, dużej wiedzy o AI, rozmowach z nauczycielami stworzyliśmy Naszym dzieciom coś na zasadzie poradnika do poszczególnych lekcji, cel był taki aby to co stworzymy pomagało im w:
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>zrozumieniu lekcji</li>
+                      <li>zdobycia wiedzy co i jak pisać to narzędzi AI</li>
+                      <li>wiedzy z jakich narzędzi korzystać</li>
+                      <li>i co najważniejsze jak weryfikować czy odpowiedzi są prawdziwe</li>
+                    </ul>
+                    <p>
+                      Postanowiliśmy rozbudować to co mieliśmy w sposób dostępny dla każdego, pokazać jak AI może pomagać dzieciom i Nam.
+                      Tak powstał pomysł na stworzenie platformy edukacyjnej o AI ale dostępnej dla Wszystkich, zależało Nam na tym aby aby z tego co stworzymy mogło skorzystać jak najwięcej rodzin.
+                    </p>
                   </div>
                 </div>
 
@@ -208,28 +202,16 @@ function ONasContent() {
               <div className="grid md:grid-cols-2 gap-8">
                 {[
                   {
-                    icon: Shield,
-                    title: 'Bezpieczeństwo Dzieci',
-                    description: 'Bezpieczeństwo i prywatność dzieci są naszym najwyższym priorytetem. Każdy materiał jest dokładnie weryfikowany pod kątem bezpieczeństwa.',
-                    features: ['Kontrola rodzicielska', 'Ochrona danych', 'Weryfikowane treści']
-                  },
-                  {
                     icon: CheckCircle,
                     title: 'Jakość i Rzetelność',
-                    description: 'Wszystkie nasze materiały są tworzone przez ekspertów i oparte na najnowszych badaniach naukowych.',
-                    features: ['Zespół ekspertów', 'Badania naukowe', 'Regularne aktualizacje']
+                    description: 'Wszystkie nasze materiały są tworzone w oparciu o najnowszą wiedzę o AI.',
+                    features: ['Sami korzystamy z Naszych materiałów z Naszymi dziećmi', 'Najnowsze dane', 'Regularne aktualizacje treści']
                   },
                   {
                     icon: Users,
                     title: 'Wspierająca Społeczność',
-                    description: 'Budujemy społeczność, w której rodzice i nauczyciele mogą wymieniać się doświadczeniami i wspierać się nawzajem.',
-                    features: ['Grupy wsparcia', 'Forum dyskusyjne', 'Webinary ekspertów']
-                  },
-                  {
-                    icon: TrendingUp,
-                    title: 'Innowacyjność',
-                    description: 'Nieustannie rozwijamy nasze materiały i metody, aby odpowiadać na zmieniające się potrzeby cyfrowego świata.',
-                    features: ['Nowe technologie', 'Innowacyjne metody', 'Ciągły rozwój']
+                    description: 'Rozpoczęliśmy Budować społeczność, w której rodzice i nauczyciele mogą wymieniać się doświadczeniami i wspierać się nawzajem.',
+                    features: ['Grupy wsparcia', 'Forum dyskusyjne', 'Bieżące tematy']
                   }
                 ].map((value, i) => (
                   <Card key={i} className="border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 hover:shadow-xl">
@@ -269,21 +251,21 @@ function ONasContent() {
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
-                    name: 'Dr Anna Kowalska',
-                    role: 'Założycielka & CEO',
-                    expertise: 'Pedagogika i psychologia dziecięca',
+                    name: 'Rodzina Kowalskich',
+                    role: 'Założyciele',
+                    expertise: 'Pasjonaci edukacji i technologii',
                     image: '/dog-6.png'
                   },
                   {
-                    name: 'Piotr Nowak',
-                    role: 'Head of AI Education',
-                    expertise: 'Sztuczna inteligencja i machine learning',
+                    name: 'Rodzina Nowaków',
+                    role: 'Współtwórcy',
+                    expertise: 'Eksperci od bezpiecznego internetu',
                     image: '/dog-7.png'
                   },
                   {
-                    name: 'Magdalena Wiśniewska',
-                    role: 'Chief Content Officer',
-                    expertise: 'Content marketing i edukacja cyfrowa',
+                    name: 'Rodzina Wiśniewskich',
+                    role: 'Zespół kreatywny',
+                    expertise: 'Twórcy treści edukacyjnych',
                     image: '/dog-0.png'
                   }
                 ].map((member, i) => (
@@ -319,7 +301,7 @@ function ONasContent() {
                 Dołącz do Naszej Społeczności!
               </h2>
               <p className="text-xl text-blue-100">
-                Zacznij bezpieczną przygodę z AI już dziś wraz z 280,000+ polskimi rodzinami
+                
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                 <Button asChild size="lg" variant="secondary" className="text-lg">
@@ -343,85 +325,5 @@ function ONasContent() {
 }
 
 export default function ONasPage() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState('')
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (password === 'Takiehaslo1!') {
-      setIsAuthenticated(true)
-      setError('')
-    } else {
-      setError('Nieprawidłowe hasło')
-      setPassword('')
-    }
-  }
-
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <Navbar />
-        
-        <main className="flex-1 flex items-center justify-center px-4 pt-16">
-          <Card className="w-full max-w-md shadow-2xl border-0">
-            <CardContent className="p-8">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full mb-4">
-                  <Lock className="w-8 h-8 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Strona Chroniona
-                </h2>
-                <p className="text-gray-600">
-                  Wprowadź hasło aby zobaczyć tę stronę
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="password" className="text-sm font-medium text-gray-700">
-                    Hasło
-                  </Label>
-                  <div className="relative mt-1">
-                    <Input
-                      id="password"
-                      type={showPassword ? 'text' : 'password'}
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="pr-10"
-                      placeholder="Wprowadź hasło"
-                      autoFocus
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                    >
-                      {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                    </button>
-                  </div>
-                  {error && (
-                    <p className="text-sm text-red-600 mt-1">{error}</p>
-                  )}
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
-                >
-                  Odblokuj
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </main>
-
-        <Footer />
-      </div>
-    )
-  }
-
   return <ONasContent />
 }

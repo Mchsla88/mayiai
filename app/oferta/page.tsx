@@ -32,137 +32,11 @@ import {
 } from 'lucide-react'
 import { toast } from '@/hooks/use-toast'
 
-function PasswordForm({ onUnlock }: { onUnlock: () => void }) {
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
 
-    setTimeout(() => {
-      if (password === 'Takiehaslo1!') {
-        toast({
-          title: "Dostęp przyznany! 🎉",
-          description: "Witaj w ofercie szkoleniowej!",
-        })
-        onUnlock()
-      } else {
-        toast({
-          title: "Błąd dostępu",
-          description: "Nieprawidłowe hasło",
-          variant: "destructive",
-        })
-      }
-      setIsLoading(false)
-    }, 800)
-  }
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      
-      <main className="flex-1 flex items-center justify-center bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 p-4 pt-20">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Card className="w-full max-w-md border-0 shadow-2xl">
-            <CardContent className="p-8">
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-center mb-8"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Lock className="w-10 h-10 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Dostęp do Oferty
-                </h2>
-                <p className="text-gray-600 mt-2">
-                  Wprowadź hasło, aby zobaczyć pełną ofertę szkoleniową
-                </p>
-              </motion.div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <Label htmlFor="password" className="text-gray-700 font-medium">
-                    Hasło dostępu
-                  </Label>
-                  <div className="relative mt-2">
-                    <Input
-                      id="password"
-                      type={showPassword ? 'text' : 'password'}
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Wprowadź hasło"
-                      className="h-12 pr-12 border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                      required
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                      {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                    </button>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <Button
-                    type="submit"
-                    className="w-full h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg font-medium shadow-lg hover:shadow-xl transition-all"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <span className="flex items-center gap-2">
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        >
-                          <Unlock className="w-5 h-5" />
-                        </motion.div>
-                        Sprawdzanie...
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2">
-                        <Unlock className="w-5 h-5" />
-                        Odblokuj dostęp
-                      </span>
-                    )}
-                  </Button>
-                </motion.div>
-              </form>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </main>
-      
-      <Footer />
-    </div>
-  )
-}
 
 export default function OfertaPage() {
-  const [isUnlocked, setIsUnlocked] = useState(false)
-
-  if (!isUnlocked) {
-    return <PasswordForm onUnlock={() => setIsUnlocked(true)} />
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -200,102 +74,105 @@ export default function OfertaPage() {
               <div className="text-center mb-16">
                 <GraduationCap className="w-16 h-16 mx-auto mb-4 text-purple-600" />
                 <h2 className="text-4xl font-bold mb-4">Szkolenia z AI</h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-gray-600 mb-2">
                   Interaktywne szkolenia dla rodziców, nauczycieli i dzieci
+                </p>
+                <p className="text-2xl font-bold text-purple-600">
+                  Wykup 12 miesięczny dostęp do szkoleń
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
                 {[
                   {
-                    title: 'AI dla Rodziców',
-                    duration: '4 godziny',
-                    level: 'Podstawowy',
-                    description: 'Naucz się, jak bezpiecznie wprowadzić AI w życie dziecka',
-                    features: [
-                      'Podstawy bezpieczeństwa AI',
-                      'Kontrola rodzicielska',
-                      'Rekomendowane narzędzia',
-                      '12 miesięcy dostępu do materiałów'
-                    ],
-                    color: 'from-blue-500 to-cyan-500',
-                    bgColor: 'bg-blue-50'
+                    title: 'Łatwa Szkoła z AI',
+                    description: 'Jak wykorzystać AI do efektywnej nauki i odrabiania lekcji.',
+                    icon: BookOpen,
+                    color: 'from-blue-400 to-blue-600',
+                    href: '/szkolenia/dzieci'
                   },
                   {
-                    title: 'AI dla Nauczycieli',
-                    duration: '8 godzin',
-                    level: 'Średniozaawansowany',
-                    description: 'Wprowadź AI do programu nauczania w swojej szkole',
-                    features: [
-                      'Metodyka nauczania AI',
-                      'Projekty dla uczniów',
-                      'Materiały do lekcji',
-                      'Dostęp do społeczności'
-                    ],
-                    color: 'from-purple-500 to-pink-500',
-                    bgColor: 'bg-purple-50',
-                    popular: true
+                    title: 'Nauczyciel z AI',
+                    description: 'Narzędzia i metody dla nowoczesnych pedagogów.',
+                    icon: Users,
+                    color: 'from-purple-400 to-purple-600',
+                    href: '/szkolenia/nauczyciele'
                   },
                   {
-                    title: 'Bezpieczeństwo z AI',
-                    duration: '12 godzin',
-                    level: 'Zaawansowany',
-                    description: 'Kompleksowa ochrona i bezpieczne korzystanie z AI',
-                    features: [
-                      'Zaawansowane zabezpieczenia',
-                      'Ochrona prywatności',
-                      'Etyka i bezpieczeństwo AI',
-                      'Mentoring 1-na-1'
-                    ],
-                    color: 'from-pink-500 to-red-500',
-                    bgColor: 'bg-pink-50'
+                    title: 'Bezpieczeństwo w AI',
+                    description: 'Ochrona danych i bezpieczne korzystanie z technologii.',
+                    icon: Sparkles,
+                    color: 'from-green-400 to-green-600',
+                    href: '#'
+                  },
+                  {
+                    title: 'Filmy/ Zdjecia z AI',
+                    description: 'Tworzenie kreatywnych treści multimedialnych z pomocą AI.',
+                    icon: Video,
+                    color: 'from-pink-400 to-pink-600',
+                    href: '#'
+                  },
+                  {
+                    title: 'Młody Influencer',
+                    description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
+                    icon: Award,
+                    color: 'from-orange-400 to-orange-600',
+                    href: '#'
                   }
-                ].map((course, i) => (
-                  <Card key={i} className={`border-2 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${course.popular ? 'border-purple-400 scale-105' : 'border-gray-200'} relative overflow-hidden`}>
-                    {course.popular && (
-                      <div className="absolute top-4 right-4 px-3 py-1 bg-purple-600 text-white text-xs font-bold rounded-full">
-                        NAJPOPULARNIEJSZY
-                      </div>
-                    )}
-                    <div className={`h-3 bg-gradient-to-r ${course.color}`}></div>
-                    <CardContent className="p-6 space-y-4">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2">{course.title}</h3>
-                        <p className="text-gray-600 text-sm mb-4">{course.description}</p>
-                      </div>
-
-                      <div className="flex gap-4 text-sm text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {course.duration}
+                ].map((training, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="h-full border-2 border-gray-100 hover:border-purple-300 transition-all hover:shadow-xl group relative overflow-hidden flex flex-col">
+                      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${training.color} opacity-10 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110`} />
+                      
+                      <CardContent className="p-6 flex-grow flex flex-col">
+                        <div className={`w-14 h-14 bg-gradient-to-br ${training.color} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
+                          <training.icon className="w-8 h-8 text-white" />
                         </div>
-                        <div className="flex items-center gap-1">
-                          <TrendingUp className="w-4 h-4" />
-                          {course.level}
+                        <h3 className="text-2xl font-bold mb-2">{training.title}</h3>
+                        <p className="text-gray-600 mb-6 flex-grow">
+                          {training.description}
+                        </p>
+                        
+                        <ul className="space-y-3 text-gray-600 mb-6">
+                          <li className="flex items-start gap-2">
+                            <span className="text-green-500 mt-1">✓</span>
+                            Praktyczna wiedza
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-green-500 mt-1">✓</span>
+                            Dostęp online 24/7
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-green-500 mt-1">✓</span>
+                            Materiały dodatkowe
+                          </li>
+                          <li className="flex items-start gap-2 font-semibold text-purple-600">
+                            <span className="text-purple-500 mt-1">✓</span>
+                            12 miesięczny dostęp do szkoleń
+                          </li>
+                        </ul>
+
+                        <div className="mb-4 text-center">
+                          <span className="text-lg font-bold text-gray-900 block">Wszystkie za 100 zł</span>
                         </div>
-                      </div>
 
-                      <div className="space-y-2 py-4">
-                        {course.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                            <span className="text-sm text-gray-700">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <Button 
-                        asChild
-                        size="lg" 
-                        className={`w-full ${course.popular ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700' : 'bg-gray-800 hover:bg-gray-900'}`}
-                      >
-                        <Link href="/kontakt">
-                          Zapytaj o szczegóły
-                          <ArrowRight className="ml-2 w-4 h-4" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
+                        <Button 
+                          asChild 
+                          className={`w-full bg-gradient-to-r ${training.color} hover:opacity-90 h-12 text-lg group-hover:shadow-lg transition-all text-white mt-auto`}
+                        >
+                          <Link href={training.href}>
+                            Rozpocznij szkolenie
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
 
