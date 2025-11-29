@@ -1,16 +1,14 @@
-
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
-    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
-
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Account {
@@ -19,12 +17,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -41,28 +39,28 @@ model Session {
 }
 
 model User {
-  id                  String                @id @default(cuid())
-  name                String?
-  firstName           String?
-  lastName            String?
-  email               String                @unique
-  emailVerified       DateTime?
-  image               String?
-  password            String?
-  companyName         String?
-  role                UserRole              @default(USER)
-  isAdmin             Boolean               @default(false)
-  createdAt           DateTime              @default(now())
-  updatedAt           DateTime              @updatedAt
-  
+  id            String    @id @default(cuid())
+  name          String?
+  firstName     String?
+  lastName      String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  companyName   String?
+  role          UserRole  @default(USER)
+  isAdmin       Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
   // Relations
-  accounts            Account[]
-  sessions            Session[]
-  subscriptions       Subscription[]
-  formSubmissions     ContactFormSubmission[]
-  ebookProgress       EbookProgress[]
-  orders              Order[]
-  userTrainings       UserTraining[]
+  accounts        Account[]
+  sessions        Session[]
+  subscriptions   Subscription[]
+  formSubmissions ContactFormSubmission[]
+  ebookProgress   EbookProgress[]
+  orders          Order[]
+  userTrainings   UserTraining[]
 
   @@map("users")
 }
@@ -76,26 +74,26 @@ model VerificationToken {
 }
 
 model Subscription {
-  id              String            @id @default(cuid())
+  id              String             @id @default(cuid())
   userId          String
-  type            SubscriptionType  @default(EBOOK_ACCESS)
+  type            SubscriptionType   @default(EBOOK_ACCESS)
   status          SubscriptionStatus @default(INACTIVE)
-  paymentProvider String?           @default("przelewy24")
+  paymentProvider String?            @default("przelewy24")
   externalId      String?
   amount          Decimal?
-  currency        String?           @default("PLN")
+  currency        String?            @default("PLN")
   startDate       DateTime?
   endDate         DateTime?
-  createdAt       DateTime          @default(now())
-  updatedAt       DateTime          @updatedAt
-  
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
+
   @@map("subscriptions")
 }
 
 model ContactFormSubmission {
-  id          String                    @id @default(cuid())
+  id          String            @id @default(cuid())
   userId      String?
   name        String
   email       String
@@ -103,118 +101,120 @@ model ContactFormSubmission {
   phone       String?
   subject     String
   message     String
-  formType    ContactFormType           @default(GENERAL_INQUIRY)
-  status      ContactFormStatus         @default(NEW)
+  formType    ContactFormType   @default(GENERAL_INQUIRY)
+  status      ContactFormStatus @default(NEW)
   source      String?
-  createdAt   DateTime                  @default(now())
-  updatedAt   DateTime                  @updatedAt
-  
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
-  
+
   @@map("contact_form_submissions")
 }
 
 model EbookChapter {
-  id              String   @id @default(cuid())
-  title           String
-  slug            String   @unique
-  content         String   @db.Text
-  excerpt         String?
-  orderIndex      Int
-  isPublished     Boolean  @default(true)
-  estimatedReadTime Int?   @default(5)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  
+  id                String   @id @default(cuid())
+  title             String
+  slug              String   @unique
+  content           String
+  excerpt           String?
+  orderIndex        Int
+  isPublished       Boolean  @default(true)
+  estimatedReadTime Int?     @default(5)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
   // Relations
-  progress        EbookProgress[]
-  
+  progress EbookProgress[]
+
   @@map("ebook_chapters")
 }
 
 model EbookProgress {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   userId      String
   chapterId   String
-  isCompleted Boolean  @default(false)
+  isCompleted Boolean   @default(false)
   readAt      DateTime?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
   user    User         @relation(fields: [userId], references: [id], onDelete: Cascade)
   chapter EbookChapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
-  
+
   @@unique([userId, chapterId])
   @@map("ebook_progress")
 }
 
 model Training {
-  id              String   @id @default(cuid())
-  title           String
-  slug            String   @unique
-  shortDescription String  @db.Text
-  fullDescription  String  @db.Text
-  price           Decimal
-  duration        String
-  level           TrainingLevel @default(BEGINNER)
-  imageUrl        String?
-  isActive        Boolean  @default(true)
-  orderIndex      Int      @default(0)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  
-  orders          Order[]
-  userTrainings   UserTraining[]
-  discountCodes   DiscountCode[]
-  
+  id               String        @id @default(cuid())
+  title            String
+  slug             String        @unique
+  shortDescription String
+  fullDescription  String
+  price            Decimal
+  duration         String
+  level            TrainingLevel @default(BEGINNER)
+  imageUrl         String?
+  isActive         Boolean       @default(true)
+  orderIndex       Int           @default(0)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  orders        Order[]
+  userTrainings UserTraining[]
+  discountCodes DiscountCode[]
+
   @@map("trainings")
 }
 
 model Ebook {
-  id              String   @id @default(cuid())
-  title           String
-  slug            String   @unique
-  author          String
-  shortDescription String  @db.Text
-  fullDescription  String  @db.Text
-  price           Decimal
-  pages           Int?
-  coverUrl        String?
-  tableOfContents String?  @db.Text
-  isActive        Boolean  @default(true)
-  orderIndex      Int      @default(0)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  author           String
+  shortDescription String
+  fullDescription  String
+  price            Decimal
+  pages            Int?
+  coverUrl         String?
+  tableOfContents  String?
+  isActive         Boolean  @default(true)
+  orderIndex       Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
   @@map("ebooks")
 }
 
 model BlogPost {
-  id              String   @id @default(cuid())
-  title           String
-  slug            String   @unique
-  excerpt         String?  @db.Text
-  content         String   @db.Text
-  featuredImage   String?
-  author          String   @default("Administrator")
-  publishedAt     DateTime?
-  isPublished     Boolean  @default(false)
-  tags            String[] @default([])
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  
+  id            String    @id @default(cuid())
+  title         String
+  slug          String    @unique
+  excerpt       String?
+  // @db.Text removed for SQLite compatibility
+  content       String
+  featuredImage String?
+  author        String    @default("Administrator")
+  publishedAt   DateTime?
+  isPublished   Boolean   @default(false)
+  // SQLite doesn't support scalar arrays. We'll use a simple string for tags in dev.
+  tags          String    @default("")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
   @@map("blog_posts")
 }
 
 model PageContent {
-  id              String   @id @default(cuid())
-  pageKey         String   @unique
-  title           String?
-  content         String   @db.Text
-  metadata        Json?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  
+  id        String   @id @default(cuid())
+  pageKey   String   @unique
+  title     String?
+  content   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
   @@map("page_contents")
 }
 
@@ -262,7 +262,7 @@ model Order {
   payuOrderId   String   @unique
   amount        Decimal
   currency      String   @default("PLN")
-  status        String   // PENDING, COMPLETED, CANCELED
+  status        String // PENDING, COMPLETED, CANCELED
   description   String?
   customerEmail String
   userId        String?
@@ -292,21 +292,20 @@ model UserTraining {
   @@map("user_trainings")
 }
 
-
 model DiscountCode {
-  id          String   @id @default(cuid())
-  code        String   @unique
-  discount    Int      // Percentage discount (e.g., 20 for 20%)
-  type        String   @default("PERCENTAGE") // PERCENTAGE, FIXED
-  isActive    Boolean  @default(true)
-  usageLimit  Int?     // Max number of uses (null for unlimited)
-  usedCount   Int      @default(0)
-  expiresAt   DateTime?
-  trainingId  String?  // Optional: specific to a training
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String    @id @default(cuid())
+  code       String    @unique
+  discount   Int // Percentage discount (e.g., 20 for 20%)
+  type       String    @default("PERCENTAGE") // PERCENTAGE, FIXED
+  isActive   Boolean   @default(true)
+  usageLimit Int? // Max number of uses (null for unlimited)
+  usedCount  Int       @default(0)
+  expiresAt  DateTime?
+  trainingId String? // Optional: specific to a training
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 
-  training    Training? @relation(fields: [trainingId], references: [id])
+  training Training? @relation(fields: [trainingId], references: [id])
 
   @@map("discount_codes")
 }
