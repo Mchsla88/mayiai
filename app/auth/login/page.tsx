@@ -46,13 +46,8 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
-            <div className="relative w-20 h-20">
-              <Image
-                src="https://cdn.abacus.ai/images/1cff8bb8-e6c2-42b8-9d2b-29a2caad5ad9.png"
-                alt="AI Family Expert"
-                fill
-                className="object-contain"
-              />
+            <div className="text-6xl">
+              🤖
             </div>
           </div>
           <div>
