@@ -1,35 +1,33 @@
-
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://mayiai.pl'
+  const baseUrl = 'https://mayiai.pl';
   
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/dashboard/',
-          '/ebook/',
-          '/auth/',
-          '/_next/',
-        ],
+        disallow: ['/api/', '/admin/', '/konto/', '/polityka-prywatnosci'],
       },
       {
-        userAgent: 'Googlebot',
+        userAgent: 'GPTBot', // Explicitly allow ChatGPT
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/dashboard/',
-          '/ebook/',
-          '/auth/',
-        ],
+      },
+      {
+        userAgent: 'Google-Extended', // Explicitly allow Google Gemini
+        allow: '/',
+      },
+      {
+        userAgent: 'CCBot', // Common Crawl
+        allow: '/',
+      },
+      {
+        userAgent: 'Bytespider', // Block aggressive bots if needed
+        disallow: '/',
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    host: baseUrl,
+  };
 }

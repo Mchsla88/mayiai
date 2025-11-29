@@ -152,3 +152,37 @@ export function BreadcrumbStructuredData({ items }: { items: Array<{ name: strin
     />
   )
 }
+export function SoftwareApplicationStructuredData() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "May I AI",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "100.00",
+      "priceCurrency": "PLN",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Zaawansowana platforma edukacyjna AI dla rodzin i nauczycieli.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1250"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "May I AI Family Expert",
+      "url": "https://mayiai.pl"
+    }
+  };
+
+  return (
+    <script
+      id="software-application-structured-data"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}

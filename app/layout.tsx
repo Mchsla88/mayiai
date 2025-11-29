@@ -8,7 +8,8 @@ import { SessionProvider } from '@/components/session-provider'
 import { 
   OrganizationStructuredData, 
   EducationalOrganizationStructuredData, 
-  WebsiteStructuredData 
+  WebsiteStructuredData,
+  SoftwareApplicationStructuredData
 } from '@/components/structured-data'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     template: '%s | May I AI Family Expert'
   },
   description: siteDescription,
+  applicationName: 'May I AI Platform',
   keywords: siteKeywords,
   authors: [{ name: 'May I AI Family Expert', url: siteUrl }],
   creator: 'May I AI Family Expert',
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     ],
   },
   other: {
-    'og:updated_time': new Date().toISOString(), // Dodane dla świeżości contentu
+    'og:updated_time': new Date().toISOString(),
   },
   twitter: {
     card: 'summary_large_image',
@@ -63,9 +65,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -88,12 +92,16 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   alternates: {
-    canonical: siteUrl,
+    canonical: './',
+    languages: {
+      'pl-PL': 'https://mayiai.pl',
+    },
   },
   verification: {
-    google: 'verification_token', // Użytkownik powinien dodać swój token
-    // yandex: 'verification_token',
-    // other: { me: ['email', 'link'] },
+    google: 'google-site-verification-code',
+    other: {
+      'bing-site-verification': 'bing-verification-code',
+    },
   },
 }
 
@@ -108,6 +116,7 @@ export default function RootLayout({
         <OrganizationStructuredData />
         <EducationalOrganizationStructuredData />
         <WebsiteStructuredData />
+        <SoftwareApplicationStructuredData />
         <SessionProvider>
           <ThemeProvider
             attribute="class"
