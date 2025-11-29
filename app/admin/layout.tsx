@@ -12,7 +12,7 @@ export default async function AdminLayout({
   const session = await getServerSession(authOptions)
 
   if (!session?.user?.email) {
-    redirect("/login")
+    redirect("/auth/login")
   }
 
   // Check if user is admin - in a real app this should be a database check
