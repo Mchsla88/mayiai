@@ -24,6 +24,19 @@ export default function TeachersTrainingPage() {
     localStorage.setItem('teachersTrainingAuth', 'true')
   }
 
+  useEffect(() => {
+    const auth = localStorage.getItem('teachersTrainingAuth')
+    if (auth === 'true') {
+      setIsAuthenticated(true)
+    }
+  }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem('teachersTrainingAuth')
+    setIsAuthenticated(false)
+    toast.success('Wylogowano pomyślnie')
+  }
+
   if (!isAuthenticated) {
     return <SimpleLoginForm onLogin={handleAuthSuccess} title="Szkolenie AI dla Nauczycieli" />
   }
@@ -33,7 +46,19 @@ export default function TeachersTrainingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-12 relative">
+        {/* Logout Button */}
+        <div className="absolute top-4 right-4 z-10">
+          <Button 
+            onClick={handleLogout} 
+            variant="outline" 
+            size="sm"
+            className="bg-white/80 backdrop-blur-sm hover:bg-red-50 hover:text-red-600 border-gray-200"
+          >
+            Wyloguj
+          </Button>
+        </div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
