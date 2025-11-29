@@ -54,8 +54,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <User className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-800">Dr Anna Kowalska</div>
-                  <div className="text-sm text-gray-500">Ekspert AI Family Expert</div>
+                  <div className="font-semibold text-gray-800">Ekspert May I AI</div>
+                  <div className="text-sm text-gray-500">Zespół May I AI</div>
                 </div>
               </div>
 

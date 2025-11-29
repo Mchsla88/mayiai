@@ -36,10 +36,18 @@ export default function TrainingLandingPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Wybierz Swoją Ścieżkę Rozwoju
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-8">
               Oferujemy specjalistyczne szkolenia z wykorzystania sztucznej inteligencji, 
               dostosowane do Twoich potrzeb i roli w edukacji.
             </p>
+            
+            <div className="flex justify-center gap-4">
+              <Button asChild variant="outline" className="border-purple-200 hover:bg-purple-50 text-purple-700">
+                <Link href="/auth/login">
+                  Masz już konto? Zaloguj się
+                </Link>
+              </Button>
+            </div>
           </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

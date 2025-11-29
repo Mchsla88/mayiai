@@ -290,3 +290,22 @@ model UserTraining {
   @@unique([userId, trainingId])
   @@map("user_trainings")
 }
+
+
+model DiscountCode {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  discount    Int      // Percentage discount (e.g., 20 for 20%)
+  type        String   @default("PERCENTAGE") // PERCENTAGE, FIXED
+  isActive    Boolean  @default(true)
+  usageLimit  Int?     // Max number of uses (null for unlimited)
+  usedCount   Int      @default(0)
+  expiresAt   DateTime?
+  trainingId  String?  // Optional: specific to a training
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  training    Training? @relation(fields: [trainingId], references: [id])
+
+  @@map("discount_codes")
+}
