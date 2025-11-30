@@ -12,13 +12,30 @@ import {
 import { SimpleLoginForm } from '@/components/simple-login-form'
 import { CertificateGenerator } from '@/components/certificate-generator'
 import toast from 'react-hot-toast'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 // Import modules from separate file
 import { trainingModules } from './training-modules-data'
 
 export default function TeachersTrainingPage() {
+  const { data: session, status } = useSession()
+  const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeModule, setActiveModule] = useState('wstep-1')
+  
+  // Redirect unauthenticated users to login
+  useEffect(() => {
+    if (status === 'loading') return
+    
+    if (!session) {
+      router.push('/auth/login?callbackUrl=/szkolenia/nauczyciele')
+      return
+    }
+    
+    setIsAuthenticated(true)
+  }, [session, status, router])
+
   const handleAuthSuccess = () => {
     setIsAuthenticated(true)
     localStorage.setItem('teachersTrainingAuth', 'true')
@@ -26,15 +43,20 @@ export default function TeachersTrainingPage() {
 
   useEffect(() => {
     const auth = localStorage.getItem('teachersTrainingAuth')
-    if (auth === 'true') {
+    if (auth === 'true' && session) {
       setIsAuthenticated(true)
     }
-  }, [])
+  }, [session])
 
   const handleLogout = () => {
     localStorage.removeItem('teachersTrainingAuth')
     setIsAuthenticated(false)
     toast.success('Wylogowano pomyślnie')
+  }
+
+  // Show loading while checking auth
+  if (status === 'loading' || (session && !isAuthenticated)) {
+    return null // NextAuth will redirect
   }
 
   if (!isAuthenticated) {

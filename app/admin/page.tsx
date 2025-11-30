@@ -57,8 +57,15 @@ export default function AdminDashboard() {
   // Modal states
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false)
   const [isAccessModalOpen, setIsAccessModalOpen] = useState(false)
+  const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false)
   const [newPassword, setNewPassword] = useState('')
   const [selectedTrainingId, setSelectedTrainingId] = useState<string>('')
+  const [newUserData, setNewUserData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
+  })
 
   useEffect(() => {
     fetchData()
@@ -133,6 +140,34 @@ export default function AdminDashboard() {
     }
   }
 
+  const handleAddUser = async () => {
+    if (!newUserData.firstName || !newUserData.lastName || !newUserData.email || !newUserData.password) {
+      toast.error('Wszystkie pola są wymagane')
+      return
+    }
+
+    try {
+      const res = await fetch('/api/admin/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newUserData)
+      })
+
+      const data = await res.json()
+
+      if (res.ok) {
+        toast.success('Użytkownik utworzony pomyślnie')
+        setIsAddUserModalOpen(false)
+        setNewUserData({ firstName: '', lastName: '', email: '', password: '' })
+        fetchData() // Refresh user list
+      } else {
+        toast.error(data.error || 'Błąd tworzenia użytkownika')
+      }
+    } catch (error) {
+      toast.error('Wystąpił błąd')
+    }
+  }
+
   const filteredUsers = users.filter(user => 
     user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
     (user.name && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -154,7 +189,15 @@ export default function AdminDashboard() {
           <p className="text-gray-500">Zarządzanie użytkownikami i dostępami</p>
         </div>
         <div className="flex gap-4">
-           <Button variant="outline" className="gap-2">
+          <Button 
+            variant="outline" 
+            className="gap-2"
+            onClick={() => setIsAddUserModalOpen(true)}
+          >
+            <Shield className="w-4 h-4" />
+            Dodaj użytkownika
+          </Button>
+          <Button variant="outline" className="gap-2">
             <Gift className="w-4 h-4" />
             Kody Rabatowe
           </Button>
@@ -314,6 +357,58 @@ export default function AdminDashboard() {
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsAccessModalOpen(false)}>Anuluj</Button>
             <Button onClick={handleGrantAccess}>Przyznaj dostęp</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Add User Modal */}
+      <Dialog open={isAddUserModalOpen} onOpenChange={setIsAddUserModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Dodaj nowego użytkownika</DialogTitle>
+            <DialogDescription>
+              Utwórz konto dla nowego użytkownika.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
+            <div>
+              <label className="text-sm font-medium">Imię</label>
+              <Input
+                placeholder="Jan"
+                value={newUserData.firstName}
+                onChange={(e) => setNewUserData({ ...newUserData, firstName: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Nazwisko</label>
+              <Input
+                placeholder="Kowalski"
+                value={newUserData.lastName}
+                onChange={(e) => setNewUserData({ ...newUserData, lastName: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Email</label>
+              <Input
+                type="email"
+                placeholder="jan.kowalski@example.com"
+                value={newUserData.email}
+                onChange={(e) => setNewUserData({ ...newUserData, email: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Hasło</label>
+              <Input
+                type="password"
+                placeholder="Minimum 6 znaków"
+                value={newUserData.password}
+                onChange={(e) => setNewUserData({ ...newUserData, password: e.target.value })}
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsAddUserModalOpen(false)}>Anuluj</Button>
+            <Button onClick={handleAddUser}>Dodaj użytkownika</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

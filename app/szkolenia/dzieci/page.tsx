@@ -27,6 +27,8 @@ import {
 import { toast } from '@/hooks/use-toast'
 import { SimpleLoginForm } from '@/components/simple-login-form'
 import { trainingModules } from './training-modules-data'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 
 
@@ -79,8 +81,7 @@ function TrainingContent() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-4xl mx-auto text-center text-white"
-            >
+              className="max-w-4xl mx-auto text-center text-white">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 Szkolenie Online
@@ -105,8 +106,7 @@ function TrainingContent() {
               <motion.aside
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="lg:col-span-3"
-              >
+                className="lg:col-span-3">
                 <div className="sticky top-24 space-y-4">
                   <Card className="border-2 border-purple-200 shadow-lg">
                     <CardContent className="p-6">
@@ -126,8 +126,7 @@ function TrainingContent() {
                                 : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
                             }`}
                             whileHover={{ x: 5 }}
-                            whileTap={{ scale: 0.98 }}
-                          >
+                            whileTap={{ scale: 0.98 }}>
                             <div className="flex items-center gap-3">
                               <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                                 activeModule === module.id
@@ -170,8 +169,7 @@ function TrainingContent() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 }}
-                  >
+                    transition={{ delay: 0.3 }}>
                     <Card className="border-2 border-blue-400 bg-gradient-to-br from-blue-50 to-cyan-50">
                       <CardContent className="p-6 text-center">
                         <BookOpen className="w-12 h-12 text-blue-600 mx-auto mb-3" />
@@ -204,8 +202,7 @@ function TrainingContent() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="scroll-mt-24"
-                    >
+                      className="scroll-mt-24">
                       <Card className="border-2 border-purple-200 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
                         <CardContent className="p-0">
                           {/* Module Header */}
@@ -246,10 +243,9 @@ function TrainingContent() {
                                     <video
                                       controls
                                       className="w-full h-full"
-                                      poster={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%236B21A8' width='1600' height='900'/%3E%3Ctext fill='white' font-size='32' font-family='Arial' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${module.title}%3C/text%3E%3C/svg%3E`}
-                                    >
+                                      poster={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%236B21A8' width='1600' height='900'/%3E%3Ctext fill='white' font-size='32' font-family='Arial' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${module.title}%3C/text%3E%3C/svg%3E`}>
                                       <source src={module.video} type="video/mp4" />
-                                      Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+                                      Twoja przeglądarka nie obs\u0142uguje odtwarzacza wideo.
                                     </video>
                                   </div>
                                   <p className="text-sm text-gray-300 mt-4 text-center">
@@ -270,10 +266,9 @@ function TrainingContent() {
                                       <audio
                                         controls
                                         className="w-full max-w-xl mx-auto"
-                                        style={{ filter: 'invert(1) hue-rotate(180deg)' }}
-                                      >
+                                        style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
                                         <source src={(module as any).audio1} type="audio/mpeg" />
-                                        Twoja przeglądarka nie obsługuje odtwarzacza audio.
+                                        Twoja przeglądarka nie obs\u0142uguje odtwarzacza audio.
                                       </audio>
                                     </div>
                                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
@@ -285,10 +280,9 @@ function TrainingContent() {
                                       <audio
                                         controls
                                         className="w-full max-w-xl mx-auto"
-                                        style={{ filter: 'invert(1) hue-rotate(180deg)' }}
-                                      >
+                                        style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
                                         <source src={(module as any).audio2} type="audio/mpeg" />
-                                        Twoja przeglądarka nie obsługuje odtwarzacza audio.
+                                        Twoja przeglądarka nie obs\u0142uguje odtwarzacza audio.
                                       </audio>
                                     </div>
                                   </div>
@@ -306,10 +300,9 @@ function TrainingContent() {
                                     <audio
                                       controls
                                       className="w-full max-w-xl mx-auto"
-                                      style={{ filter: 'invert(1) hue-rotate(180deg)' }}
-                                    >
+                                      style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
                                       <source src={(module as any).audio} type="audio/mpeg" />
-                                      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+                                      Twoja przeglądarka nie obs\u0142uguje odtwarzacza audio.
                                     </audio>
                                   </div>
                                 </div>
@@ -365,19 +358,38 @@ function TrainingContent() {
 
 // Main Page Component
 export default function SzkoleniePage() {
+  const { data: session, status } = useSession()
+  const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  // Redirect unauthenticated users to login
+  useEffect(() => {
+    if (status === 'loading') return
+    
+    if (!session) {
+      router.push('/auth/login?callbackUrl=/szkolenia/dzieci')
+      return
+    }
+    
+    setIsAuthenticated(true)
+  }, [session, status, router])
 
   useEffect(() => {
     // Check if user is already authenticated (from localStorage)
     const auth = localStorage.getItem('training_auth')
-    if (auth === 'true') {
+    if (auth === 'true' && session) {
       setIsAuthenticated(true)
     }
-  }, [])
+  }, [session])
 
   const handleLogin = () => {
     localStorage.setItem('training_auth', 'true')
     setIsAuthenticated(true)
+  }
+
+  // Show loading while checking auth
+  if (status === 'loading' || (session && !isAuthenticated)) {
+    return null // NextAuth will redirect
   }
 
   if (!isAuthenticated) {
