@@ -28,9 +28,13 @@ export default function LoginPage() {
         redirect: false,
       })
 
+      console.log('[LOGIN] signIn result:', result)
+
       if (result?.error) {
+        console.log('[LOGIN] Error:', result.error)
         toast.error('Nieprawidłowy email lub hasło')
       } else {
+        console.log('[LOGIN] Success! Redirecting to dashboard...')
         toast.success('Zalogowano pomyślnie!')
         router.push('/dashboard')
       }
