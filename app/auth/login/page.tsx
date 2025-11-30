@@ -22,29 +22,12 @@ export default function LoginPage() {
     setIsLoading(true)
 
     try {
-      const result = await signIn('credentials', {
+      // Let NextAuth handle the redirect automatically
+      await signIn('credentials', {
         email: formData.email,
         password: formData.password,
-        redirect: false,
+        callbackUrl: '/dashboard',
       })
-
-      console.log('[LOGIN] signIn result:', result)
-
-      if (result?.error) {
-        console.log('[LOGIN] Error:', result.error)
-        toast.error('Nieprawidłowy email lub hasło')
-        setIsLoading(false)
-        return
-      }
-
-      // Login succeeded - verify session and redirect
-      console.log('[LOGIN] Login API succeeded, redirecting...')
-      toast.success('Zalogowano pomyślnie!')
-      
-      // Use router.push for client-side navigation
-      // The middleware will handle authentication checking
-      router.push('/dashboard')
-      router.refresh()
     } catch (error) {
       toast.error('Wystąpił błąd podczas logowania')
     } finally {

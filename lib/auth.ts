@@ -66,6 +66,21 @@ export const authOptions: NextAuthOptions = {
     signIn: '/auth/login'
   },
   callbacks: {
+    async signIn({ user }) {
+      // Allow sign in
+      return true
+    },
+    async redirect({ url, baseUrl }) {
+      // After sign in, redirect to dashboard
+      if (url === baseUrl) {
+        return `${baseUrl}/dashboard`
+      }
+      // Allows relative callback URLs
+      if (url.startsWith("/")) return `${baseUrl}${url}`
+      // Allows callback URLs on the same origin
+      if (new URL(url).origin === baseUrl) return url
+      return baseUrl
+    },
     async jwt({ token, user }) {
       if (user) {
         token.isAdmin = user.isAdmin;
