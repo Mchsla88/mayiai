@@ -34,11 +34,17 @@ export default function RegisterPage() {
     setIsLoading(true)
 
     try {
+      // Split name into firstName and lastName
+      const nameParts = formData.name.trim().split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || nameParts[0] || 'User'
+
       const response = await fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: formData.name,
+          firstName,
+          lastName,
           email: formData.email,
           password: formData.password,
         }),
