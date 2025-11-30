@@ -22,15 +22,28 @@ export default function LoginPage() {
     setIsLoading(true)
 
     try {
-      // Let NextAuth handle the redirect automatically
-      await signIn('credentials', {
+      const result = await signIn('credentials', {
         email: formData.email,
         password: formData.password,
-        callbackUrl: '/dashboard',
+        redirect: false, // Don't auto-redirect, handle manually
       })
+
+      if (result?.error) {
+        toast.error('Nieprawidłowy email lub hasło')
+        setIsLoading(false)
+        return
+      }
+
+      if (result?.ok) {
+        // Check for callbackUrl in query params
+        const urlParams = new URLSearchParams(window.location.search)
+        const callbackUrl = urlParams.get('callbackUrl') || '/dashboard'
+        
+        toast.success('Zalogowano pomyślnie!')
+        router.push(callbackUrl)
+      }
     } catch (error) {
       toast.error('Wystąpił błąd podczas logowania')
-    } finally {
       setIsLoading(false)
     }
   }
