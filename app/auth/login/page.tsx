@@ -37,16 +37,14 @@ export default function LoginPage() {
         return
       }
 
-      // Check if login was successful by checking the result
-      if (result?.ok) {
-        console.log('[LOGIN] Success! Redirecting to dashboard...')
-        toast.success('Zalogowano pomyślnie!')
-        // Force redirect using window.location for more reliable redirect
-        window.location.href = '/dashboard'
-      } else {
-        toast.error('Wystąpił problem z logowaniem')
-        setIsLoading(false)
-      }
+      // Login succeeded - verify session and redirect
+      console.log('[LOGIN] Login API succeeded, redirecting...')
+      toast.success('Zalogowano pomyślnie!')
+      
+      // Use router.push for client-side navigation
+      // The middleware will handle authentication checking
+      router.push('/dashboard')
+      router.refresh()
     } catch (error) {
       toast.error('Wystąpił błąd podczas logowania')
     } finally {
