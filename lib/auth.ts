@@ -41,9 +41,9 @@ export const authOptions: NextAuthOptions = {
           name: `${user.firstName} ${user.lastName}`,
           isAdmin: user.isAdmin,
           role: user.role,
-          firstName: user.firstName,
-          lastName: user.lastName,
-          companyName: user.companyName,
+          firstName: user.firstName ?? undefined,
+          lastName: user.lastName ?? undefined,
+          companyName: user.companyName ?? undefined,
         };
       }
     })
