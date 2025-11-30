@@ -33,10 +33,19 @@ export default function LoginPage() {
       if (result?.error) {
         console.log('[LOGIN] Error:', result.error)
         toast.error('Nieprawidłowy email lub hasło')
-      } else {
+        setIsLoading(false)
+        return
+      }
+
+      // Check if login was successful by checking the result
+      if (result?.ok) {
         console.log('[LOGIN] Success! Redirecting to dashboard...')
         toast.success('Zalogowano pomyślnie!')
-        router.push('/dashboard')
+        // Force redirect using window.location for more reliable redirect
+        window.location.href = '/dashboard'
+      } else {
+        toast.error('Wystąpił problem z logowaniem')
+        setIsLoading(false)
       }
     } catch (error) {
       toast.error('Wystąpił błąd podczas logowania')
