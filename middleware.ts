@@ -1,8 +1,9 @@
 
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { getToken } from 'next-auth/jwt'
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   const hostname = request.headers.get('host') || ''
 
@@ -13,6 +14,23 @@ export function middleware(request: NextRequest) {
     url.host = newHostname
     url.port = '' // Wyczyść port dla https
     return NextResponse.redirect(url, 301) // Permanent redirect
+  }
+
+  // Auth check for training pages
+  const protectedPaths = ['/szkolenia/nauczyciele', '/szkolenia/dzieci', '/szkolenia/rodzice']
+  const isProtectedPath = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path))
+
+  if (isProtectedPath) {
+    const token = await getToken({ 
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET 
+    })
+
+    if (!token) {
+      const loginUrl = new URL('/auth/login', request.url)
+      loginUrl.searchParams.set('callbackUrl', request.nextUrl.pathname)
+      return NextResponse.redirect(loginUrl)
+    }
   }
 
   // Dodaj nagłówki wydajności i świeżości contentu
