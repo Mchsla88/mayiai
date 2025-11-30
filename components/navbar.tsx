@@ -53,6 +53,7 @@ export function Navbar() {
 
   const handleSignOut = async () => {
     await signOut({ redirect: false });
+    router.refresh(); // Refresh to clear session state
     router.push('/');
   };
 
