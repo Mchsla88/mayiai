@@ -237,7 +237,7 @@ Szanowni Rodzice, ten przewodnik jest przeznaczony również dla Was. W kolejnyc
       </div>
     )
   },
-    id: 'część-i-twoje-bezpieczne-cyfrowe-miejsce-platformy',
+  {    id: 'część-i-twoje-bezpieczne-cyfrowe-miejsce-platformy',
     title: 'Część I: Twoje Bezpieczne Cyfrowe Miejsce – Platformy dla Dzieci 🏰',
     duration: '68 min',
     content: (
@@ -1189,7 +1189,7 @@ Główne platformy (YouTube, TikTok, Instagram) mogą być fantastycznym miejsce
       </div>
     )
   },
-    id: 'część-ii-twój-arsenał-bezpłatne-i-bezpieczne-narzę',
+  {    id: 'część-ii-twój-arsenał-bezpłatne-i-bezpieczne-narzę',
     title: 'Część II: Twój Arsenał – Bezpłatne i Bezpieczne Narzędzia AI 🤖✨',
     duration: '41 min',
     content: (
@@ -1799,7 +1799,7 @@ Notion AI wygeneruje:
       </div>
     )
   },
-    id: 'część-iii-maszyna-do-pomysłów-od-myśli-do-treści-',
+  {    id: 'część-iii-maszyna-do-pomysłów-od-myśli-do-treści-',
     title: 'Część III: Maszyna do Pomysłów – Od Myśli do Treści 💡🎬',
     duration: '20 min',
     content: (
@@ -2090,7 +2090,7 @@ Podpis rodzica: __________
       </div>
     )
   },
-    id: 'część-iv-twój-plan-kalendarz-treści-krok-po-kroku-',
+  {    id: 'część-iv-twój-plan-kalendarz-treści-krok-po-kroku-',
     title: 'Część IV: Twój Plan – Kalendarz Treści Krok po Kroku 📅🎯',
     duration: '10 min',
     content: (
@@ -2158,7 +2158,7 @@ Kalendarz to przewodnik, nie więzienie. Jeśli pojawi się lepszy pomysł – z
       </div>
     )
   },
-    id: 'część-v-specjalna-sekcja-dla-rodziców-',
+  {    id: 'część-v-specjalna-sekcja-dla-rodziców-',
     title: 'Część V: Specjalna Sekcja dla Rodziców 👨‍👩‍👧💙',
     duration: '19 min',
     content: (
@@ -2432,7 +2432,7 @@ A:
       </div>
     )
   },
-    id: 'część-vi-rozwijanie-umiejętności-młodego-twórcy-',
+  {    id: 'część-vi-rozwijanie-umiejętności-młodego-twórcy-',
     title: 'Część VI: Rozwijanie Umiejętności Młodego Twórcy 🌱💪',
     duration: '10 min',
     content: (
@@ -2625,7 +2625,7 @@ Dzień 21-30: Opublikuj pierwszy film!
       </div>
     )
   },
-    id: 'część-specjalna-wszystkie-52-projekty---kompletne-',
+  {    id: 'część-specjalna-wszystkie-52-projekty---kompletne-',
     title: 'CZĘŚĆ SPECJALNA: Wszystkie 52 Projekty - Kompletne Przewodniki 📚🎬',
     duration: '295 min',
     content: (
