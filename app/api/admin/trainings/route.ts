@@ -19,6 +19,8 @@ export async function GET() {
       select: { id: true, title: true }
     })
 
+    console.log('Admin API: Found trainings:', trainings.length, JSON.stringify(trainings))
+
     return NextResponse.json(trainings)
   } catch (error) {
     console.error('Error fetching trainings:', error)
