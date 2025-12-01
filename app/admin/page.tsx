@@ -29,8 +29,14 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Badge } from '@/components/ui/badge'
-import { Search, Shield, Key, Ban, CheckCircle, XCircle, Loader2, Gift } from 'lucide-react'
+import { Search, Shield, Key, Ban, CheckCircle, XCircle, Loader2, Gift, Trash2, Info } from 'lucide-react'
 import { toast } from 'react-hot-toast'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+
+interface TrainingAccess {
+  title: string
+  grantedAt: string
+}
 
 interface User {
   id: string
@@ -39,7 +45,7 @@ interface User {
   role: string
   isAdmin: boolean
   createdAt: string
-  trainings: string[]
+  trainings: TrainingAccess[]
 }
 
 interface Training {
@@ -58,6 +64,7 @@ export default function AdminDashboard() {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false)
   const [isAccessModalOpen, setIsAccessModalOpen] = useState(false)
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false)
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [newPassword, setNewPassword] = useState('')
   const [selectedTrainingId, setSelectedTrainingId] = useState<string>('')
   const [newUserData, setNewUserData] = useState({
@@ -172,6 +179,27 @@ export default function AdminDashboard() {
     }
   }
 
+  const handleDeleteUser = async () => {
+    if (!selectedUser) return
+
+    try {
+      const res = await fetch(`/api/admin/users?id=${selectedUser.id}`, {
+        method: 'DELETE',
+      })
+
+      if (res.ok) {
+        toast.success('Użytkownik został usunięty')
+        setIsDeleteModalOpen(false)
+        fetchData() // Refresh user list
+      } else {
+        const data = await res.json()
+        toast.error(data.error || 'Błąd usuwania użytkownika')
+      }
+    } catch (error) {
+      toast.error('Wystąpił błąd')
+    }
+  }
+
   const filteredUsers = users.filter(user => 
     user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
     (user.name && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -265,11 +293,20 @@ export default function AdminDashboard() {
                   <TableCell>
                     <div className="flex flex-wrap gap-1">
                       {user.trainings.length > 0 ? (
-                        user.trainings.map((t, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">
-                            {t}
-                          </Badge>
-                        ))
+                        <TooltipProvider>
+                          {user.trainings.map((t, i) => (
+                            <Tooltip key={i}>
+                              <TooltipTrigger>
+                                <Badge variant="outline" className="text-xs cursor-help">
+                                  {t.title}
+                                </Badge>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>Dostęp od: {new Date(t.grantedAt).toLocaleDateString('pl-PL')}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          ))}
+                        </TooltipProvider>
                       ) : (
                         <span className="text-sm text-gray-400">-</span>
                       )}
@@ -301,6 +338,18 @@ export default function AdminDashboard() {
                         title="Zmień hasło"
                       >
                         <Key className="w-4 h-4 text-orange-600" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => {
+                          setSelectedUser(user)
+                          setIsDeleteModalOpen(true)
+                        }}
+                        title="Usuń użytkownika"
+                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                      >
+                        <Trash2 className="w-4 h-4" />
                       </Button>
                     </div>
                   </TableCell>
@@ -413,6 +462,22 @@ export default function AdminDashboard() {
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsAddUserModalOpen(false)}>Anuluj</Button>
             <Button onClick={handleAddUser}>Dodaj użytkownika</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Delete User Confirmation Modal */}
+      <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Usuń użytkownika</DialogTitle>
+            <DialogDescription>
+              Czy na pewno chcesz usunąć użytkownika {selectedUser?.email}? Tej operacji nie można cofnąć.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsDeleteModalOpen(false)}>Anuluj</Button>
+            <Button variant="destructive" onClick={handleDeleteUser}>Usuń</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

@@ -28,7 +28,8 @@ export async function GET() {
               select: {
                 title: true
               }
-            }
+            },
+            createdAt: true // Include when access was granted
           }
         }
       },
@@ -39,7 +40,10 @@ export async function GET() {
 
     const formattedUsers = users.map(user => ({
       ...user,
-      trainings: user.userTrainings.map(ut => ut.training.title)
+      trainings: user.userTrainings.map(ut => ({
+        title: ut.training.title,
+        grantedAt: ut.createdAt
+      }))
     }))
 
     return NextResponse.json(formattedUsers)
@@ -115,6 +119,50 @@ export async function POST(request: Request) {
     console.error('Error creating user:', error)
     return NextResponse.json(
       { error: 'Wystąpił błąd podczas tworzenia użytkownika' },
+      { status: 500 }
+    )
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user?.isAdmin && session?.user?.email !== 'michal@mayiai.pl') {
+      return new NextResponse('Unauthorized', { status: 401 })
+    }
+
+    const { searchParams } = new URL(request.url)
+    const userId = searchParams.get('id')
+
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'User ID is required' },
+        { status: 400 }
+      )
+    }
+
+    // Prevent deleting self
+    if (userId === session.user.id) {
+      return NextResponse.json(
+        { error: 'Nie możesz usunąć własnego konta' },
+        { status: 400 }
+      )
+    }
+
+    await prisma.user.delete({
+      where: { id: userId }
+    })
+
+    return NextResponse.json(
+      { message: 'Użytkownik został usunięty' },
+      { status: 200 }
+    )
+
+  } catch (error) {
+    console.error('Error deleting user:', error)
+    return NextResponse.json(
+      { error: 'Wystąpił błąd podczas usuwania użytkownika' },
       { status: 500 }
     )
   }
