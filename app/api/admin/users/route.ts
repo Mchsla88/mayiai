@@ -150,6 +150,14 @@ export async function DELETE(request: Request) {
       )
     }
 
+    // 1. Anonymize or detach orders (since we can't delete financial records easily without schema change)
+    // We set userId to null for orders belonging to this user
+    await prisma.order.updateMany({
+      where: { userId: userId },
+      data: { userId: null }
+    })
+    
+    // 2. Delete the user (Cascade will handle other relations like UserTraining, Account, etc.)
     await prisma.user.delete({
       where: { id: userId }
     })

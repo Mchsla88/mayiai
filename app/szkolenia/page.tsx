@@ -40,7 +40,7 @@ export default function SzkoleniaPage() {
 
   const fetchUserTrainings = async () => {
     try {
-      const response = await fetch('/api/user/trainings')
+      const response = await fetch('/api/user/trainings', { cache: 'no-store' })
       if (response.ok) {
         const data = await response.json()
         setTrainings(data)
