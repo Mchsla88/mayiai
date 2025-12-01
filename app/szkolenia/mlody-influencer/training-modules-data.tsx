@@ -1,9 +1,6 @@
 import React from 'react'
 
 export const trainingModules = [
-import React from 'react'
-
-export const trainingModules = [
   {
     id: 'kompleksowy-przewodnik-dla-dzieci-i-rodziców',
     title: 'Kompleksowy Przewodnik dla Dzieci i Rodziców',
