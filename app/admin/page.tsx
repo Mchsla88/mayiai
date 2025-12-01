@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -54,6 +56,8 @@ interface Training {
 }
 
 export default function AdminDashboard() {
+  const { data: session, status } = useSession()
+  const router = useRouter()
   const [users, setUsers] = useState<User[]>([])
   const [trainings, setTrainings] = useState<Training[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -75,8 +79,24 @@ export default function AdminDashboard() {
   })
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    // Check authentication
+    if (status === 'loading') return
+    
+    if (status === 'unauthenticated') {
+      router.push('/auth/login?callbackUrl=/admin')
+      return
+    }
+
+    if (session && !session.user?.isAdmin && session.user?.email !== 'michal@mayiai.pl') {
+      router.push('/')
+      toast.error('Brak dostępu')
+      return
+    }
+
+    if (session) {
+      fetchData()
+    }
+  }, [status, session, router])
 
   const fetchData = async () => {
     try {
