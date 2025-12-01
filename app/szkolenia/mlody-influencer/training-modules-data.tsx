@@ -6,96 +6,96 @@ export const trainingModules = [
     title: 'Kompleksowy Przewodnik dla Dzieci i Rodziców',
     duration: '10 min',
     content: (
-      <div className="space-y-6 text-gray-700 leading-relaxed">
+      &lt;div className="space-y-6 text-gray-700 leading-relaxed"&gt;
         
-<strong>Data publikacji:</strong> 01 grudnia 2025  
-<strong>Wersja:</strong> 2.0 - Wydanie Rozszerzone  
-<strong>Strony:</strong> 120+  
-<strong>Dla kogo:</strong> Dzieci 6-16 lat i ich rodzice
+&lt;strong&gt;Data publikacji:&lt;/strong&gt; 01 grudnia 2025  
+&lt;strong&gt;Wersja:&lt;/strong&gt; 2.0 - Wydanie Rozszerzone  
+&lt;strong&gt;Strony:&lt;/strong&gt; 120+  
+&lt;strong&gt;Dla kogo:&lt;/strong&gt; Dzieci 6-16 lat i ich rodzice
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
 ## 📚 Spis Treści
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Wstęp: Witaj w Świecie Kreatywności!</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Dlaczego twoje pomysły są wyjątkowe?</li>
-<li>Co to znaczy być „młodym influencerem"</li>
-<li>Zasada #1: Twoje bezpieczeństwo</li>
-<li>Rola rodziców</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Wstęp: Witaj w Świecie Kreatywności!&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Dlaczego twoje pomysły są wyjątkowe?&lt;/li&gt;
+&lt;li&gt;Co to znaczy być „młodym influencerem"&lt;/li&gt;
+&lt;li&gt;Zasada #1: Twoje bezpieczeństwo&lt;/li&gt;
+&lt;li&gt;Rola rodziców&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część I: Twoje Bezpieczne Cyfrowe Miejsce – Platformy dla Dzieci</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Rozdział 1:</strong> Dlaczego „Zwykłe" Media Społecznościowe Nie Są Dla Ciebie (Jeszcze)?</li>
-<li><strong>Rozdział 2:</strong> Twoje Bezpieczne Playgroundy</li>
-<li><strong>Rozdział 3:</strong> Główne Platformy pod Okiem Rodzica</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część I: Twoje Bezpieczne Cyfrowe Miejsce – Platformy dla Dzieci&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 1:&lt;/strong&gt; Dlaczego „Zwykłe" Media Społecznościowe Nie Są Dla Ciebie (Jeszcze)?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 2:&lt;/strong&gt; Twoje Bezpieczne Playgroundy&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 3:&lt;/strong&gt; Główne Platformy pod Okiem Rodzica&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część II: Twój Arsenał – Bezpłatne i Bezpieczne Narzędzia AI</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Rozdział 4:</strong> AI dla Małych Kreatywnych Umysłów</li>
-<li><strong>Rozdział 5:</strong> Najlepsze Bezpłatne Narzędzia AI dla Dzieci (2025)</li>
-<li><strong>Rozdział 6:</strong> Pomocnicy dla Tekstu i Organizacji</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część II: Twój Arsenał – Bezpłatne i Bezpieczne Narzędzia AI&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 4:&lt;/strong&gt; AI dla Małych Kreatywnych Umysłów&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 5:&lt;/strong&gt; Najlepsze Bezpłatne Narzędzia AI dla Dzieci (2025)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 6:&lt;/strong&gt; Pomocnicy dla Tekstu i Organizacji&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część III: Maszyna do Pomysłów – Od Myśli do Treści</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Rozdział 7:</strong> Gdzie Chować Świetne Pomysły?</li>
-<li><strong>Rozdział 8:</strong> AI jako Twój Generator Pomysłów</li>
-<li><strong>Rozdział 9:</strong> Etyka Młodego Influencera</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część III: Maszyna do Pomysłów – Od Myśli do Treści&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 7:&lt;/strong&gt; Gdzie Chować Świetne Pomysły?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 8:&lt;/strong&gt; AI jako Twój Generator Pomysłów&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 9:&lt;/strong&gt; Etyka Młodego Influencera&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część IV: Twój Plan – Kalendarz Treści Krok po Kroku</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Rozdział 10:</strong> Co to jest Kalendarz Treści?</li>
-<li><strong>Rozdział 11:</strong> Budowanie Kalendarza z AI</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część IV: Twój Plan – Kalendarz Treści Krok po Kroku&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 10:&lt;/strong&gt; Co to jest Kalendarz Treści?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 11:&lt;/strong&gt; Budowanie Kalendarza z AI&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część V: Specjalna Sekcja dla Rodziców</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Rozdział 12:</strong> Dlaczego Twoje Dziecko Chce Być „Influencerem"?</li>
-<li><strong>Rozdział 13:</strong> Twoja Rola – Przewodnik i Strażnik</li>
-<li><strong>Rozdział 14:</strong> Codzienny Checklist dla Bezpiecznej Kreacji</li>
-<li><strong>Rozdział 15:</strong> RODO i GDPR-K - Szczegółowy Przewodnik Prawny</li>
-<li><strong>Rozdział 16:</strong> FAQ dla Rodziców (20 Najważniejszych Pytań)</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część V: Specjalna Sekcja dla Rodziców&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 12:&lt;/strong&gt; Dlaczego Twoje Dziecko Chce Być „Influencerem"?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 13:&lt;/strong&gt; Twoja Rola – Przewodnik i Strażnik&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 14:&lt;/strong&gt; Codzienny Checklist dla Bezpiecznej Kreacji&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 15:&lt;/strong&gt; RODO i GDPR-K - Szczegółowy Przewodnik Prawny&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 16:&lt;/strong&gt; FAQ dla Rodziców (20 Najważniejszych Pytań)&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część VI: Rozwijanie Umiejętności Młodego Twórcy</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Rozdział 17:</strong> Jak Radzić Sobie z Krytyką Online</li>
-<li><strong>Rozdział 18:</strong> Budowanie Pewności Siebie przed Kamerą</li>
-<li><strong>Rozdział 19:</strong> Jak Współpracować z Innymi Młodymi Twórcami</li>
-<li><strong>Rozdział 20:</strong> Twój Pierwszy Miesiąc - Dziennik Młodego Influencera</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część VI: Rozwijanie Umiejętności Młodego Twórcy&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 17:&lt;/strong&gt; Jak Radzić Sobie z Krytyką Online&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 18:&lt;/strong&gt; Budowanie Pewności Siebie przed Kamerą&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 19:&lt;/strong&gt; Jak Współpracować z Innymi Młodymi Twórcami&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rozdział 20:&lt;/strong&gt; Twój Pierwszy Miesiąc - Dziennik Młodego Influencera&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Część VII: 50+ Ciekawych Projektów dla Młodych Influencerów</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Projekty dla początkujących (10)</li>
-<li>Projekty edukacyjne (10)</li>
-<li>Projekty kreatywne i artystyczne (10)</li>
-<li>Projekty naukowe (10)</li>
-<li>Projekty społeczne i ekologiczne (10)</li>
-<li>Projekty zaawansowane (10)</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Część VII: 50+ Ciekawych Projektów dla Młodych Influencerów&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Projekty dla początkujących (10)&lt;/li&gt;
+&lt;li&gt;Projekty edukacyjne (10)&lt;/li&gt;
+&lt;li&gt;Projekty kreatywne i artystyczne (10)&lt;/li&gt;
+&lt;li&gt;Projekty naukowe (10)&lt;/li&gt;
+&lt;li&gt;Projekty społeczne i ekologiczne (10)&lt;/li&gt;
+&lt;li&gt;Projekty zaawansowane (10)&lt;/li&gt;
+&lt;/ul&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Zakończenie: Twoja Podróż Dopiero Się Zaczyna!</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Zakończenie: Twoja Podróż Dopiero Się Zaczyna!&lt;/h3&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Załączniki</h3>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Załącznik A:</strong> Pełna Lista Narzędzi AI (Tabela z Opisami)</li>
-<li><strong>Załącznik B:</strong> Szablon Kalendarza Treści</li>
-<li><strong>Załącznik C:</strong> 100+ Promptów dla AI (Kategorie)</li>
-<li><strong>Załącznik D:</strong> Checklist dla Rodziców (Wersja do Druku)</li>
-<li><strong>Załącznik E:</strong> Słowniczek Pojęć Internetowych dla Dzieci</li>
-<li><strong>Załącznik F:</strong> Lista Zasobów i Linków</li>
-<li><strong>Załącznik G:</strong> Szablony Dokumentów (Zgody, Regulaminy)</li>
-</ul>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Załączniki&lt;/h3&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik A:&lt;/strong&gt; Pełna Lista Narzędzi AI (Tabela z Opisami)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik B:&lt;/strong&gt; Szablon Kalendarza Treści&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik C:&lt;/strong&gt; 100+ Promptów dla AI (Kategorie)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik D:&lt;/strong&gt; Checklist dla Rodziców (Wersja do Druku)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik E:&lt;/strong&gt; Słowniczek Pojęć Internetowych dla Dzieci&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik F:&lt;/strong&gt; Lista Zasobów i Linków&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Załącznik G:&lt;/strong&gt; Szablony Dokumentów (Zgody, Regulaminy)&lt;/li&gt;
+&lt;/ul&gt;
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
 
-      </div>
+      &lt;/div&gt;
     )
   },
   {
@@ -103,307 +103,307 @@ export const trainingModules = [
     title: 'Wstęp: Witaj w Świecie Kreatywności! ✨',
     duration: '15 min',
     content: (
-      <div className="space-y-6 text-gray-700 leading-relaxed">
-        <p className="mb-4">Witaj, młody odkrywco! Trzymasz w rękach przewodnik, który jest czymś więcej niż tylko książką. To mapa skarbów, która poprowadzi Cię przez fascynujący, kolorowy i pełen możliwości świat internetu. Być może marzysz o tym, by dzielić się swoimi pasjami z innymi, pokazywać swoje rysunki, opowiadać o ulubionych grach, przeprowadzać eksperymenty naukowe albo po prostu rozśmieszać ludzi. To wspaniałe! Każdy pomysł, który rodzi się w Twojej głowie, jest jak unikalna gwiazda na niebie – nie ma drugiej takiej samej. Ten kurs pomoże Ci sprawić, by Twoja gwiazda zabłysła jasno, ale w sposób bezpieczny i mądry.</p>
+      &lt;div className="space-y-6 text-gray-700 leading-relaxed"&gt;
+        &lt;p className="mb-4"&gt;Witaj, młody odkrywco! Trzymasz w rękach przewodnik, który jest czymś więcej niż tylko książką. To mapa skarbów, która poprowadzi Cię przez fascynujący, kolorowy i pełen możliwości świat internetu. Być może marzysz o tym, by dzielić się swoimi pasjami z innymi, pokazywać swoje rysunki, opowiadać o ulubionych grach, przeprowadzać eksperymenty naukowe albo po prostu rozśmieszać ludzi. To wspaniałe! Każdy pomysł, który rodzi się w Twojej głowie, jest jak unikalna gwiazda na niebie – nie ma drugiej takiej samej. Ten kurs pomoże Ci sprawić, by Twoja gwiazda zabłysła jasno, ale w sposób bezpieczny i mądry.&lt;/p&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🌟 Dlaczego twoje pomysły są wyjątkowe?</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🌟 Dlaczego twoje pomysły są wyjątkowe?&lt;/h3&gt;
 
-<p className="mb-4">Zastanówmy się przez chwilę, dlaczego Twoje pomysły są tak wyjątkowe. Żyjesz w niesamowitych czasach, w których masz dostęp do wiedzy i narzędzi, o jakich Twoi rodzice czy dziadkowie mogli tylko marzyć. Twoje spojrzenie na świat jest świeże, pełne energii i nieograniczone przez „dorosłe" myślenie, że „czegoś się nie da". To właśnie ta dziecięca ciekawość i odwaga w zadawaniu pytań sprawiają, że Twoje historie, rysunki czy filmy mogą być tak inspirujące dla innych.</p>
+&lt;p className="mb-4"&gt;Zastanówmy się przez chwilę, dlaczego Twoje pomysły są tak wyjątkowe. Żyjesz w niesamowitych czasach, w których masz dostęp do wiedzy i narzędzi, o jakich Twoi rodzice czy dziadkowie mogli tylko marzyć. Twoje spojrzenie na świat jest świeże, pełne energii i nieograniczone przez „dorosłe" myślenie, że „czegoś się nie da". To właśnie ta dziecięca ciekawość i odwaga w zadawaniu pytań sprawiają, że Twoje historie, rysunki czy filmy mogą być tak inspirujące dla innych.&lt;/p&gt;
 
-<strong>Historia Zosi (10 lat):</strong>  
+&lt;strong&gt;Historia Zosi (10 lat):&lt;/strong&gt;  
 Zosia uwielbia chodzić z tatą na spacery do lasu. Pewnego dnia zauważyła, że w różnych porach roku spotykają różne gatunki ptaków. Pomyślała: "A gdybym nagrała wszystkie ptaki, które widzę i stworzyła ich atlas dla innych dzieci?" Z pomocą taty założyła kanał na YouTube Kids, gdzie co tydzień pokazuje nowego ptaka, opowiada o nim ciekawostki i uczy jego głosu. Po trzech miesiącach jej kanał obserwuje 500 dzieci z całej Polski! Zwykły pomysł podczas spaceru zamienił się w pasjonujący projekt edukacyjny.
 
-<strong>Historia Kuby (12 lat):</strong>  
+&lt;strong&gt;Historia Kuby (12 lat):&lt;/strong&gt;  
 Kuba jest nieśmiały i ma trudności z mówieniem przed ludźmi. Ale za kamerą czuje się swobodnie! Uwielbia budować skomplikowane konstrukcje z klocków LEGO. Postanowił nagrywać timelapse'y (przyśpieszone filmy) swoich budowli z muzyką w tle. Nie musi mówić – jego ręce mówią za niego. Jego hipnotyzujące filmy pokazujące, jak w 60 sekund powstaje zamek lub statek kosmiczny, stały się hitem na TikToku rodziców. Kuba odkrył, że można być twórcą na swój własny, unikalny sposób.
 
-Pamiętaj: <strong>Nikt inny nie ma dokładnie takich samych doświadczeń, myśli i uczuć jak Ty. Twoja perspektywa jest Twoją supermocą.</strong>
+Pamiętaj: &lt;strong&gt;Nikt inny nie ma dokładnie takich samych doświadczeń, myśli i uczuć jak Ty. Twoja perspektywa jest Twoją supermocą.&lt;/strong&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🎯 Co to znaczy być „młodym influencerem" – nie tylko o sławie, ale o dzieleniu się pasjami</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🎯 Co to znaczy być „młodym influencerem" – nie tylko o sławie, ale o dzieleniu się pasjami&lt;/h3&gt;
 
-<p className="mb-4">W tym przewodniku często będziemy używać słowa „influencer". Ale co ono tak naprawdę znaczy? Wiele osób myśli, że to ktoś sławny, kto ma miliony obserwujących i reklamuje różne produkty. To tylko mały fragment całej prawdy.</p>
+&lt;p className="mb-4"&gt;W tym przewodniku często będziemy używać słowa „influencer". Ale co ono tak naprawdę znaczy? Wiele osób myśli, że to ktoś sławny, kto ma miliony obserwujących i reklamuje różne produkty. To tylko mały fragment całej prawdy.&lt;/p&gt;
 
-<strong>Prawdziwa definicja młodego influencera:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>🎨 <strong>Pasjonat:</strong> Ktoś, kto kocha to, co robi i chce się tym dzielić</li>
-<li>🌱 <strong>Inspirator:</strong> Osoba, która motywuje innych do spróbowania czegoś nowego</li>
-<li>👥 <strong>Budowniczy społeczności:</strong> Twórca przyjaznego grona ludzi o podobnych zainteresowaniach</li>
-<li>📚 <strong>Nauczyciel:</strong> Ktoś, kto przekazuje wiedzę w przystępny sposób</li>
-<li>😄 <strong>Entertainer:</strong> Osoba, która umie rozbawić i umilić czas</li>
-<li>🤝 <strong>Przyjaciel:</strong> Ktoś, kto buduje autentyczne relacje ze swoimi widzami</li>
-</ul>
+&lt;strong&gt;Prawdziwa definicja młodego influencera:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;🎨 &lt;strong&gt;Pasjonat:&lt;/strong&gt; Ktoś, kto kocha to, co robi i chce się tym dzielić&lt;/li&gt;
+&lt;li&gt;🌱 &lt;strong&gt;Inspirator:&lt;/strong&gt; Osoba, która motywuje innych do spróbowania czegoś nowego&lt;/li&gt;
+&lt;li&gt;👥 &lt;strong&gt;Budowniczy społeczności:&lt;/strong&gt; Twórca przyjaznego grona ludzi o podobnych zainteresowaniach&lt;/li&gt;
+&lt;li&gt;📚 &lt;strong&gt;Nauczyciel:&lt;/strong&gt; Ktoś, kto przekazuje wiedzę w przystępny sposób&lt;/li&gt;
+&lt;li&gt;😄 &lt;strong&gt;Entertainer:&lt;/strong&gt; Osoba, która umie rozbawić i umilić czas&lt;/li&gt;
+&lt;li&gt;🤝 &lt;strong&gt;Przyjaciel:&lt;/strong&gt; Ktoś, kto buduje autentyczne relacje ze swoimi widzami&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>NIE chodzi o:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>❌ Liczbę lajków i obserwujących</li>
-<li>❌ Zarabianie dużych pieniędzy</li>
-<li>❌ Bycie sławnym</li>
-<li>❌ Posiadanie drogiego sprzętu</li>
-<li>❌ Udawanie kogoś, kim nie jesteś</li>
-</ul>
+&lt;strong&gt;NIE chodzi o:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;❌ Liczbę lajków i obserwujących&lt;/li&gt;
+&lt;li&gt;❌ Zarabianie dużych pieniędzy&lt;/li&gt;
+&lt;li&gt;❌ Bycie sławnym&lt;/li&gt;
+&lt;li&gt;❌ Posiadanie drogiego sprzętu&lt;/li&gt;
+&lt;li&gt;❌ Udawanie kogoś, kim nie jesteś&lt;/li&gt;
+&lt;/ul&gt;
 
-<p className="mb-4">Możesz być influencerem w dziedzinie budowania z klocków, opieki nad chomikiem, rysowania komiksów czy pieczenia ciasteczek. Możesz mieć 10 obserwujących albo 10 tysięcy – jeśli pozytywnie wpływasz na tych, którzy Cię oglądają, jesteś influencerem! Każda pasja jest ważna!</p>
+&lt;p className="mb-4"&gt;Możesz być influencerem w dziedzinie budowania z klocków, opieki nad chomikiem, rysowania komiksów czy pieczenia ciasteczek. Możesz mieć 10 obserwujących albo 10 tysięcy – jeśli pozytywnie wpływasz na tych, którzy Cię oglądają, jesteś influencerem! Każda pasja jest ważna!&lt;/p&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🛡️ Zasada #1: Twoje bezpieczeństwo i dobrostan są najważniejsze</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🛡️ Zasada #1: Twoje bezpieczeństwo i dobrostan są najważniejsze&lt;/h3&gt;
 
-<p className="mb-4">Zanim jednak wyruszymy w tę ekscytującą podróż, musimy ustalić jedną, absolutnie najważniejszą zasadę.</p>
+&lt;p className="mb-4"&gt;Zanim jednak wyruszymy w tę ekscytującą podróż, musimy ustalić jedną, absolutnie najważniejszą zasadę.&lt;/p&gt;
 
-<strong>Zasada #1 brzmi: TWOJE BEZPIECZEŃSTWO I DOBROSTAN SĄ NAJWAŻNIEJSZE.</strong>
+&lt;strong&gt;Zasada #1 brzmi: TWOJE BEZPIECZEŃSTWO I DOBROSTAN SĄ NAJWAŻNIEJSZE.&lt;/strong&gt;
 
-<p className="mb-4">Internet jest jak wielkie miasto – pełne wspaniałych miejsc, parków rozrywki i bibliotek, ale też ciemnych zaułków, w których można spotkać kogoś o złych intencjach. Dlatego nigdy, przenigdy nie będziemy chodzić po tym mieście samotnie. Zawsze będziemy trzymać się za rękę z zaufanymi dorosłymi.</p>
+&lt;p className="mb-4"&gt;Internet jest jak wielkie miasto – pełne wspaniałych miejsc, parków rozrywki i bibliotek, ale też ciemnych zaułków, w których można spotkać kogoś o złych intencjach. Dlatego nigdy, przenigdy nie będziemy chodzić po tym mieście samotnie. Zawsze będziemy trzymać się za rękę z zaufanymi dorosłymi.&lt;/p&gt;
 
-<strong>Co oznacza „bezpieczeństwo online"? - Złote Zasady:</strong>
+&lt;strong&gt;Co oznacza „bezpieczeństwo online"? - Złote Zasady:&lt;/strong&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>🔒 Prywatność to podstawa</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;🔒 Prywatność to podstawa&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Nigdy nie ujawniaj swojego prawdziwego nazwiska (możesz używać pseudonimu)
    - Nie mów, do jakiej chodzisz szkoły
    - Nie pokazuj adresu swojego domu (nawet w tle filmu)
    - Nie podawaj numeru telefonu ani adresu e-mail
    
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>👨‍👩‍👧 Rodzice zawsze w pętli</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;👨‍👩‍👧 Rodzice zawsze w pętli&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Rodzic czyta wszystkie komentarze przed Tobą
    - Każdy film jest zatwierdzany przez rodzica przed publikacją
    - Rodzic ma dostęp do wszystkich kont i haseł
    - O wszystkim, co dziwne, mówisz od razu rodzicowi
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>🚫 Granice treści</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;🚫 Granice treści&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Nigdy nie pokazuj innych dzieci bez pisemnej zgody ich rodziców
    - Nie nagrywaj w miejscach, gdzie widać inne osoby (szkoła, sklep, plac zabaw)
    - Unikaj tematów „tylko dla dorosłych"
    - Zawsze bądź uprzejmy i pozytywny
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>⚠️ Rozpoznawanie zagrożeń</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;⚠️ Rozpoznawanie zagrożeń&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Jeśli ktoś prosi Cię o spotkanie w realu – to jest ZAGROŻENIE
    - Jeśli ktoś prosi o Twoje zdjęcia – to jest ZAGROŻENIE
    - Jeśli ktoś mówi „nie mów rodzicom" – to jest ZAGROŻENIE
    - Jeśli coś sprawia, że czujesz się nieswojo – POWIEDZ RODZICOM
 
-<strong>Dialog przykładowy - Rozmawiamy o bezpieczeństwie:</strong>
+&lt;strong&gt;Dialog przykładowy - Rozmawiamy o bezpieczeństwie:&lt;/strong&gt;
 
-<strong>Mama:</strong> Zosiu, widzę, że bardzo chcesz założyć kanał o ptakach. To super pomysł! Ale zanim zaczniemy, musimy ustalić kilka ważnych zasad.
+&lt;strong&gt;Mama:&lt;/strong&gt; Zosiu, widzę, że bardzo chcesz założyć kanał o ptakach. To super pomysł! Ale zanim zaczniemy, musimy ustalić kilka ważnych zasad.
 
-<strong>Zosia:</strong> Dobrze, mamo. Jakie zasady?
+&lt;strong&gt;Zosia:&lt;/strong&gt; Dobrze, mamo. Jakie zasady?
 
-<strong>Mama:</strong> Po pierwsze, będziemy nagrywać razem. To nie znaczy, że zawsze będę w kadrze, ale zawsze będę obok. Po drugie, zanim opublikujemy jakikolwiek film, obejrzymy go razem. Zgoda?
+&lt;strong&gt;Mama:&lt;/strong&gt; Po pierwsze, będziemy nagrywać razem. To nie znaczy, że zawsze będę w kadrze, ale zawsze będę obok. Po drugie, zanim opublikujemy jakikolwiek film, obejrzymy go razem. Zgoda?
 
-<strong>Zosia:</strong> Zgoda! A mogę sama czytać komentarze?
+&lt;strong&gt;Zosia:&lt;/strong&gt; Zgoda! A mogę sama czytać komentarze?
 
-<strong>Mama:</strong> Na początku nie. Najpierw ja je przeczytam. Jeśli ktoś napisze coś miłego, pokażę Ci. Jeśli ktoś napisze coś niemiłego lub dziwnego, ja się tym zajmę. Kiedy będziesz starsza i bardziej doświadczona, będziemy mogli to zmienić.
+&lt;strong&gt;Mama:&lt;/strong&gt; Na początku nie. Najpierw ja je przeczytam. Jeśli ktoś napisze coś miłego, pokażę Ci. Jeśli ktoś napisze coś niemiłego lub dziwnego, ja się tym zajmę. Kiedy będziesz starsza i bardziej doświadczona, będziemy mogli to zmienić.
 
-<strong>Zosia:</strong> Rozumiem. A co jeśli ktoś zapyta, gdzie mieszkam?
+&lt;strong&gt;Zosia:&lt;/strong&gt; Rozumiem. A co jeśli ktoś zapyta, gdzie mieszkam?
 
-<strong>Mama:</strong> Świetne pytanie! Wtedy odpowiesz: "Mieszkam w Polsce" i tyle. Nie podajemy miasta, ulicy, ani nazwy szkoły. Pamiętaj: w internecie jesteś "Zosia Ptaszkowa", a nie Zosia Kowalska z ulicy Kwiatowej 5.
+&lt;strong&gt;Mama:&lt;/strong&gt; Świetne pytanie! Wtedy odpowiesz: "Mieszkam w Polsce" i tyle. Nie podajemy miasta, ulicy, ani nazwy szkoły. Pamiętaj: w internecie jesteś "Zosia Ptaszkowa", a nie Zosia Kowalska z ulicy Kwiatowej 5.
 
-<strong>Zosia:</strong> Okej! To będzie nasza tajna tożsamość, jak u superbohaterów!
+&lt;strong&gt;Zosia:&lt;/strong&gt; Okej! To będzie nasza tajna tożsamość, jak u superbohaterów!
 
-<strong>Mama:</strong> Dokładnie! A teraz przygotuję Ci super pseudonim i piękne tło do nagrywania.
+&lt;strong&gt;Mama:&lt;/strong&gt; Dokładnie! A teraz przygotuję Ci super pseudonim i piękne tło do nagrywania.
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">👨‍👩‍👧‍👦 Rola rodziców: Twoi sojusznicy w internetowej przygodzie</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;👨‍👩‍👧‍👦 Rola rodziców: Twoi sojusznicy w internetowej przygodzie&lt;/h3&gt;
 
-A kto będzie Twoim najważniejszym przewodnikiem i ochroniarzem w tej podróży? <strong>Twoi rodzice!</strong> Pomyśl o nich jak o swoich sojusznikach, trenerach i najlepszych przyjaciołach w internetowej przygodzie.
+A kto będzie Twoim najważniejszym przewodnikiem i ochroniarzem w tej podróży? &lt;strong&gt;Twoi rodzice!&lt;/strong&gt; Pomyśl o nich jak o swoich sojusznikach, trenerach i najlepszych przyjaciołach w internetowej przygodzie.
 
-<strong>Dla dzieci - Dlaczego rodzice są najważniejsi:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>🎬 Są Twoimi producentami – pomagają nagrywać i montować</li>
-<li>🛡️ Są Twoimi ochroniarzami – chronią Cię przed zagrożeniami</li>
-<li>💡 Są Twoimi doradcami – pomagają wymyślać pomysły</li>
-<li>📱 Są Twoimi menedżerami – zarządzają kontami i ustawieniami</li>
-<li>❤️ Są Twoją największą publicznością – zawsze Cię wspierają</li>
-</ul>
+&lt;strong&gt;Dla dzieci - Dlaczego rodzice są najważniejsi:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;🎬 Są Twoimi producentami – pomagają nagrywać i montować&lt;/li&gt;
+&lt;li&gt;🛡️ Są Twoimi ochroniarzami – chronią Cię przed zagrożeniami&lt;/li&gt;
+&lt;li&gt;💡 Są Twoimi doradcami – pomagają wymyślać pomysły&lt;/li&gt;
+&lt;li&gt;📱 Są Twoimi menedżerami – zarządzają kontami i ustawieniami&lt;/li&gt;
+&lt;li&gt;❤️ Są Twoją największą publicznością – zawsze Cię wspierają&lt;/li&gt;
+&lt;/ul&gt;
 
-<p className="mb-4">Czasami mogą mówić „nie" lub „poczekajmy z tym", ale robią to, ponieważ bardzo Cię kochają i chcą Cię chronić. Wspólne tworzenie treści może być fantastyczną zabawą i sposobem na spędzenie razem czasu. Wasza współpraca to klucz do sukcesu i bezpieczeństwa.</p>
+&lt;p className="mb-4"&gt;Czasami mogą mówić „nie" lub „poczekajmy z tym", ale robią to, ponieważ bardzo Cię kochają i chcą Cię chronić. Wspólne tworzenie treści może być fantastyczną zabawą i sposobem na spędzenie razem czasu. Wasza współpraca to klucz do sukcesu i bezpieczeństwa.&lt;/p&gt;
 
-<strong>Dla rodziców - Specjalna wiadomość:</strong>
+&lt;strong&gt;Dla rodziców - Specjalna wiadomość:&lt;/strong&gt;
 Szanowni Rodzice, ten przewodnik jest przeznaczony również dla Was. W kolejnych rozdziałach znajdziecie:
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Szczegółowe instrukcje techniczne</li>
-<li>Aspekty prawne (RODO, GDPR-K, zgody)</li>
-<li>Narzędzia kontroli rodzicielskiej</li>
-<li>Checklista bezpieczeństwa</li>
-<li>FAQ z odpowiedziami na najtrudniejsze pytania</li>
-<li>Wsparcie w rozmowach z dziećmi o trudnych tematach online</li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Szczegółowe instrukcje techniczne&lt;/li&gt;
+&lt;li&gt;Aspekty prawne (RODO, GDPR-K, zgody)&lt;/li&gt;
+&lt;li&gt;Narzędzia kontroli rodzicielskiej&lt;/li&gt;
+&lt;li&gt;Checklista bezpieczeństwa&lt;/li&gt;
+&lt;li&gt;FAQ z odpowiedziami na najtrudniejsze pytania&lt;/li&gt;
+&lt;li&gt;Wsparcie w rozmowach z dziećmi o trudnych tematach online&lt;/li&gt;
+&lt;/ul&gt;
 
-<p className="mb-4">Jesteście najważniejsi w tej podróży. Dziękujemy, że jesteście tu dla swoich dzieci! 💙</p>
+&lt;p className="mb-4"&gt;Jesteście najważniejsi w tej podróży. Dziękujemy, że jesteście tu dla swoich dzieci! 💙&lt;/p&gt;
 
-<p className="mb-4">---</p>
-      </div>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
+      &lt;/div&gt;
     )
   },
   {    id: 'część-i-twoje-bezpieczne-cyfrowe-miejsce-platformy',
     title: 'Część I: Twoje Bezpieczne Cyfrowe Miejsce – Platformy dla Dzieci 🏰',
     duration: '68 min',
     content: (
-      <div className="space-y-6 text-gray-700 leading-relaxed">
-        <p className="mb-4">Wyobraź sobie, że chcesz zbudować wspaniały domek na drzewie. Potrzebujesz do tego bezpiecznego, solidnego drzewa, dobrych desek i narzędzi, które pasują do Twoich rąk. Podobnie jest w internecie. Zanim zaczniesz tworzyć i dzielić się swoimi pomysłami, musisz znaleźć dla siebie odpowiednie, bezpieczne miejsce.</p>
+      &lt;div className="space-y-6 text-gray-700 leading-relaxed"&gt;
+        &lt;p className="mb-4"&gt;Wyobraź sobie, że chcesz zbudować wspaniały domek na drzewie. Potrzebujesz do tego bezpiecznego, solidnego drzewa, dobrych desek i narzędzi, które pasują do Twoich rąk. Podobnie jest w internecie. Zanim zaczniesz tworzyć i dzielić się swoimi pomysłami, musisz znaleźć dla siebie odpowiednie, bezpieczne miejsce.&lt;/p&gt;
 
-<p className="mb-4">W tej części kursu poznamy cyfrowe „place zabaw" i dowiemy się, dlaczego niektóre platformy są jak solidne, przyjazne drzewa, a inne przypominają raczej ruchliwą autostradę, na którą dzieci nie powinny wchodzić bez opieki dorosłych. Zbudujemy solidne fundamenty pod Twoją twórczość, stawiając na pierwszym miejscu Twoje bezpieczeństwo.</p>
+&lt;p className="mb-4"&gt;W tej części kursu poznamy cyfrowe „place zabaw" i dowiemy się, dlaczego niektóre platformy są jak solidne, przyjazne drzewa, a inne przypominają raczej ruchliwą autostradę, na którą dzieci nie powinny wchodzić bez opieki dorosłych. Zbudujemy solidne fundamenty pod Twoją twórczość, stawiając na pierwszym miejscu Twoje bezpieczeństwo.&lt;/p&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Rozdział 1: Dlaczego „Zwykłe" Media Społecznościowe Nie Są Dla Ciebie (Jeszcze)? ⚖️</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Rozdział 1: Dlaczego „Zwykłe" Media Społecznościowe Nie Są Dla Ciebie (Jeszcze)? ⚖️&lt;/h3&gt;
 
-<p className="mb-4">Pewnie często słyszysz o takich platformach jak TikTok, Instagram czy „dorosły" YouTube. Widzisz, jak korzystają z nich starsze rodzeństwo, koledzy czy nawet dorośli. To naturalne, że Cię ciekawią. Wyglądają jak wielki, tętniący życiem park rozrywki, w którym każdy może pokazać, co potrafi. Jednak te miejsca, podobnie jak prawdziwe parki rozrywki, mają swoje regulaminy i ograniczenia wiekowe. I nie jest to wymysł dorosłych, którzy chcą Ci zepsuć zabawę. Wręcz przeciwnie – te zasady istnieją po to, by Cię chronić.</p>
+&lt;p className="mb-4"&gt;Pewnie często słyszysz o takich platformach jak TikTok, Instagram czy „dorosły" YouTube. Widzisz, jak korzystają z nich starsze rodzeństwo, koledzy czy nawet dorośli. To naturalne, że Cię ciekawią. Wyglądają jak wielki, tętniący życiem park rozrywki, w którym każdy może pokazać, co potrafi. Jednak te miejsca, podobnie jak prawdziwe parki rozrywki, mają swoje regulaminy i ograniczenia wiekowe. I nie jest to wymysł dorosłych, którzy chcą Ci zepsuć zabawę. Wręcz przeciwnie – te zasady istnieją po to, by Cię chronić.&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🇪🇺 Prawne Podstawy - RODO i GDPR-K (dla dzieci wyjaśnione prościej)</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🇪🇺 Prawne Podstawy - RODO i GDPR-K (dla dzieci wyjaśnione prościej)&lt;/h3&gt;
 
-Głównym powodem, dla którego dzieci nie mogą samodzielnie zakładać kont na większości popularnych platform, jest prawo. W Europie, a więc i w Polsce, obowiązuje bardzo ważne rozporządzenie o nazwie <strong>RODO</strong>, co jest skrótem od <strong>Rozporządzenia o Ochronie Danych Osobowych</strong>. 
+Głównym powodem, dla którego dzieci nie mogą samodzielnie zakładać kont na większości popularnych platform, jest prawo. W Europie, a więc i w Polsce, obowiązuje bardzo ważne rozporządzenie o nazwie &lt;strong&gt;RODO&lt;/strong&gt;, co jest skrótem od &lt;strong&gt;Rozporządzenia o Ochronie Danych Osobowych&lt;/strong&gt;. 
 
-<strong>Co to jest RODO? Wyobraź sobie takiego cyfrowego superbohatera:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>🦸 <strong>Moc #1: Ochrona Twoich Danych</strong> - RODO pilnuje, żeby nikt nie kradł Twoich informacji</li>
-<li>🦸 <strong>Moc #2: Prawo do Bycia Zapomnianym</strong> - Jeśli chcesz usunąć swoje dane, firmy muszą to zrobić</li>
-<li>🦸 <strong>Moc #3: Specjalna Ochrona Dzieci</strong> - Dzieci mają dodatkowe super-tarcze ochronne</li>
-<li>🦸 <strong>Moc #4: Kary dla Złoczyńców</strong> - Firmy, które łamią zasady, płacą gigantyczne kary</li>
-</ul>
+&lt;strong&gt;Co to jest RODO? Wyobraź sobie takiego cyfrowego superbohatera:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;🦸 &lt;strong&gt;Moc #1: Ochrona Twoich Danych&lt;/strong&gt; - RODO pilnuje, żeby nikt nie kradł Twoich informacji&lt;/li&gt;
+&lt;li&gt;🦸 &lt;strong&gt;Moc #2: Prawo do Bycia Zapomnianym&lt;/strong&gt; - Jeśli chcesz usunąć swoje dane, firmy muszą to zrobić&lt;/li&gt;
+&lt;li&gt;🦸 &lt;strong&gt;Moc #3: Specjalna Ochrona Dzieci&lt;/strong&gt; - Dzieci mają dodatkowe super-tarcze ochronne&lt;/li&gt;
+&lt;li&gt;🦸 &lt;strong&gt;Moc #4: Kary dla Złoczyńców&lt;/strong&gt; - Firmy, które łamią zasady, płacą gigantyczne kary&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Co to są "dane osobowe"? Wszystko, co mówi, kim jesteś:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>👤 Twoje imię i nazwisko</li>
-<li>📧 Adres e-mail</li>
-<li>📱 Numer telefonu</li>
-<li>📍 Gdzie mieszkasz</li>
-<li>📸 Twoje zdjęcia i filmy</li>
-<li>🎮 Co lubisz oglądać i w co grać</li>
-<li>🌐 Jakie strony odwiedzasz</li>
-<li>👆 Na co klikasz</li>
-</ul>
+&lt;strong&gt;Co to są "dane osobowe"? Wszystko, co mówi, kim jesteś:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;👤 Twoje imię i nazwisko&lt;/li&gt;
+&lt;li&gt;📧 Adres e-mail&lt;/li&gt;
+&lt;li&gt;📱 Numer telefonu&lt;/li&gt;
+&lt;li&gt;📍 Gdzie mieszkasz&lt;/li&gt;
+&lt;li&gt;📸 Twoje zdjęcia i filmy&lt;/li&gt;
+&lt;li&gt;🎮 Co lubisz oglądać i w co grać&lt;/li&gt;
+&lt;li&gt;🌐 Jakie strony odwiedzasz&lt;/li&gt;
+&lt;li&gt;👆 Na co klikasz&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Dlaczego platformy zbierają dane?</strong>  
-Platformy takie jak TikTok czy Instagram zarabiają pieniądze, zbierając te dane, aby wyświetlać użytkownikom bardzo precyzyjnie dopasowane reklamy. Nazywa się to <strong>reklamą behawioralną</strong>.
+&lt;strong&gt;Dlaczego platformy zbierają dane?&lt;/strong&gt;  
+Platformy takie jak TikTok czy Instagram zarabiają pieniądze, zbierając te dane, aby wyświetlać użytkownikom bardzo precyzyjnie dopasowane reklamy. Nazywa się to &lt;strong&gt;reklamą behawioralną&lt;/strong&gt;.
 
-<strong>Przykład - Jak to działa:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Oglądasz 10 filmów o kotach na TikToku</li>
-<li>Algorytm TikToka zapamiętuje: "To dziecko lubi koty"</li>
-<li>Pojawia się reklama nowej karmyfor cats</li>
-<li>Następnie reklama zabawek dla kotów</li>
-<li>Potem książki o kotach</li>
-<li>I tak dalej...</li>
-</ul>
+&lt;strong&gt;Przykład - Jak to działa:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Oglądasz 10 filmów o kotach na TikToku&lt;/li&gt;
+&lt;li&gt;Algorytm TikToka zapamiętuje: "To dziecko lubi koty"&lt;/li&gt;
+&lt;li&gt;Pojawia się reklama nowej karmyfor cats&lt;/li&gt;
+&lt;li&gt;Następnie reklama zabawek dla kotów&lt;/li&gt;
+&lt;li&gt;Potem książki o kotach&lt;/li&gt;
+&lt;li&gt;I tak dalej...&lt;/li&gt;
+&lt;/ul&gt;
 
-Algorytm próbuje „wciągnąć" Cię w spiralę zakupową. Dorośli potrafią to rozpoznać i się powstrzymać. Dzieci – nie zawsze. Dlatego RODO w dużej mierze <strong>zakazuje kierowania tego typu reklam do dzieci</strong>.
+Algorytm próbuje „wciągnąć" Cię w spiralę zakupową. Dorośli potrafią to rozpoznać i się powstrzymać. Dzieci – nie zawsze. Dlatego RODO w dużej mierze &lt;strong&gt;zakazuje kierowania tego typu reklam do dzieci&lt;/strong&gt;.
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">📅 Jaki jest limit wieku w Polsce?</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;📅 Jaki jest limit wieku w Polsce?&lt;/h3&gt;
 
-W praktyce oznacza to, że jeśli masz mniej niż <strong>16 lat</strong>, to Twój rodzic musi wyrazić zgodę na przetwarzanie Twoich danych. Wiele krajów Unii Europejskiej mogło obniżyć ten próg do 13 lat, ale <strong>Polska pozostała przy wieku 16 lat</strong>.
+W praktyce oznacza to, że jeśli masz mniej niż &lt;strong&gt;16 lat&lt;/strong&gt;, to Twój rodzic musi wyrazić zgodę na przetwarzanie Twoich danych. Wiele krajów Unii Europejskiej mogło obniżyć ten próg do 13 lat, ale &lt;strong&gt;Polska pozostała przy wieku 16 lat&lt;/strong&gt;.
 
-<strong>Co to oznacza w praktyce:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>⛔ Nie możesz samodzielnie założyć konta na TikToku (limit 13 lat w regulaminie, ale w Polsce potrzebna zgoda rodzica do 16 lat)</li>
-<li>⛔ Nie możesz samodzielnie założyć konta na Instagramie (limit 13 lat)</li>
-<li>⛔ Nie możesz samodzielnie założyć konta na YouTube (limit 13 lat, w Polsce wymaga zgody rodzica)</li>
-<li>✅ Możesz korzystać z YouTube Kids (zaprojektowany dla dzieci)</li>
-<li>✅ Możesz korzystać z Messenger Kids (wymaga konta rodzica)</li>
-<li>✅ Możesz korzystać z Roblox (z kontrolą rodzicielską)</li>
-</ul>
+&lt;strong&gt;Co to oznacza w praktyce:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;⛔ Nie możesz samodzielnie założyć konta na TikToku (limit 13 lat w regulaminie, ale w Polsce potrzebna zgoda rodzica do 16 lat)&lt;/li&gt;
+&lt;li&gt;⛔ Nie możesz samodzielnie założyć konta na Instagramie (limit 13 lat)&lt;/li&gt;
+&lt;li&gt;⛔ Nie możesz samodzielnie założyć konta na YouTube (limit 13 lat, w Polsce wymaga zgody rodzica)&lt;/li&gt;
+&lt;li&gt;✅ Możesz korzystać z YouTube Kids (zaprojektowany dla dzieci)&lt;/li&gt;
+&lt;li&gt;✅ Możesz korzystać z Messenger Kids (wymaga konta rodzica)&lt;/li&gt;
+&lt;li&gt;✅ Możesz korzystać z Roblox (z kontrolą rodzicielską)&lt;/li&gt;
+&lt;/ul&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🧠 Psychologiczne Powody - Dlaczego to nie tylko o prawie</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🧠 Psychologiczne Powody - Dlaczego to nie tylko o prawie&lt;/h3&gt;
 
-Prawo to tylko jeden z powodów. Drugi, równie ważny, to <strong>Twoje bezpieczeństwo i dobre samopoczucie psychiczne</strong>. „Dorosłe" platformy są zaprojektowane w taki sposób, by jak najdłużej utrzymać uwagę użytkownika.
+Prawo to tylko jeden z powodów. Drugi, równie ważny, to &lt;strong&gt;Twoje bezpieczeństwo i dobre samopoczucie psychiczne&lt;/strong&gt;. „Dorosłe" platformy są zaprojektowane w taki sposób, by jak najdłużej utrzymać uwagę użytkownika.
 
-<strong>Jak działają algorytmy uzależniające:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Nieskończone przewijanie (Infinite Scroll)</strong> - Nigdy nie dochodzisz do „końca" listy filmów</li>
-<li><strong>Autoplay</strong> - Następny film włącza się automatycznie, nim zdążysz odłożyć telefon</li>
-<li><strong>Powiadomienia push</strong> - „Ktoś skomentował Twój film!" – ciężko się oprzeć sprawdzeniu</li>
-<li><strong>FOMO (Fear of Missing Out)</strong> - Strach, że coś przegapisz, jeśli nie będziesz stale online</li>
-<li><strong>Dopaminowa pętla</strong> - Lajki i komentarze wywołują w mózgu reakcję przyjemności, chcesz więcej</li>
-</ul>
+&lt;strong&gt;Jak działają algorytmy uzależniające:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Nieskończone przewijanie (Infinite Scroll)&lt;/strong&gt; - Nigdy nie dochodzisz do „końca" listy filmów&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Autoplay&lt;/strong&gt; - Następny film włącza się automatycznie, nim zdążysz odłożyć telefon&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Powiadomienia push&lt;/strong&gt; - „Ktoś skomentował Twój film!" – ciężko się oprzeć sprawdzeniu&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FOMO (Fear of Missing Out)&lt;/strong&gt; - Strach, że coś przegapisz, jeśli nie będziesz stale online&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dopaminowa pętla&lt;/strong&gt; - Lajki i komentarze wywołują w mózgu reakcję przyjemności, chcesz więcej&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Realna historia - Ania, 11 lat:</strong>
+&lt;strong&gt;Realna historia - Ania, 11 lat:&lt;/strong&gt;
 Ania dostała telefon na urodziny. Rodzice pozwolili jej zainstalować TikToka „pod nadzorem". Przez pierwszy tydzień wszystko było ok – oglądała śmieszne filmiki 30 minut dziennie. Ale algorytm szybko się uczył. Po dwóch tygodniach Ania spędzała na TikToku 3 godziny dziennie. Przestała wychodzić na podwórko. W nocy, gdy rodzice spali, ukradkiem scrollowała dalej. Jej oceny w szkole spadły. Zaczęła być nerwowa i smutna, gdy nie mogła korzystać z telefonu. 
 
-<p className="mb-4">Rodzice zauważyli zmianę i razem z Anią zdecydowali o „resecie". Usunęli TikToka, ale zainstalowali YouTube Kids. Ania znalazła tam kanały o rysowaniu, które pokochała. Teraz ogląda max 45 minut dziennie (ustawiony limit), a resztę czasu... rysuje! Jest szczęśliwsza i spokojniejsza. Nie chodzi o to, że TikTok jest zły. Chodzi o to, że dla Ani było za wcześnie.</p>
+&lt;p className="mb-4"&gt;Rodzice zauważyli zmianę i razem z Anią zdecydowali o „resecie". Usunęli TikToka, ale zainstalowali YouTube Kids. Ania znalazła tam kanały o rysowaniu, które pokochała. Teraz ogląda max 45 minut dziennie (ustawiony limit), a resztę czasu... rysuje! Jest szczęśliwsza i spokojniejsza. Nie chodzi o to, że TikTok jest zły. Chodzi o to, że dla Ani było za wcześnie.&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🚦 Dodatkowe Zagrożenia na „Dorosłych" Platformach</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🚦 Dodatkowe Zagrożenia na „Dorosłych" Platformach&lt;/h3&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Nieodpowiednie Treści</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Nieodpowiednie Treści&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Mimo filtrów, możesz natknąć się na przemoc, wulgaryzmy, treści seksualne
    - Algorytm czasem „pomyli się" i pokaże Ci coś strasznego
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Cyberbullying (Cyberprzemoc)</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Cyberbullying (Cyberprzemoc)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Hejterzy, którzy piszą obraźliwe komentarze
    - Trolle, którzy celowo prowokują i denerwują
    - Młode, rozwijające się psychiki są na to szczególnie wrażliwe
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Drapieżnicy Internetowi (Online Predators)</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Drapieżnicy Internetowi (Online Predators)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Dorośli, którzy podszywają się pod dzieci
    - Próbują nawiązać kontakt, zdobyć zaufanie i uzyskać prywatne informacje
    - Mogą prosić o zdjęcia lub spotkanie w realu
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Fałszywe Standardy Urody i Sukcesu</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Fałszywe Standardy Urody i Sukcesu&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Filtrowane zdjęcia, które są nierealistyczne
    - Porównywanie się z „idealnymi" influencerami
    - Poczucie, że „nie jestem wystarczająco dobry/a"
 
-<strong>Pamiętaj:</strong> Samodzielne korzystanie z TikToka, Instagrama czy standardowego YouTube'a jest jak wejście na plac budowy bez kasku i opieki dorosłego. Jest tam mnóstwo ciekawych maszyn, ale też wiele niebezpieczeństw.
+&lt;strong&gt;Pamiętaj:&lt;/strong&gt; Samodzielne korzystanie z TikToka, Instagrama czy standardowego YouTube'a jest jak wejście na plac budowy bez kasku i opieki dorosłego. Jest tam mnóstwo ciekawych maszyn, ale też wiele niebezpieczeństw.
 
-<strong>To NIE oznacza, że NIGDY nie będziesz mógł z nich korzystać.</strong> Oznacza to, że:
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Na razie istnieją dla Ciebie znacznie lepsze i bezpieczniejsze miejsca</li>
-<li>Gdy będziesz gotowy (starszy, bardziej doświadczony), spróbujecie razem z rodzicami</li>
-<li>Zrobicie to jako <strong>zespół</strong>, w którym rodzic jest kapitanem, a Ty – kreatywnym nawigatorem</li>
-</ul>
+&lt;strong&gt;To NIE oznacza, że NIGDY nie będziesz mógł z nich korzystać.&lt;/strong&gt; Oznacza to, że:
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Na razie istnieją dla Ciebie znacznie lepsze i bezpieczniejsze miejsca&lt;/li&gt;
+&lt;li&gt;Gdy będziesz gotowy (starszy, bardziej doświadczony), spróbujecie razem z rodzicami&lt;/li&gt;
+&lt;li&gt;Zrobicie to jako &lt;strong&gt;zespół&lt;/strong&gt;, w którym rodzic jest kapitanem, a Ty – kreatywnym nawigatorem&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>💡 Złota Zasada:</strong> Bezpieczeństwo najpierw, kreatywność zaraz potem! Gdy masz solidne fundamenty, Twoja kreatywność może rozkwitnąć bez obaw.
+&lt;strong&gt;💡 Złota Zasada:&lt;/strong&gt; Bezpieczeństwo najpierw, kreatywność zaraz potem! Gdy masz solidne fundamenty, Twoja kreatywność może rozkwitnąć bez obaw.
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Rozdział 2: Twoje Bezpieczne Playgroundy – Platformy Dla Młodszych Twórców 🎠</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Rozdział 2: Twoje Bezpieczne Playgroundy – Platformy Dla Młodszych Twórców 🎠&lt;/h3&gt;
 
-<p className="mb-4">Skoro wiemy już, dlaczego główne media społecznościowe nie są najlepszym miejscem na start, pora odkryć te fantastyczne, kolorowe i bezpieczne place zabaw, które zostały stworzone specjalnie z myślą o Tobie!</p>
+&lt;p className="mb-4"&gt;Skoro wiemy już, dlaczego główne media społecznościowe nie są najlepszym miejscem na start, pora odkryć te fantastyczne, kolorowe i bezpieczne place zabaw, które zostały stworzone specjalnie z myślą o Tobie!&lt;/p&gt;
 
-<p className="mb-4">Te platformy są jak ogrodzone, przyjazne parki, w których możesz swobodnie biegać, bawić się i eksperymentować, a Twoi rodzice mogą być spokojni, że nic złego Ci się nie stanie. Zostały one zaprojektowane od podstaw tak, by chronić Twoją prywatność, dostarczać treści odpowiednie do Twojego wieku i rozwijać Twoją kreatywność. Poznajmy najlepsze z nich.</p>
+&lt;p className="mb-4"&gt;Te platformy są jak ogrodzone, przyjazne parki, w których możesz swobodnie biegać, bawić się i eksperymentować, a Twoi rodzice mogą być spokojni, że nic złego Ci się nie stanie. Zostały one zaprojektowane od podstaw tak, by chronić Twoją prywatność, dostarczać treści odpowiednie do Twojego wieku i rozwijać Twoją kreatywność. Poznajmy najlepsze z nich.&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🎬 YouTube Kids - Twoja Bezpieczna Biblioteka Filmowa</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🎬 YouTube Kids - Twoja Bezpieczna Biblioteka Filmowa&lt;/h3&gt;
 
-<strong>Co to jest?</strong>  
+&lt;strong&gt;Co to jest?&lt;/strong&gt;  
 YouTube Kids to specjalna wersja popularnego serwisu YouTube, przeznaczona wyłącznie dla dzieci. Pomyśl o tym jak o wielkiej bibliotece z filmami, w której wszystkie książki i bajki zostały starannie wybrane i posegregowane na półki odpowiednie dla różnych grup wiekowych.
 
-<strong>Dlaczego jest bezpieczny?</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>🎯 <strong>Filtrowane treści</strong> - Specjalne algorytmy i zespół moderatorów usuwają nieodpowiednie filmy</li>
-<li>🔒 <strong>Brak komentarzy</strong> - Nie musisz martwić się o niemiłe komentarze</li>
-<li>⏰ <strong>Kontrola czasu</strong> - Rodzice mogą ustawić limit oglądania</li>
-<li>👨‍👩‍👧 <strong>Pełna kontrola rodzicielska</strong> - Rodzice zarządzają wszystkim</li>
-</ul>
+&lt;strong&gt;Dlaczego jest bezpieczny?&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;🎯 &lt;strong&gt;Filtrowane treści&lt;/strong&gt; - Specjalne algorytmy i zespół moderatorów usuwają nieodpowiednie filmy&lt;/li&gt;
+&lt;li&gt;🔒 &lt;strong&gt;Brak komentarzy&lt;/strong&gt; - Nie musisz martwić się o niemiłe komentarze&lt;/li&gt;
+&lt;li&gt;⏰ &lt;strong&gt;Kontrola czasu&lt;/strong&gt; - Rodzice mogą ustawić limit oglądania&lt;/li&gt;
+&lt;li&gt;👨‍👩‍👧 &lt;strong&gt;Pełna kontrola rodzicielska&lt;/strong&gt; - Rodzice zarządzają wszystkim&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Grupy wiekowe w YouTube Kids:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Przedszkolaki (do 4 lat)</strong> - Proste bajki, piosenki, nauka kolorów i kształtów</li>
-<li><strong>Młodsze dzieci (5-8 lat)</strong> - Bajki, eksperymenty, rysowanie, proste tutoriale</li>
-<li><strong>Starsze dzieci (9-12 lat)</strong> - Vlog, nauka, gry, bardziej zaawansowane projekty DIY</li>
-</ul>
+&lt;strong&gt;Grupy wiekowe w YouTube Kids:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Przedszkolaki (do 4 lat)&lt;/strong&gt; - Proste bajki, piosenki, nauka kolorów i kształtów&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Młodsze dzieci (5-8 lat)&lt;/strong&gt; - Bajki, eksperymenty, rysowanie, proste tutoriale&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Starsze dzieci (9-12 lat)&lt;/strong&gt; - Vlog, nauka, gry, bardziej zaawansowane projekty DIY&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>SUPER FUNKCJA: Tryb "Tylko zatwierdzone treści"</strong>  
+&lt;strong&gt;SUPER FUNKCJA: Tryb "Tylko zatwierdzone treści"&lt;/strong&gt;  
 To najsicher mode! Rodzic osobiście wybiera każdy kanał i film, który możesz oglądać. To tak, jakby rodzic osobiście sprawdzał każdą zabawkę, zanim da Ci ją do rąk.
 
-<strong>Poradnik krok po kroku dla rodziców - Jak skonfigurować YouTube Kids:</strong>
+&lt;strong&gt;Poradnik krok po kroku dla rodziców - Jak skonfigurować YouTube Kids:&lt;/strong&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Pobierz aplikację</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Pobierz aplikację&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - iOS: App Store
    - Android: Google Play
    - Urządzenie mobilne lub Smart TV
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Zakładanie profilu dziecka</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Zakładanie profilu dziecka&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Otwórz aplikację YouTube Kids
    - Wybierz „Jestem rodzicem"
    - Zaloguj się swoim kontem Google
@@ -411,385 +411,385 @@ To najsicher mode! Rodzic osobiście wybiera każdy kanał i film, który możes
    - Wpisz imię dziecka (może być przezwisko)
    - Wybierz wiek dziecka
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Wybór poziomu treści</strong></li>
-</ul>
-   - <strong>Przedszkolaki:</strong> Najbardziej ograniczone
-   - <strong>Młodsi:</strong> Więcej treści edukacyjnych
-   - <strong>Starsi:</strong> Szerszy wybór, ale nadal filtrowane
-   - <strong>Tylko zatwierdzona zawartość:</strong> NAJBEZPIECZNIEJSZA opcja – samodzielnie wybierasz każdy kanał
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Wybór poziomu treści&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+   - &lt;strong&gt;Przedszkolaki:&lt;/strong&gt; Najbardziej ograniczone
+   - &lt;strong&gt;Młodsi:&lt;/strong&gt; Więcej treści edukacyjnych
+   - &lt;strong&gt;Starsi:&lt;/strong&gt; Szerszy wybór, ale nadal filtrowane
+   - &lt;strong&gt;Tylko zatwierdzona zawartość:&lt;/strong&gt; NAJBEZPIECZNIEJSZA opcja – samodzielnie wybierasz każdy kanał
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Ustawienia dodatkowe</strong></li>
-</ul>
-   - <strong>Timer:</strong> Ustaw limit czasowy (np. 30 minut dziennie)
-   - <strong>Wyłącz wyszukiwanie:</strong> Dziecko może oglądać tylko z rekomendowanych
-   - <strong>Włącz wyszukiwanie:</strong> Dziecko może szukać (ale wyniki są filtrowane)
-   - <strong>Zablokuj filmy/kanały:</strong> Jeśli coś nieodpowiedniego się przefiltrowało
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Ustawienia dodatkowe&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+   - &lt;strong&gt;Timer:&lt;/strong&gt; Ustaw limit czasowy (np. 30 minut dziennie)
+   - &lt;strong&gt;Wyłącz wyszukiwanie:&lt;/strong&gt; Dziecko może oglądać tylko z rekomendowanych
+   - &lt;strong&gt;Włącz wyszukiwanie:&lt;/strong&gt; Dziecko może szukać (ale wyniki są filtrowane)
+   - &lt;strong&gt;Zablokuj filmy/kanały:&lt;/strong&gt; Jeśli coś nieodpowiedniego się przefiltrowało
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Monitorowanie</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Monitorowanie&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Regularnie sprawdzaj historię oglądania w ustawieniach profilu dziecka
    - Rozmawiaj z dzieckiem o tym, co ogląda
 
-<strong>💡 Wskazówka dla dzieci:</strong> YouTube Kids to świetne miejsce, by zacząć! Możesz:
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Oglądać inspirujące kanały innych młodych twórców</li>
-<li>Uczyć się nowych umiejętności (rysowanie, majsterkowanie, eksperymenty)</li>
-<li>Odkrywać swoje zainteresowania</li>
-</ul>
+&lt;strong&gt;💡 Wskazówka dla dzieci:&lt;/strong&gt; YouTube Kids to świetne miejsce, by zacząć! Możesz:
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Oglądać inspirujące kanały innych młodych twórców&lt;/li&gt;
+&lt;li&gt;Uczyć się nowych umiejętności (rysowanie, majsterkowanie, eksperymenty)&lt;/li&gt;
+&lt;li&gt;Odkrywać swoje zainteresowania&lt;/li&gt;
+&lt;/ul&gt;
 
-<p className="mb-4">Gdy będziesz gotowy do tworzenia, rodzice mogą założyć kanał rodzinny na zwykłym YouTube (o tym w rozdziale 3), ale oglądanie na YouTube Kids to idealny start!</p>
+&lt;p className="mb-4"&gt;Gdy będziesz gotowy do tworzenia, rodzice mogą założyć kanał rodzinny na zwykłym YouTube (o tym w rozdziale 3), ale oglądanie na YouTube Kids to idealny start!&lt;/p&gt;
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">💬 Facebook Messenger Kids - Bezpieczny Komunikator</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;💬 Facebook Messenger Kids - Bezpieczny Komunikator&lt;/h3&gt;
 
-<strong>Co to jest?</strong>  
+&lt;strong&gt;Co to jest?&lt;/strong&gt;  
 To specjalna wersja Messengera stworzona dla dzieci 6-12 lat. Pozwala rozmawiać z rodziną i przyjaciółmi w całkowicie kontrolowanym środowisku.
 
-<strong>Dlaczego jest bezpieczny?</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>👥 <strong>Rodzic kontroluje listę kontaktów</strong> - Dziecko może rozmawiać tylko z zatwierdzonymi osobami</li>
-<li>🚫 <strong>Zero reklam</strong> - Brak prób sprzedania Ci czegokolwiek</li>
-<li>🔒 <strong>Brak zakupów</strong> - Nie można nic kupić</li>
-<li>👀 <strong>Wgląd rodzica</strong> - Rodzic może sprawdzić wiadomości w każdej chwili</li>
-<li>🎨 <strong>Zabawne funkcje</strong> - Naklejki, filtry, gry – ale bez zagrożeń</li>
-</ul>
+&lt;strong&gt;Dlaczego jest bezpieczny?&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;👥 &lt;strong&gt;Rodzic kontroluje listę kontaktów&lt;/strong&gt; - Dziecko może rozmawiać tylko z zatwierdzonymi osobami&lt;/li&gt;
+&lt;li&gt;🚫 &lt;strong&gt;Zero reklam&lt;/strong&gt; - Brak prób sprzedania Ci czegokolwiek&lt;/li&gt;
+&lt;li&gt;🔒 &lt;strong&gt;Brak zakupów&lt;/strong&gt; - Nie można nic kupić&lt;/li&gt;
+&lt;li&gt;👀 &lt;strong&gt;Wgląd rodzica&lt;/strong&gt; - Rodzic może sprawdzić wiadomości w każdej chwili&lt;/li&gt;
+&lt;li&gt;🎨 &lt;strong&gt;Zabawne funkcje&lt;/strong&gt; - Naklejki, filtry, gry – ale bez zagrożeń&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Co można robić w Messenger Kids?</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>📹 Rozmowy wideo z dziadkami</li>
-<li>💬 Wysyłać wiadomości do kuzyna</li>
-<li>🎭 Bawić się zabawnymi filtrami z rodziną</li>
-<li>🎮 Grać w proste gry z przyjaciółmi</li>
-</ul>
+&lt;strong&gt;Co można robić w Messenger Kids?&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;📹 Rozmowy wideo z dziadkami&lt;/li&gt;
+&lt;li&gt;💬 Wysyłać wiadomości do kuzyna&lt;/li&gt;
+&lt;li&gt;🎭 Bawić się zabawnymi filtrami z rodziną&lt;/li&gt;
+&lt;li&gt;🎮 Grać w proste gry z przyjaciółmi&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Poradnik dla rodziców - Jak skonfigurować Messenger Kids:</strong>
+&lt;strong&gt;Poradnik dla rodziców - Jak skonfigurować Messenger Kids:&lt;/strong&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Instalacja:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Instalacja:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Pobierz „Messenger Kids" na urządzenie dziecka
    - Logowanie wymaga TWOJEGO konta Facebook (nie dziecka!)
    - Dziecko nie ma i nie potrzebuje konta Facebook
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Tworzenie profilu:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Tworzenie profilu:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Wpisz imię i nazwisko dziecka
    - Dodaj zdjęcie profilowe (pamiętaj o prywatności)
    - Ustaw zasady korzystania
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Dodawanie kontaktów:</strong></li>
-</ul>
-   - <strong>Członkowie rodziny:</strong> Dodaj dziadków, ciocie, wujków (oni też muszą mieć Facebooka)
-   - <strong>Przyjaciele:</strong> Wyślij zaproszenie do rodziców kolegi dziecka ze szkoły. Oboje rodzice muszą zaaprobować połączenie!
-   - <strong>Limit:</strong> Przemyśl każdą osobę – jakość ważniejsza niż ilość
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Dodawanie kontaktów:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+   - &lt;strong&gt;Członkowie rodziny:&lt;/strong&gt; Dodaj dziadków, ciocie, wujków (oni też muszą mieć Facebooka)
+   - &lt;strong&gt;Przyjaciele:&lt;/strong&gt; Wyślij zaproszenie do rodziców kolegi dziecka ze szkoły. Oboje rodzice muszą zaaprobować połączenie!
+   - &lt;strong&gt;Limit:&lt;/strong&gt; Przemyśl każdą osobę – jakość ważniejsza niż ilość
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Monitorowanie:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Monitorowanie:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Możesz sprawdzać wiadomości w panelu rodzica na swoim Facebooku
    - Otrzymasz powiadomienia, gdy dziecko doda zdjęcie lub zgłosi coś nieodpowiedniego
 
-<strong>💡 Wskazówka dla dzieci:</strong> To świetny sposób, by nauczyć się, jak być miłym i uprzejmym w rozmowach online. To się nazywa <strong>cyfrowa etykieta</strong> albo <strong>netykieta</strong>. Pamiętaj:
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Pisz do innych tak, jak chciałbyś, żeby oni pisali do Ciebie</li>
-<li>Używaj emotek, żeby pokazać, że jesteś przyjaźnie nastawiony 😊</li>
-<li>Jeśli ktoś napisze coś, co Cię zdenerwuje, nie odpowiadaj od razu – powiedz rodzicom</li>
-</ul>
+&lt;strong&gt;💡 Wskazówka dla dzieci:&lt;/strong&gt; To świetny sposób, by nauczyć się, jak być miłym i uprzejmym w rozmowach online. To się nazywa &lt;strong&gt;cyfrowa etykieta&lt;/strong&gt; albo &lt;strong&gt;netykieta&lt;/strong&gt;. Pamiętaj:
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Pisz do innych tak, jak chciałbyś, żeby oni pisali do Ciebie&lt;/li&gt;
+&lt;li&gt;Używaj emotek, żeby pokazać, że jesteś przyjaźnie nastawiony 😊&lt;/li&gt;
+&lt;li&gt;Jeśli ktoś napisze coś, co Cię zdenerwuje, nie odpowiadaj od razu – powiedz rodzicom&lt;/li&gt;
+&lt;/ul&gt;
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🎮 Roblox - Twój Wirtualny Plac Budowy</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🎮 Roblox - Twój Wirtualny Plac Budowy&lt;/h3&gt;
 
-<strong>Co to jest?</strong>  
+&lt;strong&gt;Co to jest?&lt;/strong&gt;  
 Roblox to coś znacznie więcej niż tylko gra. To gigantyczny, wirtualny plac budowy i jednocześnie ogromna biblioteka gier stworzonych przez samych użytkowników. Roblox to uniwersum, w którym możesz być kimkolwiek zechcesz: odkrywcą, budowniczym, projektantem mody czy kierowcą wyścigowym.
 
-<strong>Dlaczego jest świetny dla młodych twórców?</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>🏗️ <strong>Roblox Studio</strong> - Darmowe narzędzie do tworzenia własnych gier i światów</li>
-<li>🎨 <strong>Wizualne programowanie</strong> - Nie musisz znać kodu na początek</li>
-<li>🌍 <strong>Ogromna społeczność</strong> - Miliony dzieci i nastolatków tworzą i grają</li>
-<li>💡 <strong>Nauka przez zabawę</strong> - Rozwijasz kreatywność i logiczne myślenie</li>
-<li>💰 <strong>Możliwość zarabiania (dla starszych)</strong> - Zaawansowani twórcy mogą sprzedawać swoje kreacje</li>
-</ul>
+&lt;strong&gt;Dlaczego jest świetny dla młodych twórców?&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;🏗️ &lt;strong&gt;Roblox Studio&lt;/strong&gt; - Darmowe narzędzie do tworzenia własnych gier i światów&lt;/li&gt;
+&lt;li&gt;🎨 &lt;strong&gt;Wizualne programowanie&lt;/strong&gt; - Nie musisz znać kodu na początek&lt;/li&gt;
+&lt;li&gt;🌍 &lt;strong&gt;Ogromna społeczność&lt;/strong&gt; - Miliony dzieci i nastolatków tworzą i grają&lt;/li&gt;
+&lt;li&gt;💡 &lt;strong&gt;Nauka przez zabawę&lt;/strong&gt; - Rozwijasz kreatywność i logiczne myślenie&lt;/li&gt;
+&lt;li&gt;💰 &lt;strong&gt;Możliwość zarabiania (dla starszych)&lt;/strong&gt; - Zaawansowani twórcy mogą sprzedawać swoje kreacje&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Co możesz stworzyć w Roblox?</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>🏃 <strong>Obby (tory przeszkód)</strong> - Klasyczna gra Roblox, gdzie gracze skaczą po platformach</li>
-<li>🏡 <strong>Simulator domku</strong> - Buduj i urządzaj wymarzone domy</li>
-<li>🧟 <strong>Gry survivalowe</strong> - Ucieczka przed zombie lub innymi zagrożeniami</li>
-<li>🚗 <strong>Symulatory pojazdów</strong> - Prowadź samochody, samoloty, statki</li>
-<li>📚 <strong>Interaktywne historie</strong> - Stwórz grę przygodową z dialogami i wyborami</li>
-<li>🎭 <strong>Role-play</strong> - Miejsca, gdzie gracze odgrywają role (szkoła, restauracja, szpital)</li>
-</ul>
+&lt;strong&gt;Co możesz stworzyć w Roblox?&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;🏃 &lt;strong&gt;Obby (tory przeszkód)&lt;/strong&gt; - Klasyczna gra Roblox, gdzie gracze skaczą po platformach&lt;/li&gt;
+&lt;li&gt;🏡 &lt;strong&gt;Simulator domku&lt;/strong&gt; - Buduj i urządzaj wymarzone domy&lt;/li&gt;
+&lt;li&gt;🧟 &lt;strong&gt;Gry survivalowe&lt;/strong&gt; - Ucieczka przed zombie lub innymi zagrożeniami&lt;/li&gt;
+&lt;li&gt;🚗 &lt;strong&gt;Symulatory pojazdów&lt;/strong&gt; - Prowadź samochody, samoloty, statki&lt;/li&gt;
+&lt;li&gt;📚 &lt;strong&gt;Interaktywne historie&lt;/strong&gt; - Stwórz grę przygodową z dialogami i wyborami&lt;/li&gt;
+&lt;li&gt;🎭 &lt;strong&gt;Role-play&lt;/strong&gt; - Miejsca, gdzie gracze odgrywają role (szkoła, restauracja, szpital)&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>WAŻNE: Ustawienia Bezpieczeństwa w Roblox</strong>
+&lt;strong&gt;WAŻNE: Ustawienia Bezpieczeństwa w Roblox&lt;/strong&gt;
 
 Roblox jest fantastyczny, ALE wymaga odpowiednich ustawień bezpieczeństwa. Bez nich dziecko może:
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Czatować z nieznajomymi</li>
-<li>Natknąć się na nieodpowiednie gry</li>
-<li>Wydać prawdziwe pieniądze na Robux (wirtualną walutę)</li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Czatować z nieznajomymi&lt;/li&gt;
+&lt;li&gt;Natknąć się na nieodpowiednie gry&lt;/li&gt;
+&lt;li&gt;Wydać prawdziwe pieniądze na Robux (wirtualną walutę)&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Poradnik dla rodziców - Jak zabezpieczyć Roblox:</strong>
+&lt;strong&gt;Poradnik dla rodziców - Jak zabezpieczyć Roblox:&lt;/strong&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Utwórz konto dziecka z prawidłową datą urodzenia</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Utwórz konto dziecka z prawidłową datą urodzenia&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Roblox automatycznie dostosuje ustawienia bezpieczeństwa do wieku
    - Dzieci poniżej 13 lat mają domyślnie wyższe zabezpieczenia
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Włącz „Ograniczenia konta" (Account Restrictions)</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Włącz „Ograniczenia konta" (Account Restrictions)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Ustawienia → Bezpieczeństwo → Włącz „Ograniczenia konta"
    - Dziecko zobaczy tylko gry zatwierdzone przez Roblox jako odpowiednie dla młodszych
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Ustaw prywatność czatu:</strong></li>
-</ul>
-   - <strong>Brak czatu:</strong> Dziecko nie może czatować w ogóle (NAJBEZPIECZNIEJSZE dla małych dzieci)
-   - <strong>Tylko znajomi:</strong> Może czatować tylko z dodanymi znajomymi
-   - <strong>Wszyscy z filtrem:</strong> Może czatować, ale obraźliwe słowa są cenzurowane (dla starszych)
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Ustaw prywatność czatu:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+   - &lt;strong&gt;Brak czatu:&lt;/strong&gt; Dziecko nie może czatować w ogóle (NAJBEZPIECZNIEJSZE dla małych dzieci)
+   - &lt;strong&gt;Tylko znajomi:&lt;/strong&gt; Może czatować tylko z dodanymi znajomymi
+   - &lt;strong&gt;Wszyscy z filtrem:&lt;/strong&gt; Może czatować, ale obraźliwe słowa są cenzurowane (dla starszych)
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Kontrola zakupów:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Kontrola zakupów:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Nie podawaj dziecku danych karty kredytowej
    - Jeśli chcesz kupić Robuxy, zrób to samodzielnie
    - Ustaw PIN dla zakupów w ustawieniach rodzicielskich urządzenia
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Monitoruj aktywność:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Monitoruj aktywność:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Regularnie sprawdzaj, w jakie gry dziecko gra
    - Zapytaj, z kim rozmawia
    - Sam zagraj w gry, które lubi dziecko – będziesz wiedział, co tam się dzieje
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Dodaj swoje konto jako rodzica:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Dodaj swoje konto jako rodzica:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Opcja „Parent Pin" blokuje zmiany ustawień bez Twojego kodu
 
-<strong>💡 Poradnik dla dzieci - Twój pierwszy projekt w Roblox Studio:</strong>
+&lt;strong&gt;💡 Poradnik dla dzieci - Twój pierwszy projekt w Roblox Studio:&lt;/strong&gt;
 
-<strong>Projekt: Prosta platforma do skoków (Mini Obby)</strong>
+&lt;strong&gt;Projekt: Prosta platforma do skoków (Mini Obby)&lt;/strong&gt;
 
-<strong>Krok 1: Otwórz Roblox Studio</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Na komputerze otwórz Roblox Studio (dostępne za darmo)</li>
-<li>Kliknij „New" → „Baseplate" (Pusta przestrzeń z platformą)</li>
-</ul>
+&lt;strong&gt;Krok 1: Otwórz Roblox Studio&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Na komputerze otwórz Roblox Studio (dostępne za darmo)&lt;/li&gt;
+&lt;li&gt;Kliknij „New" → „Baseplate" (Pusta przestrzeń z platformą)&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Krok 2: Stwórz pierwszą platformę</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>W górnym menu kliknij „Part" (To wstawi kostkę w świat)</li>
-<li>W oknie „Properties" (po prawej) zmień:</li>
-</ul>
+&lt;strong&gt;Krok 2: Stwórz pierwszą platformę&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;W górnym menu kliknij „Part" (To wstawi kostkę w świat)&lt;/li&gt;
+&lt;li&gt;W oknie „Properties" (po prawej) zmień:&lt;/li&gt;
+&lt;/ul&gt;
   - Size: 10, 1, 10 (szerokość, wysokość, głębokość)
   - Color: Wybierz zielony
   - Material: Plastic
 
-<strong>Krok 3: Stwórz drugą platformę</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Skopiuj pierwszą platformę (Ctrl+C, Ctrl+V)</li>
-<li>Przesuń ją obok używając strzałek (albo klikając i przeciągając)</li>
-<li>Umieść trochę wyżej – gracz będzie musiał na nią wskoczyć</li>
-</ul>
+&lt;strong&gt;Krok 3: Stwórz drugą platformę&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Skopiuj pierwszą platformę (Ctrl+C, Ctrl+V)&lt;/li&gt;
+&lt;li&gt;Przesuń ją obok używając strzałek (albo klikając i przeciągając)&lt;/li&gt;
+&lt;li&gt;Umieść trochę wyżej – gracz będzie musiał na nią wskoczyć&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Krok 4: Stwórz 5-10 platform</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Kopiuj i wklejaj dalsze platformy</li>
-<li>Układaj je jak schody albo zygzakiem</li>
-<li>Niech będzie ciekawie!</li>
-</ul>
+&lt;strong&gt;Krok 4: Stwórz 5-10 platform&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Kopiuj i wklejaj dalsze platformy&lt;/li&gt;
+&lt;li&gt;Układaj je jak schody albo zygzakiem&lt;/li&gt;
+&lt;li&gt;Niech będzie ciekawie!&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Krok 5: Dodaj punkt startowy</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>W „Model" (górne menu) kliknij „Spawn Location"</li>
-<li>To miejsce, gdzie pojawi się gracz</li>
-<li>Przesuń na swoją pierwszą platformę</li>
-</ul>
+&lt;strong&gt;Krok 5: Dodaj punkt startowy&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;W „Model" (górne menu) kliknij „Spawn Location"&lt;/li&gt;
+&lt;li&gt;To miejsce, gdzie pojawi się gracz&lt;/li&gt;
+&lt;li&gt;Przesuń na swoją pierwszą platformę&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Krok 6: Testuj!</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Kliknij dużą zieloną strzałkę „Play" na górze</li>
-<li>Zobaczysz się jako postać w grze</li>
-<li>Skacz po platformach (klawisz Spacja)</li>
-<li>Jeśli coś nie działa, kliknij „Stop" i popraw</li>
-</ul>
+&lt;strong&gt;Krok 6: Testuj!&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Kliknij dużą zieloną strzałkę „Play" na górze&lt;/li&gt;
+&lt;li&gt;Zobaczysz się jako postać w grze&lt;/li&gt;
+&lt;li&gt;Skacz po platformach (klawisz Spacja)&lt;/li&gt;
+&lt;li&gt;Jeśli coś nie działa, kliknij „Stop" i popraw&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Krok 7: Dodaj kolor i różnorodność</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Zmień kolory platform</li>
-<li>Niektóre zrób z innych materiałów (szkło, metal)</li>
-<li>Dodaj neonowe elementy</li>
-</ul>
+&lt;strong&gt;Krok 7: Dodaj kolor i różnorodność&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Zmień kolory platform&lt;/li&gt;
+&lt;li&gt;Niektóre zrób z innych materiałów (szkło, metal)&lt;/li&gt;
+&lt;li&gt;Dodaj neonowe elementy&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Krok 8: Opublikuj swoją grę</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>File → Publish to Roblox</li>
-<li>Nazwij swoją grę (np. "Moje Pierwsze Obby")</li>
-<li>Kliknij Publish</li>
-</ul>
+&lt;strong&gt;Krok 8: Opublikuj swoją grę&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;File → Publish to Roblox&lt;/li&gt;
+&lt;li&gt;Nazwij swoją grę (np. "Moje Pierwsze Obby")&lt;/li&gt;
+&lt;li&gt;Kliknij Publish&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Gratulacje! Stworzyłeś/aś swoją pierwszą grę w Roblox!</strong> 🎉  
+&lt;strong&gt;Gratulacje! Stworzyłeś/aś swoją pierwszą grę w Roblox!&lt;/strong&gt; 🎉  
 Teraz możesz ją dalej rozwijać – dodawać przeszkody, pułapki, checkpoint'y i wiele więcej!
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">🎨 Dodatkowe Bezpieczne Platformy</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;🎨 Dodatkowe Bezpieczne Platformy&lt;/h3&gt;
 
-<strong>Scratch (scratch.mit.edu)</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Darmowa platforma od MIT do nauki programowania</li>
-<li>Tworzysz gry, animacje i historie za pomocą bloczków</li>
-<li>Ogromna społeczność młodych twórców z całego świata</li>
-<li>Komentarze są mocno moderowane</li>
-<li>Idealne dla dzieci 8-16 lat</li>
-</ul>
+&lt;strong&gt;Scratch (scratch.mit.edu)&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Darmowa platforma od MIT do nauki programowania&lt;/li&gt;
+&lt;li&gt;Tworzysz gry, animacje i historie za pomocą bloczków&lt;/li&gt;
+&lt;li&gt;Ogromna społeczność młodych twórców z całego świata&lt;/li&gt;
+&lt;li&gt;Komentarze są mocno moderowane&lt;/li&gt;
+&lt;li&gt;Idealne dla dzieci 8-16 lat&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Tynker (tynker.com)</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Podobny do Scratch, ale z bardziej grywalnymi lekcjami</li>
-<li>Kursy programowania dla dzieci</li>
-<li>Część treści płatna, ale dużo darmowych lekcji</li>
-<li>Dla dzieci 7-14 lat</li>
-</ul>
+&lt;strong&gt;Tynker (tynker.com)&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Podobny do Scratch, ale z bardziej grywalnymi lekcjami&lt;/li&gt;
+&lt;li&gt;Kursy programowania dla dzieci&lt;/li&gt;
+&lt;li&gt;Część treści płatna, ale dużo darmowych lekcji&lt;/li&gt;
+&lt;li&gt;Dla dzieci 7-14 lat&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Prodigy Game (prodigygame.com)</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Gra edukacyjna z matematyki</li>
-<li>Bezpieczne środowisko, zero reklam</li>
-<li>Dzieci uczą się matematyki, nie zdając sobie z tego sprawy</li>
-<li>Dla dzieci 6-14 lat</li>
-</ul>
+&lt;strong&gt;Prodigy Game (prodigygame.com)&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Gra edukacyjna z matematyki&lt;/li&gt;
+&lt;li&gt;Bezpieczne środowisko, zero reklam&lt;/li&gt;
+&lt;li&gt;Dzieci uczą się matematyki, nie zdając sobie z tego sprawy&lt;/li&gt;
+&lt;li&gt;Dla dzieci 6-14 lat&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Kiddle (kiddle.co)</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Bezpieczna wyszukiwarka dla dzieci</li>
-<li>Filtruje wyniki, pokazując tylko strony odpowiednie dla dzieci</li>
-<li>Kolorowy i przyjazny interfejs</li>
-<li>Dla dzieci wszystkich wieku</li>
-</ul>
+&lt;strong&gt;Kiddle (kiddle.co)&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Bezpieczna wyszukiwarka dla dzieci&lt;/li&gt;
+&lt;li&gt;Filtruje wyniki, pokazując tylko strony odpowiednie dla dzieci&lt;/li&gt;
+&lt;li&gt;Kolorowy i przyjazny interfejs&lt;/li&gt;
+&lt;li&gt;Dla dzieci wszystkich wieku&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>💡 Złota Zasada Platform Bezpiecznych:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Zawsze pytaj rodzica o pozwolenie przed założeniem konta</li>
-<li>Nigdy nie podawaj prawdziwych danych osobowych</li>
-<li>Jeśli coś Cię niepokoi – powiedz rodzicom natychmiast</li>
-<li>Baw się, twórz i ucz – to Twoje bezpieczne place zabaw!</li>
-</ul>
+&lt;strong&gt;💡 Złota Zasada Platform Bezpiecznych:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Zawsze pytaj rodzica o pozwolenie przed założeniem konta&lt;/li&gt;
+&lt;li&gt;Nigdy nie podawaj prawdziwych danych osobowych&lt;/li&gt;
+&lt;li&gt;Jeśli coś Cię niepokoi – powiedz rodzicom natychmiast&lt;/li&gt;
+&lt;li&gt;Baw się, twórz i ucz – to Twoje bezpieczne place zabaw!&lt;/li&gt;
+&lt;/ul&gt;
 
 
-<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">Rozdział 3: Główne Platformy pod Okiem Rodzica: YouTube, Instagram i TikTok 👨‍👩‍👧📱</h3>
+&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;Rozdział 3: Główne Platformy pod Okiem Rodzica: YouTube, Instagram i TikTok 👨‍👩‍👧📱&lt;/h3&gt;
 
-<p className="mb-4">Przy przychodzi taki moment, kiedy pomysły młodego twórcy stają się tak wielkie, że bezpieczne, zamknięte place zabaw mogą okazać się nieco za małe. Być może marzysz o stworzeniu kanału, który dotrze do szerszej publiczności, albo o nagrywaniu krótkich, zabawnych filmików, które mogą stać się popularne.</p>
+&lt;p className="mb-4"&gt;Przy przychodzi taki moment, kiedy pomysły młodego twórcy stają się tak wielkie, że bezpieczne, zamknięte place zabaw mogą okazać się nieco za małe. Być może marzysz o stworzeniu kanału, który dotrze do szerszej publiczności, albo o nagrywaniu krótkich, zabawnych filmików, które mogą stać się popularne.&lt;/p&gt;
 
-<p className="mb-4">Jeśli Ty i Twoi rodzice wspólnie zdecydujecie, że jesteście gotowi na kolejny krok, możecie rozważyć rozpoczęcie działalności na głównych platformach, takich jak YouTube, TikTok czy Instagram. Musicie jednak pamiętać o jednej, żelaznej zasadzie:</p>
+&lt;p className="mb-4"&gt;Jeśli Ty i Twoi rodzice wspólnie zdecydujecie, że jesteście gotowi na kolejny krok, możecie rozważyć rozpoczęcie działalności na głównych platformach, takich jak YouTube, TikTok czy Instagram. Musicie jednak pamiętać o jednej, żelaznej zasadzie:&lt;/p&gt;
 
-<strong>🚨 TO NIE JEST JUŻ TYLKO TWÓJ PROJEKT. TO STAJE SIĘ PROJEKTEM RODZINNYM. 🚨</strong>
+&lt;strong&gt;🚨 TO NIE JEST JUŻ TYLKO TWÓJ PROJEKT. TO STAJE SIĘ PROJEKTEM RODZINNYM. 🚨&lt;/strong&gt;
 
-<p className="mb-4">Dorosły jest kapitanem, administratorem i głównym strażnikiem bezpieczeństwa. Poniżej znajdziesz szczegółowe instrukcje, jak podejść do każdej z tych platform w sposób odpowiedzialny.</p>
+&lt;p className="mb-4"&gt;Dorosły jest kapitanem, administratorem i głównym strażnikiem bezpieczeństwa. Poniżej znajdziesz szczegółowe instrukcje, jak podejść do każdej z tych platform w sposób odpowiedzialny.&lt;/p&gt;
 
-<p className="mb-4">---</p>
+&lt;p className="mb-4"&gt;---&lt;/p&gt;
 
-#<h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4">📺 YouTube – Kanał Rodzinny</h3>
+#&lt;h3 className="text-2xl font-bold text-purple-800 mt-8 mb-4"&gt;📺 YouTube – Kanał Rodzinny&lt;/h3&gt;
 
-<p className="mb-4">Standardowy YouTube to potężne narzędzie, ale wymaga też ogromnej odpowiedzialności. Aby prowadzić na nim kanał w bezpieczny sposób, musicie przestrzegać kilku kluczowych reguł.</p>
+&lt;p className="mb-4"&gt;Standardowy YouTube to potężne narzędzie, ale wymaga też ogromnej odpowiedzialności. Aby prowadzić na nim kanał w bezpieczny sposób, musicie przestrzegać kilku kluczowych reguł.&lt;/p&gt;
 
-<strong>🎬 Krok 1: Konto Należy Do Rodzica</strong>
+&lt;strong&gt;🎬 Krok 1: Konto Należy Do Rodzica&lt;/strong&gt;
 
-<p className="mb-4">Zgodnie z regulaminem Google (właściciela YouTube), aby założyć konto, trzeba mieć ukończone 13 lat (a w Polsce, by samodzielnie zarządzać danymi, 16 lat). Dlatego to Twój rodzic musi założyć konto na swoje dane i być jego prawnym właścicielem.</p>
+&lt;p className="mb-4"&gt;Zgodnie z regulaminem Google (właściciela YouTube), aby założyć konto, trzeba mieć ukończone 13 lat (a w Polsce, by samodzielnie zarządzać danymi, 16 lat). Dlatego to Twój rodzic musi założyć konto na swoje dane i być jego prawnym właścicielem.&lt;/p&gt;
 
-<strong>Dlaczego to tak ważne?</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>👤 Prawna odpowiedzialność spoczywa na dorosłym</li>
-<li>🏦 Ewentualne zarobki (gdy kanał urośnie) będą legalnie wypłacane na konto rodzica</li>
-<li>🛡️ Rodzic ma pełną kontrolę nad bezpieczeństwem</li>
-<li>📧 Wszystkie ważne powiadomienia trafiają do rodzica</li>
-</ul>
+&lt;strong&gt;Dlaczego to tak ważne?&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;👤 Prawna odpowiedzialność spoczywa na dorosłym&lt;/li&gt;
+&lt;li&gt;🏦 Ewentualne zarobki (gdy kanał urośnie) będą legalnie wypłacane na konto rodzica&lt;/li&gt;
+&lt;li&gt;🛡️ Rodzic ma pełną kontrolę nad bezpieczeństwem&lt;/li&gt;
+&lt;li&gt;📧 Wszystkie ważne powiadomienia trafiają do rodzica&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>Wspólne ustalenia:</strong>
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li>Nazwa kanału – wymyślcie razem (może być pseudonim dziecka + pasja, np. "Zosia Ptaszkowa", "Kuba Bricks Maste")</li>
-<li>Avatar i baner – zaprojektujcie wspólnie (pamiętając o nieujawnianiu twarzy, jeśli dziecko jest młodsze)</li>
-<li>Opis kanału – napiszcie razem, czym będzie kanał</li>
-</ul>
+&lt;strong&gt;Wspólne ustalenia:&lt;/strong&gt;
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;Nazwa kanału – wymyślcie razem (może być pseudonim dziecka + pasja, np. "Zosia Ptaszkowa", "Kuba Bricks Maste")&lt;/li&gt;
+&lt;li&gt;Avatar i baner – zaprojektujcie wspólnie (pamiętając o nieujawnianiu twarzy, jeśli dziecko jest młodsze)&lt;/li&gt;
+&lt;li&gt;Opis kanału – napiszcie razem, czym będzie kanał&lt;/li&gt;
+&lt;/ul&gt;
 
-<strong>🔐 Krok 2: Mistrzowskie Opanowanie Ustawień Bezpieczeństwa</strong>
+&lt;strong&gt;🔐 Krok 2: Mistrzowskie Opanowanie Ustawień Bezpieczeństwa&lt;/strong&gt;
 
-<p className="mb-4">YouTube Studio to Wasze centrum dowodzenia. Znajdziecie tam mnóstwo narzędzi do zarządzania kanałem.</p>
+&lt;p className="mb-4"&gt;YouTube Studio to Wasze centrum dowodzenia. Znajdziecie tam mnóstwo narzędzi do zarządzania kanałem.&lt;/p&gt;
 
-<strong>MEGA PORADNIK – Konfiguracja Bezpieczeństwa Kanału YouTube dla Rodziny</strong>
+&lt;strong&gt;MEGA PORADNIK – Konfiguracja Bezpieczeństwa Kanału YouTube dla Rodziny&lt;/strong&gt;
 
-<strong>A. Ustawienia Kanału (YouTube Studio → Ustawienia → Kanał):</strong>
+&lt;strong&gt;A. Ustawienia Kanału (YouTube Studio → Ustawienia → Kanał):&lt;/strong&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Informacje podstawowe:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Informacje podstawowe:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Ustaw język: Polski
    - Kraj: Polska
    - Słowa kluczowe kanału: (np. "kanał dla dzieci, edukacja, zabawa")
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Ustawienia zaawansowane:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Ustawienia zaawansowane:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - ✅ Zaznacz: "Ten kanał jest przeznaczony dla dzieci" (jeśli wszystkie treści są dla dzieci)
    - LUB w każdym filmie osobno zaznaczaj: "Ten film jest przeznaczony dla dzieci"
    
-   <strong>Co to zmienia?</strong>
+   &lt;strong&gt;Co to zmienia?&lt;/strong&gt;
    - Wyłącza spersonalizowane reklamy
    - Wyłącza komentarze (albo bardzo je ogranicza)
    - Wyłącza powiadomienia
    - Wyłącza możliwość dodania do playlisty
    - To wymóg prawny (COPPA w USA, RODO w EU)
 
-<strong>B. Ustawienia Społeczności (Community):</strong>
+&lt;strong&gt;B. Ustawienia Społeczności (Community):&lt;/strong&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Komentarze – NAJWAŻNIEJSZE:</strong></li>
-</ul>
-   - Opcja 1 (NAJBEZPIECZNIEJSZA): <strong>"Wyłącz komentarze"</strong> – Nikt nie może komentować
-   - Opcja 2: <strong>"Przytrzymaj wszystkie komentarze do sprawdzenia"</strong> – Każdy komentarz czeka na Twoją akceptację
-   - Opcja 3: <strong>"Przytrzymaj potencjalnie nieodpowiednie komentarze"</strong> – YouTube filter AI przytrzymuje podejrzane
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Komentarze – NAJWAŻNIEJSZE:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+   - Opcja 1 (NAJBEZPIECZNIEJSZA): &lt;strong&gt;"Wyłącz komentarze"&lt;/strong&gt; – Nikt nie może komentować
+   - Opcja 2: &lt;strong&gt;"Przytrzymaj wszystkie komentarze do sprawdzenia"&lt;/strong&gt; – Każdy komentarz czeka na Twoją akceptację
+   - Opcja 3: &lt;strong&gt;"Przytrzymaj potencjalnie nieodpowiednie komentarze"&lt;/strong&gt; – YouTube filter AI przytrzymuje podejrzane
 
-   💡 <strong>NASZA REKOMENDACJA dla MAŁYCH DZIECI:</strong> Opcja 2 – przytrzymuj wszystkie. Tak, to więcej pracy, ale masz 100% kontrolę.
+   💡 &lt;strong&gt;NASZA REKOMENDACJA dla MAŁYCH DZIECI:&lt;/strong&gt; Opcja 2 – przytrzymuj wszystkie. Tak, to więcej pracy, ale masz 100% kontrolę.
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Ustawienia domyślne treści przesłanych:</strong></li>
-</ul>
-   - Widoczność: <strong>"Niepubliczny"</strong> – Każdy nowy film będzie domyślnie niepubliczny
-   - Komentarze: <strong>"Przytrzymaj wszystkie"</strong>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Ustawienia domyślne treści przesłanych:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+   - Widoczność: &lt;strong&gt;"Niepubliczny"&lt;/strong&gt; – Każdy nowy film będzie domyślnie niepubliczny
+   - Komentarze: &lt;strong&gt;"Przytrzymaj wszystkie"&lt;/strong&gt;
    - Kategoria: "Edukacja" / "Rozrywka" / "Ludzie i blogi" – wybierz odpowiednią
    - ✅ Oznacz: "Nie, nie jest przeznaczone dla dzieci" albo "Tak, przeznaczone dla dzieci" (domyślnie)
 
-<strong>C. Publikacja Filmu – Kontrola Ostateczna:</strong>
+&lt;strong&gt;C. Publikacja Filmu – Kontrola Ostateczna:&lt;/strong&gt;
 
-<p className="mb-4">Kiedy dziecko skończy nagrywać i montować film (z Twoją pomocą), przed publikacją:</p>
+&lt;p className="mb-4"&gt;Kiedy dziecko skończy nagrywać i montować film (z Twoją pomocą), przed publikacją:&lt;/p&gt;
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Obejrzyjcie film razem:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Obejrzyjcie film razem:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Czy są widoczne dane osobowe? (szkoła, ulica, nazwiska)
    - Czy są widoczne inne dzieci? (potrzebujesz zgody ich rodziców!)
    - Czy język jest odpowiedni?
    - Czy przekaz jest pozytywny?
 
-<ul className="list-disc pl-6 space-y-2 my-4">
-<li><strong>Wgraj film jako NIEPUBLICZNY</strong></li>
-<li><strong>Dodaj tytuł i opis:</strong></li>
-</ul>
+&lt;ul className="list-disc pl-6 space-y-2 my-4"&gt;
+&lt;li&gt;&lt;strong&gt;Wgraj film jako NIEPUBLICZNY&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dodaj tytuł i opis:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
    - Tytuł: Atrakcyjny, ale uczciwy (np. "Jak Narysować Kota w 5 Minut | Tutorial dla Dzieci")
    - Opis: Krótki opis + standardowa informacja:
    
-   <div className="bg-gray-100 p-4 rounded-lg my-4"><code>
+   &lt;div className="bg-gray-100 p-4 rounded-lg my-4"&gt;&lt;code&gt;
    Cześć! Jestem [Pseudonim] i uwielbiam [pasja]. 
    W tym filmie pokażę Wam [co jest w filmie].
    
@@ -1379,9 +1379,9 @@ Rozwinięcie popularnego języka programowania dla dzieci – Scratch. Dzięki d
 <div className="bg-gray-100 p-4 rounded-lg my-4"><code>
 Gdy kliknięto zieloną flagę
 Powtarzaj w nieskończoność
-  Jeśli [ruch wideo na postaci] > 30 to
+  Jeśli [ruch wideo na postaci] &gt; 30 to
     Zmień x o 10 (ruch w prawo)
-  Jeśli [ruch wideo na postaci] < -30 to
+  Jeśli [ruch wideo na postaci] &lt; -30 to
     Zmień x o -10 (ruch w lewo)
 </code></div>
 <ul className="list-disc pl-6 space-y-2 my-4">
@@ -2402,7 +2402,7 @@ A: NIE. Nigdy nie pokazuj:
 A: Nie wchodź w dyskusję. Zablokuj, zgłoś, idź dalej. Naucz dziecko: "Hejterzy to smutni ludzie, którzy próbują poczuć się lepiej, obrażając innych."
 
 <strong>Q14: Jak często publikować?</strong>
-A: Jakość > Ilość. Lepiej 1 dobry film w tygodniu niż 7 średnich. Algorytmy doceniają regularność, więc wybierz realistyczny harmonogram i się go trzymaj.
+A: Jakość &gt; Ilość. Lepiej 1 dobry film w tygodniu niż 7 średnich. Algorytmy doceniają regularność, więc wybierz realistyczny harmonogram i się go trzymaj.
 
 <strong>Q15: Czy dziecko powinno czytać komentarze?</strong>
 A: Młodsze dzieci (do 10 lat): NIE, tylko rodzic.  
