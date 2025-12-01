@@ -98,6 +98,7 @@ export const trainingModules = [
       </div>
     )
   },
+  {
     id: 'wstęp-witaj-w-świecie-kreatywności-',
     title: 'Wstęp: Witaj w Świecie Kreatywności! ✨',
     duration: '15 min',
