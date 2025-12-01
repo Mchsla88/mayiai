@@ -126,9 +126,13 @@ export default function AdminDashboard() {
   }
 
   const handleGrantAccess = async () => {
-    if (!selectedUser || !selectedTrainingId) return
+    if (!selectedUser || !selectedTrainingId) {
+      toast.error('Wybierz użytkownika i szkolenie')
+      return
+    }
 
     try {
+      console.log('Granting access:', { userId: selectedUser.id, trainingId: selectedTrainingId })
       const res = await fetch('/api/admin/grant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -140,14 +144,20 @@ export default function AdminDashboard() {
       })
 
       if (res.ok) {
-        toast.success('Przyznano dostęp')
+        console.log('Access granted successfully')
+        toast.success('Przyznano dostęp!')
         setIsAccessModalOpen(false)
-        fetchData() // Refresh data
+        setSelectedTrainingId('')
+        setSelectedUser(null)
+        await fetchData() // Refresh data
       } else {
-        toast.error('Błąd przyznawania dostępu')
+        const errorData = await res.json().catch(() => ({}))
+        console.error('Grant access error:', errorData)
+        toast.error(errorData.error || 'Błąd przyznawania dostępu')
       }
     } catch (error) {
-      toast.error('Wystąpił błąd')
+      console.error('Grant access exception:', error)
+      toast.error('Wystąpił błąd podczas przyznawania dostępu')
     }
   }
 
@@ -180,7 +190,12 @@ export default function AdminDashboard() {
   }
 
   const handleDeleteUser = async () => {
-    if (!selectedUser) return
+    if (!selectedUser) {
+      toast.error('Nie wybrano użytkownika')
+      return
+    }
+
+    console.log('Deleting user:', selectedUser.id, selectedUser.email)
 
     try {
       const res = await fetch(`/api/admin/users?id=${selectedUser.id}`, {
@@ -188,15 +203,19 @@ export default function AdminDashboard() {
       })
 
       if (res.ok) {
-        toast.success('Użytkownik został usunięty')
+        console.log('User deleted successfully')
+        toast.success('Użytkownik został usunięty!')
         setIsDeleteModalOpen(false)
-        fetchData() // Refresh user list
+        setSelectedUser(null)
+        await fetchData() // Refresh user list
       } else {
-        const data = await res.json()
+        const data = await res.json().catch(() => ({}))
+        console.error('Delete user error:', data)
         toast.error(data.error || 'Błąd usuwania użytkownika')
       }
     } catch (error) {
-      toast.error('Wystąpił błąd')
+      console.error('Delete user exception:', error)
+      toast.error('Wystąpił błąd podczas usuwania')
     }
   }
 
