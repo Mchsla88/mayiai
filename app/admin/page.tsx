@@ -74,15 +74,19 @@ export default function AdminDashboard() {
   const fetchData = async () => {
     try {
       const [usersRes, trainingsRes] = await Promise.all([
-        fetch('/api/admin/users'),
-        fetch('/api/admin/trainings')
+        fetch('/api/admin/users', { cache: 'no-store' }),
+        fetch('/api/admin/trainings', { cache: 'no-store' })
       ])
       
       if (usersRes.ok && trainingsRes.ok) {
         const usersData = await usersRes.json()
         const trainingsData = await trainingsRes.json()
+        console.log('Fetched trainings:', trainingsData)
         setUsers(usersData)
         setTrainings(trainingsData)
+      } else {
+        console.error('Fetch error:', usersRes.status, trainingsRes.status)
+        toast.error(`Błąd pobierania: Users ${usersRes.status}, Trainings ${trainingsRes.status}`)
       }
     } catch (error) {
       console.error('Error fetching data:', error)
@@ -210,7 +214,7 @@ export default function AdminDashboard() {
               <div className="text-2xl font-bold text-blue-600">
                 {users.reduce((acc, user) => acc + user.trainings.length, 0)}
               </div>
-              <div className="text-xs text-gray-500">Aktywnych szkoleń</div>
+              <div className="text-xs text-gray-500">Aktywnych szkoleń (Baza: {trainings.length})</div>
             </div>
           </div>
         </div>
