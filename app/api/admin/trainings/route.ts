@@ -3,7 +3,8 @@ import { prisma } from '@/lib/db'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from '@/lib/auth'
 
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic' // Force dynamic
+
 
 export async function GET() {
   try {
