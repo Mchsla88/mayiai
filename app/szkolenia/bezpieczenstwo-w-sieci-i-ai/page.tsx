@@ -10,11 +10,14 @@ export const metadata: Metadata = {
   description: 'Kompleksowy przewodnik po bezpieczeństwie online dla dzieci 9-16 lat i ich rodziców. Naucz się rozpoznawać zagrożenia, bezpiecznie korzystać z internetu i AI.'
 };
 
+import { Navbar } from '@/components/navbar';
+
 export default function BezpieczenstwoAILanding() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <Navbar />
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 pt-24">
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-4 bg-blue-600 text-white">Szkolenie Online</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
