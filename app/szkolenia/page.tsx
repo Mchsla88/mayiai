@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Navbar } from '@/components/navbar'
@@ -23,7 +23,7 @@ interface Training {
   expiresAt?: string
 }
 
-export default function SzkoleniaPage() {
+function SzkoleniaContent() {
   const { data: session, status } = useSession()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -200,5 +200,17 @@ export default function SzkoleniaPage() {
 
       <Footer />
     </div>
+  )
+}
+
+export default function SzkoleniaPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    }>
+      <SzkoleniaContent />
+    </Suspense>
   )
 }
