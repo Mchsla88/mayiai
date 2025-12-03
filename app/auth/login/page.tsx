@@ -40,6 +40,7 @@ export default function LoginPage() {
         const callbackUrl = urlParams.get('callbackUrl') || '/dashboard'
         
         toast.success('Zalogowano pomyślnie!')
+        router.refresh()
         router.push(callbackUrl)
       }
     } catch (error) {
