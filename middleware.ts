@@ -34,15 +34,11 @@ export async function middleware(request: NextRequest) {
   response.headers.set('Last-Modified', lastModified)
   response.headers.set('X-Content-Last-Modified', lastModified)
   
-  // Performance optimizations
-  response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  // Security headers
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-Frame-Options', 'SAMEORIGIN')
   response.headers.set('X-XSS-Protection', '1; mode=block')
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-  
-  // Compression hint
-  response.headers.set('Accept-Encoding', 'gzip, deflate, br')
   
   return response
 }
