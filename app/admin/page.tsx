@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -88,8 +88,7 @@ export default function AdminDashboard() {
     }
 
     if (session && !session.user?.isAdmin && session.user?.email !== 'michal@mayiai.pl') {
-      router.push('/')
-      toast.error('Brak dostępu')
+      // Don't redirect immediately, show access denied screen
       return
     }
 
@@ -97,6 +96,27 @@ export default function AdminDashboard() {
       fetchData()
     }
   }, [status, session, router])
+
+  // Access Denied View
+  if (session && !session.user?.isAdmin && session.user?.email !== 'michal@mayiai.pl') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen gap-4">
+        <Shield className="w-16 h-16 text-red-500" />
+        <h1 className="text-2xl font-bold text-gray-900">Brak uprawnień administratora</h1>
+        <p className="text-gray-600">
+          Zalogowano jako: <span className="font-semibold">{session.user?.email}</span>
+        </p>
+        <div className="flex gap-4 mt-4">
+          <Button onClick={() => signOut({ callbackUrl: '/admin' })} variant="outline">
+            Wyloguj się
+          </Button>
+          <Button onClick={() => router.push('/')}>
+            Wróć na stronę główną
+          </Button>
+        </div>
+      </div>
+    )
+  }
 
   const fetchData = async () => {
     try {

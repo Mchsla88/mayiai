@@ -15,7 +15,8 @@ export async function middleware(request: NextRequest) {
     '/szkolenia/mlody-influencer',
     '/szkolenia/nauczyciele',
     '/szkolenia/dzieci',
-    '/dashboard'
+    '/dashboard',
+    '/admin'
   ]
   const isProtectedPath = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path))
 
