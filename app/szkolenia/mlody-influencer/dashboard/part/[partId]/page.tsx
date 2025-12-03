@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { DashboardNavbar } from '@/components/dashboard/navbar';
-import { courseParts, chapters } from '@/lib/course-data-mlody';
+import { courseParts, chapters } from '@/lib/course-data';
 
 export default function PartPage() {
   const params = useParams();

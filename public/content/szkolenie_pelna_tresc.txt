@@ -1,0 +1,1763 @@
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+📚 Bezpieczeństwo w sieci i
+w świecie AI
+
+Kompleksowy scenariusz szkolenia online
+dla dzieci 9–16 lat i rodziców
+
+🕐 Czas trwania: 90–120 minut
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+1/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+📋 Spis treści
+🎯 Cel szkolenia
+📋 Przygotowanie techniczne
+CZĘŚĆ I: Wprowadzenie – Witamy w cyfrowym świecie! (10–12 min)
+Slajd 1: Powitanie
+Slajd 2: Szybka ankieta – poznajmy się!
+Slajd 3: Dlaczego o tym mówimy?
+CZĘŚĆ II: Zagrożenia w sieci – o czym musicie wiedzieć (25–30 min)
+Slajd 4: Nieznajomi w internecie
+Slajd 5: Phishing i oszustwa
+Slajd 6: Cyberprzemoc i hejt
+Slajd 7: Treści nieodpowiednie
+CZĘŚĆ III: Bezpieczne korzystanie z internetu (25–30 min)
+Slajd 8: Hasła i loginy
+Slajd 9: Co możesz, a czego nie możesz udostępniać
+Slajd 10: Zasady korzystania z urządzeń w domu
+Slajd 11: Rozmowa – najważniejsze narzędzie
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+2/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+CZĘŚĆ IV: Świat AI – nowy gracz w grze (25–30 min)
+Slajd 12: Czym jest AI i gdzie się z nią spotykasz
+Slajd 13: Deepfake'i i dezinformacja
+Slajd 14: Prywatność a AI
+Slajd 15: AI a szkoła
+CZĘŚĆ V: Co robić, gdy coś się stanie? (15–20 min)
+Slajd 16: Dla dzieci – Trzy kroki ratunkowe
+Slajd 17: Dla rodziców – Jak reagować
+Slajd 18: Gdzie szukać pomocy
+CZĘŚĆ VI: Tworzymy rodzinne zasady (15–20 min)
+Slajd 19: Warsztat – Rodzinna umowa cyfrowa
+Slajd 20: Checklist do wydrukowania
+CZĘŚĆ VII: Podsumowanie i Q&A (10–15 min)
+Slajd 21: 3 najważniejsze rzeczy
+Slajd 22: Co dalej? – Następne kroki
+Slajd 23: Pytania i odpowiedzi
+Slajd 24: Dziękuję!
+
+📦 Materiały do przygotowania przed szkoleniem
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+3/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🎯 Cel szkolenia
+DLA DZIECI (9–16 LAT)
+
+Nauczycie się:
+Rozpoznawać zagrożenia w sieci (nieznajomi, oszustwa, cyberprzemoc)
+Bezpiecznie korzystać z internetu i AI
+Wiedzieć, co zrobić, gdy coś pójdzie nie tak
+Chronić swoje dane osobowe i prywatność
+
+DLA RODZICÓW
+
+Zrozumiecie:
+Świat online, w którym żyją wasze dzieci
+Jak wspierać dzieci bez nadmiernej kontroli
+Jak reagować na konkretne sytuacje kryzysowe
+Jak budować zaufanie i otwartą komunikację
+
+WSPÓLNY CEL
+
+Wypracowanie rodzinnych zasad bezpieczeństwa cyfrowego, które będą realistyczne,
+wykonalne i zaakceptowane przez wszystkich członków rodziny.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+4/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+📋 Przygotowanie techniczne (przed szkoleniem)
+🛠️ Narzędzia potrzebne do przeprowadzenia szkolenia:
+Platforma do wideokonferencji:
+Zoom / Google Meet / MS Teams
+Włącz funkcję czatu dla pytań uczestników
+Przygotuj breakout rooms (opcjonalnie – dla ćwiczeń w małych grupach)
+Włącz nagrywanie szkolenia (za zgodą uczestników) – rodzice mogą wrócić do
+materiału
+Prezentacja:
+PowerPoint / Google Slides / Canva
+24 slajdy (szczegółowa treść w dalszej części dokumentu)
+Kolorowe, czytelne, z emoji i grafikami
+Narzędzia interaktywne:
+Mentimeter – do ankiet i quizów na żywo
+Kahoot – do interaktywnych quizów
+Lub po prostu używaj czatu i podnoszenia rąk w platformie
+Materiały do pobrania (PDF):
+Checklist rodzinny – "Nasza rodzinna umowa cyfrowa"
+Infografika "Jak rozpoznać phishing"
+Lista numerów alarmowych i linków pomocowych
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+5/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ I: Wprowadzenie – Witamy w
+cyfrowym świecie!
+Czas: 10–12 minut
+
+Slajd 1: Powitanie
+
+👋
+
+CO MÓWI PROWADZĄCY (DLA WSZYSTKICH):
+
+"Cześć wszystkim! Dzisiaj będziemy rozmawiać o czymś, co jest częścią waszego
+codziennego życia – o internecie i sztucznej inteligencji. Nie będzie nudno, obiecuję!
+Będziemy mówić o grach, TikToku, chatbotach i o tym, jak być bezpiecznym online –
+bez straszenia, ale z konkretami."
+
+DLA DZIECI:
+
+Dzisiejsze szkolenie to nie lista zakazów! To szansa, żeby:
+Dowiedzieć się, jak być bezpiecznym w sieci
+Poznać triki oszustów i wiedzieć, jak się przed nimi chronić
+Nauczyć się, co zrobić, gdy coś pójdzie nie tak
+
+DLA RODZICÓW:
+
+"Drodzy rodzice, dzisiejsze szkolenie to nie tylko lista zakazów. To szansa, żeby
+zrozumieć świat, w którym wasze dzieci spędzają czas, i nauczyć się rozmawiać o
+bezpieczeństwie tak, żeby dzieci do was przychodziły, gdy coś się stanie."
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+6/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 2: Szybka ankieta – poznajmy się!
+
+📊
+
+INTERAKCJA (MENTIMETER LUB CZAT)
+
+Pytania do uczestników:
+"Podnieście rękę (lub napiszcie w czacie): Kto z was korzysta z TikToka?"
+"Kto gra w Roblox, Minecraft, Fortnite?"
+"Kto rozmawiał kiedyś z chatbotem AI (np. ChatGPT, Snapchat AI)?"
+"Rodzice: Czy wiecie, na jakich platformach wasze dzieci spędzają
+najwięcej czasu?"
+
+CEL TEJ ANKIETY:
+
+Pokazać różnorodność doświadczeń, zbudować zaufanie, dać dzieciom poczucie, że
+ich świat jest rozumiany i traktowany poważnie.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+7/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 3: Dlaczego o tym mówimy?
+
+🤔
+
+DLA DZIECI (9–16 LAT)
+
+"Internet to super miejsce – możecie się uczyć, bawić, rozmawiać z przyjaciółmi. Ale
+tak jak na ulicy są zasady (patrzysz przed przejściem, nie wsiadasz do obcego
+samochodu), tak w internecie też są zasady bezpieczeństwa."
+
+Zapamiętaj: Internet = prawdziwy świat. Te same zasady bezpieczeństwa
+obowiązują online i offline!
+
+DLA RODZICÓW
+
+"Świat online to nie tylko 'ekran'. To prawdziwe relacje, emocje, czasem zagrożenia.
+Nasze zadanie: dać dzieciom narzędzia, nie strach."
+Kluczowe przesłanie:
+Nie chodzi o zakazywanie, ale o edukację
+Nie chodzi o kontrolę, ale o zaufanie i otwartą komunikację
+Nie chodzi o straszenie, ale o dawanie konkretnych narzędzi
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+8/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ II: Zagrożenia w sieci – o czym
+musicie wiedzieć
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+9/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Czas: 25–30 minut
+
+Slajd 4: Nieznajomi w internecie
+
+👤
+
+DLA DZIECI (9–12 LAT)
+
+Przykład:
+"Wyobraźcie sobie: grasz w Roblox, ktoś pisze 'Hej, fajnie budujesz! Chcesz
+darmowe Robuxy? Podaj mi swój login'.
+CZY TO JEST BEZPIECZNE?"
+Odpowiedź:
+
+❌ NIE! To może być oszust.
+
+Złota zasada:
+Nieznajomy w internecie = nieznajomy na ulicy
+Nie podajesz mu swojego adresu, hasła, nie wysyłasz zdjęć.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+10/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+Przykład:
+"Ktoś pisze do ciebie na Instagramie: 'Jesteś ładna/ładny, chcesz porozmawiać
+na Snapie?'. Prosi o zdjęcie. Mówi, że ma 15 lat, ale nie chce włączyć kamery."
+
+🚩 Red flags (czerwone flagi) – sygnały alarmowe:
+Prosi o przeniesienie rozmowy na inny komunikator (WhatsApp, Telegram)
+Prosi o zdjęcia (zwłaszcza intymne)
+Mówi: "Nie mów rodzicom, to nasza tajemnica"
+Oferuje pieniądze, prezenty, spotkanie
+Robi komplementy bardzo szybko i intensywnie
+Nie chce włączyć kamery lub pokazać się
+
+⚠️ TO MOŻE BYĆ GROOMING
+Grooming = dorosły udający nastolatka, który buduje zaufanie, aby
+wykorzystać dziecko.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+11/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW – CO MUSICIE WIEDZIEĆ O GROOMINGU
+
+Grooming to proces, nie jednorazowe zdarzenie. Zaczyna się od:
+1. Budowania zaufania – komplementy, zainteresowanie, słuchanie
+2. Izolowania – "nie mów rodzicom", przeniesienie na prywatny komunikator
+3. Małych próśb – "wyślij zdjęcie w stroju kąpielowym"
+4. Eskalacji – prośby o zdjęcia intymne, spotkanie
+5. Szantażu – "jak nie wyślesz więcej, to wrzucę to, co już mam"
+Rozmawiajcie z dziećmi:
+Nikt w internecie nie jest tym, za kogo się podaje, dopóki nie spotkasz go w realu
+(i nawet wtedy bądź ostrożny)
+Jeśli ktoś prosi o "tajemnicę przed rodzicami" – to największy sygnał
+alarmowy!
+Prawdziwi przyjaciele nie proszą o zdjęcia intymne
+
+ĆWICZENIE (2 MINUTY)
+
+Dla wszystkich uczestników:
+"Napiszcie w czacie: Jakie pytanie zadalibyście osobie, która pisze do was w grze,
+żeby sprawdzić, czy to naprawdę dzieciak?"
+Przykłady odpowiedzi:
+"Jaka jest twoja ulubiona postać w tej grze?"
+"W co jeszcze grasz?"
+"Ile masz lat?" (ale pamiętaj – oszuści też mogą kłamać!)
+
+⚠️ Uwaga: Oszuści też mogą znać odpowiedzi! Najlepiej: nie udostępniaj nikomu
+danych osobowych, bez względu na odpowiedzi.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+12/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 5: Phishing i oszustwa – "Wygrałeś iPhone'a!"
+
+🎣
+
+DLA DZIECI (9–16 LAT)
+
+Przykład:
+"Dostajesz wiadomość: 'Gratulacje! Wygrałeś 1000 V-Bucks! Kliknij tutaj i podaj
+dane karty rodzica'.
+CO ROBISZ?"
+Odpowiedź:
+
+❌ Nic nie klikasz! To oszustwo (phishing).
+
+Jak rozpoznać fejka (phishing):
+
+✅ 🚩 Obiecuje coś za darmo (pieniądze, skiny, nagrody)
+✅ 🚩 Prosi o hasło, dane karty, PESEL
+✅ 🚩 Link wygląda dziwnie (np. r0blox.com zamiast roblox.com )
+✅ 🚩 Pilne: "Masz 5 minut, żeby kliknąć!"
+✅ 🚩 Wiadomość ma błędy ortograficzne
+✅ 🚩 Nadawca to dziwny adres e-mail
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+13/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+"Phishing to nie tylko maile od 'banku'. Dzieci dostają wiadomości:
+W grach (Roblox, Minecraft, Fortnite)
+Na Discordzie
+W SMS-ach
+W komentarzach na TikToku/YouTube
+Uczcie dzieci zasady:
+
+Jeśli coś brzmi za dobrze, żeby było prawdziwe – prawdopodobnie nie jest
+prawdziwe.
+Zawsze pytaj rodzica, zanim klikniesz link lub podasz dane.
+
+PRZYKŁAD NA EKRANIE – PRAWDZIWY VS. FAŁSZYWY LINK
+
+Pokaż uczestnikom różnicę:
+
+✅ PRAWDZIWY
+
+❌ FAŁSZYWY
+
+youtube.com
+
+yotube.com (brak "u")
+
+roblox.com
+
+r0blox.com (zero zamiast "o")
+
+google.com
+
+go0gle.com (zero zamiast "o")
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+14/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 6: Cyberprzemoc i hejt
+
+😢
+
+DLA DZIECI (9–12 LAT)
+
+Przykład:
+"Ktoś pisze na czacie klasowym: 'Jesteś głupi, nikt cię nie lubi'. Albo wrzuca
+twoje zdjęcie i się z niego śmieje.
+Jak się czujesz?"
+
+TO JEST CYBERPRZEMOC
+
+Boli tak samo jak przemoc w szkole, a czasem bardziej – bo jest 24/7,
+wszędzie, nie możesz uciec.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+15/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+Cyberprzemoc to:
+Hejt w komentarzach
+Wykluczanie z grupy na Messengerze
+Rozsyłanie twoich prywatnych wiadomości
+Tworzenie fake'owych kont, żeby cię ośmieszyć
+Groźby, szantaż
+
+Co możesz zrobić?
+1. Nie odpowiadaj – hejter chce reakcji. Nie dawaj mu tej satysfakcji.
+2. Zrób screenshota – to dowód.
+3. Zablokuj i zgłoś – na każdej platformie jest opcja zgłoszenia.
+4. Powiedz dorosłemu – to NIE jest skarżenie, to proszenie o pomoc.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+16/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+Cyberprzemoc to przedłużenie relacji szkolnych. Dziecko może nie mówić, bo:
+Boi się, że zabierzecie telefon
+Wstydzi się
+Myśli, że samo sobie poradzi
+Obawia się, że będzie jeszcze gorzej
+
+🚩 Sygnały alarmowe – na co zwrócić uwagę:
+Zmiana nastroju po korzystaniu z telefonu
+Wycofanie się z aktywności online (zamknięcie kont)
+Problemy ze snem, koszmary
+Niechęć do szkoły, udawane choroby
+Nerwowość, drażliwość, płacz
+
+Jak reagować?
+
+✅ Słuchaj bez oceniania: "Dziękuję, że mi powiedziałeś/aś"
+✅ Nie zabieraj od razu telefonu – to ich okno na świat
+✅ Razem ustalcie plan: zgłoszenie do szkoły, zablokowanie, rozmowa z
+rodzicami sprawcy
+✅ Dokumentujcie: screenshoty, zapisane wiadomości
+❌ ❌ "To twoja wina!"
+❌ ❌ "Nie dramatyzuj!"
+❌ ❌ "Po prostu zablokuj i zapomnij"
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+17/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 7: Treści nieodpowiednie
+
+🔞
+
+DLA DZIECI (9–16 LAT)
+
+"Czasem w internecie możesz trafić na rzeczy, które są:
+Straszne (przemoc, brutalne obrazy)
+Smutne (filmy o samookaleczaniu, samobójstwie)
+Nieodpowiednie dla twojego wieku (pornografia, nagość)
+
+Co robisz, gdy to zobaczysz?
+1. Zamknij stronę / aplikację – natychmiast
+2. Powiedz rodzicowi – nie będziesz miał kłopotów za to, że powiesz
+3. Nie udostępniaj tego dalej (nawet jeśli koledzy mówią "wyślij dalej")
+
+⚠️ ZAPAMIĘTAJ
+To NIE jest twoja wina, że na coś trafiłeś. Algorytmy czasem pokazują złe
+rzeczy. Ważne, żebyś powiedział rodzicowi.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+18/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+Algorytmy rekomendują treści na podstawie kliknięć. Dziecko może
+przypadkowo trafić na:
+Treści pro-ana (promujące anoreksję)
+Samookaleczanie
+Pornografię
+Przemoc, brutalne sceny
+Treści nawołujące do samobójstwa
+
+Co możecie zrobić?
+1. Włączcie tryb ograniczony:
+YouTube → Ustawienia → Tryb ograniczony
+TikTok → Ustawienia → Dobrostan cyfrowy → Tryb ograniczony
+Instagram → Ustawienia → Prywatność
+2. Rozmawiajcie o tym, co dziecko ogląda – bez przesłuchania, z
+ciekawością:
+"Co ciekawego widziałeś dzisiaj?"
+"Kogo teraz śledzisz na TikToku?"
+3. Uczcie krytycznego myślenia:
+"Czy to, co widzisz, jest prawdziwe?"
+"Czy to jest zdrowe?"
+"Jak się czujesz po obejrzeniu tego?"
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+19/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ III: Bezpieczne korzystanie z
+internetu – zasady dla całej rodziny
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+20/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Czas: 25–30 minut
+
+Slajd 8: Hasła i loginy – twoja cyfrowa tożsamość
+
+🔐
+
+DLA DZIECI (9–16 LAT)
+
+"Hasło to jak klucz do twojego domu. Nie dajesz go każdemu, prawda?"
+
+Dobre hasło:
+Ma co najmniej 8 znaków (lepiej 12+)
+Ma wielkie i małe litery, cyfry, znaki specjalne
+NIE jest twoim imieniem, datą urodzenia, 12345678
+Przykład dobrego hasła:
+Kocham$Pizze2024!
+
+⚠️ ZASADA
+Nie udostępniaj hasła nawet najlepszemu przyjacielowi.
+Ludzie się kłócą, przyjaźnie się kończą – a twoje hasło zostaje u kogoś.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+21/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+Menedżer haseł – twój najlepszy przyjaciel:
+Wbudowany w przeglądarkę (Chrome, Safari, Firefox)
+Aplikacje: Bitwarden (darmowy), 1Password, LastPass
+Zasada: Każde konto = inne hasło
+(Jeśli jedno konto zostanie zhackowane, inne będą bezpieczne)
+
+Uwierzytelnianie dwuskładnikowe (2FA):
+Dodatkowy kod z SMS-a lub aplikacji (np. Google Authenticator)
+Nawet jeśli ktoś ukradnie hasło, nie wejdzie na konto
+Włącz 2FA na: Instagram, TikTok, Gmail, Discord, Snapchat
+
+DLA RODZICÓW
+
+Ważne uwagi:
+Nie udostępniajcie dzieciom swojego hasła do sklepu z aplikacjami bez
+nadzoru. Dzieci mogą przypadkowo (lub celowo) kupić coś drogiego.
+Włączcie 2FA na swoich kontach i pokażcie dzieciom, jak to działa.
+Modelujcie dobre praktyki: Jeśli wy używacie hasła 123456 , dziecko też tak
+zrobi.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+22/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 9: Co możesz, a czego nie możesz udostępniać w sieci
+
+📝
+
+DLA DZIECI (9–12 LAT)
+
+✅ MOŻESZ udostępnić
+Swoje hobby (np. "Lubię
+rysować")
+Ulubioną grę, film
+
+❌ NIE MOŻESZ udostępniać
+Pełnego imienia i nazwiska
+Adresu, nazwy szkoły
+Numeru telefonu, adresu e-mail
+
+Śmieszne memy
+
+Zdjęć z widocznym adresem
+
+Imię (bez nazwiska)
+
+(numer domu, nazwa ulicy)
+"Jestem sam w domu"
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+23/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+Test "Babci":
+Czy chciałbyś, żeby twoja babcia to zobaczyła?
+Jeśli nie – nie wrzucaj.
+
+Test "Za 5 lat":
+Czy za 5 lat będziesz żałować tego posta/zdjęcia?
+(Np. rekruterzy do pracy przeglądają social media.)
+
+⚠️ GEOLOKALIZACJA
+Wyłącz lokalizację w postach!
+Nie pokazuj, gdzie jesteś w czasie rzeczywistym
+Post "Jestem na wakacjach" = "Mój dom jest pusty"
+Możesz wrzucić zdjęcie z wakacji po powrocie
+
+DLA RODZICÓW – SHARENTING
+
+Sharenting = udostępnianie zdjęć dzieci przez rodziców
+Pytajcie dzieci o zgodę (zwłaszcza starsze): "Mogę wrzucić to zdjęcie?"
+Ustawienia prywatności: Sprawdźcie, kto widzi wasze posty (przyjaciele vs.
+publiczne)
+Nie wrzucajcie:
+Zdjęć z widocznym imieniem, nazwiskiem, adresem
+Zdjęć w sytuacjach krępujących (nocnik, płacz, karanie)
+Informacji o szkole, klasie, zajęciach pozalekcyjnych
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+24/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+ĆWICZENIE (5 MINUT)
+
+"Pokażę wam 5 postów. Powiedzcie w czacie: BEZPIECZNY czy
+NIEBEZPIECZNY?"
+1. "Idę do szkoły nr 15 w Warszawie!"
+
+❌ NIEBEZPIECZNY (nazwa szkoły + lokalizacja)
+2. "Uwielbiam pizzę!"
+✅ BEZPIECZNY
+3. Zdjęcie domu z widocznym numerem domu
+
+❌ NIEBEZPIECZNY (widoczny adres)
+4. "Mój numer telefonu: 123-456-789"
+❌ NIEBEZPIECZNY (dane osobowe)
+5. Mem z kotem
+✅ BEZPIECZNY
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+25/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 10: Zasady korzystania z urządzeń w domu
+
+🏠
+
+DLA DZIECI (9–16 LAT)
+
+Razem z rodzicami ustalcie:
+1. Gdzie korzystacie z telefonu/tabletu
+Np. nie w sypialni w nocy
+W miejscach wspólnych (salon, nie za zamkniętymi drzwiami)
+2. Kiedy jest czas offline
+Podczas posiłków
+Godzinę przed snem
+Podczas odrabiania lekcji (bez rozpraszaczy)
+3. Ile czasu dziennie
+Np. 2h w dni szkolne, 3h w weekend (to przykład – ustalcie swoje)
+Czas edukacyjny (nauka) nie wlicza się do limitu
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+26/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW – KONTROLA RODZICIELSKA "Z GŁOWĄ"
+
+Narzędzia techniczne:
+Google Family Link (Android)
+Screen Time (iOS)
+Kontrola w routerze (limity czasu, blokowanie stron)
+Aplikacje: Qustodio, Norton Family, Kaspersky Safe Kids
+
+⚠️ KLUCZOWE: TRANSPARENTNOŚĆ!
+Powiedzcie dziecku, że monitorujecie – nie róbcie tego po kryjomu.
+"Zainstalowaliśmy aplikację, która pomoże nam upewnić się, że jesteś
+bezpieczny. Nie chodzi o szpiegowanie, ale o ochronę."
+
+Zaufanie ≠ Naiwność
+Kontrola to nie szpiegowanie. To narzędzie do nauki odpowiedzialności.
+W miarę jak dziecko dorasta i pokazuje odpowiedzialność, poluzuj kontrolę.
+
+Strefy offline (dla całej rodziny!):
+
+✅ Telefony w koszyczku podczas kolacji
+✅ Brak ekranów 1h przed snem (dla wszystkich, także rodziców!)
+✅ "Dzień offline" raz w miesiącu (wycieczka bez telefonów)
+⚠️ MODELOWANIE
+Dzieci uczą się od was. Jeśli wy scrollujecie przy kolacji, one też będą.
+Bądźcie przykładem!
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+27/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 11: Rozmowa – najważniejsze narzędzie
+bezpieczeństwa
+
+💬
+
+DLA DZIECI (9–16 LAT)
+
+Jeśli coś w internecie sprawia, że czujesz się:
+
+😰 Przestraszony/a
+😢 Smutny/a
+😕 Zmieszany/a
+😣 Niekomfortowo
+
+👉 POWIEDZ RODZICOWI
+Nie będziesz miał kłopotów. Obiecuję.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+28/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW – JAK REAGOWAĆ, ŻEBY DZIECKO PRZYSZŁO NASTĘPNYM RAZEM
+
+❌ ŹLE (nie rób tego!)
+
+✅ DOBRZE (tak reaguj!)
+
+❌ "Mówiłem, żeby nie klikać!
+Zabraniam ci internetu!"
+❌ "To twoja wina!"
+❌ Krzyk, kara, zabieranie telefonu
+bez rozmowy
+❌ "Nie dramatyzuj!"
+❌ "Sama/sam się prosiłeś/aś!"
+
+✅ "Dziękuję, że mi powiedziałeś/aś.
+To było odważne."
+✅ "Razem to rozwiążemy."
+✅ "Co możemy zrobić, żeby to się
+nie powtórzyło?"
+✅ "Nie jesteś winny/a. To się
+zdarza."
+✅ "Zawsze możesz do mnie
+przyjść."
+
+Regularne "check-iny" (nie przesłuchania!):
+Raz w tygodniu: "Co ciekawego widziałeś w internecie?"
+Przy herbacie, w spokojnej atmosferze
+Bez telefonu w ręku (dajcie dziecku pełną uwagę)
+Słuchajcie z ciekawością, nie z podejrzeniem
+
+⚠️ KLUCZOWE PRZESŁANIE
+Jeśli dziecko przyszło do was z problemem – to sukces, nie porażka.
+Znaczy to, że mu zaufało. Nie zmarnujcie tej szansy złą reakcją.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+29/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ IV: Świat AI – nowy gracz w grze
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+30/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Czas: 25–30 minut
+
+Slajd 12: Czym jest AI i gdzie się z nią spotykasz
+
+🤖
+
+DLA DZIECI (9–16 LAT)
+
+AI (sztuczna inteligencja) to programy komputerowe, które potrafią:
+
+💬 Rozmawiać (chatboty jak ChatGPT, Snapchat AI, Character.AI)
+🎨 Tworzyć obrazki (DALL-E, Midjourney, Stable Diffusion)
+📺 Rekomendować filmy (Netflix, YouTube, TikTok)
+👤 Rozpoznawać twarze (filtry na Instagramie, Snapchacie)
+📝 Pomagać w nauce (tłumaczenia, wyjaśnianie, rozwiązywanie zadań)
+⚠️ ZAPAMIĘTAJ!
+AI to nie człowiek.
+Nie ma uczuć
+Nie "wie", kim jesteś
+Nie jest twoim przyjacielem
+AI to narzędzie – jak młotek albo kalkulator
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+31/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+AI uczy się na danych z internetu. Czasem te dane są:
+
+❌ Błędne (AI może podać nieprawdę jako fakt)
+❌ Stronnicze (uprzedzenia, stereotypy)
+❌ Nieaktualne (informacje sprzed lat)
+Zasada: AI może się mylić. Zawsze sprawdzaj informacje z AI w innych
+źródłach!
+
+DLA RODZICÓW
+
+"AI to nie science fiction – to codzienność waszych dzieci. Używają jej do:
+Nauki (wyjaśnianie trudnych tematów)
+Zabawy (tworzenie obrazków, rozmowy z chatbotami)
+Twórczości (pomoc w pisaniu opowiadań, tworzenie muzyki)
+Warto wiedzieć, jak AI działa, żeby móc z dziećmi o tym rozmawiać.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+32/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 13: Deepfake'i i dezinformacja
+
+🎭
+
+DLA DZIECI (9–12 LAT)
+
+Deepfake = fałszywy film lub zdjęcie stworzone przez komputer, które wygląda jak
+prawdziwe.
+Przykład:
+Film, w którym prezydent mówi coś, czego nigdy nie powiedział.
+Albo twoja twarz na ciele kogoś innego.
+
+⚠️ TO MOŻE BYĆ UŻYWANE DO:
+Okłamywania ludzi (fake newsy)
+Żartów (czasem nieszkodliwych, czasem krzywdzących)
+Szantażu
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+33/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+Deepfake'i mogą być używane do:
+
+🗳️ Fake newsów (polityka, celebryci)
+💰 Oszustw ("CEO firmy" dzwoni i prosi o przelew)
+😱 Szantażu (twoja twarz na nieodpowiednim filmie)
+😂 Żartów (czasem nieszkodliwych, czasem krzywdzących)
+Jak rozpoznać deepfake'a?
+
+🗣️ Dziwne ruchy ust – nie pasują do słów
+2. 👁️ Nienaturalne mruganie lub brak mrugania
+3. 🌑 Dziwne cienie, rozmyte krawędzie twarzy
+4. 🔍 Sprawdź źródło: Czy to oficjalny kanał? Czy inne media o tym piszą?
+5. 🔎 Odwrotne wyszukiwanie obrazu (Google Images)
+1.
+
+DLA RODZICÓW
+
+Deepfake'i to realne zagrożenie. Wasze dziecko może być:
+Ofiarą – ktoś użyje jego zdjęcia do stworzenia deepfake'a
+Nieświadomym rozpowszechniaczem – udostępni fake'a, myśląc, że to prawda
+Uczcie krytycznego myślenia:
+"Skąd to wiesz?"
+"Kto to opublikował?"
+"Czy to potwierdza inne źródło?"
+"Czy to brzmi realistycznie?"
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+34/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+ĆWICZENIE (3 MINUTY)
+
+Pokaż 2 filmy:
+1. Jeden prawdziwy
+2. Jeden deepfake
+Niech uczestnicy zgadną, który jest fake'iem.
+Gdzie znaleźć przykłady (edukacyjne)?
+YouTube: "deepfake examples", "how to spot deepfakes"
+Strona: detectfakes.media.mit.edu
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+35/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 14: Prywatność a AI – czego nie mówisz chatbotowi
+
+🔒
+
+DLA DZIECI (9–16 LAT)
+
+Chatbot (np. ChatGPT, Snapchat AI, Character.AI) to super narzędzie, ale:
+
+❌ NIE PODAWAJ MU:
+Swojego prawdziwego imienia i nazwiska
+Adresu, nazwy szkoły
+Numeru telefonu, e-maila
+PESEL-u, danych karty rodzica
+Prywatnych sekretów (AI może zapisywać rozmowy)
+
+Zapamiętaj: AI to nie terapeuta, nie lekarz, nie przyjaciel.
+To program komputerowy.
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+AI uczy się na tym, co jej powiesz. Twoje dane mogą:
+Trafić do bazy treningowej (choć firmy twierdzą, że anonimizują)
+Być odczytane przez moderatorów (ludzi sprawdzających rozmowy)
+Wyciec w przypadku hacku (historia zdarzeń: OpenAI, Snapchat)
+Zasada: Traktuj AI jak publiczny czat.
+Nie pisz niczego, czego nie chciałbyś zobaczyć na billboardzie.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+36/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+Dzieci używają AI do:
+Odrabiania lekcji
+Rozmów "dla zabawy" (czasem o problemach osobistych)
+Tworzenia memów, obrazków
+
+⚠️ UPEWNIJCIE SIĘ, ŻE WIEDZĄ:
+AI to nie terapeuta (jeśli dziecko ma problemy, niech rozmawia z
+człowiekiem)
+AI to nie wyszukiwarka medyczna (nie diagnozuje chorób)
+Regulaminy AI często wymagają 13+ lub 18+ lat
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+37/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 15: AI a szkoła – kiedy pomaga, kiedy szkodzi
+
+🎓
+
+DLA DZIECI (9–12 LAT)
+
+✅ AI MOŻE pomóc
+
+❌ AI NIE POWINNA
+
+Wytłumaczyć trudne zadanie z
+
+Zrobić za ciebie całego
+
+matmy
+
+wypracowania (nauczyciel to
+
+Przetłumaczyć tekst
+Dać pomysły na projekt
+Sprawdzić pisownię
+
+pozna!)
+Rozwiązać wszystkie zadania za
+ciebie (niczego się nie nauczysz)
+
+DLA MŁODZIEŻY (13–16 LAT)
+
+Mądre użycie AI:
+
+✅ "Wytłumacz mi, jak działa fotosynteza"
+✅ "Daj mi 3 pomysły na tytuł mojego eseju"
+✅ "Sprawdź gramatykę w tym tekście"
+Głupie użycie AI:
+
+❌ "Napisz mi wypracowanie o Mickiewiczu" (i skopiowanie bez zmian)
+❌ "Zrób mi prezentację na temat..." (i oddanie jako swojej)
+⚠️ DLACZEGO TO WAŻNE?
+Nauczyciele używają detektorów AI (np. GPTZero, Turnitin)
+Ściąganie = brak nauki = problemy na egzaminach
+Umiejętność samodzielnego myślenia to twoja supermoc
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+38/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+AI to narzędzie, nie nauczyciel. Zachęcajcie dzieci do:
+1. Używania AI jako "korepetytora" (zadawanie pytań, wyjaśnianie)
+2. Nie jako "wykonawcy" (robienie za nie)
+Pytania do dziecka:
+"Czy rozumiesz, co AI ci napisała?"
+"Czy potrafisz to wytłumaczyć swoimi słowami?"
+"Co nowego się nauczyłeś/aś?"
+
+Rozmawiajcie z nauczycielami o polityce szkoły wobec AI.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+39/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ V: Co robić, gdy coś się stanie?
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+40/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Czas: 15–20 minut
+
+Slajd 16: Dla dzieci – Trzy kroki ratunkowe
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+🆘
+
+41/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA DZIECI (9–16 LAT)
+
+🚨 TRY KROKI RATUNKOWE 🚨
+
+1
+
+5
+
+9
+
+🛑 KROK 1: PRZESTAŃ
+2
+
+Nie odpisuj
+
+3
+
+Nie klikaj dalej
+
+4
+
+Nie udostępniaj
+
+6
+
+To dowód (jeśli umiesz – jeśli nie, nie martw się)
+
+7
+
+Telefon: przycisk zasilania + głośność
+
+8
+
+Komputer: Print Screen / Cmd+Shift+4 (Mac)
+
+📸 KROK 2: ZRÓB SCREENSHOTA
+
+🗣️ KROK 3: POWIEDZ DOROSŁEMU
+10 Rodzic
+11 Nauczyciel
+12 Pedagog szkolny
+
+13 116 111 – Telefon Zaufania dla Dzieci
+To NIE jest skarżenie – to proszenie o pomoc!
+
+⚠️ ZAPAMIĘTAJ
+NIE JESTEŚ WINNY/A za to, co się stało.
+Zawsze możesz przyjść po pomoc. Zawsze.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+42/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 17: Dla rodziców – Jak reagować na konkretne
+sytuacje
+
+🛡️
+
+SCENARIUSZ 1: CYBERPRZEMOC / HEJT
+
+1. Słuchaj, nie oceniaj: "Dziękuję, że mi powiedziałeś/aś"
+2. Zrób screenshoty (dowód)
+3. Zgłoś na platformie:
+Instagram: Zgłoś → Nękanie lub bullying
+TikTok: Przytrzymaj komentarz → Zgłoś
+Snapchat: Naciśnij i przytrzymaj → Zgłoś
+4. Rozważ kontakt ze szkołą (jeśli sprawca to kolega z klasy)
+5. Nie zmuszaj dziecka do "odpuszczenia" – to boli, trzeba to przepracować
+
+SCENARIUSZ 2: KONTAKT Z NIEZNAJOMYM / GROOMING
+
+1. Zachowaj spokój – dziecko nie jest winne
+2. Zabezpiecz dowody:
+Screenshoty wiadomości
+Zapisz profil sprawcy (nazwa użytkownika, zdjęcie)
+NIE usuwaj rozmów (to dowód dla policji)
+3. Zgłoś na policję – wydział do walki z cyberprzestępczością
+4. Zablokuj kontakt
+5. Zmiana ustawień prywatności: Kto może pisać do dziecka?
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+43/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+SCENARIUSZ 3: WYSŁANE/OTRZYMANE NAGIE ZDJĘCIA (SEXTING)
+
+⚠️ TO JEST POWAŻNA SYTUACJA PRAWNA
+Posiadanie/rozsyłanie zdjęć nieletnich to przestępstwo – nawet jeśli dziecko
+wysłało swoje własne zdjęcie.
+
+1. Nie karć dziecka – może być ofiarą szantażu
+2. Zgłoś na policję natychmiast
+3. Skontaktuj się ze szkołą (jeśli zdjęcia krążą wśród uczniów)
+4. Wsparcie psychologiczne dla dziecka (może czuć wstyd, lęk)
+5. Zablokuj sprawcę na wszystkich platformach
+
+SCENARIUSZ 4: UZALEŻNIENIE OD GIER/SCROLLOWANIA
+
+🚩 Objawy uzależnienia:
+Zaniedbywanie obowiązków (szkoła, dom)
+Drażliwość, agresja po odebraniu urządzenia
+Kłamstwa o czasie spędzonym online
+Wycofanie się z życia społecznego offline
+Problemy ze snem (gra/scrolluje w nocy)
+1. Ustal limity (razem z dzieckiem, nie jednostronnie)
+2. Zaproponuj alternatywy (sport, hobby offline, wspólne aktywności)
+3. Znajdź przyczyn ę: Ucieczka od problemów? Nuda? Presja rówieśników?
+4. Jeśli poważne – konsultacja z psychologiem/terapeutą specjalizującym się w
+uzależnieniach behawioralnych
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+44/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 18: Gdzie szukać pomocy – numery i linki
+
+📞
+
+DLA DZIECI I MŁODZIEŻY
+
+📞 116 111 – Telefon Zaufania dla Dzieci i Młodzieży
+Bezpłatny, anonimowy, całodobowy (24/7)
+Możesz dzwonić z każdego telefonu
+Czat online: 116111.pl (jeśli wolisz pisać niż mówić)
+
+💻 Helpline.org.pl
+Pomoc w problemach związanych z internetem
+Zgłaszanie cyberprzemocy, niebezpiecznych treści
+
+🚨 Dyzurnet.pl
+Zgłaszanie nielegalnych treści w internecie
+Pornografia dziecięca, przemoc, rasizm
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+45/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+📞 800 12 12 12 – Fundacja Dajemy Dzieciom Siłę
+Pomoc w sytuacjach przemocy wobec dzieci
+Poradnictwo dla rodziców
+Bezpłatny, anonimowy
+
+🚔 Policja – Wydział Cyberprzestępczości
+Każda komenda wojewódzka ma wydział do walki z cyberprzestępczością
+Zgłaszanie: grooming, sexting, szantaż, oszustwa
+
+🌐 Dodatkowe zasoby:
+NASK.pl – materiały edukacyjne, kampanie
+Sieciaki.pl – bezpieczeństwo dzieci w sieci
+Saferinternet.pl – porady, artykuły
+Dzieckowsieci.pl – przewodnik dla rodziców
+Niebieskalinia.pl – pomoc w sytuacjach przemocy domowej
+Cert.pl – reagowanie na incydenty bezpieczeństwa
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+46/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ VI: Tworzymy rodzinne zasady
+bezpieczeństwa
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+47/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Czas: 15–20 minut
+
+Slajd 19: Warsztat – Wasza rodzinna umowa cyfrowa
+
+📝
+
+ĆWICZENIE WARSZTATOWE (10–15 MINUT)
+
+Prowadzący:
+"Teraz czas na was! Przez następne 10 minut, rodzice i dzieci razem
+wypracujcie 5–10 zasad, które będą obowiązywać w waszym domu."
+Podział na breakout rooms (opcjonalnie):
+Każda rodzina w osobnym pokoju (jeśli platforma pozwala)
+Lub wszyscy pracują razem, a potem dzielą się w czacie
+
+PRZYKŁADOWE ZASADY – INSPIRACJA (POKAŻ NA SLAJDZIE)
+
+✅ Dla dzieci:
+✅ Zawsze mówię rodzicowi, jeśli ktoś nowy pisze do mnie w sieci
+✅ Nie podaję swojego adresu, numeru telefonu ani nazwy szkoły
+✅ Nie wysyłam swojego zdjęcia osobie, której nie znam z prawdziwego życia
+✅ Jeśli coś w internecie sprawia, że czuję się niekomfortowo, mówię o tym
+✅ Nie wpisuję danych osobowych do chatbotów AI
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+48/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+✅ DLA RODZICÓW:
+
+✅ Nie wrzucam zdjęć dziecka bez zapytania go o zgodę
+✅ Regularnie rozmawiam z dzieckiem o tym, co robi w internecie (bez
+przesłuchania)
+✅ Nie zabieram telefonu jako kary za to, że dziecko powiedziało mi o problemie
+✅ Modeluję zdrowe korzystanie z technologii (nie scrolluję przy kolacji)
+✅ Włączam kontrolę rodzicielską transparentnie (dziecko wie, że monitoruję)
+✅ DLA CAŁEJ RODZINY:
+
+✅ Telefony w koszyczku podczas posiłków
+✅ Brak ekranów 1h przed snem
+✅ Wspólny "dzień offline" raz w miesiącu (np. wycieczka bez telefonów)
+✅ Wzajemny szacunek – nie oceniamy, słuchamy
+PO 10 MINUTACH:
+
+"Kto chce podzielić się swoimi zasadami?" (Kilka rodzin dzieli się w czacie lub na
+głos.)
+Prowadzący docenia różnorodność:
+"Świetnie! Widzicie, że każda rodzina jest inna. Nie ma jednych 'idealnych'
+zasad. Ważne, żeby były realistyczne, wykonalne i zaakceptowane przez
+wszystkich."
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+49/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 20: Checklist do wydrukowania
+
+✅
+
+PROWADZĄCY:
+
+"Przygotowałem dla was checklistę, którą możecie wydrukować i powiesić na
+lodówce. Wyślę ją na czacie / mailem po szkoleniu."
+
+✅ NASZA RODZINNA UMOWA CYFROWA
+
+📱 Zasady dla dzieci:
+✅ Nie podaję danych osobowych (adres, telefon, szkoła, PESEL)
+✅ Nie rozmawiam z nieznajomymi w internecie (gry, czaty)
+✅ Nie klikam podejrzanych linków ("Wygrałeś nagrodę!")
+✅ Jeśli coś jest niepokojące, mówię rodzicowi
+✅ Nie udostępniam haseł (nawet przyjaciołom)
+✅ Nie wysyłam zdjęć osobom, których nie znam z prawdziwego życia
+✅ Nie wpisuję prawdziwych danych do AI
+✅ Mam prawo powiedzieć "nie" i zablokować kogoś
+👨‍👩‍👧‍👦 Zasady dla rodziców:
+✅ Pytam dziecko o zgodę przed wrzuceniem jego zdjęcia
+✅ Rozmawiam regularnie o internecie (bez przesłuchania)
+✅ Nie karzę za szczerość (jeśli dziecko powie o problemie)
+✅ Włączam kontrolę rodzicielską transparentnie
+✅ Daję przykład (zdrowe korzystanie z technologii)
+✅ Słucham z empatią, nie oceniam
+✅ Reaguję spokojnie w sytuacjach kryzysowych
+🏠 Zasady dla całej rodziny:
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+50/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+✅ Telefony w koszyczku podczas posiłków
+✅ Brak ekranów 1h przed snem
+✅ Wspólny czas offline (np. gry planszowe, spacer)
+✅ Wzajemny szacunek – słuchamy siebie nawzajem
+✅ "Pogadanki cyfrowe" raz w tygodniu – 10 min rozmowy o internecie
+Data: _______________
+Podpisy:
+Dziecko: ___________
+Rodzic: ___________
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+51/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+🕐 CZĘŚĆ VII: Podsumowanie i Q&A
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+52/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Czas: 10–15 minut
+
+Slajd 21: 3 najważniejsze rzeczy – zapamiętaj to!
+
+🎯
+
+DLA DZIECI
+
+🔑 3 KLUCZOWE ZASADY
+1. Nieznajomy w internecie = nieznajomy na ulicy.
+Nie ufaj, nie podawaj danych.
+2. Jeśli coś jest niepokojące – powiedz rodzicowi.
+Nie będziesz miał kłopotów.
+3. AI to narzędzie, nie przyjaciel.
+Nie podawaj jej swoich prawdziwych danych.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+53/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+DLA RODZICÓW
+
+🔑 3 KLUCZOWE ZASADY
+1. Rozmowa > kontrola.
+Zaufanie to fundament bezpieczeństwa.
+2. Bądź wzorem.
+Dzieci uczą się od was – modelujcie zdrowe zachowania.
+3. Reaguj spokojnie.
+Jeśli dziecko przyszło z problemem – to sukces, nie porażka.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+54/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 22: Co dalej? – Następne kroki
+
+🚀
+
+DLA WSZYSTKICH UCZESTNIKÓW
+
+1
+
+Wydrukujcie checklistę i powieście ją w widocznym miejscu (np. na lodówce).
+
+2
+
+Ustalcie "pogadanki cyfrowe"
+
+6
+
+10
+
+14
+
+3
+
+Raz w tygodniu, 10 minut, przy herbacie
+
+4
+
+"Co nowego w twoim internecie?"
+
+5
+
+Bez przesłuchania, z ciekawością
+
+Śledźcie aktualne zagrożenia:
+7
+
+NASK.pl – kampanie edukacyjne
+
+8
+
+Dyzurnet.pl – zgłaszanie treści
+
+9
+
+Fundacja Dajemy Dzieciom Siłę – pomoc w sytuacjach przemocy
+
+Uczcie się razem
+11
+
+Nowa gra? Nowa aplikacja? Poznajcie ją wspólnie!
+
+12
+
+Dziecko niech wam pokaże, jak działa TikTok, Discord, Roblox
+
+13
+
+Wy pokażcie dziecku, jak sprawdzać fakty, jak rozpoznać phishing
+
+Aktualizujcie zasady
+15
+
+Rodzinna umowa to żywy dokument
+
+16
+
+Co 3–6 miesięcy: "Czy te zasady nadal mają sens?"
+
+17
+
+Dostosowujcie je do wieku i dojrzałości dziecka
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+55/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 23: Pytania i odpowiedzi
+
+❓
+
+PROWADZĄCY:
+
+"Teraz czas na wasze pytania! Piszcie w czacie lub włączcie mikrofon."
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+56/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+TYPOWE PYTANIA – PRZYGOTUJ ODPOWIEDZI
+
+Q: Od jakiego wieku dziecko może mieć telefon?
+A: Nie ma jednej odpowiedzi. Zależy od dojrzałości dziecka. Niektóre dzieci są
+gotowe w wieku 10 lat, inne dopiero w wieku 13–14 lat. Jeśli dajecie telefon:
+Ustalcie zasady od razu (kontrola rodzicielska, limity czasu)
+Zacznijcie od telefonu bez internetu / z ograniczonym dostępem
+Stopniowo zwiększajcie swobodę w miarę wzrostu odpowiedzialności
+Q: Czy powinienem czytać wiadomości dziecka?
+A: To zależy od wieku:
+Młodsze dzieci (9–12): Tak, ale transparentnie. "Będę sprawdzać, żeby upewnić
+się, że jesteś bezpieczny."
+Starsze (13+): Raczej nie, chyba że są sygnały alarmowe (zmiana zachowania,
+wycofanie się). Zaufanie jest kluczowe w tym wieku.
+Kompromis: Zamiast czytać, rozmawiajcie. Budujcie relację, w której dziecko
+samo wam powie, co się dzieje.
+Q: Jak rozmawiać o pornografii z dzieckiem?
+A: Spokojnie, bez wstydu:
+Młodsze dzieci: "W internecie są treści dla dorosłych. Jeśli na coś trafisz,
+możesz mi powiedzieć – nie będziesz miał kłopotów."
+Starsze dzieci: Rozmowa o realizmie. "Porno ≠ prawdziwe relacje. To fantasy,
+nie instrukcja. Prawdziwe relacje opierają się na szacunku, zgodzie,
+komunikacji."
+Nie karźcie za przypadkowe trafienie – to się zdarza.
+Q: Co zrobić, jeśli dziecko jest uzależnione od gier?
+A:
+Ustal limity (razem!), nie jednostronnie
+Zaproponuj alternatywy (sport, hobby, wspólne aktywności)
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+57/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Szukaj przyczyny: Ucieczka od problemów (szkoła, relacje)? Nuda? Presja
+rówieśników?
+Jeśli poważne (zaniedbywanie szkoły, agresja, izolacja) – konsultacja z
+psychologiem/terapeutą
+Q: Czy kontrola rodzicielska to dobry pomysł?
+A: Tak, ale z transparentnością i równowagą:
+Dla młodszych dzieci (9–12): Tak, zdecydowanie. Filtrowanie treści, limity
+czasu, monitorowanie aktywności.
+Dla starszych (13+): Poluzuj kontrolę stopniowo. Daj dziecku przestrzeń, ale
+bądź w kontakcie.
+Kluczowe: Powiedz dziecku, że monitorujesz. "To nie szpiegowanie, to ochrona."
+Kontrola ≠ zaufanie. Buduj oba.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+58/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+Slajd 24: Dziękuję!
+
+🙏
+
+Dziękuję za udział!
+
+🎉
+
+Pamiętajcie:
+Internet to wspaniałe miejsce, jeśli wiemy, jak się w nim poruszać.
+Bądźcie bezpieczni, bądźcie mądrzy, bądźcie ze sobą w
+kontakcie.
+
+📧 Kontakt:
+E-mail: [twój e-mail prowadzącego]
+Materiały do pobrania: [link do PDF-ów]
+
+📦 Materiały, które otrzymacie:
+✅ Checklist rodzinny – "Nasza rodzinna umowa cyfrowa"
+🎣 Infografika "Jak rozpoznać phishing"
+📞 Lista numerów alarmowych i linków pomocowych
+🎥 Link do nagrania szkolenia (jeśli nagrywaliśmy)
+Do zobaczenia!
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+👋
+
+59/63
+
+12/1/25, 10:57 PM
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+60/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+📦 Materiały do przygotowania przed szkoleniem
+1. Prezentacja (slajdy) – 24 slajdy
+Możesz użyć: Canva, PowerPoint, Google Slides
+Kolorowe, czytelne, z emoji i grafikami
+Duże czcionki (minimum 24pt dla treści, 36pt+ dla nagłówków)
+Wysoky kontrast (ciemny tekst na jasnym tle)
+Nie za dużo tekstu na slajdzie (maksymalnie 5–7 punktów)
+
+2. PDF "Checklist rodzinny" – do wydruku
+Treść: "Nasza rodzinna umowa cyfrowa" (patrz Slajd 20)
+Format A4
+Czytelne czcionki
+Miejsce na podpisy
+Można dodać grafikę (emoji, ikony)
+
+3. PDF "Jak rozpoznać phishing" – infografika
+Zawartość:
+Definicja phishingu
+7 czerwonych flag (co to jest, jak wygląda)
+Przykłady prawdziwe vs. fałszywe
+Co zrobić, gdy dostaniesz podejrzaną wiadomość
+Narzędzia: Canva (szablony infografik), Adobe Illustrator, Figma
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+61/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+4. PDF "Numery alarmowe i linki pomocowe"
+Zawartość (patrz Slajd 18):
+116 111 – Telefon Zaufania dla Dzieci
+800 12 12 12 – Fundacja Dajemy Dzieciom Siłę
+Policja – Wydział Cyberprzestępczości
+Helpline.org.pl, Dyzurnet.pl, NASK.pl
+Inne zasoby (Sieciaki.pl, Saferinternet.pl, Dzieckowsieci.pl)
+
+5. Przykłady deepfake'ów (filmy z YouTube – edukacyjne)
+Wyszukaj na YouTube:
+"deepfake examples"
+"how to spot deepfakes"
+"deepfake detection tutorial"
+Lub odwiedź: detectfakes.media.mit.edu
+Przygotuj 2 filmy: 1 prawdziwy, 1 deepfake – do ćwiczenia z uczestnikami.
+
+6. Ankieta Mentimeter (opcjonalnie – do interakcji)
+Stwórz ankietę na Mentimeter.com z pytaniami:
+"Kto z was korzysta z TikToka?"
+"Kto gra w Roblox, Minecraft, Fortnite?"
+"Kto rozmawiał kiedyś z chatbotem AI?"
+"Rodzice: Czy wiecie, na jakich platformach wasze dzieci spędzają najwięcej czasu?"
+Lub po prostu używaj czatu i podnoszenia rąk w platformie wideokonferencyjnej.
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+62/63
+
+12/1/25, 10:57 PM
+
+Szkolenie: Bezpieczeństwo w sieci i w świecie AI
+
+7. Kahoot (opcjonalnie – quiz na zakończenie)
+Stwórz krótki quiz (10 pytań) na Kahoot.com:
+"Czy powinienem podać swój adres nieznajomemu w grze?" (NIE)
+"Co to jest phishing?" (Oszustwo w internecie)
+"Co zrobić, gdy dostanę wiadomość 'Wygrałeś iPhone'a'?" (Nie klikać, powiedzieć
+rodzicowi)
+"Czy AI może się mylić?" (TAK)
+"Co to jest deepfake?" (Fałszywy film stworzony przez komputer)
+
+✅ Szkolenie gotowe do przeprowadzenia!
+Ten dokument zawiera kompletny scenariusz wszystkich 24 slajdów,
+wraz z materiałami dla dzieci, rodziców, ćwiczeniami i przykładami.
+Powodzenia w prowadzeniu szkolenia!
+
+file:///home/ubuntu/szkolenie_bezpieczenstwo_html.html
+
+🚀
+
+63/63
+
+

@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
 import bcrypt from 'bcryptjs'
+import { sendWelcomeEmailAdmin } from '@/lib/email'
 
 export const dynamic = 'force-dynamic'
 
@@ -107,9 +108,17 @@ export async function POST(request: Request) {
       }
     })
 
+    // Send welcome email with credentials
+    try {
+      await sendWelcomeEmailAdmin(email.toLowerCase(), password, `${firstName} ${lastName}`)
+    } catch (emailError) {
+      console.error('Error sending welcome email:', emailError)
+      // Don't fail the request if email fails
+    }
+
     return NextResponse.json(
       { 
-        message: 'Użytkownik utworzony pomyślnie',
+        message: 'Użytkownik utworzony pomyślnie. Email z danymi logowania został wysłany.',
         user
       },
       { status: 201 }

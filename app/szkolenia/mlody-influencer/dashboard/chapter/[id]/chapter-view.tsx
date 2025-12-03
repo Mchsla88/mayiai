@@ -18,7 +18,7 @@ import {
   Home,
   X,
 } from 'lucide-react';
-import { Chapter, courseParts, chapters } from '@/lib/course-data-mlody';
+import { Chapter, courseParts, chapters } from '@/lib/course-data';
 import { Slide } from '@/lib/content-parser';
 import { toast } from 'sonner';
 

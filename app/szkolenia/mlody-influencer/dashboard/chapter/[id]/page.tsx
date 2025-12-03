@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { chapters } from '@/lib/course-data-mlody';
+import { chapters } from '@/lib/course-data';
 import { getChapterSlides } from '@/lib/content-parser';
 import { ChapterView } from './chapter-view';
 

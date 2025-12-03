@@ -170,8 +170,14 @@ export default function Header() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link href="/dashboard" className="flex items-center">
-                      <Settings className="mr-2 h-4 w-4" />
+                      <User className="mr-2 h-4 w-4" />
                       Panel użytkownika
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/dashboard/settings" className="flex items-center">
+                      <Settings className="mr-2 h-4 w-4" />
+                      Ustawienia
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
@@ -296,6 +302,13 @@ export default function Header() {
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                       >
                         Panel użytkownika
+                      </Link>
+                      <Link
+                        href="/dashboard/settings"
+                        onClick={closeMenu}
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                      >
+                        Ustawienia
                       </Link>
                       <Link
                         href="/ebook"

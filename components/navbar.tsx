@@ -30,7 +30,7 @@ const navigation = [
   { name: 'Strona Główna', href: '/' },
   { name: 'O Nas', href: '/o-nas' },
   { name: 'Oferta', href: '/oferta' },
-  { name: 'Szkolenia', href: '/szkolenia' },
+  { name: 'Twoje Szkolenia', href: '/szkolenia' },
   { name: 'Blog', href: '/blog' },
   { name: 'Kontakt', href: '/kontakt' }
 ];
@@ -132,8 +132,14 @@ export function Navbar() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link href="/dashboard" className="flex items-center">
-                      <Settings className="mr-2 h-4 w-4" />
+                      <BookOpen className="mr-2 h-4 w-4" />
                       Panel użytkownika
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/dashboard/settings" className="flex items-center">
+                      <Settings className="mr-2 h-4 w-4" />
+                      Ustawienia
                     </Link>
                   </DropdownMenuItem>
                   {session.user.isAdmin && (
@@ -215,6 +221,13 @@ export function Navbar() {
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                       >
                         Panel użytkownika
+                      </Link>
+                      <Link
+                        href="/dashboard/settings"
+                        onClick={closeMenu}
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                      >
+                        Ustawienia
                       </Link>
                       {session.user.isAdmin && (
                         <Link

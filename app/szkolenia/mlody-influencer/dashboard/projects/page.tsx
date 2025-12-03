@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Palette, Star } from 'lucide-react';
-import { projects } from '@/lib/course-data-mlody';
+import { projects } from '@/lib/course-data';
 
 export default function ProjectsPage() {
   const router = useRouter();

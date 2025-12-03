@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { DashboardNavbar } from '@/components/dashboard/navbar';
 import { ProgressCard } from '@/components/dashboard/progress-card';
-import { chapters, courseParts } from '@/lib/course-data-mlody';
+import { chapters, courseParts } from '@/lib/course-data';
 import { motion } from 'framer-motion';
 
 interface ChapterProgress {

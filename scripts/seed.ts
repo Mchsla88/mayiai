@@ -590,6 +590,67 @@ Skuteczny monitoring i optymalizacja strategii wymagają zarówno sztywnej dyscy
   });
 
   console.log('✅ Sample data created');
+
+  // Create trainings
+  console.log('🌱 Adding trainings...');
+
+  const mlodyInfluencer = await prisma.training.upsert({
+    where: { slug: 'mlody-influencer' },
+    update: {},
+    create: {
+      title: 'Młody Influencer',
+      slug: 'mlody-influencer',
+      shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
+      fullDescription: 'Kompleksowe szkolenie dla młodych twórców internetowych, którzy chcą nauczyć się tworzyć profesjonalny content z wykorzystaniem narzędzi AI.',
+      price: 299.00,
+      duration: '6 tygodni',
+      level: 'INTERMEDIATE',
+      imageUrl: null,
+      isActive: true,
+      orderIndex: 1
+    }
+  });
+
+  console.log('✅ Szkolenie "Młody Influencer" dodane');
+
+  const bezpieczenstwoAI = await prisma.training.upsert({
+    where: { slug: 'bezpieczenstwo-w-sieci-i-ai' },
+    update: {},
+    create: {
+      title: 'Bezpieczeństwo w sieci i w świecie AI',
+      slug: 'bezpieczenstwo-w-sieci-i-ai',
+      shortDescription: 'Kompleksowy przewodnik po bezpieczeństwie online dla dzieci i rodziców',
+      fullDescription: 'Szkolenie online dla dzieci 9-16 lat i ich rodziców. Nauczysz się rozpoznawać zagrożenia w sieci, bezpiecznie korzystać z internetu i AI, chronić dane osobowe.',
+      price: 199.00,
+      duration: '90-120 minut',
+      level: 'BEGINNER',
+      imageUrl: null,
+      isActive: true,
+      orderIndex: 2
+    }
+  });
+
+  console.log('✅ Szkolenie "Bezpieczeństwo w sieci i AI" dodane');
+
+  const nauczyciele = await prisma.training.upsert({
+    where: { slug: 'nauczyciele' },
+    update: {},
+    create: {
+      title: 'Szkolenie dla Nauczycieli',
+      slug: 'nauczyciele',
+      shortDescription: 'Wykorzystanie AI w edukacji',
+      fullDescription: 'Szkolenie dla nauczycieli na temat wykorzystania narzędzi AI w codziennej pracy edukacyjnej.',
+      price: 249.00,
+      duration: '4 tygodnie',
+      level: 'INTERMEDIATE',
+      imageUrl: null,
+      isActive: true,
+      orderIndex: 3
+    }
+  });
+
+  console.log('✅ Szkolenie "Nauczyciele" dodane');
+
   console.log('🎉 Database seeded successfully');
 }
 

@@ -96,8 +96,35 @@ export interface UserTrainingAccess {
 /**
  * Get all trainings a user has access to
  * Sources: UserTraining (admin granted) + Order (user purchased)
+ * Admins have access to ALL trainings automatically
  */
 export async function getUserTrainings(userId: string): Promise<UserTrainingAccess[]> {
+  // Check if user is admin
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { isAdmin: true }
+  })
+
+  // If admin, return ALL active trainings
+  if (user?.isAdmin) {
+    const allTrainings = await prisma.training.findMany({
+      where: { isActive: true },
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        shortDescription: true,
+        imageUrl: true
+      }
+    })
+
+    return allTrainings.map(training => ({
+      ...training,
+      source: 'granted' as const
+    }))
+  }
+
+  // Non-admin users: continue with existing logic
   const trainings: UserTrainingAccess[] = []
 
   // Get admin-granted trainings from UserTraining
@@ -171,8 +198,18 @@ export async function getUserTrainings(userId: string): Promise<UserTrainingAcce
 
 /**
  * Check if user has access to a specific training by slug
+ * Admins always have access
  */
 export async function checkUserAccess(userId: string, trainingSlug: string): Promise<boolean> {
+  // Check if user is admin
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { isAdmin: true }
+  })
+
+  // Admins always have access
+  if (user?.isAdmin) return true
+
   // Get training ID from slug
   const training = await prisma.training.findUnique({
     where: { slug: trainingSlug },
