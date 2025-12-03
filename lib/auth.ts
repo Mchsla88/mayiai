@@ -83,6 +83,7 @@ export const authOptions: NextAuthOptions = {
       return baseUrl
     },
     async jwt({ token, user }) {
+      console.log('[AUTH_DEBUG] JWT Callback', { hasUser: !!user, tokenSub: token.sub });
       if (user) {
         token.isAdmin = user.isAdmin;
         token.role = user.role;
@@ -93,6 +94,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
+      console.log('[AUTH_DEBUG] Session Callback', { hasToken: !!token, sessionUser: !!session.user });
       if (session.user) {
         session.user.id = token.sub!;
         session.user.isAdmin = token.isAdmin as boolean;
