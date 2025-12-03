@@ -26,7 +26,7 @@ const SLIDE_ICONS = ['🌟', '💡', '🎯', '🚀', '✨', '🎨', '📚', '�
  * Extract content for a specific chapter from course.md
  */
 export async function getChapterContent(chapterNum: number): Promise<string> {
-  const filePath = path.join(process.cwd(), 'public', 'content', 'course.md');
+  const filePath = path.join(process.cwd(), 'public', 'trainings', 'mlody-influencer-content.md');
   const content = fs.readFileSync(filePath, 'utf-8');
 
   // Find the chapter heading
@@ -360,7 +360,7 @@ function groupBlocksIntoSlides(blocks: ContentBlock[], chapterNum: number): Slid
  * Get introduction content
  */
 export async function getIntroductionContent(): Promise<string> {
-  const filePath = path.join(process.cwd(), 'public', 'content', 'course.md');
+  const filePath = path.join(process.cwd(), 'public', 'trainings', 'mlody-influencer-content.md');
   const content = fs.readFileSync(filePath, 'utf-8');
 
   // Extract content between "## Wstęp" and "## Część I:" (exact match with colon)
@@ -378,7 +378,7 @@ export async function getIntroductionContent(): Promise<string> {
  * Get appendices content
  */
 export async function getAppendicesContent(): Promise<string> {
-  const filePath = path.join(process.cwd(), 'public', 'content', 'course.md');
+  const filePath = path.join(process.cwd(), 'public', 'trainings', 'mlody-influencer-content.md');
   const content = fs.readFileSync(filePath, 'utf-8');
 
   const appendicesStart = content.indexOf('## Załączniki');

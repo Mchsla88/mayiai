@@ -10,7 +10,7 @@ import Image from 'next/image'
 const trainings = [
   {
     id: 1,
-    title: 'Łatwa Szkoła z AI',
+    title: 'Nauka z AI',
     icon: BookOpen,
     description: 'Jak wykorzystać AI do efektywnej nauki i odrabiania lekcji.',
     color: 'from-blue-400 to-blue-600',
@@ -33,19 +33,10 @@ const trainings = [
     description: 'Ochrona danych i bezpieczne korzystanie z technologii.',
     color: 'from-green-400 to-green-600',
     image: '/dog-3.png',
-    href: '#'
+    href: '/szkolenia/bezpieczenstwo-w-sieci-i-ai'
   },
   {
     id: 4,
-    title: 'Filmy/ Zdjęcia z AI',
-    icon: Play,
-    description: 'Tworzenie kreatywnych treści multimedialnych z pomocą AI.',
-    color: 'from-pink-400 to-pink-600',
-    image: '/dog-4.png',
-    href: '#'
-  },
-  {
-    id: 5,
     title: 'Młody Influencer',
     icon: Award,
     description: 'Budowanie marki osobistej i tworzenie contentu z AI.',

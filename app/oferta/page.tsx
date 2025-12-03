@@ -97,14 +97,6 @@ export default function OfertaPage() {
                   href: '#'
                 },
                 {
-                  title: 'Filmy/ Zdjecia z AI',
-                  description: 'Tworzenie kreatywnych treści multimedialnych z pomocą AI.',
-                  icon: Video,
-                  color: 'from-pink-500 to-rose-600',
-                  shadow: 'shadow-pink-500/20',
-                  href: '#'
-                },
-                {
                   title: 'Młody Influencer',
                   description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
                   icon: Award,
@@ -169,37 +161,6 @@ export default function OfertaPage() {
                   </Card>
                 </motion.div>
               ))}
-            </div>
-
-            {/* Features Grid */}
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <Card className="bg-white/40 backdrop-blur-md border-0 shadow-lg">
-                <CardContent className="p-8 flex items-start gap-6">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Video className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Wygodny format wideo</h3>
-                    <p className="text-gray-600">
-                      Wszystkie lekcje są nagrane w wysokiej jakości. Możesz je oglądać na komputerze, tablecie lub telefonie w dowolnym momencie.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/40 backdrop-blur-md border-0 shadow-lg">
-                <CardContent className="p-8 flex items-start gap-6">
-                  <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <GraduationCap className="w-6 h-6 text-pink-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Certyfikat ukończenia</h3>
-                    <p className="text-gray-600">
-                      Po zakończeniu każdego szkolenia otrzymasz imienny certyfikat potwierdzający zdobyte umiejętności.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>

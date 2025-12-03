@@ -160,7 +160,7 @@ export function Navbar() {
             ) : (
               <div className="flex items-center space-x-3">
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href="/auth/login">Zaloguj się</Link>
+                  <Link href="/szkolenia">Zaloguj się</Link>
                 </Button>
                 <Button size="sm" asChild className="bg-blue-600 hover:bg-blue-700">
                   <Link href="/oferta">Rozpocznij</Link>
@@ -251,7 +251,7 @@ export function Navbar() {
                   ) : (
                     <div className="space-y-2">
                       <Link
-                        href="/auth/login"
+                        href="/szkolenia"
                         onClick={closeMenu}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                       >

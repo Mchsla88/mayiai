@@ -495,7 +495,7 @@ export default function SzkoleniePage() {
     return (
       <SimpleLoginForm
         onLogin={handleLogin}
-        title="Szkolenie dla Dzieci i Rodziców"
+        title="Nauka z AI"
       />
     );
   }

@@ -47,7 +47,7 @@ export default function SzkoleniaPage() {
         {
           id: 'dzieci',
           slug: 'dzieci',
-          title: 'Szkolenie dla Dzieci i Rodziców',
+          title: 'Nauka z AI',
           shortDescription: 'Podstawy AI dla najmłodszych',
           imageUrl: null,
           source: 'granted'
@@ -106,7 +106,7 @@ export default function SzkoleniaPage() {
         {
           id: 'dzieci',
           slug: 'dzieci',
-          title: 'Szkolenie dla Dzieci i Rodziców',
+          title: 'Nauka z AI',
           shortDescription: 'Podstawy AI dla najmłodszych',
           imageUrl: null,
           source: 'granted'
