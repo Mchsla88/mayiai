@@ -14,6 +14,7 @@ export async function GET() {
       authenticated: !!session, 
       user: session?.user,
       timestamp: new Date().toISOString(),
+      version: "v2",
       cookies: cookieNames
     })
   } catch (error) {
