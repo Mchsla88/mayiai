@@ -83,7 +83,8 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>Email: hello@mayiai.pl</li>
               <li>MZ Sp. z o.o.</li>
-              <li>81-356 Gdynia, Starowiejska 16/2</li>
+              <li>ul. Starowiejska 16/2</li>
+              <li>81-356 Gdynia</li>
             </ul>
           </div>
         </div>
