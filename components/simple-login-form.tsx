@@ -33,6 +33,7 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
 
     if ((username.trim() === 'test' && password.trim() === 'test') || 
         (username.trim().toLowerCase() === 'michal@mayiai.pl' && password.trim() === 'admin123') ||
+        (username.trim().toLowerCase() === 'm.slawinski@gmail.com' && password.trim() === 'admin123') ||
         (username.trim().toLowerCase() === 'mchsla88@gmail.com' && password.trim() === 'Takiehaslo1')) {
       console.log("Logowanie udane!")
       try {
