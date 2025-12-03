@@ -20,8 +20,8 @@ const contactOptions = [
     icon: Phone,
     title: 'Zadzwoń',
     description: 'Porozmawiaj z ekspertem',
-    action: '+48 123 456 789',
-    href: 'tel:+48123456789'
+    action: 'Napisz do nas',
+    href: '/kontakt'
   },
   {
     icon: Mail,

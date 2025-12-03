@@ -110,7 +110,7 @@ export default function OfertaPage() {
                   icon: Award,
                   color: 'from-orange-500 to-amber-600',
                   shadow: 'shadow-orange-500/20',
-                  href: '#'
+                  href: '/szkolenia/mlody-influencer'
                 }
               ].map((training, index) => (
                 <motion.div
@@ -136,9 +136,12 @@ export default function OfertaPage() {
                       </p>
                       
                       <div className="space-y-6">
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-3xl font-bold text-gray-900">100 zł</span>
-                          <span className="text-gray-500 font-medium">/ szkolenie</span>
+                        <div className="flex flex-col gap-1">
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-3xl font-bold text-gray-900">100 zł</span>
+                            <span className="text-gray-500 font-medium">/ szkolenie</span>
+                          </div>
+                          <span className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</span>
                         </div>
 
                         <ul className="space-y-3 text-sm text-gray-600">

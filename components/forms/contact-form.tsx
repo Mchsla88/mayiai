@@ -173,7 +173,7 @@ export default function ContactForm() {
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+48 123 456 789"
+                  placeholder="Twój numer telefonu"
                   value={formData.phone}
                   onChange={handleChange}
                 />

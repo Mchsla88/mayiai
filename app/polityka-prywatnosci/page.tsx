@@ -18,8 +18,10 @@ export default function PrivacyPolicyPage() {
 
             <h2>1. Administrator danych</h2>
             <p>
-              Administratorem Twoich danych jest AI Family Expert Poland, 
-              e-mail: kontakt@aifamilyexpert.pl
+              Dane firmy: MZ Sp. z o.o., 81-356 Gdynia, Starowiejska 16/2<br />
+              NIP: 5862395683<br />
+              Kontakt: hello@mayiai.pl<br />
+              Strona: https://mayiai.pl
             </p>
 
             <h2>2. Zakres danych</h2>
@@ -84,8 +86,8 @@ export default function PrivacyPolicyPage() {
             <h2>10. Kontakt</h2>
             <p>
               W sprawach dotyczących danych osobowych: 
-              <a href="mailto:kontakt@aifamilyexpert.pl" className="text-blue-600 hover:underline">
-                kontakt@aifamilyexpert.pl
+              <a href="mailto:hello@mayiai.pl" className="text-blue-600 hover:underline">
+                hello@mayiai.pl
               </a>, temat: „Dane osobowe".
             </p>
           </div>

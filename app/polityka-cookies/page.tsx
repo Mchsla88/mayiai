@@ -20,9 +20,16 @@ export default function CookiesPolicyPage() {
 
             <h2>2. Kto ustawia cookies</h2>
             <ul>
-              <li><strong>Własne:</strong> aifamilyexpert.pl</li>
+              <li><strong>Własne:</strong> mayiai.pl</li>
               <li><strong>Zewnętrzne:</strong> Google Analytics (GA4), operatorzy płatności (Przelewy24, Stripe)</li>
             </ul>
+
+            <p className="mt-4">
+              <strong>Dane firmy:</strong> MZ Sp. z o.o., 81-356 Gdynia, Starowiejska 16/2<br />
+              <strong>NIP:</strong> 5862395683<br />
+              <strong>Kontakt:</strong> hello@mayiai.pl<br />
+              <strong>Strona:</strong> https://mayiai.pl
+            </p>
 
             <h2>3. Rodzaje cookies</h2>
             <ul>
@@ -38,7 +45,7 @@ export default function CookiesPolicyPage() {
             <p>Możesz usunąć lub zablokować cookies w ustawieniach przeglądarki. Ograniczenie cookies niezbędnych może uniemożliwić korzystanie z kluczowych funkcji.</p>
 
             <h2>Kontakt</h2>
-            <p><a href="mailto:kontakt@aifamilyexpert.pl" className="text-blue-600 hover:underline">kontakt@aifamilyexpert.pl</a></p>
+            <p><a href="mailto:hello@mayiai.pl" className="text-blue-600 hover:underline">hello@mayiai.pl</a></p>
           </div>
         </div>
       </main>

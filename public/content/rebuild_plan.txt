@@ -1,0 +1,87 @@
+PLAN REBUILDU KURSU - NOWA STRUKTURA
+
+================================
+ZACHOWAĆ BEZ ZMIAN (linie 1-1994):
+================================
+- Wstęp
+- Część I: Platformy (3 rozdziały)
+- Część V: Dla Rodziców (5 rozdziałów)
+
+================================
+PRZEBUDOWAĆ CAŁKOWICIE:
+================================
+
+CZĘŚĆ II: NARZĘDZIA AI
+Obecny stan: 3 rozdziały (4, 5, 6)
+Nowy stan: 15+ rozdziałów - każde narzędzie osobno:
+- Rozdział 4: Wprowadzenie do AI
+- Rozdział 5: Kreebo - Tworzenie Historii
+- Rozdział 6: Scratch + AI - Programowanie
+- Rozdział 7: Teachable Machine - Uczenie Maszynowe
+- Rozdział 8: Bing Image Creator - Generowanie Obrazów
+- Rozdział 9: Canva - Design i Grafika
+- Rozdział 10: Roblox Studio - Tworzenie Gier 3D
+- Rozdział 11: AI Dungeon - Interaktywne Przygody
+- Rozdział 12: Pixton - Tworzenie Komiksów
+- Rozdział 13: Storybird - Ilustrowane Historie
+- Rozdział 14: TinkerCAD - Projektowanie 3D
+- Rozdział 15: ChatGPT - Asystent Językowy
+- Rozdział 16: Gemini - AI od Google
+- Rozdział 17: Notion AI - Organizacja i Notatki
+- Rozdział 18: Grammarly - Korekta Tekstów
+
+CZĘŚĆ III: POMYSŁY I ETYKA
+Obecny stan: 3 rozdziały (7, 8, 9)
+Nowy stan: 9 rozdziałów:
+- Rozdział 19: Gdzie Chować Świetne Pomysły?
+- Rozdział 20: AI jako Generator Pomysłów
+- Rozdział 21: Etyka 1 - Prywatność i Bezpieczeństwo
+- Rozdział 22: Etyka 2 - Bycie Miłym Online
+- Rozdział 23: Etyka 3 - Szacunek dla Innych
+- Rozdział 24: Etyka 4 - Uczciwość i Autentyczność
+- Rozdział 25: Etyka 5 - Tworzenie Wartościowych Treści
+- Rozdział 26: Etyka 6 - Prawa Autorskie i Cytowanie
+- Rozdział 27: Etyka 7 - Radzenie Sobie z Hejtem
+
+CZĘŚĆ IV: KALENDARZ TREŚCI
+Obecny stan: 2 rozdziały (10, 11)
+Nowy stan: 5 rozdziałów:
+- Rozdział 28: Wprowadzenie do Kalendarza Treści
+- Rozdział 29: Krok 1 - Tworzenie Arkusza Google Sheets
+- Rozdział 30: Krok 2 - Wypełnianie Szablonu
+- Rozdział 31: Krok 3 - Planowanie z Pomocą AI
+- Rozdział 32: Krok 4 - Automatyzacja i Statystyki
+
+CZĘŚĆ V: DLA RODZICÓW
+Obecny stan: 5 rozdziałów (12-16) - ZACHOWAĆ BEZ ZMIAN ✅
+
+CZĘŚĆ VI: ROZWIJANIE UMIEJĘTNOŚCI
+Obecny stan: 4 rozdziały (17-20)
+Nowy stan: 8 rozdziałów:
+- Rozdział 33: Jak Radzić Sobie z Krytyką Online [ZACHOWAĆ]
+- Rozdział 34: Budowanie Pewności Siebie przed Kamerą [ZACHOWAĆ]
+- Rozdział 35: Jak Współpracować z Innymi Młodymi Twórcami [ZACHOWAĆ]
+- Rozdział 36: Wszystko o Montażu Dla Początkujących [DODAĆ z załączników]
+- Rozdział 37: Tworzenie Miniaturek i Tytułów [DODAĆ nowy]
+- Rozdział 38: Analiza Statystyk [DODAĆ nowy]
+- Rozdział 39: Studia Przypadków - Młodzi Polscy Twórcy [DODAĆ z załączników]
+- Rozdział 40: Twój Pierwszy Miesiąc - Dzień Po Dniu [ROZBUDOWAĆ z załączników]
+
+CZĘŚĆ VII: 50+ PROJEKTÓW
+Obecny stan: 10 projektów szczegółowo + 42 w skrócie
+Nowy stan: 52 projekty - WSZYSTKIE szczegółowo z załączników
+- Kategoria A: Projekty dla Początkujących (1-10)
+- Kategoria B: Projekty Edukacyjne (11-20)
+- Kategoria C: Projekty Kreatywne (21-30)
+- Kategoria D: Projekty Naukowe (31-40)
+- Kategoria E: Projekty Zaawansowane (41-50)
+- Kategoria F: Projekty Specjalne (51-52)
+
+================================
+ZAŁĄCZNIKI (tylko 4 rzeczy):
+================================
+- Załącznik A: Tabela Narzędzi AI
+- Załącznik B: Szablon Kalendarza
+- Załącznik C: 100+ Promptów
+- Załącznik D: Checklist dla Rodziców
+

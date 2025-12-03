@@ -15,36 +15,48 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials) {
+        console.log('[AUTH_DEBUG] Authorize called with:', { email: credentials?.email });
+
         if (!credentials?.email || !credentials?.password) {
+          console.log('[AUTH_DEBUG] Missing credentials');
           return null;
         }
 
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email
+        try {
+          const user = await prisma.user.findUnique({
+            where: {
+              email: credentials.email
+            }
+          });
+
+          console.log('[AUTH_DEBUG] User lookup result:', user ? 'Found' : 'Not Found');
+
+          if (!user || !user.password) {
+            console.log('[AUTH_DEBUG] User not found or no password');
+            return null;
           }
-        });
 
-        if (!user || !user.password) {
+          const passwordMatch = await bcrypt.compare(credentials.password, user.password);
+          console.log('[AUTH_DEBUG] Password match:', passwordMatch);
+
+          if (!passwordMatch) {
+            return null;
+          }
+
+          return {
+            id: user.id,
+            email: user.email,
+            name: `${user.firstName} ${user.lastName}`,
+            isAdmin: user.isAdmin,
+            role: user.role,
+            firstName: user.firstName ?? undefined,
+            lastName: user.lastName ?? undefined,
+            companyName: user.companyName ?? undefined,
+          };
+        } catch (error) {
+          console.error('[AUTH_DEBUG] Error in authorize:', error);
           return null;
         }
-
-        const passwordMatch = await bcrypt.compare(credentials.password, user.password);
-
-        if (!passwordMatch) {
-          return null;
-        }
-
-        return {
-          id: user.id,
-          email: user.email,
-          name: `${user.firstName} ${user.lastName}`,
-          isAdmin: user.isAdmin,
-          role: user.role,
-          firstName: user.firstName ?? undefined,
-          lastName: user.lastName ?? undefined,
-          companyName: user.companyName ?? undefined,
-        };
       }
     })
   ],

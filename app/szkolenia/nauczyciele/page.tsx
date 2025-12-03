@@ -12,7 +12,7 @@ import {
 import { SimpleLoginForm } from '@/components/simple-login-form'
 import { CertificateGenerator } from '@/components/certificate-generator'
 import toast from 'react-hot-toast'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 
 // Import modules from separate file
@@ -24,10 +24,17 @@ export default function TeachersTrainingPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeModule, setActiveModule] = useState('wstep-1')
   
-  // Redirect unauthenticated users to login
+  // Redirect unauthenticated users to login (unless locally authenticated)
   useEffect(() => {
     if (status === 'loading') return
     
+    // Check local auth first
+    const mainAuth = localStorage.getItem('main_training_auth')
+    if (mainAuth === 'true') {
+      setIsAuthenticated(true)
+      return
+    }
+
     if (!session) {
       router.push('/auth/login?callbackUrl=/szkolenia/nauczyciele')
       return
@@ -43,15 +50,31 @@ export default function TeachersTrainingPage() {
 
   useEffect(() => {
     const auth = localStorage.getItem('teachersTrainingAuth')
-    if (auth === 'true' && session) {
+    const mainAuth = localStorage.getItem('main_training_auth')
+    if (auth === 'true' || mainAuth === 'true') {
       setIsAuthenticated(true)
     }
-  }, [session])
+  }, [])
 
   const handleLogout = () => {
-    localStorage.removeItem('teachersTrainingAuth')
-    setIsAuthenticated(false)
-    toast.success('Wylogowano pomyślnie')
+    try {
+      localStorage.removeItem('teachersTrainingAuth')
+      localStorage.removeItem('main_training_auth')
+      localStorage.removeItem('mlodyInfluencerAuth')
+      localStorage.removeItem('training_auth')
+      
+      setIsAuthenticated(false)
+      toast.success('Wylogowano pomyślnie')
+
+      if (session) {
+        window.location.href = '/api/auth/signout?callbackUrl=/'
+      } else {
+        window.location.href = '/'
+      }
+    } catch (error) {
+      console.error('Logout error:', error)
+      window.location.href = '/'
+    }
   }
 
   // Show loading while checking auth

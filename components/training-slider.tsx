@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, BookOpen, Users, Shield, Video, Award, Play } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { BookOpen, Users, Shield, Play, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -37,7 +37,7 @@ const trainings = [
   },
   {
     id: 4,
-    title: 'Filmy/ Zdjecia z AI',
+    title: 'Filmy/ Zdjęcia z AI',
     icon: Play,
     description: 'Tworzenie kreatywnych treści multimedialnych z pomocą AI.',
     color: 'from-pink-400 to-pink-600',
@@ -51,111 +51,49 @@ const trainings = [
     description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
     color: 'from-orange-400 to-orange-600',
     image: '/dog-5.png',
-    href: '#'
+    href: '/szkolenia/mlody-influencer'
   }
 ]
 
 export function TrainingSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
-  const [isAutoPlay, setIsAutoPlay] = useState(true)
-
-  const nextSlide = useCallback(() => {
-    setDirection(1)
-    setCurrentIndex((prev) => (prev + 1) % trainings.length)
-  }, [])
-
-  const prevSlide = useCallback(() => {
-    setDirection(-1)
-    setCurrentIndex((prev) => (prev - 1 + trainings.length) % trainings.length)
-  }, [])
-
-  // Auto-play functionality
-  useEffect(() => {
-    if (!isAutoPlay) return
-    const interval = setInterval(nextSlide, 5000)
-    return () => clearInterval(interval)
-  }, [isAutoPlay, nextSlide])
-
-  const getSlideIndex = (offset: number) => {
-    return (currentIndex + offset + trainings.length) % trainings.length
-  }
-
-  const visibleSlides = [-1, 0, 1].map(offset => {
-    const index = getSlideIndex(offset)
-    return { ...trainings[index], offset, key: trainings[index].id }
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
   })
 
   return (
-    <div 
-      className="relative w-full max-w-7xl mx-auto h-[600px] flex items-center justify-center overflow-hidden"
-      onMouseEnter={() => setIsAutoPlay(false)}
-      onMouseLeave={() => setIsAutoPlay(true)}
-    >
-      {/* Navigation Buttons */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between z-30 px-4 pointer-events-none">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-          className="pointer-events-auto bg-white/80 hover:bg-white rounded-full shadow-lg backdrop-blur-sm w-12 h-12 transition-transform hover:scale-110"
+    <section ref={ref} className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <ChevronLeft className="w-8 h-8" />
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-          className="pointer-events-auto bg-white/80 hover:bg-white rounded-full shadow-lg backdrop-blur-sm w-12 h-12 transition-transform hover:scale-110"
-        >
-          <ChevronRight className="w-8 h-8" />
-        </Button>
-      </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Nasze <span className="text-purple-600">Szkolenia AI</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Kompleksowe programy edukacyjne dla dzieci, rodziców i nauczycieli
+          </p>
+        </motion.div>
 
-      {/* Slider Track */}
-      <div className="relative w-full h-full flex items-center justify-center perspective-1000">
-        <AnimatePresence initial={false} mode="popLayout">
-          {visibleSlides.map((training) => {
-            const isCenter = training.offset === 0
-            
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {trainings.map((training, index) => {
+            const IconComponent = training.icon
             return (
               <motion.div
-                key={training.key}
-                layoutId={`slide-${training.id}`}
-                initial={{ 
-                  scale: 0.8,
-                  x: direction > 0 ? '100%' : '-100%',
-                  opacity: 0,
-                  zIndex: 0,
-                  rotateY: direction > 0 ? -25 : 25
-                }}
-                animate={{ 
-                  scale: isCenter ? 1 : 0.8,
-                  x: `${training.offset * 110}%`,
-                  opacity: isCenter ? 1 : 0.5,
-                  zIndex: isCenter ? 10 : 1,
-                  rotateY: training.offset * -25
-                }}
-                exit={{ 
-                  scale: 0.8,
-                  x: direction > 0 ? '-100%' : '100%',
-                  opacity: 0,
-                  zIndex: 0,
-                  rotateY: direction > 0 ? 25 : -25
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30
-                }}
-                className="absolute w-full max-w-md left-1/2 -ml-[224px]"
+                key={training.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group"
               >
-                <div className={`bg-white rounded-3xl shadow-2xl overflow-hidden border-2 transition-all duration-300 ${
-                  isCenter ? 'border-purple-500/50 ring-4 ring-purple-500/20' : 'border-white/50 grayscale-[0.5]'
-                } backdrop-blur-xl h-full`}>
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-purple-300 overflow-hidden h-full flex flex-col">
+                  {/* Image Header */}
                   <div className={`h-48 bg-gradient-to-br ${training.color} relative flex items-center justify-center overflow-hidden`}>
                     <div className="absolute inset-0 bg-white/10" />
-                    <div className="relative w-40 h-40 transition-transform duration-500 hover:scale-110">
+                    <div className="relative w-32 h-32 transition-transform duration-500 group-hover:scale-110">
                       <Image
                         src={training.image}
                         alt={training.title}
@@ -164,18 +102,32 @@ export function TrainingSlider() {
                       />
                     </div>
                   </div>
-                  <div className="p-8 text-center space-y-4">
-                    <h3 className="text-2xl font-bold text-gray-800">
-                      {training.title}
-                    </h3>
-                    <p className="text-gray-600 line-clamp-2 min-h-[3rem]">
+
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${training.color} rounded-full flex items-center justify-center`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {training.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-gray-600 mb-6 flex-1">
                       {training.description}
                     </p>
+
+                    {/* Pricing */}
+                    <div className="mb-4 pb-4 border-b border-gray-200">
+                      <div className="text-3xl font-bold text-gray-900">100 zł</div>
+                      <div className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</div>
+                    </div>
+
+                    {/* CTA Button */}
                     <Button 
                       asChild 
-                      className={`w-full bg-gradient-to-r ${training.color} text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg ${
-                        !isCenter ? 'pointer-events-none opacity-50' : ''
-                      }`}
+                      className={`w-full bg-gradient-to-r ${training.color} text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg`}
                     >
                       <Link href={training.href}>
                         Zobacz szczegóły
@@ -186,24 +138,8 @@ export function TrainingSlider() {
               </motion.div>
             )
           })}
-        </AnimatePresence>
+        </div>
       </div>
-      
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-        {trainings.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => {
-              setDirection(idx > currentIndex ? 1 : -1)
-              setCurrentIndex(idx)
-            }}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? 'bg-purple-600 w-8' : 'bg-gray-300 w-2 hover:bg-gray-400'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   )
 }

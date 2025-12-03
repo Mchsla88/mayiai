@@ -22,8 +22,7 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
   // Debug: Log props to see what's being passed
   console.log("SimpleLoginForm rendered with props:", { onLogin, title })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleLoginClick = async () => {
     setError('')
     setIsLoading(true)
 
@@ -32,7 +31,9 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
 
     console.log("Próba logowania:", username, password)
 
-    if (username.trim() === 'test' && password.trim() === 'test') {
+    if ((username.trim() === 'test' && password.trim() === 'test') || 
+        (username.trim().toLowerCase() === 'michal@mayiai.pl' && password.trim() === 'admin123') ||
+        (username.trim().toLowerCase() === 'mchsla88@gmail.com' && password.trim() === 'Takiehaslo1')) {
       console.log("Logowanie udane!")
       try {
         if (typeof onLogin === 'function') {
@@ -51,7 +52,7 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
       }
     } else {
       console.log("Błąd logowania")
-      setError('Nieprawidłowy login lub hasło (spróbuj: test / test)')
+      setError('Nieprawidłowy login lub hasło')
       setIsLoading(false)
     }
   }
@@ -72,7 +73,7 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-6">
             <div>
               <Label htmlFor="username" className="text-gray-700 font-medium">
                 Login
@@ -103,6 +104,12 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
                   className="h-12 pr-12 border-gray-300 focus:border-purple-500 focus:ring-purple-500 text-black"
                   required
                   disabled={isLoading}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault()
+                      handleLoginClick()
+                    }
+                  }}
                 />
                 <button
                   type="button"
@@ -122,7 +129,8 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
             )}
 
             <Button
-              type="submit"
+              type="button"
+              onClick={handleLoginClick}
               className="w-full h-12 bg-purple-600 hover:bg-purple-700 text-white text-lg font-medium shadow-lg transition-all"
               disabled={isLoading}
             >
@@ -138,7 +146,7 @@ export function SimpleLoginForm({ onLogin, title = "Dostęp do Szkolenia" }: Sim
                 </span>
               )}
             </Button>
-          </form>
+          </div>
         </CardContent>
       </Card>
     </div>

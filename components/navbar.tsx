@@ -52,6 +52,12 @@ export function Navbar() {
   }, []);
 
   const handleSignOut = async () => {
+    // Clear all local auth tokens
+    localStorage.removeItem('main_training_auth');
+    localStorage.removeItem('mlodyInfluencerAuth');
+    localStorage.removeItem('teachersTrainingAuth');
+    localStorage.removeItem('training_auth');
+    
     await signOut({ redirect: false });
     router.refresh(); // Refresh to clear session state
     router.push('/');

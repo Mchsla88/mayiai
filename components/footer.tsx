@@ -72,8 +72,8 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="/polityka-prywatnosci" className="hover:text-white transition-colors">Polityka prywatności</Link></li>
               <li><Link href="/polityka-cookies" className="hover:text-white transition-colors">Polityka cookies</Link></li>
-              <li><Link href="/regulamin" className="hover:text-white transition-colors">Regulamin serwisu</Link></li>
-              <li><Link href="/regulamin-sprzedazy" className="hover:text-white transition-colors">Regulamin sprzedaży</Link></li>
+              <li><Link href="/regulamin-zakupow" className="hover:text-white transition-colors">Regulamin zakupów</Link></li>
+              <li><Link href="/regulamin-zwrotow" className="hover:text-white transition-colors">Regulamin zwrotów</Link></li>
             </ul>
           </div>
 
@@ -81,14 +81,15 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Kontakt</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Email: kontakt@mayiai.pl</li>
-              <li>Warszawa, Polska</li>
+              <li>Email: hello@mayiai.pl</li>
+              <li>MZ Sp. z o.o.</li>
+              <li>81-356 Gdynia, Starowiejska 16/2</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {currentYear} May I AI Family Expert Poland. Wszelkie prawa zastrzeżone.</p>
+          <p>&copy; {currentYear} MZ Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
         </div>
       </div>
     </footer>

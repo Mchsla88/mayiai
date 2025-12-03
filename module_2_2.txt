@@ -1,0 +1,101 @@
+    id: 'rozdzial-2-2',
+    title: 'Rozdział 2.2: Warsztat Etyczny – 4 Kluczowe Scenariusze',
+    icon: <Scale className="w-5 h-5" />,
+    duration: '25 min',
+    category: 'Rozdział 2',
+    content: (
+      <ModernContent 
+        title="Rozdział 2.2: Warsztat Etyczny"
+        icon={<Scale />}
+      >
+        <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 2.2: Warsztat Etyczny (Praktyczne Scenariusze)</h4>
+        
+        <p className="text-gray-700 mb-6"><strong>Teoria etyki jest bezużyteczna bez praktyki.</strong> Poniżej przedstawiamy cztery kluczowe wyzwania etyczne wraz z praktycznymi przykładami i rozwiązaniami.</p>
+
+        <div className="space-y-8">
+          <SectionCard title="⚖️ Zagadnienie 1: RODO i Prywatność Uczniów" color="blue">
+            <p className="font-bold text-gray-900 mb-2">Problem:</p>
+            <p className="text-gray-700 mb-4">Nauczyciel chce użyć AI do analizy, oceny lub personalizacji pracy ucznia.</p>
+            
+            <div className="bg-red-50 p-4 rounded-lg mb-4 border-l-4 border-red-400">
+              <p className="font-bold text-red-900 mb-2">❌ Zagrożenie (Scenariusz):</p>
+              <p className="text-gray-700">Nauczyciel Języka Polskiego kopiuje wypracowanie ucznia (zawierające jego imię, nazwisko, osobiste przemyślenia) do publicznej wersji ChatGPT z prośbą: "Oceń tę pracę i wskaż błędy".</p>
+              <p className="text-red-800 mt-2 font-medium">Dane osobowe ucznia opuszczają bezpieczny ekosystem szkoły. To <strong>rażące naruszenie RODO</strong> i prawa do prywatności!</p>
+            </div>
+
+            <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+              <p className="font-bold text-green-900 mb-3">✅ Rozwiązanie (Praktyka):</p>
+              <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-4">
+                <li><strong>Zasada Anonimizacji:</strong> Nigdy nie wprowadzać danych identyfikujących uczniów do publicznych modeli AI. Najpierw zanonimizować tekst.</li>
+                <li><strong>Konta Instytucjonalne:</strong> Korzystać z narzędzi AI w ramach pakietów instytucjonalnych (Microsoft 365 dla edukacji, Google Workspace for Education) - te wersje "enterprise" gwarantują, że dane nie są wykorzystywane do trenowania modeli publicznych.</li>
+              </ol>
+            </div>
+          </SectionCard>
+
+          <SectionCard title="📝 Zagadnienie 2: Plagiat vs. Augmentacja (Filozofia 80/20)" color="orange">
+            <p className="font-bold text-gray-900 mb-2">Problem:</p>
+            <p className="text-gray-700 mb-4">Uczeń oddaje pracę w całości wygenerowaną przez AI. To jedna z głównych obaw nauczycieli (76%).</p>
+            
+            <div className="bg-red-50 p-4 rounded-lg mb-4">
+              <p className="font-bold text-red-900 mb-2">❌ Zagrożenie:</p>
+              <p className="text-gray-700">Nauczyciel zadaje esej o przyczynach wybuchu I Wojny Światowej. Uczeń wpisuje temat w AI, kopiuje tekst i oddaje jako własny.</p>
+            </div>
+
+            <div className="bg-purple-50 p-6 rounded-xl mb-4 border-2 border-purple-300">
+              <h6 className="text-lg font-bold text-purple-900 mb-3">💡 Filozofia 80/20</h6>
+              <p className="text-gray-700 mb-3">AI może wykonać <strong>80% "surowej" pracy</strong> (zebranie faktów, wstępny szkic), ale kluczowe <strong>20% musi dodać człowiek</strong> (krytyczna analiza, weryfikacja, własna refleksja, unikalny styl).</p>
+            </div>
+
+            <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+              <p className="font-bold text-green-900 mb-3">✅ Rozwiązanie - Zmiana Zadań:</p>
+              <p className="text-gray-700 mb-2">Zamiast: <span className="line-through">"Napisz esej o..."</span></p>
+              <p className="text-gray-700 mb-3">Zadanie powinno brzmieć:</p>
+              <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-4 text-sm">
+                <li>"Użyj AI, aby wygenerować listę 5 głównych przyczyn wybuchu I Wojny Światowej." <span className="text-blue-600">(80% pracy AI)</span></li>
+                <li>"Wybierz dwie przyczyny, które uważasz za najważniejsze, i znajdź dla nich potwierdzenie w podręczniku." <span className="text-purple-600">(Weryfikacja)</span></li>
+                <li>"Napisz dwa akapity własnej analizy, argumentując, dlaczego te przyczyny były kluczowe." <span className="text-green-600">(20% pracy ucznia)</span></li>
+                <li>"Dołącz wygenerowaną listę AI jako załącznik i zacytuj użyte narzędzie."</li>
+              </ol>
+              <p className="text-gray-700 mt-3 italic">Zadanie przesuwa się z "pisania" na "myślenie", "weryfikowanie" i "redagowanie"!</p>
+            </div>
+          </SectionCard>
+
+          <SectionCard title="🎭 Zagadnienie 3: Deepfake i Dezinformacja" color="red">
+            <p className="font-bold text-gray-900 mb-2">Problem:</p>
+            <p className="text-gray-700 mb-4">Uczniowie mają problem z odróżnieniem treści prawdziwych od fałszywych (deepfake audio/wideo, obrazy generowane przez AI).</p>
+            
+            <div className="bg-red-50 p-4 rounded-lg mb-4">
+              <p className="font-bold text-red-900 mb-2">❌ Zagrożenie:</p>
+              <p className="text-gray-700">W sieci krąży wideo, na którym znany polityk wygłasza kontrowersyjne opinie. Uczniowie przyjmują to za fakt, nie wiedząc, że to deepfake.</p>
+            </div>
+
+            <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+              <p className="font-bold text-green-900 mb-3">✅ Rozwiązanie (Praktyka):</p>
+              
+              <h6 className="font-bold text-gray-800 mb-2">1. Nauka "Cyfrowej Intuicji"</h6>
+              <p className="text-gray-700 mb-3">Ucz uczniów zwracania uwagi na nienaturalne detale:</p>
+              <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4 ml-4 text-sm">
+                <li><strong>Obrazy AI:</strong> Nienaturalne dłonie (za dużo/mało palców), dziwne artefakty w tle, nienaturalne cienie, "martwe" oczy</li>
+                <li><strong>Wideo:</strong> Brak mrugania, dziwne synchronizowanie ust, nienaturalna kadencja głosu</li>
+              </ul>
+
+              <h6 className="font-bold text-gray-800 mb-2">2. Gra "Prawda czy AI?"</h6>
+              <p className="text-gray-700 text-sm">Pokaż uczniom serię obrazów/tekstów – niektóre prawdziwe, niektóre AI. Niech głosują i uzasadniają swoje odpowiedzi. To buduje umiejętności krytycznej analizy!</p>
+            </div>
+          </SectionCard>
+        </div>
+      </ModernContent>
+    )
+  },
+
+  // ROZDZIAŁ 3
+  {
+    id: 'rozdzial-3-1',
+    title: 'Rozdział 3.1: Wprowadzenie – "Śmieci na Wejściu, Śmieci na Wyjściu"',
+    icon: <MessageSquare className="w-5 h-5" />,
+    duration: '10 min',
+    category: 'Rozdział 3',
+    content: (
+      <ModernContent 
+        title="Rozdział 3.1: Wprowadzenie"
+        icon={<MessageSquare />}

@@ -26,9 +26,45 @@ export default function SzkoleniaPage() {
   const { data: session, status } = useSession()
   const router = useRouter()
   const [trainings, setTrainings] = useState<UserTraining[]>([])
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    // Check local auth
+    const localAuth = localStorage.getItem('main_training_auth')
+    if (localAuth === 'true') {
+      setIsAuthenticated(true)
+      // Load hardcoded trainings for admin/local user
+      setTrainings([
+        {
+          id: 'nauczyciele',
+          slug: 'nauczyciele',
+          title: 'Szkolenie dla Nauczycieli',
+          shortDescription: 'Wykorzystanie AI w edukacji',
+          imageUrl: null,
+          source: 'granted'
+        },
+        {
+          id: 'dzieci',
+          slug: 'dzieci',
+          title: 'Szkolenie dla Dzieci i Rodziców',
+          shortDescription: 'Podstawy AI dla najmłodszych',
+          imageUrl: null,
+          source: 'granted'
+        },
+        {
+          id: 'mlody-influencer',
+          slug: 'mlody-influencer',
+          title: 'Młody Influencer',
+          shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
+          imageUrl: null,
+          source: 'granted'
+        }
+      ])
+      setIsLoading(false)
+      return
+    }
+
     if (status === 'loading') return
 
     if (session?.user) {
@@ -53,7 +89,37 @@ export default function SzkoleniaPage() {
   }
 
   const handleLogin = () => {
-    router.refresh()
+    localStorage.setItem('main_training_auth', 'true')
+    setIsAuthenticated(true)
+    // Reload to apply state if needed, but state update should handle it
+    // router.refresh() 
+    // Manually trigger data load
+    setTrainings([
+        {
+          id: 'nauczyciele',
+          slug: 'nauczyciele',
+          title: 'Szkolenie dla Nauczycieli',
+          shortDescription: 'Wykorzystanie AI w edukacji',
+          imageUrl: null,
+          source: 'granted'
+        },
+        {
+          id: 'dzieci',
+          slug: 'dzieci',
+          title: 'Szkolenie dla Dzieci i Rodziców',
+          shortDescription: 'Podstawy AI dla najmłodszych',
+          imageUrl: null,
+          source: 'granted'
+        },
+        {
+          id: 'mlody-influencer',
+          slug: 'mlody-influencer',
+          title: 'Młody Influencer',
+          shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
+          imageUrl: null,
+          source: 'granted'
+        }
+      ])
   }
 
   // Show loading
@@ -73,7 +139,7 @@ export default function SzkoleniaPage() {
   }
 
   // Show login form for unauthenticated users
-  if (!session) {
+  if (!session && !isAuthenticated) {
     return (
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
         <Navbar />
@@ -119,7 +185,7 @@ export default function SzkoleniaPage() {
               Twoje Szkolenia
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Witaj, {session.user.name || session.user.email}!
+              Witaj, {session?.user?.name || session?.user?.email || 'Użytkowniku'}!
             </h1>
             <p className="text-xl text-gray-600">
               {trainings.length === 0 

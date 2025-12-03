@@ -1,14 +1,18 @@
+"use client";
 
-'use client'
-
-import { useState, useEffect, useRef } from 'react'
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useRef } from "react";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import {
   BookOpen,
   Play,
@@ -22,45 +26,61 @@ import {
   Award,
   Clock,
   Users,
-  LogOut
-} from 'lucide-react'
-import { toast } from '@/hooks/use-toast'
-import { SimpleLoginForm } from '@/components/simple-login-form'
-import { trainingModules } from './training-modules-data'
-import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-
-
+  LogOut,
+} from "lucide-react";
+import toast from "react-hot-toast";
+import { SimpleLoginForm } from "@/components/simple-login-form";
+import { trainingModules } from "./training-modules-data";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 // Login Form removed - using SimpleLoginForm component instead
 
 // Training Content Component
 function TrainingContent() {
-  const [activeModule, setActiveModule] = useState(trainingModules[0].id)
-  const moduleRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const { data: session } = useSession();
+  const router = useRouter();
+  const [activeModule, setActiveModule] = useState(trainingModules[0].id);
+  const moduleRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const scrollToModule = (moduleId: string) => {
-    const element = moduleRefs.current[moduleId]
+    const element = moduleRefs.current[moduleId];
     if (element) {
-      const offset = 100
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+      const offset = 100;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: elementPosition - offset,
-        behavior: 'smooth'
-      })
-      setActiveModule(moduleId)
+        behavior: "smooth",
+      });
+      setActiveModule(moduleId);
     }
-  }
+  };
 
   const handleLogout = () => {
-    localStorage.removeItem('training_auth')
-    window.location.reload()
-  }
+    try {
+      localStorage.removeItem("training_auth");
+      localStorage.removeItem("main_training_auth");
+      localStorage.removeItem("mlodyInfluencerAuth");
+      localStorage.removeItem("teachersTrainingAuth");
+
+      toast.success("Wylogowano pomyślnie");
+
+      if (session) {
+        window.location.href = "/api/auth/signout?callbackUrl=/";
+      } else {
+        window.location.href = "/";
+      }
+    } catch (error) {
+      console.error("Logout error:", error);
+      window.location.href = "/";
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
       <Navbar />
-      
+
       <main className="flex-1 pt-20">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 py-16">
@@ -81,16 +101,17 @@ function TrainingContent() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-4xl mx-auto text-center text-white">
+              className="max-w-4xl mx-auto text-center text-white"
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 Szkolenie Online
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Wykorzystanie AI do Efektywnej Nauki
               </h1>
-              
+
               <p className="text-xl text-white/90 mb-6">
                 Kompleksowe szkolenie z wykorzystania Claude i Gemini w edukacji
               </p>
@@ -106,7 +127,8 @@ function TrainingContent() {
               <motion.aside
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="lg:col-span-3">
+                className="lg:col-span-3"
+              >
                 <div className="sticky top-24 space-y-4">
                   <Card className="border-2 border-purple-200 shadow-lg">
                     <CardContent className="p-6">
@@ -114,7 +136,7 @@ function TrainingContent() {
                         <BookOpen className="w-5 h-5 text-purple-600" />
                         <h3 className="font-bold text-lg">Spis Treści</h3>
                       </div>
-                      
+
                       <nav className="space-y-2">
                         {trainingModules.map((module, index) => (
                           <motion.button
@@ -122,26 +144,35 @@ function TrainingContent() {
                             onClick={() => scrollToModule(module.id)}
                             className={`w-full text-left px-4 py-3 rounded-lg transition-all group ${
                               activeModule === module.id
-                                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
-                                : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
+                                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
+                                : "bg-gray-50 hover:bg-gray-100 text-gray-700"
                             }`}
                             whileHover={{ x: 5 }}
-                            whileTap={{ scale: 0.98 }}>
+                            whileTap={{ scale: 0.98 }}
+                          >
                             <div className="flex items-center gap-3">
-                              <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                                activeModule === module.id
-                                  ? 'bg-white/20'
-                                  : 'bg-purple-100 text-purple-600'
-                              }`}>
-                                <span className="text-sm font-bold">{index + 1}</span>
+                              <div
+                                className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                                  activeModule === module.id
+                                    ? "bg-white/20"
+                                    : "bg-purple-100 text-purple-600"
+                                }`}
+                              >
+                                <span className="text-sm font-bold">
+                                  {index + 1}
+                                </span>
                               </div>
                               <div className="flex-1 min-w-0">
                                 <div className="text-sm font-medium truncate">
                                   {module.title}
                                 </div>
-                                <div className={`text-xs flex items-center gap-1 ${
-                                  activeModule === module.id ? 'text-white/80' : 'text-gray-500'
-                                }`}>
+                                <div
+                                  className={`text-xs flex items-center gap-1 ${
+                                    activeModule === module.id
+                                      ? "text-white/80"
+                                      : "text-gray-500"
+                                  }`}
+                                >
                                   <Clock className="w-3 h-3" />
                                   {module.duration}
                                 </div>
@@ -155,11 +186,15 @@ function TrainingContent() {
                       <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
                         <div className="flex items-center justify-between text-sm">
                           <span className="text-gray-600">Łączny czas:</span>
-                          <span className="font-bold text-purple-600">~76 minut</span>
+                          <span className="font-bold text-purple-600">
+                            ~76 minut
+                          </span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
                           <span className="text-gray-600">Poziom:</span>
-                          <span className="font-bold text-purple-600">Początkujący</span>
+                          <span className="font-bold text-purple-600">
+                            Początkujący
+                          </span>
                         </div>
                       </div>
                     </CardContent>
@@ -169,7 +204,8 @@ function TrainingContent() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 }}>
+                    transition={{ delay: 0.3 }}
+                  >
                     <Card className="border-2 border-blue-400 bg-gradient-to-br from-blue-50 to-cyan-50">
                       <CardContent className="p-6 text-center">
                         <BookOpen className="w-12 h-12 text-blue-600 mx-auto mb-3" />
@@ -179,7 +215,11 @@ function TrainingContent() {
                         <p className="text-sm text-gray-600 mb-4">
                           Pobierz plik z promptami i wyjaśnieniami
                         </p>
-                        <a href="/prompty_ai_szkolenie.html" target="_blank" download>
+                        <a
+                          href="/prompty_ai_szkolenie.html"
+                          target="_blank"
+                          download
+                        >
                           <Button className="w-full bg-blue-600 hover:bg-blue-700">
                             <BookOpen className="w-4 h-4 mr-2" />
                             Pobierz PDF z promptami
@@ -197,12 +237,15 @@ function TrainingContent() {
                   {trainingModules.map((module, index) => (
                     <motion.div
                       key={module.id}
-                      ref={(el) => { moduleRefs.current[module.id] = el }}
+                      ref={(el) => {
+                        moduleRefs.current[module.id] = el;
+                      }}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="scroll-mt-24">
+                      className="scroll-mt-24"
+                    >
                       <Card className="border-2 border-purple-200 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
                         <CardContent className="p-0">
                           {/* Module Header */}
@@ -211,9 +254,13 @@ function TrainingContent() {
                               <div>
                                 <div className="flex items-center gap-3 mb-2">
                                   <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                                    <span className="font-bold">{index + 1}</span>
+                                    <span className="font-bold">
+                                      {index + 1}
+                                    </span>
                                   </div>
-                                  <h2 className="text-2xl font-bold">{module.title}</h2>
+                                  <h2 className="text-2xl font-bold">
+                                    {module.title}
+                                  </h2>
                                 </div>
                                 <div className="flex items-center gap-4 text-sm text-white/80">
                                   <span className="flex items-center gap-1">
@@ -222,7 +269,7 @@ function TrainingContent() {
                                   </span>
                                 </div>
                               </div>
-                              
+
                               {(module.video || (module as any).audio) && (
                                 <div className="flex-shrink-0">
                                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -239,13 +286,21 @@ function TrainingContent() {
                             {module.video ? (
                               <div className="bg-black flex items-center justify-center p-4">
                                 <div className="w-full max-w-6xl">
-                                  <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl" style={{ aspectRatio: '16/9' }}>
+                                  <div
+                                    className="relative bg-black rounded-lg overflow-hidden shadow-2xl"
+                                    style={{ aspectRatio: "16/9" }}
+                                  >
                                     <video
                                       controls
                                       className="w-full h-full"
-                                      poster={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%236B21A8' width='1600' height='900'/%3E%3Ctext fill='white' font-size='32' font-family='Arial' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${module.title}%3C/text%3E%3C/svg%3E`}>
-                                      <source src={module.video} type="video/mp4" />
-                                      Twoja przeglądarka nie obs\u0142uguje odtwarzacza wideo.
+                                      poster={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%236B21A8' width='1600' height='900'/%3E%3Ctext fill='white' font-size='32' font-family='Arial' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${module.title}%3C/text%3E%3C/svg%3E`}
+                                    >
+                                      <source
+                                        src={module.video}
+                                        type="video/mp4"
+                                      />
+                                      Twoja przeglądarka nie obs\u0142uguje
+                                      odtwarzacza wideo.
                                     </video>
                                   </div>
                                   <p className="text-sm text-gray-300 mt-4 text-center">
@@ -253,7 +308,8 @@ function TrainingContent() {
                                   </p>
                                 </div>
                               </div>
-                            ) : (module as any).audio1 && (module as any).audio2 ? (
+                            ) : (module as any).audio1 &&
+                              (module as any).audio2 ? (
                               <div className="bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center p-8">
                                 <div className="w-full max-w-4xl">
                                   <div className="space-y-6">
@@ -261,28 +317,52 @@ function TrainingContent() {
                                       <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                         <Play className="w-10 h-10 text-white" />
                                       </div>
-                                      <h4 className="text-2xl font-bold text-white mb-4 text-center">Instrukcja Głosowa 1</h4>
-                                      <p className="text-white/80 mb-6 text-center">Podsumowanie i wskazówki praktyczne</p>
+                                      <h4 className="text-2xl font-bold text-white mb-4 text-center">
+                                        Instrukcja Głosowa 1
+                                      </h4>
+                                      <p className="text-white/80 mb-6 text-center">
+                                        Podsumowanie i wskazówki praktyczne
+                                      </p>
                                       <audio
                                         controls
                                         className="w-full max-w-xl mx-auto"
-                                        style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
-                                        <source src={(module as any).audio1} type="audio/mpeg" />
-                                        Twoja przeglądarka nie obs\u0142uguje odtwarzacza audio.
+                                        style={{
+                                          filter:
+                                            "invert(1) hue-rotate(180deg)",
+                                        }}
+                                      >
+                                        <source
+                                          src={(module as any).audio1}
+                                          type="audio/mpeg"
+                                        />
+                                        Twoja przeglądarka nie obs\u0142uguje
+                                        odtwarzacza audio.
                                       </audio>
                                     </div>
                                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
                                       <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                         <Play className="w-10 h-10 text-white" />
                                       </div>
-                                      <h4 className="text-2xl font-bold text-white mb-4 text-center">Instrukcja Głosowa 2</h4>
-                                      <p className="text-white/80 mb-6 text-center">Zaawansowane techniki i strategie</p>
+                                      <h4 className="text-2xl font-bold text-white mb-4 text-center">
+                                        Instrukcja Głosowa 2
+                                      </h4>
+                                      <p className="text-white/80 mb-6 text-center">
+                                        Zaawansowane techniki i strategie
+                                      </p>
                                       <audio
                                         controls
                                         className="w-full max-w-xl mx-auto"
-                                        style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
-                                        <source src={(module as any).audio2} type="audio/mpeg" />
-                                        Twoja przeglądarka nie obs\u0142uguje odtwarzacza audio.
+                                        style={{
+                                          filter:
+                                            "invert(1) hue-rotate(180deg)",
+                                        }}
+                                      >
+                                        <source
+                                          src={(module as any).audio2}
+                                          type="audio/mpeg"
+                                        />
+                                        Twoja przeglądarka nie obs\u0142uguje
+                                        odtwarzacza audio.
                                       </audio>
                                     </div>
                                   </div>
@@ -295,14 +375,26 @@ function TrainingContent() {
                                     <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                       <Play className="w-10 h-10 text-white" />
                                     </div>
-                                    <h4 className="text-2xl font-bold text-white mb-4">Instrukcja Głosowa</h4>
-                                    <p className="text-white/80 mb-6">Przesłuchaj szczegółową instrukcję głosową dla tego modułu</p>
+                                    <h4 className="text-2xl font-bold text-white mb-4">
+                                      Instrukcja Głosowa
+                                    </h4>
+                                    <p className="text-white/80 mb-6">
+                                      Przesłuchaj szczegółową instrukcję głosową
+                                      dla tego modułu
+                                    </p>
                                     <audio
                                       controls
                                       className="w-full max-w-xl mx-auto"
-                                      style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
-                                      <source src={(module as any).audio} type="audio/mpeg" />
-                                      Twoja przeglądarka nie obs\u0142uguje odtwarzacza audio.
+                                      style={{
+                                        filter: "invert(1) hue-rotate(180deg)",
+                                      }}
+                                    >
+                                      <source
+                                        src={(module as any).audio}
+                                        type="audio/mpeg"
+                                      />
+                                      Twoja przeglądarka nie obs\u0142uguje
+                                      odtwarzacza audio.
                                     </audio>
                                   </div>
                                 </div>
@@ -331,7 +423,9 @@ function TrainingContent() {
                             <div className="flex items-center justify-between gap-4">
                               <div className="flex items-center gap-2 text-sm text-gray-600">
                                 <GraduationCap className="w-5 h-5" />
-                                <span>Moduł {index + 1} z {trainingModules.length}</span>
+                                <span>
+                                  Moduł {index + 1} z {trainingModules.length}
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -340,8 +434,6 @@ function TrainingContent() {
                     </motion.div>
                   ))}
                 </AnimatePresence>
-
-
               </div>
             </div>
           </div>
@@ -351,50 +443,62 @@ function TrainingContent() {
       <Footer />
 
       {/* End Video Modal - Full Screen */}
-
     </div>
-  )
+  );
 }
 
 // Main Page Component
 export default function SzkoleniePage() {
-  const { data: session, status } = useSession()
-  const router = useRouter()
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Redirect unauthenticated users to login
+  // Redirect unauthenticated users to login (unless locally authenticated)
   useEffect(() => {
-    if (status === 'loading') return
-    
-    if (!session) {
-      router.push('/auth/login?callbackUrl=/szkolenia/dzieci')
-      return
+    if (status === "loading") return;
+
+    // Check local auth first
+    const mainAuth = localStorage.getItem("main_training_auth");
+    if (mainAuth === "true") {
+      setIsAuthenticated(true);
+      return;
     }
-    
-    setIsAuthenticated(true)
-  }, [session, status, router])
+
+    if (!session) {
+      router.push("/auth/login?callbackUrl=/szkolenia/dzieci");
+      return;
+    }
+
+    setIsAuthenticated(true);
+  }, [session, status, router]);
 
   useEffect(() => {
     // Check if user is already authenticated (from localStorage)
-    const auth = localStorage.getItem('training_auth')
-    if (auth === 'true' && session) {
-      setIsAuthenticated(true)
+    const auth = localStorage.getItem("training_auth");
+    if (auth === "true" && session) {
+      setIsAuthenticated(true);
     }
-  }, [session])
+  }, [session]);
 
   const handleLogin = () => {
-    localStorage.setItem('training_auth', 'true')
-    setIsAuthenticated(true)
-  }
+    localStorage.setItem("training_auth", "true");
+    setIsAuthenticated(true);
+  };
 
   // Show loading while checking auth
-  if (status === 'loading' || (session && !isAuthenticated)) {
-    return null // NextAuth will redirect
+  if (status === "loading" || (session && !isAuthenticated)) {
+    return null; // NextAuth will redirect
   }
 
   if (!isAuthenticated) {
-    return <SimpleLoginForm onLogin={handleLogin} title="Szkolenie dla Dzieci i Rodziców" />
+    return (
+      <SimpleLoginForm
+        onLogin={handleLogin}
+        title="Szkolenie dla Dzieci i Rodziców"
+      />
+    );
   }
 
-  return <TrainingContent />
+  return <TrainingContent />;
 }

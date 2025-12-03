@@ -581,7 +581,7 @@ Skuteczny monitoring i optymalizacja strategii wymagają zarówno sztywnej dyscy
       name: 'Anna Kowalska',
       email: 'anna.kowalska@example.com',
       companyName: 'Tech Solutions Sp. z o.o.',
-      phone: '+48 123 456 789',
+
       subject: 'Konsultacja strategiczna',
       message: 'Dzień dobry, interesuje mnie konsultacja w zakresie transformacji cyfrowej naszej firmy. Czy moglibyśmy umówić się na rozmowę?',
       formType: 'CONSULTATION_REQUEST',
