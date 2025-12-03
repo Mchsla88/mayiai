@@ -10,7 +10,13 @@ export async function middleware(request: NextRequest) {
 
 
   // Auth check for training pages
-  const protectedPaths = ['/szkolenia/rodzice']
+  const protectedPaths = [
+    '/szkolenia/rodzice',
+    '/szkolenia/mlody-influencer',
+    '/szkolenia/nauczyciele',
+    '/szkolenia/dzieci',
+    '/dashboard'
+  ]
   const isProtectedPath = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path))
 
   if (isProtectedPath) {

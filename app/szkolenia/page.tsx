@@ -26,61 +26,59 @@ export default function SzkoleniaPage() {
   const { data: session, status } = useSession()
   const router = useRouter()
   const [trainings, setTrainings] = useState<UserTraining[]>([])
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Check local auth
-    const localAuth = localStorage.getItem('main_training_auth')
-    if (localAuth === 'true') {
-      setIsAuthenticated(true)
-      // Load hardcoded trainings for admin/local user
-      setTrainings([
-        {
-          id: 'nauczyciele',
-          slug: 'nauczyciele',
-          title: 'Szkolenie dla Nauczycieli',
-          shortDescription: 'Wykorzystanie AI w edukacji',
-          imageUrl: null,
-          source: 'granted'
-        },
-        {
-          id: 'dzieci',
-          slug: 'dzieci',
-          title: 'Nauka z AI',
-          shortDescription: 'Podstawy AI dla najmłodszych',
-          imageUrl: null,
-          source: 'granted'
-        },
-        {
-          id: 'mlody-influencer',
-          slug: 'mlody-influencer',
-          title: 'Młody Influencer',
-          shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
-          imageUrl: null,
-          source: 'granted'
-        },
-        {
-          id: 'bezpieczenstwo-w-sieci-i-ai',
-          slug: 'bezpieczenstwo-w-sieci-i-ai',
-          title: 'Bezpieczeństwo w AI',
-          shortDescription: 'Ochrona danych i bezpieczne korzystanie z technologii',
-          imageUrl: null,
-          source: 'granted'
-        }
-      ])
-      setIsLoading(false)
+    if (status === 'loading') return
+
+    if (status === 'unauthenticated') {
+      router.push('/auth/login')
       return
     }
 
-    if (status === 'loading') return
-
     if (session?.user) {
-      fetchUserTrainings()
-    } else {
-      setIsLoading(false)
+      // Admin gets access to all trainings
+      if (session.user.isAdmin || session.user.email === 'michal@mayiai.pl') {
+        setTrainings([
+          {
+            id: 'nauczyciele',
+            slug: 'nauczyciele',
+            title: 'Szkolenie dla Nauczycieli',
+            shortDescription: 'Wykorzystanie AI w edukacji',
+            imageUrl: null,
+            source: 'granted'
+          },
+          {
+            id: 'dzieci',
+            slug: 'dzieci',
+            title: 'Nauka z AI',
+            shortDescription: 'Podstawy AI dla najmłodszych',
+            imageUrl: null,
+            source: 'granted'
+          },
+          {
+            id: 'mlody-influencer',
+            slug: 'mlody-influencer',
+            title: 'Młody Influencer',
+            shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
+            imageUrl: null,
+            source: 'granted'
+          },
+          {
+            id: 'bezpieczenstwo-w-sieci-i-ai',
+            slug: 'bezpieczenstwo-w-sieci-i-ai',
+            title: 'Bezpieczeństwo w AI',
+            shortDescription: 'Ochrona danych i bezpieczne korzystanie z technologii',
+            imageUrl: null,
+            source: 'granted'
+          }
+        ])
+        setIsLoading(false)
+      } else {
+        fetchUserTrainings()
+      }
     }
-  }, [session, status])
+  }, [session, status, router])
 
   const fetchUserTrainings = async () => {
     try {
@@ -96,50 +94,8 @@ export default function SzkoleniaPage() {
     }
   }
 
-
-  const handleLogin = () => {
-    localStorage.setItem('main_training_auth', 'true')
-    setIsAuthenticated(true)
-    setIsLoading(false) // Stop showing loading
-    // Manually set trainings data
-    setTrainings([
-        {
-          id: 'nauczyciele',
-          slug: 'nauczyciele',
-          title: 'Szkolenie dla Nauczycieli',
-          shortDescription: 'Wykorzystanie AI w edukacji',
-          imageUrl: null,
-          source: 'granted'
-        },
-        {
-          id: 'dzieci',
-          slug: 'dzieci',
-          title: 'Nauka z AI',
-          shortDescription: 'Podstawy AI dla najmłodszych',
-          imageUrl: null,
-          source: 'granted'
-        },
-        {
-          id: 'mlody-influencer',
-          slug: 'mlody-influencer',
-          title: 'Młody Influencer',
-          shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
-          imageUrl: null,
-          source: 'granted'
-        },
-        {
-          id: 'bezpieczenstwo-w-sieci-i-ai',
-          slug: 'bezpieczenstwo-w-sieci-i-ai',
-          title: 'Bezpieczeństwo w AI',
-          shortDescription: 'Ochrona danych i bezpieczne korzystanie z technologii',
-          imageUrl: null,
-          source: 'granted'
-        }
-      ])
-  }
-
   // Show loading
-  if (status === 'loading' || (session && isLoading)) {
+  if (status === 'loading' || isLoading) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -147,36 +103,6 @@ export default function SzkoleniaPage() {
           <div className="text-center">
             <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-gray-600">Ładowanie...</p>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    )
-  }
-
-  // Show login form for unauthenticated users
-  if (!session && !isAuthenticated) {
-    return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
-        <Navbar />
-        <main className="flex-1 flex items-center justify-center px-4 pt-20 pb-12">
-          <div className="max-w-md w-full">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-6">
-                <Sparkles className="w-4 h-4" />
-                Platforma Szkoleń AI
-              </div>
-              <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Twoje Szkolenia
-              </h1>
-              <p className="text-gray-600">
-                Zaloguj się aby zobaczyć przypisane do Ciebie szkolenia
-              </p>
-            </div>
-            <SimpleLoginForm 
-              onLogin={handleLogin} 
-              title="" 
-            />
           </div>
         </main>
         <Footer />

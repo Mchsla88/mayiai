@@ -38,7 +38,7 @@ const navigation = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { data: session, status } = useSession() || {};
+  const { data: session, status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -52,15 +52,7 @@ export function Navbar() {
   }, []);
 
   const handleSignOut = async () => {
-    // Clear all local auth tokens
-    localStorage.removeItem('main_training_auth');
-    localStorage.removeItem('mlodyInfluencerAuth');
-    localStorage.removeItem('teachersTrainingAuth');
-    localStorage.removeItem('training_auth');
-    
-    await signOut({ redirect: false });
-    router.refresh(); // Refresh to clear session state
-    router.push('/');
+    await signOut({ redirect: true, callbackUrl: '/' });
   };
 
   const closeMenu = () => setIsOpen(false);
@@ -151,7 +143,7 @@ export function Navbar() {
                     </DropdownMenuItem>
                   )}
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleSignOut} className="text-red-600">
+                  <DropdownMenuItem onClick={handleSignOut} className="text-red-600 cursor-pointer">
                     <LogOut className="mr-2 h-4 w-4" />
                     Wyloguj się
                   </DropdownMenuItem>
@@ -160,7 +152,7 @@ export function Navbar() {
             ) : (
               <div className="flex items-center space-x-3">
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href="/szkolenia">Zaloguj się</Link>
+                  <Link href="/auth/login">Zaloguj się</Link>
                 </Button>
                 <Button size="sm" asChild className="bg-blue-600 hover:bg-blue-700">
                   <Link href="/oferta">Rozpocznij</Link>
@@ -251,7 +243,7 @@ export function Navbar() {
                   ) : (
                     <div className="space-y-2">
                       <Link
-                        href="/szkolenia"
+                        href="/auth/login"
                         onClick={closeMenu}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                       >

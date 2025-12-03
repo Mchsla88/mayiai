@@ -57,26 +57,6 @@ function TrainingContent() {
     }
   };
 
-  const handleLogout = () => {
-    try {
-      localStorage.removeItem("training_auth");
-      localStorage.removeItem("main_training_auth");
-      localStorage.removeItem("mlodyInfluencerAuth");
-      localStorage.removeItem("teachersTrainingAuth");
-
-      toast.success("Wylogowano pomyślnie");
-
-      if (session) {
-        window.location.href = "/api/auth/signout?callbackUrl=/";
-      } else {
-        window.location.href = "/";
-      }
-    } catch (error) {
-      console.error("Logout error:", error);
-      window.location.href = "/";
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
       <Navbar />
@@ -85,19 +65,6 @@ function TrainingContent() {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 py-16">
           <div className="container mx-auto px-4">
-            {/* Logout Button - Top Right */}
-            <div className="absolute top-4 right-4 z-10">
-              <Button
-                onClick={handleLogout}
-                variant="secondary"
-                size="sm"
-                className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30"
-              >
-                <LogOut className="w-4 h-4 mr-2" />
-                Wyloguj
-              </Button>
-            </div>
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -451,52 +418,21 @@ function TrainingContent() {
 export default function SzkoleniePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Redirect unauthenticated users to login
-  // Redirect unauthenticated users to login (unless locally authenticated)
   useEffect(() => {
     if (status === "loading") return;
 
-    // Check local auth first
-    const mainAuth = localStorage.getItem("main_training_auth");
-    if (mainAuth === "true") {
-      setIsAuthenticated(true);
-      return;
-    }
-
-    if (!session) {
+    if (status === "unauthenticated") {
       router.push("/auth/login?callbackUrl=/szkolenia/dzieci");
-      return;
     }
+  }, [status, router]);
 
-    setIsAuthenticated(true);
-  }, [session, status, router]);
-
-  useEffect(() => {
-    // Check if user is already authenticated (from localStorage)
-    const auth = localStorage.getItem("training_auth");
-    if (auth === "true" && session) {
-      setIsAuthenticated(true);
-    }
-  }, [session]);
-
-  const handleLogin = () => {
-    localStorage.setItem("training_auth", "true");
-    setIsAuthenticated(true);
-  };
-
-  // Show loading while checking auth
-  if (status === "loading" || (session && !isAuthenticated)) {
-    return null; // NextAuth will redirect
-  }
-
-  if (!isAuthenticated) {
+  if (status === "loading" || status === "unauthenticated") {
     return (
-      <SimpleLoginForm
-        onLogin={handleLogin}
-        title="Nauka z AI"
-      />
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
     );
   }
 

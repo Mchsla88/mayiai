@@ -100,7 +100,7 @@ export default function DashboardPage() {
           <h2 className="text-2xl font-bold text-foreground mb-4">
             ✨ Wstęp: Witaj w Świecie Kreatywności!
           </h2>
-          <Link href="/dashboard/intro">
+          <Link href="/szkolenia/mlody-influencer/dashboard/intro">
             <div className="bg-white rounded-3xl p-6 shadow-warm hover:shadow-warm-lg transition-smooth cursor-pointer max-w-md">
               <div className="w-12 h-12 bg-gradient-warm rounded-2xl flex items-center justify-center mb-4 shadow-warm">
                 <span className="text-2xl">✨</span>
@@ -127,7 +127,7 @@ export default function DashboardPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {courseParts.map((part, index) => (
-              <Link key={part.id} href={`/dashboard/part/${part.id}`}>
+              <Link key={part.id} href={`/szkolenia/mlody-influencer/dashboard/part/${part.id}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function DashboardPage() {
           <h2 className="text-2xl font-bold text-foreground mb-4">
             📎 Załączniki
           </h2>
-          <Link href="/dashboard/appendices">
+          <Link href="/szkolenia/mlody-influencer/dashboard/appendices">
             <div className="bg-white rounded-3xl p-6 shadow-warm hover:shadow-warm-lg transition-smooth cursor-pointer max-w-md">
               <div className="w-12 h-12 bg-gradient-blue rounded-2xl flex items-center justify-center mb-4 shadow-warm">
                 <span className="text-2xl">📎</span>

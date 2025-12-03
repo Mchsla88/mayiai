@@ -12,24 +12,7 @@ export function DashboardNavbar() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    try {
-      // Clear ALL auth tokens
-      localStorage.removeItem('main_training_auth');
-      localStorage.removeItem('mlodyInfluencerAuth');
-      localStorage.removeItem('teachersTrainingAuth');
-      localStorage.removeItem('training_auth');
-      
-      await signOut({ redirect: false });
-      toast.success('Wylogowano pomyślnie');
-      router.push('/');
-      router.refresh(); // Force page refresh to clear session state
-    } catch (error) {
-      console.error('Logout error:', error);
-      // Clear tokens anyway and redirect
-      localStorage.clear();
-      router.push('/');
-      router.refresh();
-    }
+    await signOut({ redirect: true, callbackUrl: '/' });
   };
 
   return (
