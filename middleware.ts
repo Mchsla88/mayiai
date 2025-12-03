@@ -7,14 +7,7 @@ export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   const hostname = request.headers.get('host') || ''
 
-  // WWW Canonicalization: Przekieruj www na non-www (wszystkie domeny)
-  if (hostname.startsWith('www.')) {
-    const newHostname = hostname.substring(4) // Usuń 'www.'
-    url.protocol = 'https'
-    url.host = newHostname
-    url.port = '' // Wyczyść port dla https
-    return NextResponse.redirect(url, 301) // Permanent redirect
-  }
+
 
   // Auth check for training pages
   const protectedPaths = ['/szkolenia/rodzice']
