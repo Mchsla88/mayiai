@@ -32,12 +32,11 @@ function SzkoleniaContent() {
   const [isProcessing, setIsProcessing] = useState<string | null>(null)
 
   useEffect(() => {
-    if (status === 'loading') return
-
-    if (status === 'unauthenticated') {
-      router.push('/auth/login')
-      return
-    }
+    // Remove authentication check to allow guests to view offer
+    // if (status === 'unauthenticated') {
+    //   router.push('/auth/login')
+    //   return
+    // }
 
     fetchTrainings()
 
@@ -65,6 +64,13 @@ function SzkoleniaContent() {
   }
 
   const handlePurchase = async (trainingId: string) => {
+    // If not authenticated, redirect to login
+    if (status === 'unauthenticated') {
+      toast.info('Zaloguj się, aby dokonać zakupu')
+      router.push('/auth/login?callbackUrl=/szkolenia')
+      return
+    }
+
     try {
       setIsProcessing(trainingId)
       const response = await fetch('/api/payu/create-order', {
@@ -91,7 +97,7 @@ function SzkoleniaContent() {
   }
 
   // Show loading
-  if (status === 'loading' || isLoading) {
+  if (status === 'loading' && !trainings.length) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -122,10 +128,13 @@ function SzkoleniaContent() {
               Centrum Szkoleniowe
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Wybierz swoją ścieżkę rozwoju
+              {session?.user ? `Witaj, ${session.user.name || session.user.email?.split('@')[0]}!` : 'Wybierz swoją ścieżkę rozwoju'}
             </h1>
             <p className="text-xl text-gray-600">
-              Dostępne szkolenia i kursy online
+              {session?.user 
+                ? `Masz dostęp do ${trainings.filter(t => t.hasAccess).length} szkoleń`
+                : 'Zaloguj się, aby uzyskać dostęp do swoich szkoleń lub wybierz kurs z oferty poniżej.'
+              }
             </p>
           </motion.div>
 
