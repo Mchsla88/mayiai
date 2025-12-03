@@ -288,7 +288,7 @@ export function ChapterView({ chapter, slides }: ChapterViewProps) {
 
                 {isCompleted && nextChapter && (
                   <Button
-                    onClick={() => router.push(`/dashboard/chapter/${nextChapter.id}`)}
+                    onClick={() => router.push(`/szkolenia/mlody-influencer/dashboard/chapter/${nextChapter.id}`)}
                     size="lg"
                     variant="outline"
                     className="rounded-2xl gap-3 text-lg py-6"

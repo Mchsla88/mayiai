@@ -83,6 +83,11 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      perspective: {
+        '1000': '1000px',
+        '2000': '2000px',
+        '3000': '3000px',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

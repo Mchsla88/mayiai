@@ -80,7 +80,7 @@ export default function PartPage() {
               >
                 <Card
                   className="cursor-pointer hover:shadow-xl transition-all duration-300 border-2 border-orange-200 hover:border-orange-400 bg-white"
-                  onClick={() => router.push(`/dashboard/chapter/${chapter.id}`)}
+                  onClick={() => router.push(`/szkolenia/mlody-influencer/dashboard/chapter/${chapter.id}`)}
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between">

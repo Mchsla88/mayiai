@@ -23,7 +23,7 @@ export function ChapterCard({ chapter, index, isCompleted, isLocked, progress }:
       transition={{ delay: index * 0.05 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
-      <Link href={isLocked ? '#' : `/dashboard/chapter/${chapter.id}`}>
+      <Link href={isLocked ? '#' : `/szkolenia/mlody-influencer/dashboard/chapter/${chapter.id}`}>
         <Card
           className={`p-6 rounded-3xl shadow-warm hover:shadow-warm-lg transition-smooth relative overflow-hidden ${
             isLocked ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'

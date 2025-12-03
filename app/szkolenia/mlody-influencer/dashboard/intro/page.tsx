@@ -62,7 +62,7 @@ export default function IntroPage() {
             slides={slides}
             onComplete={() => {
               // Navigate to next chapter when intro is completed
-              window.location.href = '/dashboard/chapter/chapter-1';
+              window.location.href = '/szkolenia/mlody-influencer/dashboard/chapter/chapter-1';
             }}
           />
         )}

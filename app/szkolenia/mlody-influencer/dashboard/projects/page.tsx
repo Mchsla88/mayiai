@@ -143,7 +143,7 @@ export default function ProjectsPage() {
               Pełna lista 50+ projektów dostępna jest w Rozdziale 21
             </p>
             <Button
-              onClick={() => router.push('/dashboard/chapter/chapter-21')}
+              onClick={() => router.push('/szkolenia/mlody-influencer/dashboard/chapter/chapter-21')}
               className="rounded-2xl bg-gradient-warm text-white shadow-warm hover:shadow-warm-lg transition-smooth"
             >
               Przejdź do pełnej listy

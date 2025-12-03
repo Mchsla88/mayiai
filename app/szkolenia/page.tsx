@@ -59,6 +59,14 @@ export default function SzkoleniaPage() {
           shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
           imageUrl: null,
           source: 'granted'
+        },
+        {
+          id: 'bezpieczenstwo-w-sieci-i-ai',
+          slug: 'bezpieczenstwo-w-sieci-i-ai',
+          title: 'Bezpieczeństwo w AI',
+          shortDescription: 'Ochrona danych i bezpieczne korzystanie z technologii',
+          imageUrl: null,
+          source: 'granted'
         }
       ])
       setIsLoading(false)
@@ -88,12 +96,12 @@ export default function SzkoleniaPage() {
     }
   }
 
+
   const handleLogin = () => {
     localStorage.setItem('main_training_auth', 'true')
     setIsAuthenticated(true)
-    // Reload to apply state if needed, but state update should handle it
-    // router.refresh() 
-    // Manually trigger data load
+    setIsLoading(false) // Stop showing loading
+    // Manually set trainings data
     setTrainings([
         {
           id: 'nauczyciele',
@@ -116,6 +124,14 @@ export default function SzkoleniaPage() {
           slug: 'mlody-influencer',
           title: 'Młody Influencer',
           shortDescription: 'Tworzenie contentu i budowanie marki osobistej z AI',
+          imageUrl: null,
+          source: 'granted'
+        },
+        {
+          id: 'bezpieczenstwo-w-sieci-i-ai',
+          slug: 'bezpieczenstwo-w-sieci-i-ai',
+          title: 'Bezpieczeństwo w AI',
+          shortDescription: 'Ochrona danych i bezpieczne korzystanie z technologii',
           imageUrl: null,
           source: 'granted'
         }

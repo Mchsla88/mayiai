@@ -73,7 +73,7 @@ export default function OfertaPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
               {[
                 {
-                  title: 'Łatwa Szkoła z AI',
+                  title: 'Nauka z AI',
                   description: 'Jak wykorzystać AI do efektywnej nauki i odrabiania lekcji.',
                   icon: BookOpen,
                   color: 'from-blue-500 to-indigo-600',
@@ -135,17 +135,6 @@ export default function OfertaPage() {
                           </div>
                           <span className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</span>
                         </div>
-
-                        <ul className="space-y-3 text-sm text-gray-600">
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            Dostęp online 24/7
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            Certyfikat ukończenia
-                          </li>
-                        </ul>
 
                         <Button 
                           asChild 
