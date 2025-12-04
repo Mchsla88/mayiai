@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
     const body = await req.json();
-    const { trainingId, email, firstName, lastName } = body;
+    const { trainingId, email, firstName, lastName, discountCode } = body;
 
     // Validate required fields
     if (!trainingId) {
@@ -47,8 +47,33 @@ export async function POST(req: Request) {
       console.log('Created new user:', user.id);
     }
 
+    // Calculate price with discount
+    let finalPrice = Number(training.price);
+    
+    if (discountCode) {
+      const discount = await prisma.discountCode.findUnique({
+        where: { code: discountCode },
+      });
+
+      if (discount && discount.isActive) {
+        const now = new Date();
+        if (
+          (!discount.expiresAt || now <= discount.expiresAt) &&
+          (!discount.usageLimit || discount.usedCount < discount.usageLimit) &&
+          (!discount.trainingId || discount.trainingId === trainingId)
+        ) {
+          if (discount.type === 'PERCENTAGE') {
+            finalPrice = Math.round(finalPrice * (1 - discount.discount / 100));
+          } else {
+            finalPrice = Math.max(0, finalPrice - discount.discount);
+          }
+          console.log(`Applied discount ${discountCode}: ${training.price} -> ${finalPrice}`);
+        }
+      }
+    }
+
     const payuClient = getPayUClient();
-    const amount = Math.round(Number(training.price) * 100); // PayU expects amount in grosze as integer string
+    const amount = Math.round(finalPrice * 100); // PayU expects amount in grosze as integer string
 
     const baseUrl = process.env.NEXTAUTH_URL || 'https://mayiai.pl';
 
