@@ -36,13 +36,11 @@ export default function TeachersTrainingPage() {
       return
     }
 
-    if (!session) {
-      router.push('/auth/login?callbackUrl=/szkolenia/nauczyciele')
-      return
+    // If session exists, we are authenticated
+    if (session) {
+      setIsAuthenticated(true)
     }
-    
-    setIsAuthenticated(true)
-  }, [session, status, router])
+  }, [session, status])
 
   const handleAuthSuccess = () => {
     setIsAuthenticated(true)
