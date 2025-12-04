@@ -11,6 +11,7 @@ import { motion } from 'framer-motion'
 import { GraduationCap, ArrowRight, ShoppingCart, Lock, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
+import { PurchaseDialog } from '@/components/purchase-dialog'
 
 interface Training {
   id: string
@@ -29,7 +30,17 @@ function SzkoleniaContent() {
   const searchParams = useSearchParams()
   const [trainings, setTrainings] = useState<Training[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [isProcessing, setIsProcessing] = useState<string | null>(null)
+  const [purchaseDialog, setPurchaseDialog] = useState<{
+    isOpen: boolean
+    trainingId: string
+    trainingTitle: string
+    trainingPrice: number
+  }>({
+    isOpen: false,
+    trainingId: '',
+    trainingTitle: '',
+    trainingPrice: 0,
+  })
 
   useEffect(() => {
     // Remove authentication check to allow guests to view offer
@@ -63,37 +74,14 @@ function SzkoleniaContent() {
     }
   }
 
-  const handlePurchase = async (trainingId: string) => {
-    // If not authenticated, redirect to login
-    if (status === 'unauthenticated') {
-      toast.info('Zaloguj się, aby dokonać zakupu')
-      router.push('/auth/login?callbackUrl=/szkolenia')
-      return
-    }
-
-    try {
-      setIsProcessing(trainingId)
-      const response = await fetch('/api/payu/create-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ trainingId }),
-      })
-
-      const data = await response.json()
-
-      if (response.ok && data.redirectUri) {
-        window.location.href = data.redirectUri
-      } else {
-        toast.error(data.error || 'Wystąpił błąd podczas inicjowania płatności')
-      }
-    } catch (error) {
-      console.error('Purchase error:', error)
-      toast.error('Wystąpił błąd połączenia')
-    } finally {
-      setIsProcessing(null)
-    }
+  const handlePurchase = (training: Training) => {
+    // Open purchase dialog instead of redirecting to login
+    setPurchaseDialog({
+      isOpen: true,
+      trainingId: training.id,
+      trainingTitle: training.title,
+      trainingPrice: Number(training.price),
+    })
   }
 
   // Show loading
@@ -185,18 +173,11 @@ function SzkoleniaContent() {
                       </Link>
                     ) : (
                       <Button 
-                        onClick={() => handlePurchase(training.id)}
-                        disabled={isProcessing === training.id}
+                        onClick={() => handlePurchase(training)}
                         className="w-full bg-gradient-to-r from-purple-600 to-pink-600 group-hover:shadow-lg transition-all"
                       >
-                        {isProcessing === training.id ? (
-                          <>Przetwarzanie...</>
-                        ) : (
-                          <>
-                            Kup teraz
-                            <ShoppingCart className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </>
-                        )}
+                        Kup teraz
+                        <ShoppingCart className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     )}
                   </CardContent>
@@ -206,6 +187,14 @@ function SzkoleniaContent() {
           </div>
         </div>
       </main>
+
+      <PurchaseDialog
+        isOpen={purchaseDialog.isOpen}
+        onClose={() => setPurchaseDialog({ ...purchaseDialog, isOpen: false })}
+        trainingId={purchaseDialog.trainingId}
+        trainingTitle={purchaseDialog.trainingTitle}
+        trainingPrice={purchaseDialog.trainingPrice}
+      />
 
       <Footer />
     </div>

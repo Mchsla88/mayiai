@@ -7,14 +7,18 @@ import { getPayUClient } from '@/lib/payu';
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    if (!session?.user?.id) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const body = await req.json();
+    const { trainingId, email, firstName, lastName } = body;
 
-    const { trainingId } = await req.json();
-
+    // Validate required fields
     if (!trainingId) {
       return NextResponse.json({ error: 'Missing trainingId' }, { status: 400 });
+    }
+
+    if (!email || !firstName || !lastName) {
+      return NextResponse.json({ 
+        error: 'Missing buyer information (email, firstName, lastName required)' 
+      }, { status: 400 });
     }
 
     const training = await prisma.training.findUnique({
@@ -23,6 +27,24 @@ export async function POST(req: Request) {
 
     if (!training) {
       return NextResponse.json({ error: 'Training not found' }, { status: 404 });
+    }
+
+    // Find or create user
+    let user = await prisma.user.findUnique({
+      where: { email },
+    });
+
+    if (!user) {
+      // Create new user if doesn't exist
+      user = await prisma.user.create({
+        data: {
+          email,
+          name: `${firstName} ${lastName}`,
+          firstName,
+          lastName,
+        },
+      });
+      console.log('Created new user:', user.id);
     }
 
     const payuClient = getPayUClient();
@@ -37,9 +59,9 @@ export async function POST(req: Request) {
       currencyCode: 'PLN',
       totalAmount: amount.toString(),
       buyer: {
-        email: session.user.email!,
-        firstName: session.user.name?.split(' ')[0] || 'Użytkownik',
-        lastName: session.user.name?.split(' ')[1] || 'Mayiai',
+        email,
+        firstName,
+        lastName,
         language: 'pl',
       },
       products: [
@@ -64,8 +86,8 @@ export async function POST(req: Request) {
         amount: training.price,
         status: 'PENDING',
         description: `Zakup szkolenia: ${training.title}`,
-        customerEmail: session.user.email!,
-        userId: session.user.id,
+        customerEmail: email,
+        userId: user.id,
         trainingId: training.id,
       },
     });
@@ -73,6 +95,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ redirectUri: payuResponse.redirectUri });
   } catch (error) {
     console.error('PayU Create Order Error:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({ 
+      error: 'Internal Server Error', 
+      details: error instanceof Error ? error.message : 'Unknown error'
+    }, { status: 500 });
   }
 }
