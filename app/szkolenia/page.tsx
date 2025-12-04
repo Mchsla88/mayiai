@@ -31,16 +31,12 @@ function SzkoleniaContent() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Redirect unauthenticated users to oferta page
-    if (status === 'unauthenticated') {
-      router.push('/oferta')
-      return
-    }
-
     if (status === 'authenticated') {
       fetchTrainings()
+    } else if (status === 'unauthenticated') {
+      setIsLoading(false)
     }
-  }, [status, router])
+  }, [status])
 
   const fetchTrainings = async () => {
     try {
@@ -66,7 +62,58 @@ function SzkoleniaContent() {
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Ładowanie Twoich szkoleń...</p>
+            <p className="text-gray-600">Ładowanie...</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  // Show login prompt for unauthenticated users
+  if (status === 'unauthenticated') {
+    return (
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <Navbar />
+        <main className="flex-1 pt-24 pb-12">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center max-w-xl mx-auto"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Lock className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Twoje Szkolenia
+              </h1>
+              <p className="text-lg text-gray-600 mb-8">
+                Zaloguj się, aby uzyskać dostęp do swoich szkoleń
+              </p>
+              <div className="space-y-4">
+                <Link href="/auth/login?callbackUrl=/szkolenia">
+                  <Button size="lg" className="w-full max-w-xs bg-purple-600 hover:bg-purple-700">
+                    Zaloguj się
+                  </Button>
+                </Link>
+                <p className="text-sm text-gray-500">
+                  Nie masz konta?{' '}
+                  <Link href="/auth/register" className="text-purple-600 hover:underline">
+                    Zarejestruj się
+                  </Link>
+                </p>
+                <div className="pt-4 border-t border-gray-200 mt-6">
+                  <p className="text-sm text-gray-500 mb-3">Nie masz jeszcze żadnych szkoleń?</p>
+                  <Link href="/oferta">
+                    <Button variant="outline" size="lg">
+                      Zobacz ofertę szkoleń
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </main>
         <Footer />
