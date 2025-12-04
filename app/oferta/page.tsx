@@ -116,67 +116,69 @@ function OfertaContent() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all overflow-hidden flex flex-col group">
-                  {/* Thumbnail */}
-                  <div className="relative h-48 bg-gray-100 overflow-hidden">
-                    {training.imageUrl ? (
-                      <Image 
-                        src={training.imageUrl} 
-                        alt={training.title} 
-                        fill 
-                        className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500">
-                        <GraduationCap className="w-16 h-16 text-white/80" />
-                      </div>
-                    )}
-                    {training.hasAccess && (
-                      <div className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                        POSIADASZ DOSTĘP
-                      </div>
-                    )}
-                  </div>
-
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
-                      <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded">
-                        <BarChart className="w-3 h-3" />
-                        {training.level || 'Średniozaawansowany'}
-                      </span>
-                      <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded">
-                        <Clock className="w-3 h-3" />
-                        {training.duration || '4h 30m'}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
-                      {training.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
-                      {training.shortDescription}
-                    </p>
-
-                    <div className="flex items-center gap-1 text-yellow-400 mb-4">
-                      <Star className="w-4 h-4 fill-current" />
-                      <Star className="w-4 h-4 fill-current" />
-                      <Star className="w-4 h-4 fill-current" />
-                      <Star className="w-4 h-4 fill-current" />
-                      <Star className="w-4 h-4 fill-current" />
-                      <span className="text-gray-400 text-xs ml-1">(5.0)</span>
-                    </div>
-
-                    <div className="flex items-end justify-between mt-auto pt-4 border-t border-gray-100">
-                      <div>
-                        <div className="text-xs text-gray-400 line-through">
-                          {(Number(training.price) * 1.2).toFixed(0)} zł
+                  <Link href={`/oferta/${training.slug}`} className="flex-1 flex flex-col cursor-pointer">
+                    {/* Thumbnail */}
+                    <div className="relative h-48 bg-gray-100 overflow-hidden">
+                      {training.imageUrl ? (
+                        <Image 
+                          src={training.imageUrl} 
+                          alt={training.title} 
+                          fill 
+                          className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500">
+                          <GraduationCap className="w-16 h-16 text-white/80" />
                         </div>
-                        <div className="text-2xl font-bold text-purple-600">
-                          {training.price} zł
+                      )}
+                      {training.hasAccess && (
+                        <div className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                          POSIADASZ DOSTĘP
+                        </div>
+                      )}
+                    </div>
+
+                    <CardContent className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+                        <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded">
+                          <BarChart className="w-3 h-3" />
+                          {training.level || 'Średniozaawansowany'}
+                        </span>
+                        <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded">
+                          <Clock className="w-3 h-3" />
+                          {training.duration || '4h 30m'}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                        {training.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                        {training.shortDescription}
+                      </p>
+
+                      <div className="flex items-center gap-1 text-yellow-400 mb-4">
+                        <Star className="w-4 h-4 fill-current" />
+                        <Star className="w-4 h-4 fill-current" />
+                        <Star className="w-4 h-4 fill-current" />
+                        <Star className="w-4 h-4 fill-current" />
+                        <Star className="w-4 h-4 fill-current" />
+                        <span className="text-gray-400 text-xs ml-1">(5.0)</span>
+                      </div>
+
+                      <div className="flex items-end justify-between mt-auto pt-4 border-t border-gray-100">
+                        <div>
+                          <div className="text-xs text-gray-400 line-through">
+                            {(Number(training.price) * 1.2).toFixed(0)} zł
+                          </div>
+                          <div className="text-2xl font-bold text-purple-600">
+                            {training.price} zł
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
+                    </CardContent>
+                  </Link>
 
                   <CardFooter className="p-6 pt-0">
                     {training.hasAccess ? (
