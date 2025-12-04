@@ -13,7 +13,11 @@ import {
 } from '@/components/structured-data'
 import { CartProvider } from '@/context/cart-context'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap', // Prevents FOIT/FOUT and improves CLS
+  variable: '--font-inter',
+})
 
 const siteName = 'May I AI Family Expert'
 const siteUrl = 'https://mayiai.pl'
@@ -112,8 +116,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pl" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="pl" className={inter.variable} suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
         <OrganizationStructuredData />
         <EducationalOrganizationStructuredData />
         <WebsiteStructuredData />
