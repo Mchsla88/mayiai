@@ -31,9 +31,9 @@ function SzkoleniaContent() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Require authentication
+    // Redirect unauthenticated users to oferta page
     if (status === 'unauthenticated') {
-      router.push('/auth/login')
+      router.push('/oferta')
       return
     }
 
