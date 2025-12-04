@@ -161,9 +161,6 @@ model Training {
   duration         String
   level            TrainingLevel @default(BEGINNER)
   imageUrl         String?
-  modulesCount     Int           @default(0)
-  learningOutcomes Json? // Array of strings
-  program          Json? // Array of objects { title, description }
   isActive         Boolean       @default(true)
   orderIndex       Int           @default(0)
   createdAt        DateTime      @default(now())
