@@ -67,7 +67,16 @@ export class PayUClient {
     });
 
     if (!response.ok) {
-      throw new Error(`PayU OAuth failed: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('PayU OAuth Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText,
+        url: `${this.baseUrl}/pl/standard/user/oauth/authorize`,
+        clientId: this.config.clientId,
+        environment: this.config.environment,
+      });
+      throw new Error(`PayU OAuth failed: ${response.statusText} - ${errorText}`);
     }
 
     const data = await response.json();
