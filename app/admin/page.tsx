@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import { useState, useEffect } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
@@ -288,10 +290,12 @@ export default function AdminDashboard() {
             <Shield className="w-4 h-4" />
             Dodaj użytkownika
           </Button>
-          <Button variant="outline" className="gap-2">
-            <Gift className="w-4 h-4" />
-            Kody Rabatowe
-          </Button>
+          <Link href="/admin/discounts">
+            <Button variant="outline" className="gap-2">
+              <Gift className="w-4 h-4" />
+              Kody Rabatowe
+            </Button>
+          </Link>
           <div className="bg-white p-4 rounded-lg shadow-sm border flex gap-8">
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">{users.length}</div>
