@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useCart } from '@/context/cart-context';
 import { 
   Menu, 
   X, 
@@ -15,7 +16,8 @@ import {
   Settings, 
   BookOpen, 
   ChevronDown,
-  Shield
+  Shield,
+  ShoppingCart
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -39,6 +41,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { data: session, status } = useSession();
+  const { count: cartCount } = useCart();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -100,6 +103,18 @@ export function Navbar() {
 
           {/* Auth Section */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Cart Icon */}
+            <Link href="/koszyk">
+              <Button variant="ghost" size="icon" className="relative">
+                <ShoppingCart className="h-5 w-5 text-gray-700" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </Button>
+            </Link>
+
             {status === 'loading' ? (
               <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse" />
             ) : session?.user ? (

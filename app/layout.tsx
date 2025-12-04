@@ -11,6 +11,7 @@ import {
   WebsiteStructuredData,
   SoftwareApplicationStructuredData
 } from '@/components/structured-data'
+import { CartProvider } from '@/context/cart-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -118,15 +119,17 @@ export default function RootLayout({
         <WebsiteStructuredData />
         <SoftwareApplicationStructuredData />
         <SessionProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster position="top-center" />
-          </ThemeProvider>
+          <CartProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem={false}
+              disableTransitionOnChange
+            >
+              {children}
+              <Toaster position="top-center" />
+            </ThemeProvider>
+          </CartProvider>
         </SessionProvider>
       </body>
     </html>

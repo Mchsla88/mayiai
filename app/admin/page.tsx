@@ -209,6 +209,11 @@ export default function AdminDashboard() {
       return
     }
 
+    if (newUserData.password.length < 6) {
+      toast.error('Hasło musi mieć co najmniej 6 znaków')
+      return
+    }
+
     try {
       const res = await fetch('/api/admin/users', {
         method: 'POST',
