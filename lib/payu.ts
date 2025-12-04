@@ -102,7 +102,27 @@ export class PayUClient {
         ...orderData,
         merchantPosId: this.config.posId,
       }),
+      redirect: 'manual', // Important: Prevent fetch from following the redirect
     });
+
+    // PayU returns 302 Found for successful order creation with redirectUri in body
+    if (response.status === 302) {
+      try {
+        const data = await response.json();
+        return data;
+      } catch (e) {
+        // Fallback: if body is empty or not JSON, try to get Location header (though PayU docs say body has JSON)
+        const location = response.headers.get('Location');
+        if (location) {
+          return {
+            status: { statusCode: 'SUCCESS' },
+            redirectUri: location,
+            orderId: '', // We might miss orderId if we only use header
+          };
+        }
+        throw new Error('PayU returned 302 but failed to parse response body or find Location header');
+      }
+    }
 
     if (!response.ok) {
       const errorText = await response.text();
