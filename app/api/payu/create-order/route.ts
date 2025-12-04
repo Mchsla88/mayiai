@@ -95,6 +95,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ redirectUri: payuResponse.redirectUri });
   } catch (error) {
     console.error('PayU Create Order Error:', error);
+    // Log detailed error if available
+    if (error instanceof Error) {
+      console.error('Error details:', error.message);
+      console.error('Stack:', error.stack);
+    }
     return NextResponse.json({ 
       error: 'Internal Server Error', 
       details: error instanceof Error ? error.message : 'Unknown error'

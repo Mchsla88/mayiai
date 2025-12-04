@@ -86,6 +86,9 @@ export class PayUClient {
   /**
    * Create a new order
    */
+  /**
+   * Create a new order
+   */
   async createOrder(orderData: PayUOrderRequest): Promise<PayUOrderResponse> {
     const token = await this.getAccessToken();
 
@@ -103,11 +106,23 @@ export class PayUClient {
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`PayU order creation failed: ${errorText}`);
+      console.error('PayU Create Order Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText,
+        url: `${this.baseUrl}/api/v2_1/orders`,
+      });
+      throw new Error(`PayU order creation failed: ${response.statusText} - ${errorText}`);
     }
 
-    const data = await response.json();
-    return data;
+    try {
+      const data = await response.json();
+      return data;
+    } catch (e) {
+       const text = await response.text();
+       console.error('PayU JSON Parse Error:', text);
+       throw new Error('Failed to parse PayU response');
+    }
   }
 
   /**
