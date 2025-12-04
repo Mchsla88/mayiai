@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import crypto from 'crypto';
+import { grantAccess } from '@/lib/access';
 
 export async function POST(req: Request) {
   try {
@@ -57,41 +58,15 @@ export async function POST(req: Request) {
         data: { status: 'COMPLETED' },
       });
 
-      // Grant access to training
-      if (order.userId && order.trainingId) {
-        // Calculate expiration (e.g., 1 year)
-        const expiresAt = new Date();
-        expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-
-        // Check if access already exists
-        const existingAccess = await prisma.userTraining.findUnique({
-          where: {
-            userId_trainingId: {
-              userId: order.userId,
-              trainingId: order.trainingId
-            }
-          }
-        });
-
-        if (existingAccess) {
-           await prisma.userTraining.update({
-             where: { id: existingAccess.id },
-             data: { 
-               isActive: true,
-               expiresAt: expiresAt // Extend access
-             }
-           });
-        } else {
-          await prisma.userTraining.create({
-            data: {
-              userId: order.userId,
-              trainingId: order.trainingId,
-              expiresAt: expiresAt,
-              isActive: true,
-            },
-          });
+      // Grant access to training and send welcome email
+      if (order.trainingId && order.customerEmail) {
+        try {
+          const result = await grantAccess(order.customerEmail, order.trainingId, orderId);
+          console.log(`Access granted to ${order.customerEmail} for training ${order.trainingId}. New user: ${result.isNewUser}`);
+        } catch (accessError) {
+          console.error('Error granting access:', accessError);
+          // Don't fail the whole notification - access can be fixed manually
         }
-        console.log(`Access granted to user ${order.userId} for training ${order.trainingId}`);
       }
     } else if (status === 'CANCELED') {
        await prisma.order.update({
