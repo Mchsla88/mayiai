@@ -10,9 +10,17 @@ function generatePassword(length = 12) {
 
 export async function grantAccess(email: string, trainingId: string, payuOrderId: string) {
   try {
-    // 1. Check if user exists
-    let user = await prisma.user.findUnique({
-      where: { email },
+    // Normalize email to lowercase to prevent duplicates
+    const normalizedEmail = email.toLowerCase().trim();
+    
+    // 1. Check if user exists (case-insensitive search)
+    let user = await prisma.user.findFirst({
+      where: { 
+        email: {
+          equals: normalizedEmail,
+          mode: 'insensitive'
+        }
+      },
     });
 
     let isNewUser = false;
@@ -26,9 +34,9 @@ export async function grantAccess(email: string, trainingId: string, payuOrderId
 
       user = await prisma.user.create({
         data: {
-          email,
+          email: normalizedEmail, // Always store lowercase
           password: hashedPassword,
-          name: email.split('@')[0], // Default name from email
+          name: normalizedEmail.split('@')[0], // Default name from email
         },
       });
     }
