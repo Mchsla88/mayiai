@@ -14,6 +14,7 @@ import { CertificateGenerator } from '@/components/certificate-generator'
 import toast from 'react-hot-toast'
 import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { Navbar } from '@/components/navbar'
 
 // Import modules from separate file
 import { trainingModules } from './training-modules-data'
@@ -90,8 +91,9 @@ export default function TeachersTrainingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <Navbar />
       
-      <main className="container mx-auto px-4 py-12 relative">
+      <main className="container mx-auto px-4 py-12 pt-24 relative">
         {/* Logout Button */}
         <div className="absolute top-4 right-4 z-10">
           <Button 
