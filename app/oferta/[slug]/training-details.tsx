@@ -30,6 +30,13 @@ interface Training {
   price: any // Decimal or number
   duration: string
   level: string
+  modulesCount?: number
+  learningOutcomes?: string[]
+  program?: {
+    title: string;
+    description: string;
+    duration?: string;
+  }[]
 }
 
 export function TrainingDetails({ training }: { training: Training }) {
@@ -104,7 +111,36 @@ export function TrainingDetails({ training }: { training: Training }) {
                     </div>
                   </div>
                 </div>
+                {training.modulesCount && (
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3 col-span-2">
+                    <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                      <GraduationCap className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Liczba modułów</div>
+                      <div className="font-semibold">{training.modulesCount} modułów lekcyjnych</div>
+                    </div>
+                  </div>
+                )}
               </div>
+
+              {/* Learning Outcomes */}
+              {training.learningOutcomes && training.learningOutcomes.length > 0 && (
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    Czego się nauczysz?
+                  </h3>
+                  <ul className="space-y-3">
+                    {training.learningOutcomes.map((outcome, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-600">
+                        <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                        <span>{outcome}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </motion.div>
 
             {/* Right Column: Content and Actions */}
@@ -168,6 +204,28 @@ export function TrainingDetails({ training }: { training: Training }) {
                 <h3 className="text-gray-900 font-bold text-xl mb-4">O tym szkoleniu</h3>
                 <p className="whitespace-pre-line">{training.fullDescription}</p>
               </div>
+
+              {/* Program */}
+              {training.program && training.program.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Program szkolenia</h3>
+                  <div className="space-y-3">
+                    {training.program.map((module, index) => (
+                      <div key={index} className="bg-white p-4 rounded-xl border border-gray-200 hover:border-purple-200 transition-colors">
+                        <div className="flex justify-between items-start mb-1">
+                          <h4 className="font-bold text-gray-900">{module.title}</h4>
+                          {module.duration && (
+                            <span className="text-xs font-medium bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                              {module.duration}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-gray-600">{module.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>

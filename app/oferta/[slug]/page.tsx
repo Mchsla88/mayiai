@@ -1,7 +1,7 @@
-
 import { prisma } from '@/lib/db'
 import { notFound } from 'next/navigation'
 import { TrainingDetails } from './training-details'
+import { trainingDetailsData } from '@/lib/training-details-data'
 
 export default async function TrainingPage({ params }: { params: { slug: string } }) {
   const training = await prisma.training.findUnique({
@@ -12,5 +12,12 @@ export default async function TrainingPage({ params }: { params: { slug: string 
     notFound()
   }
 
-  return <TrainingDetails training={training as any} />
+  const details = trainingDetailsData[params.slug] || {}
+  
+  const extendedTraining = {
+    ...training,
+    ...details
+  }
+
+  return <TrainingDetails training={extendedTraining as any} />
 }
