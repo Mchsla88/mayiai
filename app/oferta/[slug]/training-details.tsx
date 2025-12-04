@@ -90,25 +90,13 @@ export function TrainingDetails({ training }: { training: Training }) {
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-                  <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
-                    <Clock className="w-6 h-6" />
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3 col-span-2">
+                  <div className="p-2 bg-green-100 rounded-lg text-green-600">
+                    <CheckCircle className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-500">Czas trwania</div>
-                    <div className="font-semibold">{training.duration}</div>
-                  </div>
-                </div>
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-                  <div className="p-2 bg-pink-100 rounded-lg text-pink-600">
-                    <BarChart className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">Poziom</div>
-                    <div className="font-semibold">
-                      {training.level === 'BEGINNER' ? 'Początkujący' : 
-                       training.level === 'INTERMEDIATE' ? 'Średniozaawansowany' : 'Zaawansowany'}
-                    </div>
+                    <div className="text-sm text-gray-500">Dostęp</div>
+                    <div className="font-semibold">12 miesięcy</div>
                   </div>
                 </div>
                 {training.modulesCount && (
