@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useState, useRef } from 'react'
-import { BookOpen, Users, Shield, Award, ChevronLeft, ChevronRight } from 'lucide-react'
+import { BookOpen, Users, Shield, Award, ChevronLeft, ChevronRight, Code } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -47,6 +47,17 @@ const trainings = [
     image: '/training-influencer.jpg',
     href: '/szkolenia/mlody-influencer',
     price: 100
+  },
+  {
+    id: 5,
+    title: 'Kodowanie z AI',
+    icon: Code,
+    description: 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!',
+    color: 'from-cyan-400 to-cyan-600',
+    image: '/training-kodowanie.jpg',
+    href: '/szkolenia/kodowanie',
+    price: 0,
+    comingSoon: true
   }
 ]
 
@@ -224,20 +235,40 @@ export function TrainingSlider() {
 
                       {/* Pricing */}
                       <div className="mb-4 pb-4 border-b border-gray-200">
-                        <div className="text-3xl font-bold text-gray-900">{training.price} zł</div>
-                        <div className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</div>
+                        {(training as any).comingSoon ? (
+                          <>
+                            <div className="inline-block px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-sm font-bold rounded-full mb-2">
+                              🚀 Wkrótce
+                            </div>
+                            <div className="text-sm text-gray-600">Pracujemy nad tym szkoleniem!</div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="text-3xl font-bold text-gray-900">{training.price} zł</div>
+                            <div className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</div>
+                          </>
+                        )}
                       </div>
 
                       {/* CTA Button */}
-                      <Button
-                        asChild
-                        className={`w-full bg-gradient-to-r ${training.color} text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50`}
-                        disabled={!isCurrent}
-                      >
-                        <Link href={isCurrent ? training.href : '#'}>
-                          {isCurrent ? 'Zobacz szczegóły' : 'Kliknij aby wybrać'}
-                        </Link>
-                      </Button>
+                      {(training as any).comingSoon ? (
+                        <Button
+                          className={`w-full bg-gradient-to-r ${training.color} text-white opacity-70 cursor-not-allowed`}
+                          disabled
+                        >
+                          Powiadomimy Cię o starcie!
+                        </Button>
+                      ) : (
+                        <Button
+                          asChild
+                          className={`w-full bg-gradient-to-r ${training.color} text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50`}
+                          disabled={!isCurrent}
+                        >
+                          <Link href={isCurrent ? training.href : '#'}>
+                            {isCurrent ? 'Zobacz szczegóły' : 'Kliknij aby wybrać'}
+                          </Link>
+                        </Button>
+                      )}
                     </div>
                   </motion.div>
                 </motion.div>
