@@ -6,15 +6,19 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const {
-      items, // Array of training IDs
+      trainingId, // Single training ID (not items array)
+      items, // Keep for backward compatibility
       email,
       firstName,
       lastName,
       discountCode,
     } = body;
 
+    // Support both trainingId and items for backward compatibility
+    const trainingIds = trainingId ? [trainingId] : (items || []);
+
     // Validate input
-    if (!items || !Array.isArray(items) || items.length === 0 || !email || !firstName || !lastName) {
+    if (!trainingIds || trainingIds.length === 0 || !email || !firstName || !lastName) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -24,15 +28,65 @@ export async function POST(req: NextRequest) {
     // Fetch trainings from DB
     const trainings = await prisma.training.findMany({
       where: {
-        id: { in: items }
+        id: { in: trainingIds }
       }
     });
 
-    if (trainings.length !== items.length) {
+    if (trainings.length !== trainingIds.length) {
       return NextResponse.json(
         { error: 'Some items not found' },
         { status: 400 }
       );
+    }
+
+    // Normalize email
+    const normalizedEmail = email.toLowerCase().trim();
+
+    // Check if user already has access to this training
+    const existingUser = await prisma.user.findFirst({
+      where: { 
+        email: {
+          equals: normalizedEmail,
+          mode: 'insensitive'
+        }
+      }
+    });
+
+    if (existingUser) {
+      // Check if user already owns this training
+      for (const training of trainings) {
+        const existingAccess = await prisma.userTraining.findFirst({
+          where: {
+            userId: existingUser.id,
+            trainingId: training.id,
+            isActive: true,
+            expiresAt: { gt: new Date() }
+          }
+        });
+
+        if (existingAccess) {
+          return NextResponse.json(
+            { error: `Masz już dostęp do szkolenia "${training.title}". Sprawdź swoje szkolenia w panelu.` },
+            { status: 400 }
+          );
+        }
+
+        // Also check completed orders
+        const existingOrder = await prisma.order.findFirst({
+          where: {
+            userId: existingUser.id,
+            trainingId: training.id,
+            status: 'COMPLETED'
+          }
+        });
+
+        if (existingOrder) {
+          return NextResponse.json(
+            { error: `Masz już dostęp do szkolenia "${training.title}". Sprawdź swoje szkolenia w panelu.` },
+            { status: 400 }
+          );
+        }
+      }
     }
 
     // Calculate total amount
@@ -86,14 +140,14 @@ export async function POST(req: NextRequest) {
     const clientIp = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '127.0.0.1';
 
     // Find or create user
-    let user = await prisma.user.findUnique({
-      where: { email: email.toLowerCase() }
+    let user = existingUser || await prisma.user.findUnique({
+      where: { email: normalizedEmail }
     });
 
     if (!user) {
        user = await prisma.user.create({
         data: {
-          email: email.toLowerCase(),
+          email: normalizedEmail,
           firstName,
           lastName,
           name: `${firstName} ${lastName}`,
@@ -102,6 +156,7 @@ export async function POST(req: NextRequest) {
           isAdmin: false
         }
       });
+      console.log(`Created new user: ${normalizedEmail}`);
     }
 
     const orderData = {
