@@ -25,6 +25,7 @@ interface Training {
   expiresAt?: string
   level?: string
   duration?: string
+  comingSoon?: boolean
 }
 
 function OfertaContent() {
@@ -133,6 +134,11 @@ function OfertaContent() {
                           <GraduationCap className="w-16 h-16 text-white/80" />
                         </div>
                       )}
+                      {training.comingSoon && (
+                        <div className="absolute top-4 left-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                          🚀 WKRÓTCE
+                        </div>
+                      )}
                       {training.hasAccess && (
                         <div className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                           POSIADASZ DOSTĘP
@@ -166,15 +172,27 @@ function OfertaContent() {
                       </div>
 
                       <div className="flex items-end justify-between mt-auto pt-4 border-t border-gray-100">
-                        <div className="text-2xl font-bold text-purple-600">
-                          {training.price} zł
-                        </div>
+                        {training.comingSoon ? (
+                          <div className="text-lg font-bold text-cyan-600">
+                            Dostępne wkrótce
+                          </div>
+                        ) : (
+                          <div className="text-2xl font-bold text-purple-600">
+                            {training.price} zł
+                          </div>
+                        )}
                       </div>
                     </CardContent>
                   </Link>
 
                   <CardFooter className="p-6 pt-0">
-                    {training.hasAccess ? (
+                    {training.comingSoon ? (
+                      <div className="w-full text-center">
+                        <div className="bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 px-4 py-3 rounded-lg font-medium">
+                          📅 Dostępne za kilka dni!
+                        </div>
+                      </div>
+                    ) : training.hasAccess ? (
                       <Link href={`/szkolenia/${training.slug}`} className="w-full">
                         <Button className="w-full bg-green-600 hover:bg-green-700">
                           Przejdź do szkolenia

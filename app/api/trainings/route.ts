@@ -38,7 +38,8 @@ export async function GET() {
       'nauczyciele': '/training-nauczyciele.jpg',
       'dzieci': '/training-dzieci.jpg',
       'mlody-influencer': '/training-influencer.jpg',
-      'bezpieczenstwo-w-sieci-i-ai': '/training-rodzice.jpg'
+      'bezpieczenstwo-w-sieci-i-ai': '/training-rodzice.jpg',
+      'kodowanie': '/training-kodowanie.jpg'
     };
 
     const titleMap: Record<string, string> = {
@@ -47,8 +48,12 @@ export async function GET() {
 
     const descriptionMap: Record<string, string> = {
       'nauczyciele': 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły. Certyfikowany poradnik dla nauczycieli.',
-      'mlody-influencer': 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.'
+      'mlody-influencer': 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.',
+      'kodowanie': 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!'
     };
+
+    // Trainings that are coming soon (blocked from purchase)
+    const comingSoonSlugs = ['mlody-influencer', 'kodowanie'];
 
     const trainingsWithAccess = trainings.map(training => ({
       ...training,
@@ -56,8 +61,31 @@ export async function GET() {
       title: titleMap[training.slug] || training.title,
       shortDescription: descriptionMap[training.slug] || training.shortDescription,
       hasAccess: userTrainingsIds.includes(training.id),
-      price: Number(training.price)
+      price: Number(training.price),
+      comingSoon: comingSoonSlugs.includes(training.slug)
     }));
+
+    // Add Kodowanie z AI as a static entry if not in database
+    const hasKodowanie = trainings.some(t => t.slug === 'kodowanie');
+    if (!hasKodowanie) {
+      trainingsWithAccess.push({
+        id: 'kodowanie-placeholder',
+        slug: 'kodowanie',
+        title: 'Kodowanie z AI dla Dzieci',
+        shortDescription: 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!',
+        fullDescription: '',
+        imageUrl: '/training-kodowanie.jpg',
+        price: 0,
+        duration: 'Wkrótce',
+        level: 'BEGINNER',
+        isActive: true,
+        orderIndex: 99,
+        hasAccess: false,
+        comingSoon: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      } as any);
+    }
 
     return NextResponse.json(trainingsWithAccess);
   } catch (error) {
