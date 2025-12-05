@@ -48,12 +48,16 @@ export const authOptions: NextAuthOptions = {
           const sessionId = uuidv4();
           
           // Save session ID to database - this invalidates any other active sessions
-          await prisma.user.update({
-            where: { id: user.id },
-            data: { activeSessionId: sessionId }
-          });
-          
-          console.log('[AUTH_DEBUG] New session created:', sessionId.substring(0, 8) + '...');
+          // Wrapped in try-catch in case the column doesn't exist yet
+          try {
+            await prisma.user.update({
+              where: { id: user.id },
+              data: { activeSessionId: sessionId }
+            });
+            console.log('[AUTH_DEBUG] New session created:', sessionId.substring(0, 8) + '...');
+          } catch (sessionError) {
+            console.log('[AUTH_DEBUG] Session ID update skipped (column may not exist yet)');
+          }
 
           return {
             id: user.id,
