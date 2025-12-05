@@ -34,8 +34,16 @@ export async function GET() {
       }
     }
 
+    const imageMap: Record<string, string> = {
+      'nauczyciele': '/training-nauczyciele.jpg',
+      'dzieci': '/training-dzieci.jpg',
+      'mlody-influencer': '/training-influencer.jpg',
+      'bezpieczenstwo-w-sieci-i-ai': '/training-rodzice.jpg'
+    };
+
     const trainingsWithAccess = trainings.map(training => ({
       ...training,
+      imageUrl: imageMap[training.slug] || training.imageUrl,
       hasAccess: userTrainingsIds.includes(training.id),
       price: Number(training.price) // Convert Decimal to number for JSON
     }));
