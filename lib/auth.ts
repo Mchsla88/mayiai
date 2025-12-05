@@ -3,6 +3,7 @@ import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import { prisma } from './db';
+import { v4 as uuidv4 } from 'uuid';
 
 export const authOptions: NextAuthOptions = {
   // NOTE: PrismaAdapter is not compatible with CredentialsProvider
@@ -43,6 +44,17 @@ export const authOptions: NextAuthOptions = {
             return null;
           }
 
+          // Generate unique session ID for single-session enforcement
+          const sessionId = uuidv4();
+          
+          // Save session ID to database - this invalidates any other active sessions
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { activeSessionId: sessionId }
+          });
+          
+          console.log('[AUTH_DEBUG] New session created:', sessionId.substring(0, 8) + '...');
+
           return {
             id: user.id,
             email: user.email,
@@ -52,6 +64,7 @@ export const authOptions: NextAuthOptions = {
             firstName: user.firstName ?? undefined,
             lastName: user.lastName ?? undefined,
             companyName: user.companyName ?? undefined,
+            sessionId: sessionId, // Include session ID in user object
           };
         } catch (error) {
           console.error('[AUTH_DEBUG] Error in authorize:', error);
@@ -89,6 +102,7 @@ export const authOptions: NextAuthOptions = {
         token.firstName = user.firstName;
         token.lastName = user.lastName;
         token.companyName = user.companyName;
+        token.sessionId = user.sessionId; // Store session ID in JWT
       }
       return token;
     },
@@ -100,6 +114,7 @@ export const authOptions: NextAuthOptions = {
         session.user.firstName = token.firstName as string;
         session.user.lastName = token.lastName as string;
         session.user.companyName = token.companyName as string;
+        session.user.sessionId = token.sessionId as string; // Include session ID in session
       }
       return session;
     }
