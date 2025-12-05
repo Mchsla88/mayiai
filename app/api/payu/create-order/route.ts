@@ -92,15 +92,31 @@ export async function POST(req: NextRequest) {
     // Calculate prices per item
     let orderItems = trainings.map(t => ({
       ...t,
+      originalPrice: Number(t.price),
       finalPrice: Number(t.price)
     }));
 
+    console.log(`[CREATE-ORDER] Starting price calculation. Training count: ${trainings.length}`);
+    console.log(`[CREATE-ORDER] Original prices:`, orderItems.map(i => ({ title: i.title, price: i.originalPrice })));
+    console.log(`[CREATE-ORDER] Discount code received: "${discountCode}"`);
+
     // Apply discount code if provided
     if (discountCode) {
+      const codeToSearch = discountCode.toUpperCase().trim();
+      console.log(`[CREATE-ORDER] Searching for discount code: "${codeToSearch}"`);
+      
       const code = await prisma.discountCode.findUnique({
-        where: { code: discountCode.toUpperCase() },
+        where: { code: codeToSearch },
         include: { training: true }
       });
+
+      console.log(`[CREATE-ORDER] Found code:`, code ? { 
+        code: code.code, 
+        type: code.type, 
+        discount: code.discount, 
+        isActive: code.isActive,
+        trainingId: code.trainingId 
+      } : 'NOT FOUND');
 
       if (code && code.isActive) {
         // Check expiration and limits
@@ -108,50 +124,57 @@ export async function POST(req: NextRequest) {
         const isExpired = code.expiresAt && new Date(code.expiresAt) < now;
         const isLimitReached = code.usageLimit && code.usedCount >= code.usageLimit;
 
+        console.log(`[CREATE-ORDER] Code validation: expired=${isExpired}, limitReached=${isLimitReached}`);
+
         if (!isExpired && !isLimitReached) {
           if (code.trainingId) {
             // Discount applies to specific training
+            console.log(`[CREATE-ORDER] Applying discount to specific training: ${code.trainingId}`);
             orderItems = orderItems.map(item => {
               if (item.id === code.trainingId) {
                 const discountAmount = code.type === 'PERCENTAGE'
-                  ? Math.round(item.finalPrice * (code.discount / 100))
+                  ? Math.round(item.originalPrice * (code.discount / 100))
                   : code.discount;
-                return { ...item, finalPrice: Math.max(0, item.finalPrice - discountAmount) };
+                const newPrice = Math.max(0, item.originalPrice - discountAmount);
+                console.log(`[CREATE-ORDER] Item "${item.title}": ${item.originalPrice} - ${discountAmount} = ${newPrice}`);
+                return { ...item, finalPrice: newPrice };
               }
               return item;
             });
           } else {
-            // Global discount - distribute proportionally or apply to total?
-            // For simplicity and to match PayU requirements (unitPrice * quantity = total),
-            // we'll apply percentage to each item, or split fixed amount.
-            // Current logic was global deduction. Let's apply to each item for percentage.
-            // For fixed amount, it's trickier with multiple items.
+            // Global discount
+            console.log(`[CREATE-ORDER] Applying global discount: ${code.discount}${code.type === 'PERCENTAGE' ? '%' : ' PLN'}`);
             
             if (code.type === 'PERCENTAGE') {
-              orderItems = orderItems.map(item => ({
-                ...item,
-                finalPrice: Math.max(0, Math.round(item.finalPrice * (1 - code.discount / 100)))
-              }));
+              orderItems = orderItems.map(item => {
+                const discountAmount = Math.round(item.originalPrice * (code.discount / 100));
+                const newPrice = Math.max(0, item.originalPrice - discountAmount);
+                console.log(`[CREATE-ORDER] Item "${item.title}": ${item.originalPrice} - ${discountAmount} (${code.discount}%) = ${newPrice}`);
+                return { ...item, finalPrice: newPrice };
+              });
             } else {
-              // Fixed amount global discount
-              // Distribute weighted by price? Or just subtract from total and adjust last item?
-              // Let's subtract from total and adjust items to match.
-              // Actually, simpler: subtract from first item (or largest) until exhausted?
-              // Let's stick to the previous logic of total calculation but we MUST reflect it in items.
-              
+              // Fixed amount global discount - subtract from first item
               let remainingDiscount = code.discount;
               orderItems = orderItems.map(item => {
                 if (remainingDiscount > 0) {
-                  const deduction = Math.min(item.finalPrice, remainingDiscount);
+                  const deduction = Math.min(item.originalPrice, remainingDiscount);
                   remainingDiscount -= deduction;
-                  return { ...item, finalPrice: item.finalPrice - deduction };
+                  const newPrice = item.originalPrice - deduction;
+                  console.log(`[CREATE-ORDER] Item "${item.title}": ${item.originalPrice} - ${deduction} = ${newPrice}`);
+                  return { ...item, finalPrice: newPrice };
                 }
                 return item;
               });
             }
           }
+        } else {
+          console.log(`[CREATE-ORDER] Code not applied: expired=${isExpired}, limitReached=${isLimitReached}`);
         }
+      } else {
+        console.log(`[CREATE-ORDER] Code not found or inactive`);
       }
+    } else {
+      console.log(`[CREATE-ORDER] No discount code provided`);
     }
 
     // Calculate total amount from items
@@ -159,6 +182,9 @@ export async function POST(req: NextRequest) {
     
     // PayU expects amount in grosze (integers)
     const totalAmountGrosze = totalAmount * 100;
+
+    console.log(`[CREATE-ORDER] Final prices:`, orderItems.map(i => ({ title: i.title, finalPrice: i.finalPrice })));
+    console.log(`[CREATE-ORDER] Total amount: ${totalAmount} PLN (${totalAmountGrosze} groszy)`);
 
     const client = getPayUClient();
     
