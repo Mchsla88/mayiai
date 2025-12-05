@@ -494,15 +494,181 @@ export const trainingModules: TrainingModule[] = [
             </ul>
           </SectionCard>
 
-          <SectionCard title="Gratulacje ukończenia szkolenia!" color="green">
-            <p className="text-gray-700 leading-relaxed">
-              Poznałeś wszystkie kluczowe aspekty wykorzystania AI w edukacji. 
-              Teraz możesz tworzyć spersonalizowane materiały i prowadzić interaktywne sesje testowe. 
-              Powodzenia w dalszej nauce!
-            </p>
           </SectionCard>
         </div>
       </ModernContent>
     )
+  },
+  {
+    id: 'lektury-szkolne',
+    title: 'Moduł 10: Lektury szkolne 📚',
+    duration: '10 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Lektury szkolne"
+        icon={<BookOpen />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Lektury szkolne 📚</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Aby szybko przeanalizować i zrozumieć treść dowolnej lektury, użyj poniższych poleceń. 
+          AI pomoże Ci stworzyć idealne podsumowanie dostosowane do Twojego wieku!
+        </p>
+
+        <SectionCard title="Krok 1: Znajdź zagadnienia z podstawy programowej" color="blue">
+          <p className="text-gray-700 mb-4">
+            Wklej poniższe polecenie do Claude.ai, uzupełniając dane w nawiasach:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-blue-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Jesteś ekspertem od polskiego systemu edukacji. Znajdź i przedstaw w punktach kluczowe zagadnienia z podstawy programowej 
+              Ministerstwa Edukacji Narodowej (MEN) dla przedmiotu <strong className="bg-yellow-200 px-1">[język polski]</strong> dla klasy 
+              <strong className="bg-yellow-200 px-1">[4 szkoły podstawowej]</strong> na temat wiedzy z lektury szkolnej 
+              "<strong className="bg-yellow-200 px-1">[Akademia Pana Kleksa]</strong>"
+            </p>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Krok 2: Stwórz szczegółowe podsumowanie lektury" color="purple">
+          <p className="text-gray-700 mb-4">
+            Po otrzymaniu zagadnień, skopiuj i wklej poniższe polecenie:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-purple-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Przeanalizuj lekturę szkolną "<strong className="bg-yellow-200 px-1">[Tytuł lektury, np. 'Akademia Pana Kleksa']</strong>" 
+              dla klasy <strong className="bg-yellow-200 px-1">[numer klasy]</strong>. Stwórz zwięzłe podsumowanie zawierające absolutnie niezbędne informacje do zapamiętania:
+            </p>
+            <ol className="list-decimal list-inside mt-2 text-gray-700 space-y-1">
+              <li>Główni bohaterowie (z krótką charakterystyką).</li>
+              <li>Wydarzenia w porządku chronologicznym.</li>
+              <li>Kluczowe motywy i problematyka utworu.</li>
+              <li>Świat przedstawiony (miejsce i czas akcji).</li>
+            </ol>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Krok 3: Stwórz rozszerzoną wersję do nauki" color="green">
+          <p className="text-gray-700 mb-4">
+            Następnie wklej to polecenie, aby stworzyć wersję przyjazną dla dziecka:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-green-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Na podstawie powyższych zagadnień, stwórz bardzo rozszerzoną listę punktów, które trzeba zapamiętać. 
+              Rozbuduj opis bohaterów oraz ważnych sytuacji z książki. Opisz kluczowe motywy i problematykę utworu 
+              oraz świat przedstawiony (miejsce i czas akcji).
+              <br /><br />
+              Przedstaw je w sposób niezwykle łatwy do zapamiętania dla <strong className="bg-yellow-200 px-1">[np. 10-latka]</strong>. 
+              Użyj prostego języka, porównań, metafor, a nawet mnemotechnik. Każdy kluczowy termin lub data muszą być jasno wytłumaczone.
+            </p>
+          </div>
+        </SectionCard>
+
+        <InfoBox icon={<Lightbulb />}>
+          <strong>Wskazówka:</strong> Możesz użyć tego samego schematu dla każdej lektury szkolnej - od "Małego Księcia" po "Pana Tadeusza"!
+        </InfoBox>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'gramatyka-ortografia',
+    title: 'Moduł 11: Gramatyka i Ortografia ✍️',
+    duration: '10 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Gramatyka i Ortografia"
+        icon={<FileText />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Gramatyka i Ortografia ✍️</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Te polecenia oparte są na skutecznym schemacie "tłumaczenie + przykłady + ćwiczenia", 
+          aby ułatwić zrozumienie i utrwalenie zasad gramatycznych oraz ortograficznych.
+        </p>
+
+        <SectionCard title="Nauka gramatyki" color="purple">
+          <p className="text-gray-700 mb-4">
+            Skopiuj i wklej poniższe polecenie, aby nauczyć się dowolnego zagadnienia gramatycznego:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-purple-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Wytłumacz w najprostszy możliwy sposób, jak 11-latkowi, zagadnienie gramatyczne: 
+              <strong className="bg-yellow-200 px-1">[wpisz zagadnienie, np. "Części mowy - czasownik, rzeczownik, przymiotnik"]</strong>.
+              <br /><br />
+              Twoje wyjaśnienie musi zawierać:
+            </p>
+            <ol className="list-decimal list-inside mt-2 text-gray-700 space-y-1">
+              <li>Bardzo prostą definicję.</li>
+              <li>Minimum 5 klarownych przykładów użycia w zdaniach.</li>
+              <li>Krótkie ćwiczenie interaktywne: podaj 5 zdań i poproś o wskazanie w nich <strong className="bg-yellow-200 px-1">[np. czasowników]</strong>. Na końcu podaj odpowiedzi.</li>
+            </ol>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Przykładowe zagadnienia do nauki" color="blue">
+          <p className="text-gray-700 mb-4">
+            Oto lista zagadnień, które możesz wpisać w miejsce nawiasu:
+          </p>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Części mowy (rzeczownik, czasownik, przymiotnik, przysłówek)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Części zdania (podmiot, orzeczenie, dopełnienie)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Odmiana przez przypadki</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Czas przeszły, teraźniejszy i przyszły</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Zasady pisowni "ó" i "u"</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Zasady pisowni "rz" i "ż"</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Wielka i mała litera</span>
+            </li>
+          </ul>
+        </SectionCard>
+
+        <SectionCard title="Jak korzystać" color="green">
+          <ol className="space-y-3 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+              <span>Skopiuj polecenie powyżej i wklej je do Claude.ai</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+              <span>Zamień tekst w nawiasach kwadratowych na konkretne zagadnienie</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+              <span>Przeczytaj wyjaśnienie i wykonaj ćwiczenie</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+              <span>Sprawdź odpowiedzi i powtórz, jeśli trzeba</span>
+            </li>
+          </ol>
+        </SectionCard>
+
+        <InfoBox icon={<GraduationCap />}>
+          <strong>Rezultat:</strong> Dzięki tej metodzie dziecko otrzyma jasne wyjaśnienie, praktyczne przykłady 
+          oraz możliwość natychmiastowego przetestowania swojej wiedzy. To idealne połączenie teorii z praktyką!
+        </InfoBox>
+      </ModernContent>
+    )
   }
 ]
+
