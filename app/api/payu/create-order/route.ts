@@ -89,9 +89,12 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Calculate total amount
-    let totalAmount = trainings.reduce((sum, t) => sum + Number(t.price), 0);
-    
+    // Calculate prices per item
+    let orderItems = trainings.map(t => ({
+      ...t,
+      finalPrice: Number(t.price)
+    }));
+
     // Apply discount code if provided
     if (discountCode) {
       const code = await prisma.discountCode.findUnique({
@@ -100,36 +103,59 @@ export async function POST(req: NextRequest) {
       });
 
       if (code && code.isActive) {
-        // Check expiration
+        // Check expiration and limits
         const now = new Date();
-        if (code.expiresAt && new Date(code.expiresAt) < now) {
-          // Expired
-        } else if (code.usageLimit && code.usedCount >= code.usageLimit) {
-          // Limit reached
-        } else {
-          // Apply discount
+        const isExpired = code.expiresAt && new Date(code.expiresAt) < now;
+        const isLimitReached = code.usageLimit && code.usedCount >= code.usageLimit;
+
+        if (!isExpired && !isLimitReached) {
           if (code.trainingId) {
             // Discount applies to specific training
-            const targetTraining = trainings.find(t => t.id === code.trainingId);
-            if (targetTraining) {
-              const discountValue = code.type === 'PERCENTAGE' 
-                ? Math.round(Number(targetTraining.price) * (code.discount / 100))
-                : code.discount;
-              totalAmount -= discountValue;
-            }
+            orderItems = orderItems.map(item => {
+              if (item.id === code.trainingId) {
+                const discountAmount = code.type === 'PERCENTAGE'
+                  ? Math.round(item.finalPrice * (code.discount / 100))
+                  : code.discount;
+                return { ...item, finalPrice: Math.max(0, item.finalPrice - discountAmount) };
+              }
+              return item;
+            });
           } else {
-            // Global discount
-            const discountValue = code.type === 'PERCENTAGE'
-              ? Math.round(totalAmount * (code.discount / 100))
-              : code.discount;
-            totalAmount -= discountValue;
+            // Global discount - distribute proportionally or apply to total?
+            // For simplicity and to match PayU requirements (unitPrice * quantity = total),
+            // we'll apply percentage to each item, or split fixed amount.
+            // Current logic was global deduction. Let's apply to each item for percentage.
+            // For fixed amount, it's trickier with multiple items.
+            
+            if (code.type === 'PERCENTAGE') {
+              orderItems = orderItems.map(item => ({
+                ...item,
+                finalPrice: Math.max(0, Math.round(item.finalPrice * (1 - code.discount / 100)))
+              }));
+            } else {
+              // Fixed amount global discount
+              // Distribute weighted by price? Or just subtract from total and adjust last item?
+              // Let's subtract from total and adjust items to match.
+              // Actually, simpler: subtract from first item (or largest) until exhausted?
+              // Let's stick to the previous logic of total calculation but we MUST reflect it in items.
+              
+              let remainingDiscount = code.discount;
+              orderItems = orderItems.map(item => {
+                if (remainingDiscount > 0) {
+                  const deduction = Math.min(item.finalPrice, remainingDiscount);
+                  remainingDiscount -= deduction;
+                  return { ...item, finalPrice: item.finalPrice - deduction };
+                }
+                return item;
+              });
+            }
           }
         }
       }
     }
 
-    // Ensure total is not negative
-    totalAmount = Math.max(0, totalAmount);
+    // Calculate total amount from items
+    const totalAmount = orderItems.reduce((sum, item) => sum + item.finalPrice, 0);
     
     // PayU expects amount in grosze (integers)
     const totalAmountGrosze = totalAmount * 100;
@@ -172,9 +198,9 @@ export async function POST(req: NextRequest) {
         lastName: user.lastName || lastName,
         language: 'pl',
       },
-      products: trainings.map(t => ({
-        name: t.title,
-        unitPrice: (Number(t.price) * 100).toString(),
+      products: orderItems.map(item => ({
+        name: item.title,
+        unitPrice: (item.finalPrice * 100).toString(),
         quantity: '1',
       })),
       continueUrl: `${process.env.NEXTAUTH_URL}/oferta?status=success`,
