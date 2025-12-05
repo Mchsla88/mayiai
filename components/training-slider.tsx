@@ -16,7 +16,7 @@ const trainings = [
     color: 'from-blue-400 to-blue-600',
     image: '/training-dzieci.jpg',
     href: '/szkolenia/dzieci',
-    price: 100
+    price: 200
   },
   {
     id: 2,

@@ -24,7 +24,7 @@ export async function GET() {
 
     await prisma.training.update({
       where: { slug: 'dzieci' },
-      data: { price: 100 }
+      data: { price: 200 }
     });
 
     // Get all trainings
