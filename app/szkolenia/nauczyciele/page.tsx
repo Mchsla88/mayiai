@@ -86,7 +86,7 @@ export default function TeachersTrainingPage() {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="flex-1">
-          <SimpleLoginForm onLogin={handleAuthSuccess} title="Szkolenie AI dla Nauczycieli" />
+          <SimpleLoginForm onLogin={handleAuthSuccess} title="Poradnik AI dla Nauczycieli" />
         </div>
       </div>
     )
@@ -118,7 +118,7 @@ export default function TeachersTrainingPage() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Szkolenie AI dla Nauczycieli
+            Poradnik AI dla Nauczycieli
           </h1>
           <p className="text-xl text-gray-600 mb-4">
             Kompleksowy Przewodnik 2024-2026

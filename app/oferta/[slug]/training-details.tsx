@@ -149,18 +149,9 @@ export function TrainingDetails({ training }: { training: Training }) {
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 space-y-6">
-                <div className="flex items-end justify-between">
-                  <div>
-                    <div className="text-sm text-gray-500 mb-1">Cena regularna</div>
-                    <div className="text-lg text-gray-400 line-through decoration-red-500">
-                      {(Number(training.price) * 1.2).toFixed(0)} zł
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-green-600 font-bold mb-1">Oszczędzasz 20%</div>
-                    <div className="text-4xl font-bold text-gray-900">
-                      {Number(training.price)} zł
-                    </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-4xl font-bold text-gray-900">
+                    {Number(training.price)} zł
                   </div>
                 </div>
 
