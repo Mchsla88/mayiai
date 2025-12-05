@@ -46,7 +46,8 @@ const trainings = [
     color: 'from-orange-400 to-orange-600',
     image: '/training-influencer.jpg',
     href: '/szkolenia/mlody-influencer',
-    price: 100
+    price: 100,
+    comingSoon: true
   },
   {
     id: 5,
