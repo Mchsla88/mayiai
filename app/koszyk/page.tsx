@@ -366,9 +366,14 @@ export default function CartPage() {
                     )}
                   </Button>
                   
-                  <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Bezpieczne płatności PayU</span>
+                  <div className="flex flex-col items-center justify-center gap-2 text-sm text-gray-500">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4" />
+                      <span>Bezpieczne płatności PayU</span>
+                    </div>
+                    <p className="text-xs text-center text-amber-600 bg-amber-50 p-2 rounded border border-amber-100 w-full">
+                      ⚠️ Po opłaceniu sprawdź folder SPAM/Oferty - tam może trafić mail z danymi logowania.
+                    </p>
                   </div>
                 </CardContent>
               </Card>

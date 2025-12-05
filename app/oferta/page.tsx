@@ -39,7 +39,9 @@ function OfertaContent() {
     fetchTrainings()
 
     if (searchParams.get('status') === 'success') {
-      toast.success('Płatność zakończona sukcesem! Dostęp został przyznany.')
+      toast.success('Płatność zakończona sukcesem! Sprawdź email (również SPAM) - wysłaliśmy dane logowania.', {
+        duration: 8000,
+      })
       router.replace('/szkolenia')
     }
   }, [searchParams, router])
