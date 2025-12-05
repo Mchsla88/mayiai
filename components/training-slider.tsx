@@ -187,18 +187,18 @@ export function TrainingSlider() {
                     transition={{ duration: 0.3 }}
                   >
                     {/* Image Header */}
-                    <div className={`h-56 bg-gradient-to-br ${training.color} relative flex items-center justify-center overflow-hidden`}>
+                    <div className={`h-72 bg-gradient-to-br ${training.color} relative flex items-center justify-center overflow-hidden`}>
                       <div className="absolute inset-0 bg-white/10" />
                       <motion.div
-                        className="relative w-36 h-36"
-                        animate={isCurrent && isHovered ? { scale: 1.1, rotate: 5 } : { scale: 1, rotate: 0 }}
+                        className="relative w-full h-full"
+                        animate={isCurrent && isHovered ? { scale: 1.05 } : { scale: 1 }}
                         transition={{ duration: 0.3 }}
                       >
                         <Image
                           src={training.image}
                           alt={training.title}
                           fill
-                          className="object-contain drop-shadow-2xl"
+                          className="object-cover drop-shadow-2xl"
                         />
                       </motion.div>
                     </div>
