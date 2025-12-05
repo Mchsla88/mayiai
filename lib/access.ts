@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/db';
 import { hash } from 'bcryptjs';
-import { sendWelcomeEmail, sendAccessGrantedEmail } from '@/lib/email';
+// Use Nodemailer SMTP instead of Resend (more reliable)
+import { sendWelcomeEmail, sendAccessGrantedEmail } from '@/lib/email-smtp';
 import crypto from 'crypto';
 
 // Helper to generate random password

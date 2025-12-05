@@ -89,11 +89,22 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Calculate prices per item
+    // DEBUG: Log raw training data from DB
+    console.log(`[CREATE-ORDER] ============ RAW TRAINING DATA ============`);
+    trainings.forEach(t => {
+      console.log(`[CREATE-ORDER] Training: "${t.title}"`);
+      console.log(`[CREATE-ORDER]   - Raw price from DB: ${t.price}`);
+      console.log(`[CREATE-ORDER]   - Type of price: ${typeof t.price}`);
+      console.log(`[CREATE-ORDER]   - Price toString(): ${t.price.toString()}`);
+      console.log(`[CREATE-ORDER]   - Number(price): ${Number(t.price)}`);
+    });
+    console.log(`[CREATE-ORDER] ==========================================`);
+
+    // Calculate prices per item - use parseFloat for safer Decimal conversion
     let orderItems = trainings.map(t => ({
       ...t,
-      originalPrice: Number(t.price),
-      finalPrice: Number(t.price)
+      originalPrice: parseFloat(t.price.toString()),
+      finalPrice: parseFloat(t.price.toString())
     }));
 
     console.log(`[CREATE-ORDER] Starting price calculation. Training count: ${trainings.length}`);
