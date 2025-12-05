@@ -104,7 +104,7 @@ function TrainingContent() {
                         <h3 className="font-bold text-lg">Spis Treści</h3>
                       </div>
 
-                      <nav className="space-y-2">
+                      <nav className="space-y-2 max-h-[50vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-purple-300 scrollbar-track-transparent">
                         {trainingModules.map((module, index) => (
                           <motion.button
                             key={module.id}
