@@ -222,31 +222,9 @@ export const trainingModules: TrainingModule[] = [
         </SectionCard>
 
         <SectionCard title="Gratulacje!" color="green">
-          <p className="text-gray-700 mb-4">
-            Masz teraz gotowy, spersonalizowany plik PDF, który możesz:
+          <p className="text-gray-700 leading-relaxed">
+            Masz teraz gotowy, spersonalizowany plik PDF, który możesz wydrukować, przesłać na tablet/telefon lub używać na komputerze.
           </p>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Wydrukować</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Przesłać</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Używać</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Na tablet/telefonie</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Na komputerze</span>
-            </li>
-          </ul>
         </SectionCard>
       </ModernContent>
     )
