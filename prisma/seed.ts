@@ -43,7 +43,7 @@ Dołącz do tysięcy nauczycieli, którzy już korzystają z AI i uczą (się) m
         price: 100,
         level: 'BEGINNER',
         duration: '4h 30m',
-        imageUrl: '/images/nauczyciele.jpg',
+        imageUrl: '/training-nauczyciele.jpg',
         isActive: true,
         orderIndex: 1
       },
@@ -55,7 +55,7 @@ Dołącz do tysięcy nauczycieli, którzy już korzystają z AI i uczą (się) m
         price: 100,
         level: 'BEGINNER',
         duration: '4h 30m',
-        imageUrl: '/images/nauczyciele.jpg',
+        imageUrl: '/training-nauczyciele.jpg',
         isActive: true,
         orderIndex: 1
       }
@@ -80,7 +80,7 @@ Daj swojemu dziecku przewagę w szkole i w życiu, ucząc je kompetencji przysz�
         price: 100,
         level: 'BEGINNER',
         duration: '2h 15m',
-        imageUrl: '/images/dzieci.jpg',
+        imageUrl: '/training-dzieci.jpg',
         isActive: true,
         orderIndex: 2
       },
@@ -92,7 +92,7 @@ Daj swojemu dziecku przewagę w szkole i w życiu, ucząc je kompetencji przysz�
         price: 100,
         level: 'BEGINNER',
         duration: '2h 15m',
-        imageUrl: '/images/dzieci.jpg',
+        imageUrl: '/training-dzieci.jpg',
         isActive: true,
         orderIndex: 2
       }
@@ -119,7 +119,7 @@ To nie jest kurs "jak szybko zdobyć lajki". To kurs "jak zbudować trwałą i w
         price: 100,
         level: 'INTERMEDIATE',
         duration: '6h 00m',
-        imageUrl: '/images/influencer.jpg',
+        imageUrl: '/training-influencer.jpg',
         isActive: true,
         orderIndex: 3
       },
@@ -131,7 +131,7 @@ To nie jest kurs "jak szybko zdobyć lajki". To kurs "jak zbudować trwałą i w
         price: 100,
         level: 'INTERMEDIATE',
         duration: '6h 00m',
-        imageUrl: '/images/influencer.jpg',
+        imageUrl: '/training-influencer.jpg',
         isActive: true,
         orderIndex: 3
       }
@@ -157,7 +157,7 @@ Zadbaj o cyfrowe bezpieczeństwo swoje i swoich bliskich.`,
         price: 50,
         level: 'BEGINNER',
         duration: '3h 30m',
-        imageUrl: '/images/security.jpg',
+        imageUrl: '/training-rodzice.jpg',
         isActive: true,
         orderIndex: 4
       },
@@ -169,7 +169,7 @@ Zadbaj o cyfrowe bezpieczeństwo swoje i swoich bliskich.`,
         price: 50,
         level: 'BEGINNER',
         duration: '3h 30m',
-        imageUrl: '/images/security.jpg',
+        imageUrl: '/training-rodzice.jpg',
         isActive: true,
         orderIndex: 4
       }

@@ -14,7 +14,7 @@ const trainings = [
     icon: BookOpen,
     description: 'Jak wykorzystać AI do efektywnej nauki i odrabiania lekcji.',
     color: 'from-blue-400 to-blue-600',
-    image: '/dog-1.png',
+    image: '/training-dzieci.jpg',
     href: '/szkolenia/dzieci'
   },
   {
@@ -23,7 +23,7 @@ const trainings = [
     icon: Users,
     description: 'Narzędzia i metody dla nowoczesnych pedagogów.',
     color: 'from-purple-400 to-purple-600',
-    image: '/dog-2.png',
+    image: '/training-nauczyciele.jpg',
     href: '/szkolenia/nauczyciele'
   },
   {
@@ -32,7 +32,7 @@ const trainings = [
     icon: Shield,
     description: 'Ochrona danych i bezpieczne korzystanie z technologii.',
     color: 'from-green-400 to-green-600',
-    image: '/dog-3.png',
+    image: '/training-rodzice.jpg',
     href: '/szkolenia/bezpieczenstwo-w-sieci-i-ai'
   },
   {
@@ -41,7 +41,7 @@ const trainings = [
     icon: Award,
     description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
     color: 'from-orange-400 to-orange-600',
-    image: '/dog-5.png',
+    image: '/training-influencer.jpg',
     href: '/szkolenia/mlody-influencer'
   }
 ]
