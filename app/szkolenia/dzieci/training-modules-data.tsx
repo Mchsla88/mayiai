@@ -298,41 +298,56 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul2-krok2',
-    title: 'Moduł 2 - Krok 2: Upload pliku PDF',
-    duration: '5 min',
+    title: 'Moduł 2 - Krok 2: Przygotowanie sesji testowej',
+    duration: '8 min',
     video: '/6-film.mp4',
     content: (
       <ModernContent 
-        title="Przesyłanie materiału do Gemini"
+        title="Przygotowanie sesji testowej"
         icon={<Rocket />}
       >
-        <h3 className="text-2xl font-bold mb-4 text-purple-600">Przesyłanie materiału do Gemini</h3>
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Przygotowanie sesji testowej</h3>
         
         <p className="text-gray-700 text-lg leading-relaxed mb-6">
-          Teraz prześlemy wcześniej przygotowany materiał PDF do Gemini, aby asystent mógł na jego podstawie 
-          przeprowadzić interaktywny test wiedzy.
+          W oknie czatu Gemini na komputerze, w polu "Zapytaj Gemini", wpisz poniższe polecenie. <strong>Nie wciskaj jeszcze Enter!</strong>
         </p>
 
-        <SectionCard title="Jak przesłać plik" color="green">
+        <SectionCard title="Kluczowy prompt do testu wiedzy" color="purple">
+          <div className="bg-white p-4 rounded-lg border-2 border-purple-200 font-mono text-sm max-h-[400px] overflow-y-auto">
+            <p className="text-gray-800 whitespace-pre-wrap">
+              Przygotuj zestaw pytań sprawdzających wiedzę na podstawie przesłanego pliku. Pytania mają być różnorodne, każde pytanie zadajesz po odpowiedzi na poprzednie:
+              {'\n\n'}• Pięć pytań otwartych, wymagających krótkiej odpowiedzi. Aby była prawidłowa, odpowiedź musi składać się z minimum dwóch słów.
+              {'\n'}• Pięć pytań testowych z jedną poprawną odpowiedzią. Jeśli odpowiedź będzie niepełna lub niepoprawna, odpowiedz "błędna odpowiedź" i uzasadnij czemu.
+              {'\n'}• Dwa pytania typu "prawda/fałsz".
+              {'\n\n'}Po otrzymaniu każdej odpowiedzi, sprawdź, czy była w pełni prawidłowa. Jeśli tak, przejdź do następnego pytania. Jeśli odpowiedź nie jest prawidłowa, powiedz: "błędna odpowiedź" i dokładnie uzasadnij dlaczego.
+              {'\n\n'}Po serii pytań napisz podsumowanie testu, omawiając błędne odpowiedzi. Następnie zapytaj, czy kontynuujemy sprawdzanie wiedzy. Jeśli odpowiedź będzie "tak", przygotuj następny, inny zestaw pytań. Powtarzaj to pytanie po każdym zakończonym teście.
+              {'\n\n'}Test zaczynasz od pytania: "Czy możemy zacząć?". Rozmowa jest z dzieckiem, więc bądź dokładny i daj dużo czasu na odpowiedź.
+              {'\n\n'}WAŻNE: Jeśli odpowiedź na pytanie nie brzmi prawidłowo, upewnij się, że to ostateczna odpowiedź. Jeśli dziecko powie "nie", poinformuj je, że gdy odpowiedź będzie ostateczna, ma powiedzieć słowo "gotowe". Nie przerywaj wypowiedzi, dopóki nie usłyszysz tego słowa.
+              {'\n\n'}Rozmowa ma odbywać się w 100% w języku polskim, a asystent głosowy ma odpowiadać również w 100% po polsku.
+            </p>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Następne kroki" color="green">
           <ol className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
-              <span>W oknie Gemini na komputerze znajdź ikonę spinacza (📎) lub przycisk do dodawania plików</span>
+              <span>Teraz załącz plik PDF stworzony w Module 1. Kliknij ikonę plusa [+] w polu tekstowym, wybierz "Prześlij pliki" i wskaż zapisany dokument.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
-              <span>Kliknij ikonę i wybierz wcześniej zapisany plik PDF z materiałem do nauki</span>
+              <span>Po załączeniu pliku, wciśnij Enter, aby wysłać polecenie wraz z plikiem.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
-              <span>Poczekaj, aż plik zostanie przesłany i przetworzony przez Gemini</span>
+              <span>Poczekaj 2-3 minuty, aż Gemini przetworzy dane.</span>
             </li>
           </ol>
         </SectionCard>
 
         <InfoBox icon={<Lightbulb />}>
-          <strong>Wskazówka:</strong> Upewnij się, że plik nie jest zbyt duży (maksymalnie kilka MB). 
-          Jeśli plik jest większy, rozważ jego kompresję.
+          <strong>Wskazówka:</strong> Możesz skopiować prompt powyżej i wkleić go do Gemini. 
+          Upewnij się, że plik PDF został poprawnie załączony przed wysłaniem.
         </InfoBox>
       </ModernContent>
     )
