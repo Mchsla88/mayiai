@@ -164,13 +164,8 @@ function OfertaContent() {
                       </div>
 
                       <div className="flex items-end justify-between mt-auto pt-4 border-t border-gray-100">
-                        <div>
-                          <div className="text-xs text-gray-400 line-through">
-                            {(Number(training.price) * 1.2).toFixed(0)} zł
-                          </div>
-                          <div className="text-2xl font-bold text-purple-600">
-                            {training.price} zł
-                          </div>
+                        <div className="text-2xl font-bold text-purple-600">
+                          {training.price} zł
                         </div>
                       </div>
                     </CardContent>
