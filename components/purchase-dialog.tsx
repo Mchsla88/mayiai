@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -7,8 +5,9 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { toast } from 'sonner'
-import { Loader2, Tag } from 'lucide-react'
+import { Loader2, Tag, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 interface PurchaseDialogProps {
   isOpen: boolean
@@ -42,6 +41,7 @@ export function PurchaseDialog({
   const [appliedDiscount, setAppliedDiscount] = useState<DiscountData | null>(null)
   const [regulationsAccepted, setRegulationsAccepted] = useState(false)
   const [privacyAccepted, setPrivacyAccepted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   // Reset state when dialog opens/closes
   useEffect(() => {
@@ -50,6 +50,7 @@ export function PurchaseDialog({
       setAppliedDiscount(null)
       setRegulationsAccepted(false)
       setPrivacyAccepted(false)
+      setErrorMessage(null)
     }
   }, [isOpen])
 
@@ -68,6 +69,7 @@ export function PurchaseDialog({
 
     try {
       setIsValidatingCode(true)
+      setErrorMessage(null)
       const response = await fetch('/api/discounts/validate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -93,6 +95,7 @@ export function PurchaseDialog({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setErrorMessage(null)
 
     if (!formData.email || !formData.firstName || !formData.lastName) {
       toast.error('Wypełnij wszystkie wymagane pola')
@@ -126,11 +129,15 @@ export function PurchaseDialog({
         toast.success('Przekierowywanie do płatności...')
         window.location.href = data.redirectUri
       } else {
-        toast.error(data.error || 'Wystąpił błąd podczas inicjowania płatności')
+        // Show error in the dialog
+        setErrorMessage(data.error || 'Wystąpił błąd podczas inicjowania płatności')
+        // Also show toast for visibility
+        toast.error(data.error || 'Wystąpił błąd')
         console.error('PayU error:', data)
       }
     } catch (error) {
       console.error('Purchase error:', error)
+      setErrorMessage('Wystąpił błąd połączenia. Spróbuj ponownie.')
       toast.error('Wystąpił błąd połączenia')
     } finally {
       setIsProcessing(false)
@@ -148,6 +155,16 @@ export function PurchaseDialog({
             Uzupełnij dane, aby sfinalizować zamówienie.
           </DialogDescription>
         </DialogHeader>
+        
+        {errorMessage && (
+          <Alert variant="destructive" className="mb-4">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Błąd</AlertTitle>
+            <AlertDescription>
+              {errorMessage}
+            </AlertDescription>
+          </Alert>
+        )}
         
         <div className="bg-gray-50 p-4 rounded-lg mb-4">
           <h3 className="font-medium text-gray-900">{trainingTitle}</h3>
@@ -174,7 +191,10 @@ export function PurchaseDialog({
               type="email"
               placeholder="twoj@email.pl"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) => {
+                setFormData({ ...formData, email: e.target.value })
+                setErrorMessage(null)
+              }}
               required
               disabled={isProcessing}
             />
