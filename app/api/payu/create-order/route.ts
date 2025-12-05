@@ -105,8 +105,14 @@ export async function POST(req: NextRequest) {
       const codeToSearch = discountCode.toUpperCase().trim();
       console.log(`[CREATE-ORDER] Searching for discount code: "${codeToSearch}"`);
       
-      const code = await prisma.discountCode.findUnique({
-        where: { code: codeToSearch },
+      // Use case-insensitive search to match validation behavior
+      const code = await prisma.discountCode.findFirst({
+        where: { 
+          code: {
+            equals: codeToSearch,
+            mode: 'insensitive'
+          }
+        },
         include: { training: true }
       });
 

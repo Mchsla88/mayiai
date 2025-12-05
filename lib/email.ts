@@ -2,8 +2,9 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_123456789');
 
-// Use mayiai.pl domain for production emails
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Szkolenia MayiAI <hello@mayiai.pl>';
+// Use send.mayiai.pl subdomain which has SPF/DKIM configured for Resend
+// If env var is set to hello@mayiai.pl, it should be changed to hello@send.mayiai.pl
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Szkolenia MayiAI <hello@send.mayiai.pl>';
 
 export async function sendWelcomeEmail(email: string, password: string, trainingName: string) {
   console.log(`📧 [START] Sending welcome email to ${email} for training: ${trainingName}`);
