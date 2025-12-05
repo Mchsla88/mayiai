@@ -7,7 +7,8 @@ import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Trash2, ArrowRight, ShieldCheck, Clock, Tag, Loader2 } from 'lucide-react'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Trash2, ArrowRight, ShieldCheck, Clock, Tag, Loader2, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { toast } from 'sonner'
@@ -35,6 +36,7 @@ export default function CartPage() {
   })
   const [regulationsAccepted, setRegulationsAccepted] = useState(false)
   const [privacyAccepted, setPrivacyAccepted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   useEffect(() => {
     if (session?.user) {
@@ -123,9 +125,11 @@ export default function CartPage() {
         toast.success('Przekierowywanie do płatności...')
         window.location.href = data.redirectUri
       } else {
-        toast.error(data.error || 'Wystąpił błąd podczas inicjowania płatności')
+        setErrorMessage(data.error || 'Wystąpił błąd podczas inicjowania płatności')
+        toast.error(data.error || 'Wystąpił błąd')
       }
     } catch (error) {
+      setErrorMessage('Wystąpił błąd połączenia. Spróbuj ponownie.')
       toast.error('Wystąpił błąd połączenia')
     } finally {
       setIsProcessing(false)
@@ -187,6 +191,8 @@ export default function CartPage() {
                           <button 
                             onClick={() => removeItem(item.id)}
                             className="text-gray-400 hover:text-red-500 transition-colors"
+                            title="Usuń z koszyka"
+                            aria-label="Usuń z koszyka"
                           >
                             <Trash2 className="w-5 h-5" />
                           </button>
@@ -206,6 +212,15 @@ export default function CartPage() {
                   <CardTitle>Dane do zamówienia</CardTitle>
                 </CardHeader>
                 <CardContent>
+                  {errorMessage && (
+                    <Alert variant="destructive" className="mb-4">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertTitle>Błąd</AlertTitle>
+                      <AlertDescription>
+                        {errorMessage}
+                      </AlertDescription>
+                    </Alert>
+                  )}
                   <form onSubmit={handleCheckout} className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="email">Email *</Label>
