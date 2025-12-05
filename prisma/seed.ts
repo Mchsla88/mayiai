@@ -28,8 +28,8 @@ async function main() {
     await prisma.training.upsert({
       where: { slug: 'nauczyciele' },
       update: {
-        title: 'Szkolenie dla Nauczycieli: Wykorzystanie AI w Edukacji',
-        shortDescription: 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły. Certyfikowane szkolenie dla nauczycieli.',
+        title: 'Poradnik AI dla Nauczycieli: Wykorzystanie AI w Edukacji',
+        shortDescription: 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły. Certyfikowany poradnik dla nauczycieli.',
         fullDescription: `Czy czujesz, że technologia zmienia się szybciej niż program nauczania?
 Sztuczna inteligencja to nie kolejna "nowinka", która przeminie. To narzędzie, które już teraz redefiniuje edukację.
 
@@ -49,7 +49,7 @@ Dołącz do tysięcy nauczycieli, którzy już korzystają z AI i uczą (się) m
       },
       create: {
         slug: 'nauczyciele',
-        title: 'Szkolenie dla Nauczycieli: Wykorzystanie AI w Edukacji',
+        title: 'Poradnik AI dla Nauczycieli: Wykorzystanie AI w Edukacji',
         shortDescription: 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły.',
         fullDescription: 'Pełny opis szkolenia dla nauczycieli...',
         price: 100,
@@ -103,7 +103,7 @@ Daj swojemu dziecku przewagę w szkole i w życiu, ucząc je kompetencji przysz�
       where: { slug: 'mlody-influencer' },
       update: {
         title: 'Młody Influencer: Budowanie Marki Osobistej',
-        shortDescription: 'Kompletny kurs dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.',
+        shortDescription: 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.',
         fullDescription: `Bycie influencerem to dzisiaj wymarzony zawód wielu młodych ludzi. Ale to nie tylko wrzucanie zdjęć. To ciężka praca, strategia i odpowiedzialność.
 
 Stworzyliśmy ten kurs, aby pomóc młodym twórcom wystartować mądrze.
@@ -126,7 +126,7 @@ To nie jest kurs "jak szybko zdobyć lajki". To kurs "jak zbudować trwałą i w
       create: {
         slug: 'mlody-influencer',
         title: 'Młody Influencer: Budowanie Marki Osobistej',
-        shortDescription: 'Kompletny kurs dla przyszłych twórców internetowych.',
+        shortDescription: 'Poradnik dla przyszłych twórców internetowych.',
         fullDescription: 'Pełny opis szkolenia Młody Influencer...',
         price: 100,
         level: 'INTERMEDIATE',

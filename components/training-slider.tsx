@@ -15,16 +15,18 @@ const trainings = [
     description: 'Jak wykorzystać AI do efektywnej nauki i odrabiania lekcji.',
     color: 'from-blue-400 to-blue-600',
     image: '/training-dzieci.jpg',
-    href: '/szkolenia/dzieci'
+    href: '/szkolenia/dzieci',
+    price: 100
   },
   {
     id: 2,
-    title: 'Nauczyciel z AI',
+    title: 'Poradnik AI dla Nauczycieli',
     icon: Users,
     description: 'Narzędzia i metody dla nowoczesnych pedagogów.',
     color: 'from-purple-400 to-purple-600',
     image: '/training-nauczyciele.jpg',
-    href: '/szkolenia/nauczyciele'
+    href: '/szkolenia/nauczyciele',
+    price: 100
   },
   {
     id: 3,
@@ -33,16 +35,18 @@ const trainings = [
     description: 'Ochrona danych i bezpieczne korzystanie z technologii.',
     color: 'from-green-400 to-green-600',
     image: '/training-rodzice.jpg',
-    href: '/szkolenia/bezpieczenstwo-w-sieci-i-ai'
+    href: '/szkolenia/bezpieczenstwo-w-sieci-i-ai',
+    price: 50
   },
   {
     id: 4,
     title: 'Młody Influencer',
     icon: Award,
-    description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
+    description: 'Poradnik dla przyszłych twórców internetowych.',
     color: 'from-orange-400 to-orange-600',
     image: '/training-influencer.jpg',
-    href: '/szkolenia/mlody-influencer'
+    href: '/szkolenia/mlody-influencer',
+    price: 100
   }
 ]
 
@@ -220,7 +224,7 @@ export function TrainingSlider() {
 
                       {/* Pricing */}
                       <div className="mb-4 pb-4 border-b border-gray-200">
-                        <div className="text-3xl font-bold text-gray-900">100 zł</div>
+                        <div className="text-3xl font-bold text-gray-900">{training.price} zł</div>
                         <div className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</div>
                       </div>
 
