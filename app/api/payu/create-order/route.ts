@@ -208,9 +208,14 @@ export async function POST(req: NextRequest) {
     // Get user's IP
     const clientIp = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '127.0.0.1';
 
-    // Find or create user
-    let user = existingUser || await prisma.user.findUnique({
-      where: { email: normalizedEmail }
+    // Find or create user - use case-insensitive search
+    let user = existingUser || await prisma.user.findFirst({
+      where: { 
+        email: {
+          equals: normalizedEmail,
+          mode: 'insensitive'
+        }
+      }
     });
 
     if (!user) {
