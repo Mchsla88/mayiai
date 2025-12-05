@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs';
 
 // EMERGENCY FIX - Uses direct PG connection to bypass Prisma
 export async function GET() {
+  console.log('Fix password endpoint called');
   let client;
   try {
     const connectionString = process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_PRISMA_URL;
