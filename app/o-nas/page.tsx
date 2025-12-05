@@ -266,7 +266,7 @@ function ONasContent() {
                     name: 'Atos',
                     role: 'Chief Happiness Officer',
                     expertise: 'Maskotka zespołu',
-                    image: '/team-1.jpg'
+                    image: '/team-atos.jpg'
                   }
                 ].map((member, i) => (
                   <Card key={i} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
