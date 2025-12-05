@@ -6,7 +6,9 @@ const resend = new Resend(process.env.RESEND_API_KEY || 're_123456789');
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Szkolenia MayiAI <hello@mayiai.pl>';
 
 export async function sendWelcomeEmail(email: string, password: string, trainingName: string) {
-  console.log(`📧 Sending welcome email to ${email} for training: ${trainingName}`);
+  console.log(`📧 [START] Sending welcome email to ${email} for training: ${trainingName}`);
+  console.log(`📧 [DEBUG] FROM_EMAIL: ${FROM_EMAIL}`);
+  console.log(`📧 [DEBUG] API Key present: ${!!process.env.RESEND_API_KEY}`);
   
   try {
     const result = await resend.emails.send({
@@ -32,10 +34,13 @@ export async function sendWelcomeEmail(email: string, password: string, training
         </div>
       `,
     });
-    console.log(`✅ Welcome email sent successfully to ${email}`, result);
+    console.log(`✅ [SUCCESS] Welcome email sent to ${email}. ID: ${result.data?.id}, Error: ${result.error}`);
+    if (result.error) {
+       console.error(`❌ [RESEND ERROR] ${JSON.stringify(result.error)}`);
+    }
     return result;
   } catch (error) {
-    console.error(`❌ Failed to send welcome email to ${email}:`, error);
+    console.error(`❌ [EXCEPTION] Failed to send welcome email to ${email}:`, error);
     throw error;
   }
 }
