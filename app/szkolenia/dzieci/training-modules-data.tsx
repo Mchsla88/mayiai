@@ -494,6 +494,12 @@ export const trainingModules: TrainingModule[] = [
             </ul>
           </SectionCard>
 
+          <SectionCard title="Gratulacje ukończenia szkolenia!" color="green">
+            <p className="text-gray-700 leading-relaxed">
+              Poznałeś wszystkie kluczowe aspekty wykorzystania AI w edukacji. 
+              Teraz możesz tworzyć spersonalizowane materiały i prowadzić interaktywne sesje testowe. 
+              Powodzenia w dalszej nauce!
+            </p>
           </SectionCard>
         </div>
       </ModernContent>
