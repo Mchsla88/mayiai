@@ -251,7 +251,7 @@ function ONasContent() {
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
-                    name: 'Rodzina Sławińskich',
+                    name: 'Nasza Rodzinka',
                     role: 'Założyciele',
                     expertise: 'Pasjonaci edukacji i technologii',
                     image: '/team-2.jpg'
@@ -263,7 +263,7 @@ function ONasContent() {
                     image: '/team-3.jpg'
                   },
                   {
-                    name: 'Max',
+                    name: 'Atos',
                     role: 'Chief Happiness Officer',
                     expertise: 'Maskotka zespołu',
                     image: '/team-1.jpg'
