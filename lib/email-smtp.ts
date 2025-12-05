@@ -34,6 +34,11 @@ export async function sendWelcomeEmail(email: string, password: string, training
       from: FROM_EMAIL,
       to: email,
       subject: `🎓 Dostęp do szkolenia: ${trainingName}`,
+      headers: {
+        'List-Unsubscribe': `<mailto:${process.env.SMTP_USER}?subject=unsubscribe>`,
+        'Precedence': 'bulk',
+        'X-Auto-Response-Suppress': 'OOF, AutoReply',
+      },
       html: `
         <!DOCTYPE html>
         <html>
@@ -51,12 +56,12 @@ export async function sendWelcomeEmail(email: string, password: string, training
             
             <p style="font-size: 16px; color: #333;">Twoje konto zostało utworzone. Oto Twoje dane logowania:</p>
             
-            <div style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); padding: 25px; border-radius: 10px; margin: 25px 0;">
-              <p style="margin: 8px 0; color: white; font-size: 16px;">
-                <strong>📧 Login:</strong> ${email}
+            <div style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); padding: 25px; border-radius: 10px; margin: 25px 0; color: white;">
+              <p style="margin: 8px 0; color: white; font-size: 18px; font-weight: bold;">
+                📧 Login: <a href="mailto:${email}" style="color: white; text-decoration: none;">${email}</a>
               </p>
-              <p style="margin: 8px 0; color: white; font-size: 16px;">
-                <strong>🔑 Hasło:</strong> <code style="background: rgba(255,255,255,0.2); padding: 3px 8px; border-radius: 4px;">${password}</code>
+              <p style="margin: 8px 0; color: white; font-size: 18px; font-weight: bold;">
+                🔑 Hasło: <code style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-family: monospace; letter-spacing: 1px;">${password}</code>
               </p>
             </div>
             

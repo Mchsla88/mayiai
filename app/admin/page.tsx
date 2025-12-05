@@ -301,6 +301,12 @@ export default function AdminDashboard() {
               Kody Rabatowe
             </Button>
           </Link>
+          <Link href="/admin/deleted-users">
+            <Button variant="outline" className="gap-2">
+              <Trash2 className="w-4 h-4" />
+              Historia usuniętych
+            </Button>
+          </Link>
           <div className="bg-white p-4 rounded-lg shadow-sm border flex gap-8">
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">{users.length}</div>

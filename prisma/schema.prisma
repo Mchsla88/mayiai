@@ -381,3 +381,18 @@ model Project {
   @@index([userId])
   @@index([category])
 }
+
+model DeletedUser {
+  id        String   @id @default(cuid())
+  email     String
+  name      String?
+  reason    String?
+  deletedAt DateTime @default(now())
+  deletedBy String?
+
+  // Store original data snapshot
+  originalId        String
+  originalCreatedAt DateTime
+
+  @@map("deleted_users")
+}
