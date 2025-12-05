@@ -6,6 +6,27 @@ import { prisma } from '@/lib/db';
 
 export async function GET() {
   try {
+    // FIX: Update prices to match the offer
+    await prisma.training.update({
+      where: { slug: 'mlody-influencer' },
+      data: { price: 100 }
+    });
+    
+    await prisma.training.update({
+      where: { slug: 'bezpieczenstwo-w-sieci-i-ai' },
+      data: { price: 50 }
+    });
+
+    await prisma.training.update({
+      where: { slug: 'nauczyciele' },
+      data: { price: 100 }
+    });
+
+    await prisma.training.update({
+      where: { slug: 'dzieci' },
+      data: { price: 100 }
+    });
+
     // Get all trainings
     const trainings = await prisma.training.findMany({
       select: {

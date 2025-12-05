@@ -50,20 +50,13 @@ export async function GET() {
       'mlody-influencer': 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.'
     };
 
-    const priceMap: Record<string, number> = {
-      'nauczyciele': 100,
-      'dzieci': 100,
-      'mlody-influencer': 100,
-      'bezpieczenstwo-w-sieci-i-ai': 50
-    };
-
     const trainingsWithAccess = trainings.map(training => ({
       ...training,
       imageUrl: imageMap[training.slug] || training.imageUrl,
       title: titleMap[training.slug] || training.title,
       shortDescription: descriptionMap[training.slug] || training.shortDescription,
       hasAccess: userTrainingsIds.includes(training.id),
-      price: priceMap[training.slug] || Number(training.price)
+      price: Number(training.price)
     }));
 
     return NextResponse.json(trainingsWithAccess);
