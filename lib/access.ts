@@ -30,29 +30,51 @@ export async function grantAccess(email: string, trainingId: string, payuOrderId
       },
     });
 
-    console.log('[GRANT ACCESS] User lookup result:', user ? { id: user.id, email: user.email } : 'NOT FOUND');
+    console.log('[GRANT ACCESS] User lookup result:', user ? { 
+      id: user.id, 
+      email: user.email,
+      hasPassword: !!user.password && user.password.length > 0
+    } : 'NOT FOUND');
 
     let isNewUser = false;
     let password = '';
 
-    // 2. Create user if not exists
+    // 2. Check if user needs password
+    // User is "new" if they don't exist OR if they exist but have no password
+    // (this happens when user was created in create-order before payment completed)
+    const needsPassword = !user || !user.password || user.password === '';
+
     if (!user) {
+      // Create new user
       isNewUser = true;
       password = generatePassword();
-      console.log(`[GRANT ACCESS] Creating new user with password (length: ${password.length})`);
+      console.log(`[GRANT ACCESS] Creating NEW user with password`);
       
       const hashedPassword = await hash(password, 10);
 
       user = await prisma.user.create({
         data: {
-          email: normalizedEmail, // Always store lowercase
+          email: normalizedEmail,
           password: hashedPassword,
-          name: normalizedEmail.split('@')[0], // Default name from email
+          name: normalizedEmail.split('@')[0],
         },
       });
       console.log(`[GRANT ACCESS] ✅ New user created: ${user.id}`);
+    } else if (needsPassword) {
+      // User exists but has no password - generate one and update
+      isNewUser = true;
+      password = generatePassword();
+      console.log(`[GRANT ACCESS] User exists but has NO password - generating one`);
+      
+      const hashedPassword = await hash(password, 10);
+      
+      user = await prisma.user.update({
+        where: { id: user.id },
+        data: { password: hashedPassword },
+      });
+      console.log(`[GRANT ACCESS] ✅ Password set for existing user: ${user.id}`);
     } else {
-      console.log(`[GRANT ACCESS] User already exists, will send access granted email`);
+      console.log(`[GRANT ACCESS] User already exists with password, will send access granted email`);
     }
 
     // 3. Calculate expiration date (12 months from now)
