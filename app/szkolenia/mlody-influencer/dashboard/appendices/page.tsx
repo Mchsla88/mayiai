@@ -10,14 +10,6 @@ import Link from 'next/link';
 const attachments = [
   {
     id: 1,
-    title: 'Kompletny kurs Młody Influencer (PDF)',
-    description: 'Pełna wersja kursu do pobrania i druku',
-    filename: 'mlody_influencer_kurs_COMPLETE.pdf',
-    size: '2.5 MB',
-    icon: FileText
-  },
-  {
-    id: 2,
     title: 'Schemat tworzenia treści',
     description: 'Szablon do planowania postów i filmów',
     filename: 'schamat.pdf',
