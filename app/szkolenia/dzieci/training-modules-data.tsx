@@ -222,31 +222,9 @@ export const trainingModules: TrainingModule[] = [
         </SectionCard>
 
         <SectionCard title="Gratulacje!" color="green">
-          <p className="text-gray-700 mb-4">
-            Masz teraz gotowy, spersonalizowany plik PDF, który możesz:
+          <p className="text-gray-700 leading-relaxed">
+            Masz teraz gotowy, spersonalizowany plik PDF, który możesz wydrukować, przesłać na tablet/telefon lub używać na komputerze.
           </p>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Wydrukować</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Przesłać</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Używać</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Na tablet/telefonie</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Na komputerze</span>
-            </li>
-          </ul>
         </SectionCard>
       </ModernContent>
     )
@@ -298,41 +276,56 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul2-krok2',
-    title: 'Moduł 2 - Krok 2: Upload pliku PDF',
-    duration: '5 min',
+    title: 'Moduł 2 - Krok 2: Przygotowanie sesji testowej',
+    duration: '8 min',
     video: '/6-film.mp4',
     content: (
       <ModernContent 
-        title="Przesyłanie materiału do Gemini"
+        title="Przygotowanie sesji testowej"
         icon={<Rocket />}
       >
-        <h3 className="text-2xl font-bold mb-4 text-purple-600">Przesyłanie materiału do Gemini</h3>
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Przygotowanie sesji testowej</h3>
         
         <p className="text-gray-700 text-lg leading-relaxed mb-6">
-          Teraz prześlemy wcześniej przygotowany materiał PDF do Gemini, aby asystent mógł na jego podstawie 
-          przeprowadzić interaktywny test wiedzy.
+          W oknie czatu Gemini na komputerze, w polu "Zapytaj Gemini", wpisz poniższe polecenie. <strong>Nie wciskaj jeszcze Enter!</strong>
         </p>
 
-        <SectionCard title="Jak przesłać plik" color="green">
+        <SectionCard title="Kluczowy prompt do testu wiedzy" color="purple">
+          <div className="bg-white p-4 rounded-lg border-2 border-purple-200 font-mono text-sm max-h-[400px] overflow-y-auto">
+            <p className="text-gray-800 whitespace-pre-wrap">
+              Przygotuj zestaw pytań sprawdzających wiedzę na podstawie przesłanego pliku. Pytania mają być różnorodne, każde pytanie zadajesz po odpowiedzi na poprzednie:
+              {'\n\n'}• Pięć pytań otwartych, wymagających krótkiej odpowiedzi. Aby była prawidłowa, odpowiedź musi składać się z minimum dwóch słów.
+              {'\n'}• Pięć pytań testowych z jedną poprawną odpowiedzią. Jeśli odpowiedź będzie niepełna lub niepoprawna, odpowiedz "błędna odpowiedź" i uzasadnij czemu.
+              {'\n'}• Dwa pytania typu "prawda/fałsz".
+              {'\n\n'}Po otrzymaniu każdej odpowiedzi, sprawdź, czy była w pełni prawidłowa. Jeśli tak, przejdź do następnego pytania. Jeśli odpowiedź nie jest prawidłowa, powiedz: "błędna odpowiedź" i dokładnie uzasadnij dlaczego.
+              {'\n\n'}Po serii pytań napisz podsumowanie testu, omawiając błędne odpowiedzi. Następnie zapytaj, czy kontynuujemy sprawdzanie wiedzy. Jeśli odpowiedź będzie "tak", przygotuj następny, inny zestaw pytań. Powtarzaj to pytanie po każdym zakończonym teście.
+              {'\n\n'}Test zaczynasz od pytania: "Czy możemy zacząć?". Rozmowa jest z dzieckiem, więc bądź dokładny i daj dużo czasu na odpowiedź.
+              {'\n\n'}WAŻNE: Jeśli odpowiedź na pytanie nie brzmi prawidłowo, upewnij się, że to ostateczna odpowiedź. Jeśli dziecko powie "nie", poinformuj je, że gdy odpowiedź będzie ostateczna, ma powiedzieć słowo "gotowe". Nie przerywaj wypowiedzi, dopóki nie usłyszysz tego słowa.
+              {'\n\n'}Rozmowa ma odbywać się w 100% w języku polskim, a asystent głosowy ma odpowiadać również w 100% po polsku.
+            </p>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Następne kroki" color="green">
           <ol className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
-              <span>W oknie Gemini na komputerze znajdź ikonę spinacza (📎) lub przycisk do dodawania plików</span>
+              <span>Teraz załącz plik PDF stworzony w Module 1. Kliknij ikonę plusa [+] w polu tekstowym, wybierz "Prześlij pliki" i wskaż zapisany dokument.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
-              <span>Kliknij ikonę i wybierz wcześniej zapisany plik PDF z materiałem do nauki</span>
+              <span>Po załączeniu pliku, wciśnij Enter, aby wysłać polecenie wraz z plikiem.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
-              <span>Poczekaj, aż plik zostanie przesłany i przetworzony przez Gemini</span>
+              <span>Poczekaj 2-3 minuty, aż Gemini przetworzy dane.</span>
             </li>
           </ol>
         </SectionCard>
 
         <InfoBox icon={<Lightbulb />}>
-          <strong>Wskazówka:</strong> Upewnij się, że plik nie jest zbyt duży (maksymalnie kilka MB). 
-          Jeśli plik jest większy, rozważ jego kompresję.
+          <strong>Wskazówka:</strong> Możesz skopiować prompt powyżej i wkleić go do Gemini. 
+          Upewnij się, że plik PDF został poprawnie załączony przed wysłaniem.
         </InfoBox>
       </ModernContent>
     )
@@ -504,5 +497,177 @@ export const trainingModules: TrainingModule[] = [
         </div>
       </ModernContent>
     )
+  },
+  {
+    id: 'lektury-szkolne',
+    title: 'Moduł 10: Lektury szkolne 📚',
+    duration: '10 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Lektury szkolne"
+        icon={<BookOpen />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Lektury szkolne 📚</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Aby szybko przeanalizować i zrozumieć treść dowolnej lektury, użyj poniższych poleceń. 
+          AI pomoże Ci stworzyć idealne podsumowanie dostosowane do Twojego wieku!
+        </p>
+
+        <SectionCard title="Krok 1: Znajdź zagadnienia z podstawy programowej" color="blue">
+          <p className="text-gray-700 mb-4">
+            Wklej poniższe polecenie do Claude.ai, uzupełniając dane w nawiasach:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-blue-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Jesteś ekspertem od polskiego systemu edukacji. Znajdź i przedstaw w punktach kluczowe zagadnienia z podstawy programowej 
+              Ministerstwa Edukacji Narodowej (MEN) dla przedmiotu <strong className="bg-yellow-200 px-1">[język polski]</strong> dla klasy 
+              <strong className="bg-yellow-200 px-1">[4 szkoły podstawowej]</strong> na temat wiedzy z lektury szkolnej 
+              "<strong className="bg-yellow-200 px-1">[Akademia Pana Kleksa]</strong>"
+            </p>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Krok 2: Stwórz szczegółowe podsumowanie lektury" color="purple">
+          <p className="text-gray-700 mb-4">
+            Po otrzymaniu zagadnień, skopiuj i wklej poniższe polecenie:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-purple-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Przeanalizuj lekturę szkolną "<strong className="bg-yellow-200 px-1">[Tytuł lektury, np. 'Akademia Pana Kleksa']</strong>" 
+              dla klasy <strong className="bg-yellow-200 px-1">[numer klasy]</strong>. Stwórz zwięzłe podsumowanie zawierające absolutnie niezbędne informacje do zapamiętania:
+            </p>
+            <ol className="list-decimal list-inside mt-2 text-gray-700 space-y-1">
+              <li>Główni bohaterowie (z krótką charakterystyką).</li>
+              <li>Wydarzenia w porządku chronologicznym.</li>
+              <li>Kluczowe motywy i problematyka utworu.</li>
+              <li>Świat przedstawiony (miejsce i czas akcji).</li>
+            </ol>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Krok 3: Stwórz rozszerzoną wersję do nauki" color="green">
+          <p className="text-gray-700 mb-4">
+            Następnie wklej to polecenie, aby stworzyć wersję przyjazną dla dziecka:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-green-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Na podstawie powyższych zagadnień, stwórz bardzo rozszerzoną listę punktów, które trzeba zapamiętać. 
+              Rozbuduj opis bohaterów oraz ważnych sytuacji z książki. Opisz kluczowe motywy i problematykę utworu 
+              oraz świat przedstawiony (miejsce i czas akcji).
+              <br /><br />
+              Przedstaw je w sposób niezwykle łatwy do zapamiętania dla <strong className="bg-yellow-200 px-1">[np. 10-latka]</strong>. 
+              Użyj prostego języka, porównań, metafor, a nawet mnemotechnik. Każdy kluczowy termin lub data muszą być jasno wytłumaczone.
+            </p>
+          </div>
+        </SectionCard>
+
+        <InfoBox icon={<Lightbulb />}>
+          <strong>Wskazówka:</strong> Możesz użyć tego samego schematu dla każdej lektury szkolnej - od "Małego Księcia" po "Pana Tadeusza"!
+        </InfoBox>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'gramatyka-ortografia',
+    title: 'Moduł 11: Gramatyka i Ortografia ✍️',
+    duration: '10 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Gramatyka i Ortografia"
+        icon={<FileText />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Gramatyka i Ortografia ✍️</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Te polecenia oparte są na skutecznym schemacie "tłumaczenie + przykłady + ćwiczenia", 
+          aby ułatwić zrozumienie i utrwalenie zasad gramatycznych oraz ortograficznych.
+        </p>
+
+        <SectionCard title="Nauka gramatyki" color="purple">
+          <p className="text-gray-700 mb-4">
+            Skopiuj i wklej poniższe polecenie, aby nauczyć się dowolnego zagadnienia gramatycznego:
+          </p>
+          <div className="bg-white p-4 rounded-lg border-2 border-purple-200 font-mono text-sm">
+            <p className="text-gray-800">
+              Wytłumacz w najprostszy możliwy sposób, jak 11-latkowi, zagadnienie gramatyczne: 
+              <strong className="bg-yellow-200 px-1">[wpisz zagadnienie, np. "Części mowy - czasownik, rzeczownik, przymiotnik"]</strong>.
+              <br /><br />
+              Twoje wyjaśnienie musi zawierać:
+            </p>
+            <ol className="list-decimal list-inside mt-2 text-gray-700 space-y-1">
+              <li>Bardzo prostą definicję.</li>
+              <li>Minimum 5 klarownych przykładów użycia w zdaniach.</li>
+              <li>Krótkie ćwiczenie interaktywne: podaj 5 zdań i poproś o wskazanie w nich <strong className="bg-yellow-200 px-1">[np. czasowników]</strong>. Na końcu podaj odpowiedzi.</li>
+            </ol>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Przykładowe zagadnienia do nauki" color="blue">
+          <p className="text-gray-700 mb-4">
+            Oto lista zagadnień, które możesz wpisać w miejsce nawiasu:
+          </p>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Części mowy (rzeczownik, czasownik, przymiotnik, przysłówek)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Części zdania (podmiot, orzeczenie, dopełnienie)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Odmiana przez przypadki</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Czas przeszły, teraźniejszy i przyszły</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Zasady pisowni "ó" i "u"</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Zasady pisowni "rz" i "ż"</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700">Wielka i mała litera</span>
+            </li>
+          </ul>
+        </SectionCard>
+
+        <SectionCard title="Jak korzystać" color="green">
+          <ol className="space-y-3 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+              <span>Skopiuj polecenie powyżej i wklej je do Claude.ai</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+              <span>Zamień tekst w nawiasach kwadratowych na konkretne zagadnienie</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+              <span>Przeczytaj wyjaśnienie i wykonaj ćwiczenie</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+              <span>Sprawdź odpowiedzi i powtórz, jeśli trzeba</span>
+            </li>
+          </ol>
+        </SectionCard>
+
+        <InfoBox icon={<GraduationCap />}>
+          <strong>Rezultat:</strong> Dzięki tej metodzie dziecko otrzyma jasne wyjaśnienie, praktyczne przykłady 
+          oraz możliwość natychmiastowego przetestowania swojej wiedzy. To idealne połączenie teorii z praktyką!
+        </InfoBox>
+      </ModernContent>
+    )
   }
 ]
+

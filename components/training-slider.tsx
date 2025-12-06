@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useState, useRef } from 'react'
-import { BookOpen, Users, Shield, Award, ChevronLeft, ChevronRight } from 'lucide-react'
+import { BookOpen, Users, Shield, Award, ChevronLeft, ChevronRight, Code } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,17 +14,19 @@ const trainings = [
     icon: BookOpen,
     description: 'Jak wykorzystać AI do efektywnej nauki i odrabiania lekcji.',
     color: 'from-blue-400 to-blue-600',
-    image: '/dog-1.png',
-    href: '/szkolenia/dzieci'
+    image: '/training-dzieci.jpg',
+    href: '/szkolenia/dzieci',
+    price: 200
   },
   {
     id: 2,
-    title: 'Nauczyciel z AI',
+    title: 'Poradnik AI dla Nauczycieli',
     icon: Users,
     description: 'Narzędzia i metody dla nowoczesnych pedagogów.',
     color: 'from-purple-400 to-purple-600',
-    image: '/dog-2.png',
-    href: '/szkolenia/nauczyciele'
+    image: '/training-nauczyciele.jpg',
+    href: '/szkolenia/nauczyciele',
+    price: 100
   },
   {
     id: 3,
@@ -32,17 +34,30 @@ const trainings = [
     icon: Shield,
     description: 'Ochrona danych i bezpieczne korzystanie z technologii.',
     color: 'from-green-400 to-green-600',
-    image: '/dog-3.png',
-    href: '/szkolenia/bezpieczenstwo-w-sieci-i-ai'
+    image: '/training-rodzice.jpg',
+    href: '/szkolenia/bezpieczenstwo-w-sieci-i-ai',
+    price: 50
   },
   {
     id: 4,
     title: 'Młody Influencer',
     icon: Award,
-    description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
+    description: 'Poradnik dla przyszłych twórców internetowych.',
     color: 'from-orange-400 to-orange-600',
-    image: '/dog-5.png',
+    image: '/training-influencer.jpg',
     href: '/szkolenia/mlody-influencer',
+    price: 100,
+    comingSoon: true
+  },
+  {
+    id: 5,
+    title: 'Kodowanie z AI',
+    icon: Code,
+    description: 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!',
+    color: 'from-cyan-400 to-cyan-600',
+    image: '/training-kodowanie.jpg',
+    href: '/szkolenia/kodowanie',
+    price: 0,
     comingSoon: true
   }
 ]
@@ -188,18 +203,18 @@ export function TrainingSlider() {
                     transition={{ duration: 0.3 }}
                   >
                     {/* Image Header */}
-                    <div className={`h-56 bg-gradient-to-br ${training.color} relative flex items-center justify-center overflow-hidden`}>
+                    <div className={`h-72 bg-gradient-to-br ${training.color} relative flex items-center justify-center overflow-hidden`}>
                       <div className="absolute inset-0 bg-white/10" />
                       <motion.div
-                        className="relative w-36 h-36"
-                        animate={isCurrent && isHovered ? { scale: 1.1, rotate: 5 } : { scale: 1, rotate: 0 }}
+                        className="relative w-full h-full"
+                        animate={isCurrent && isHovered ? { scale: 1.05 } : { scale: 1 }}
                         transition={{ duration: 0.3 }}
                       >
                         <Image
                           src={training.image}
                           alt={training.title}
                           fill
-                          className="object-contain drop-shadow-2xl"
+                          className="object-cover drop-shadow-2xl"
                         />
                       </motion.div>
                     </div>
@@ -221,17 +236,28 @@ export function TrainingSlider() {
 
                       {/* Pricing */}
                       <div className="mb-4 pb-4 border-b border-gray-200">
-                        <div className="text-3xl font-bold text-gray-900">100 zł</div>
-                        <div className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</div>
+                        {(training as any).comingSoon ? (
+                          <>
+                            <div className="inline-block px-3 py-1 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-sm font-bold rounded-full mb-2">
+                              🚀 Wkrótce
+                            </div>
+                            <div className="text-sm text-gray-600">Pracujemy nad tym szkoleniem!</div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="text-3xl font-bold text-gray-900">{training.price} zł</div>
+                            <div className="text-sm font-semibold text-purple-600">12 miesięcy dostępu</div>
+                          </>
+                        )}
                       </div>
 
                       {/* CTA Button */}
-                      {training.comingSoon ? (
+                      {(training as any).comingSoon ? (
                         <Button
+                          className={`w-full bg-gradient-to-r ${training.color} text-white opacity-70 cursor-not-allowed`}
                           disabled
-                          className="w-full bg-gray-200 text-gray-400 cursor-not-allowed shadow-none"
                         >
-                          Wkrótce
+                          Powiadomimy Cię o starcie!
                         </Button>
                       ) : (
                         <Button

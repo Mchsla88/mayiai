@@ -26,7 +26,7 @@ import {
   Smile,
   GraduationCap
 } from 'lucide-react'
-import { OrganizationStructuredData, EducationalOrganizationStructuredData, WebsiteStructuredData } from '@/components/structured-data'
+import { OrganizationStructuredData, EducationalOrganizationStructuredData, WebsiteStructuredData, FAQStructuredData } from '@/components/structured-data'
 import { ParticlesBackground } from '@/components/animations/ParticlesBackground'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { FloatingElement } from '@/components/animations/FloatingElement'
@@ -34,6 +34,30 @@ import { GlassmorphCard } from '@/components/animations/GlassmorphCard'
 import { MagneticButton } from '@/components/animations/MagneticButton'
 import { useRef } from 'react'
 import { TrainingSlider } from '@/components/training-slider'
+
+// FAQ data for SEO - Critical for AI Overviews and Bing Chat
+const homepageFAQs = [
+  {
+    question: 'Czym jest May I AI i dla kogo są wasze szkolenia?',
+    answer: 'May I AI to pierwsza polska marka edukacyjna skupiona na bezpiecznej nauce sztucznej inteligencji dla rodzin. Nasze szkolenia są przeznaczone dla dzieci, rodziców i nauczycieli, którzy chcą zrozumieć AI i nauczyć się jej bezpiecznego wykorzystywania.'
+  },
+  {
+    question: 'Czy szkolenia AI dla dzieci są bezpieczne?',
+    answer: 'Tak, wszystkie nasze materiały są starannie opracowane z myślą o bezpieczeństwie dzieci. Uczymy nie tylko jak korzystać z AI, ale przede wszystkim jak robić to odpowiedzialnie, chroniąc prywatność i rozwijając krytyczne myślenie.'
+  },
+  {
+    question: 'Od jakiego wieku dziecko może uczyć się o AI?',
+    answer: 'Nasze szkolenia są dostosowane do różnych grup wiekowych. Mamy materiały dla dzieci od 6 lat wzwyż, z odpowiednim poziomem trudności i formą przekazu dostosowaną do wieku uczestnika.'
+  },
+  {
+    question: 'Jak długo trwa dostęp do szkoleń?',
+    answer: 'Oferujemy 12-miesięczny dostęp do wszystkich materiałów szkoleniowych. W tym czasie możesz korzystać ze wszystkich treści bez ograniczeń, wielokrotnie wracając do materiałów.'
+  },
+  {
+    question: 'Czy potrzebuję specjalistycznej wiedzy technicznej?',
+    answer: 'Nie, nasze szkolenia są zaprojektowane dla osób bez wcześniejszej wiedzy o AI. Tłumaczymy wszystko prostym językiem, z praktycznymi przykładami i ćwiczeniami.'
+  }
+]
 
 export default function HomePage() {
   const ref = useRef<HTMLDivElement>(null)
@@ -53,6 +77,7 @@ export default function HomePage() {
       <OrganizationStructuredData />
       <EducationalOrganizationStructuredData />
       <WebsiteStructuredData />
+      <FAQStructuredData faqs={homepageFAQs} />
       <Navbar />
       
       <main className="flex-1 pt-16">

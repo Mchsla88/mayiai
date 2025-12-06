@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 async function main() {
   const email = 'michal@mayiai.pl'
-  const newPassword = 'admin123'
+  const newPassword = 'Takiehaslo123!'
   
   console.log(`Resetting password for ${email}...`)
   

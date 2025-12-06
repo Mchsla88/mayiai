@@ -9,12 +9,8 @@ export async function middleware(request: NextRequest) {
 
 
 
-  // Auth check for training pages
+  // Auth check for protected pages (training pages have their own local login)
   const protectedPaths = [
-    '/szkolenia/rodzice',
-    '/szkolenia/mlody-influencer',
-    '/szkolenia/nauczyciele',
-    '/szkolenia/dzieci',
     '/dashboard',
     '/admin'
   ]

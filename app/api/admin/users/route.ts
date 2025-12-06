@@ -159,20 +159,44 @@ export async function DELETE(request: Request) {
       )
     }
 
-    // 1. Anonymize or detach orders (since we can't delete financial records easily without schema change)
+    // 1. Fetch user data for archiving
+    const userToDelete = await prisma.user.findUnique({
+      where: { id: userId }
+    })
+
+    if (!userToDelete) {
+      return NextResponse.json(
+        { error: 'Użytkownik nie istnieje' },
+        { status: 404 }
+      )
+    }
+
+    // 2. Archive user data
+    await prisma.deletedUser.create({
+      data: {
+        email: userToDelete.email,
+        name: userToDelete.name,
+        reason: 'Usunięty przez administratora',
+        deletedBy: session.user.email,
+        originalId: userToDelete.id,
+        originalCreatedAt: userToDelete.createdAt
+      }
+    })
+
+    // 3. Anonymize or detach orders (since we can't delete financial records easily without schema change)
     // We set userId to null for orders belonging to this user
     await prisma.order.updateMany({
       where: { userId: userId },
       data: { userId: null }
     })
     
-    // 2. Delete the user (Cascade will handle other relations like UserTraining, Account, etc.)
+    // 4. Delete the user (Cascade will handle other relations like UserTraining, Account, etc.)
     await prisma.user.delete({
       where: { id: userId }
     })
 
     return NextResponse.json(
-      { message: 'Użytkownik został usunięty' },
+      { message: 'Użytkownik został usunięty i zarchiwizowany' },
       { status: 200 }
     )
 

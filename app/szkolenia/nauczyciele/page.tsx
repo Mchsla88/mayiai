@@ -14,6 +14,7 @@ import { CertificateGenerator } from '@/components/certificate-generator'
 import toast from 'react-hot-toast'
 import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { Navbar } from '@/components/navbar'
 
 // Import modules from separate file
 import { trainingModules } from './training-modules-data'
@@ -35,13 +36,11 @@ export default function TeachersTrainingPage() {
       return
     }
 
-    if (!session) {
-      router.push('/auth/login?callbackUrl=/szkolenia/nauczyciele')
-      return
+    // If session exists, we are authenticated
+    if (session) {
+      setIsAuthenticated(true)
     }
-    
-    setIsAuthenticated(true)
-  }, [session, status, router])
+  }, [session, status])
 
   const handleAuthSuccess = () => {
     setIsAuthenticated(true)
@@ -83,15 +82,23 @@ export default function TeachersTrainingPage() {
   }
 
   if (!isAuthenticated) {
-    return <SimpleLoginForm onLogin={handleAuthSuccess} title="Szkolenie AI dla Nauczycieli" />
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1">
+          <SimpleLoginForm onLogin={handleAuthSuccess} title="Poradnik AI dla Nauczycieli" />
+        </div>
+      </div>
+    )
   }
 
   const currentModule = trainingModules.find(m => m.id === activeModule)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <Navbar />
       
-      <main className="container mx-auto px-4 py-12 relative">
+      <main className="container mx-auto px-4 py-12 pt-24 relative">
         {/* Logout Button */}
         <div className="absolute top-4 right-4 z-10">
           <Button 
@@ -111,7 +118,7 @@ export default function TeachersTrainingPage() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Szkolenie AI dla Nauczycieli
+            Poradnik AI dla Nauczycieli
           </h1>
           <p className="text-xl text-gray-600 mb-4">
             Kompleksowy Przewodnik 2024-2026

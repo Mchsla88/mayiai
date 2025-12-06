@@ -67,13 +67,25 @@ export class PayUClient {
     });
 
     if (!response.ok) {
-      throw new Error(`PayU OAuth failed: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('PayU OAuth Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText,
+        url: `${this.baseUrl}/pl/standard/user/oauth/authorize`,
+        clientId: this.config.clientId,
+        environment: this.config.environment,
+      });
+      throw new Error(`PayU OAuth failed: ${response.statusText} - ${errorText}`);
     }
 
     const data = await response.json();
     return data.access_token;
   }
 
+  /**
+   * Create a new order
+   */
   /**
    * Create a new order
    */
@@ -90,15 +102,47 @@ export class PayUClient {
         ...orderData,
         merchantPosId: this.config.posId,
       }),
+      redirect: 'manual', // Important: Prevent fetch from following the redirect
     });
+
+    // PayU returns 302 Found for successful order creation with redirectUri in body
+    if (response.status === 302) {
+      try {
+        const data = await response.json();
+        return data;
+      } catch (e) {
+        // Fallback: if body is empty or not JSON, try to get Location header (though PayU docs say body has JSON)
+        const location = response.headers.get('Location');
+        if (location) {
+          return {
+            status: { statusCode: 'SUCCESS' },
+            redirectUri: location,
+            orderId: '', // We might miss orderId if we only use header
+          };
+        }
+        throw new Error('PayU returned 302 but failed to parse response body or find Location header');
+      }
+    }
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`PayU order creation failed: ${errorText}`);
+      console.error('PayU Create Order Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText,
+        url: `${this.baseUrl}/api/v2_1/orders`,
+      });
+      throw new Error(`PayU order creation failed: ${response.statusText} - ${errorText}`);
     }
 
-    const data = await response.json();
-    return data;
+    try {
+      const data = await response.json();
+      return data;
+    } catch (e) {
+       const text = await response.text();
+       console.error('PayU JSON Parse Error:', text);
+       throw new Error('Failed to parse PayU response');
+    }
   }
 
   /**

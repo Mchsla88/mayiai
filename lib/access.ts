@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/db';
 import { hash } from 'bcryptjs';
-import { sendWelcomeEmail, sendAccessGrantedEmail } from '@/lib/email';
+// Use Nodemailer SMTP instead of Resend (more reliable)
+import { sendWelcomeEmail, sendAccessGrantedEmail } from '@/lib/email-smtp';
 import crypto from 'crypto';
 
 // Helper to generate random password
@@ -9,28 +10,71 @@ function generatePassword(length = 12) {
 }
 
 export async function grantAccess(email: string, trainingId: string, payuOrderId: string) {
+  console.log('==========================================');
+  console.log('[GRANT ACCESS] Starting access grant process');
+  console.log(`[GRANT ACCESS] Email: ${email}, TrainingId: ${trainingId}, OrderId: ${payuOrderId}`);
+  console.log('==========================================');
+  
   try {
-    // 1. Check if user exists
-    let user = await prisma.user.findUnique({
-      where: { email },
+    // Normalize email to lowercase to prevent duplicates
+    const normalizedEmail = email.toLowerCase().trim();
+    console.log(`[GRANT ACCESS] Normalized email: ${normalizedEmail}`);
+    
+    // 1. Check if user exists (case-insensitive search)
+    let user = await prisma.user.findFirst({
+      where: { 
+        email: {
+          equals: normalizedEmail,
+          mode: 'insensitive'
+        }
+      },
     });
+
+    console.log('[GRANT ACCESS] User lookup result:', user ? { 
+      id: user.id, 
+      email: user.email,
+      hasPassword: !!user.password && user.password.length > 0
+    } : 'NOT FOUND');
 
     let isNewUser = false;
     let password = '';
 
-    // 2. Create user if not exists
+    // 2. Check if user needs password
+    // User is "new" if they don't exist OR if they exist but have no password
+    // (this happens when user was created in create-order before payment completed)
+    const needsPassword = !user || !user.password || user.password === '';
+
     if (!user) {
+      // Create new user
       isNewUser = true;
       password = generatePassword();
+      console.log(`[GRANT ACCESS] Creating NEW user with password`);
+      
       const hashedPassword = await hash(password, 10);
 
       user = await prisma.user.create({
         data: {
-          email,
+          email: normalizedEmail,
           password: hashedPassword,
-          name: email.split('@')[0], // Default name from email
+          name: normalizedEmail.split('@')[0],
         },
       });
+      console.log(`[GRANT ACCESS] ✅ New user created: ${user.id}`);
+    } else if (needsPassword) {
+      // User exists but has no password - generate one and update
+      isNewUser = true;
+      password = generatePassword();
+      console.log(`[GRANT ACCESS] User exists but has NO password - generating one`);
+      
+      const hashedPassword = await hash(password, 10);
+      
+      user = await prisma.user.update({
+        where: { id: user.id },
+        data: { password: hashedPassword },
+      });
+      console.log(`[GRANT ACCESS] ✅ Password set for existing user: ${user.id}`);
+    } else {
+      console.log(`[GRANT ACCESS] User already exists with password, will send access granted email`);
     }
 
     // 3. Calculate expiration date (12 months from now)
@@ -38,6 +82,7 @@ export async function grantAccess(email: string, trainingId: string, payuOrderId
     expiresAt.setFullYear(expiresAt.getFullYear() + 1);
 
     // 4. Grant Access (Create or Update UserTraining)
+    console.log(`[GRANT ACCESS] Upserting UserTraining for user ${user.id}, training ${trainingId}`);
     await prisma.userTraining.upsert({
       where: {
         userId_trainingId: {
@@ -56,27 +101,37 @@ export async function grantAccess(email: string, trainingId: string, payuOrderId
         expiresAt: expiresAt,
       },
     });
+    console.log('[GRANT ACCESS] ✅ UserTraining upserted successfully');
 
     // 5. Update Order with userId
+    console.log(`[GRANT ACCESS] Updating order ${payuOrderId} with userId ${user.id}`);
     await prisma.order.update({
       where: { payuOrderId },
       data: { userId: user.id },
     });
+    console.log('[GRANT ACCESS] ✅ Order updated with userId');
 
     // 6. Send Email
     const training = await prisma.training.findUnique({ where: { id: trainingId } });
     const trainingName = training?.title || 'Szkolenie';
+    console.log(`[GRANT ACCESS] Training name: ${trainingName}`);
 
     if (isNewUser) {
+      console.log(`[GRANT ACCESS] 📧 Sending WELCOME email to ${email} (new user)`);
       await sendWelcomeEmail(email, password, trainingName);
+      console.log('[GRANT ACCESS] ✅ Welcome email sent');
     } else {
+      console.log(`[GRANT ACCESS] 📧 Sending ACCESS GRANTED email to ${email} (existing user)`);
       await sendAccessGrantedEmail(email, trainingName);
+      console.log('[GRANT ACCESS] ✅ Access granted email sent');
     }
 
+    console.log('[GRANT ACCESS] ✅ Process completed successfully');
+    console.log('==========================================');
     return { success: true, isNewUser };
 
   } catch (error) {
-    console.error('Error granting access:', error);
+    console.error('[GRANT ACCESS] ❌ Error:', error);
     throw error;
   }
 }

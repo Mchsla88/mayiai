@@ -186,3 +186,126 @@ export function SoftwareApplicationStructuredData() {
     />
   );
 }
+
+// FAQPage Schema - Critical for AI Overviews and Bing Chat
+export function FAQStructuredData({ faqs }: { faqs: Array<{ question: string; answer: string }> }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  return (
+    <script
+      id="faq-structured-data"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}
+
+// Course Schema for training pages
+export function CourseStructuredData({ 
+  name, 
+  description, 
+  price, 
+  provider = "May I AI Family Expert",
+  imageUrl
+}: { 
+  name: string; 
+  description: string; 
+  price: number;
+  provider?: string;
+  imageUrl?: string;
+}) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": name,
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": provider,
+      "url": "https://mayiai.pl"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": price.toString(),
+      "priceCurrency": "PLN",
+      "availability": "https://schema.org/InStock"
+    },
+    ...(imageUrl && { "image": imageUrl }),
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "courseWorkload": "PT10H"
+    }
+  };
+
+  return (
+    <script
+      id="course-structured-data"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}
+
+// Product Schema for e-books and products
+export function ProductStructuredData({ 
+  name, 
+  description, 
+  price, 
+  imageUrl,
+  rating = 4.9,
+  reviewCount = 100
+}: { 
+  name: string; 
+  description: string; 
+  price: number;
+  imageUrl?: string;
+  rating?: number;
+  reviewCount?: number;
+}) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": name,
+    "description": description,
+    "brand": {
+      "@type": "Brand",
+      "name": "May I AI Family Expert"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": price.toString(),
+      "priceCurrency": "PLN",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "May I AI Family Expert"
+      }
+    },
+    ...(imageUrl && { "image": imageUrl }),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": rating.toString(),
+      "reviewCount": reviewCount.toString()
+    }
+  };
+
+  return (
+    <script
+      id="product-structured-data"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}

@@ -6,7 +6,7 @@ import { Resend } from 'resend'
 
 export const dynamic = 'force-dynamic'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Resend initialized inside handler
 
 function generatePassword(length = 12) {
   const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
@@ -57,6 +57,7 @@ export async function POST(request: Request) {
 
     // Send email with new password
     try {
+      const resend = new Resend(process.env.RESEND_API_KEY)
       await resend.emails.send({
         from: 'May I AI <onboarding@resend.dev>',
         to: email,

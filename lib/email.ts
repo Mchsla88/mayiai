@@ -2,46 +2,77 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_123456789');
 
-const FROM_EMAIL = 'Szkolenia <onboarding@resend.dev>'; // TODO: Update with user's domain
+// Use send.mayiai.pl subdomain which has SPF/DKIM configured for Resend
+// If env var is set to hello@mayiai.pl, it should be changed to hello@send.mayiai.pl
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Szkolenia MayiAI <hello@send.mayiai.pl>';
 
 export async function sendWelcomeEmail(email: string, password: string, trainingName: string) {
+  console.log(`📧 [START] Sending welcome email to ${email} for training: ${trainingName}`);
+  console.log(`📧 [DEBUG] FROM_EMAIL: ${FROM_EMAIL}`);
+  console.log(`📧 [DEBUG] API Key present: ${!!process.env.RESEND_API_KEY}`);
+  
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: `Dostęp do szkolenia: ${trainingName}`,
       html: `
-        <h1>Witaj!</h1>
-        <p>Dziękujemy za zakup szkolenia <strong>${trainingName}</strong>.</p>
-        <p>Twoje konto zostało utworzone. Oto Twoje dane logowania:</p>
-        <ul>
-          <li><strong>Login:</strong> ${email}</li>
-          <li><strong>Hasło:</strong> ${password}</li>
-        </ul>
-        <p>Możesz zalogować się tutaj: <a href="${process.env.NEXT_PUBLIC_APP_URL}/login">Zaloguj się</a></p>
-        <p>Dostęp jest ważny przez 12 miesięcy.</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h1 style="color: #7c3aed;">Witaj!</h1>
+          <p>Dziękujemy za zakup szkolenia <strong>${trainingName}</strong>.</p>
+          <p>Twoje konto zostało utworzone. Oto Twoje dane logowania:</p>
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 10px 0;"><strong>Login:</strong> ${email}</p>
+            <p style="margin: 10px 0;"><strong>Hasło:</strong> ${password}</p>
+          </div>
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || process.env.NEXTAUTH_URL}/auth/login" 
+             style="display: inline-block; background-color: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 20px 0;">
+            Zaloguj się
+          </a>
+          <p>Dostęp jest ważny przez 12 miesięcy.</p>
+          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+          <p style="color: #9ca3af; font-size: 12px;">© 2024 MayiAI. Wszystkie prawa zastrzeżone.</p>
+        </div>
       `,
     });
+    console.log(`✅ [SUCCESS] Welcome email sent to ${email}. ID: ${result.data?.id}, Error: ${result.error}`);
+    if (result.error) {
+       console.error(`❌ [RESEND ERROR] ${JSON.stringify(result.error)}`);
+    }
+    return result;
   } catch (error) {
-    console.error('Failed to send welcome email:', error);
+    console.error(`❌ [EXCEPTION] Failed to send welcome email to ${email}:`, error);
+    throw error;
   }
 }
 
 export async function sendAccessGrantedEmail(email: string, trainingName: string) {
+  console.log(`📧 Sending access granted email to ${email} for training: ${trainingName}`);
+  
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: `Nowy dostęp: ${trainingName}`,
       html: `
-        <h1>Witaj ponownie!</h1>
-        <p>Dziękujemy za zakup szkolenia <strong>${trainingName}</strong>.</p>
-        <p>Dostęp został przypisany do Twojego istniejącego konta.</p>
-        <p>Możesz przejść do szkolenia tutaj: <a href="${process.env.NEXT_PUBLIC_APP_URL}/szkolenia">Twoje szkolenia</a></p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h1 style="color: #7c3aed;">Witaj ponownie!</h1>
+          <p>Dziękujemy za zakup szkolenia <strong>${trainingName}</strong>.</p>
+          <p>Dostęp został przypisany do Twojego istniejącego konta.</p>
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || process.env.NEXTAUTH_URL}/szkolenia" 
+             style="display: inline-block; background-color: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 20px 0;">
+            Przejdź do szkoleń
+          </a>
+          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+          <p style="color: #9ca3af; font-size: 12px;">© 2024 MayiAI. Wszystkie prawa zastrzeżone.</p>
+        </div>
       `,
     });
+    console.log(`✅ Access granted email sent successfully to ${email}`, result);
+    return result;
   } catch (error) {
-    console.error('Failed to send access granted email:', error);
+    console.error(`❌ Failed to send access granted email to ${email}:`, error);
+    throw error;
   }
 }
 

@@ -104,7 +104,7 @@ function TrainingContent() {
                         <h3 className="font-bold text-lg">Spis Treści</h3>
                       </div>
 
-                      <nav className="space-y-2">
+                      <nav className="space-y-2 max-h-[50vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-purple-300 scrollbar-track-transparent">
                         {trainingModules.map((module, index) => (
                           <motion.button
                             key={module.id}
@@ -254,11 +254,15 @@ function TrainingContent() {
                               <div className="bg-black flex items-center justify-center p-4">
                                 <div className="w-full max-w-6xl">
                                   <div
-                                    className="relative bg-black rounded-lg overflow-hidden shadow-2xl"
+                                    className="relative bg-black rounded-lg overflow-hidden shadow-2xl select-none"
                                     style={{ aspectRatio: "16/9" }}
+                                    onContextMenu={(e) => e.preventDefault()}
                                   >
                                     <video
                                       controls
+                                      controlsList="nodownload noplaybackrate"
+                                      disablePictureInPicture
+                                      onContextMenu={(e) => e.preventDefault()}
                                       className="w-full h-full"
                                       poster={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Crect fill='%236B21A8' width='1600' height='900'/%3E%3Ctext fill='white' font-size='32' font-family='Arial' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${module.title}%3C/text%3E%3C/svg%3E`}
                                     >
@@ -266,7 +270,7 @@ function TrainingContent() {
                                         src={module.video}
                                         type="video/mp4"
                                       />
-                                      Twoja przeglądarka nie obs\u0142uguje
+                                      Twoja przeglądarka nie obsługuje
                                       odtwarzacza wideo.
                                     </video>
                                   </div>

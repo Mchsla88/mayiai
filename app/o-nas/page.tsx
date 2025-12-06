@@ -251,22 +251,22 @@ function ONasContent() {
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
-                    name: 'Rodzina Kowalskich',
+                    name: 'Nasza Rodzinka',
                     role: 'Założyciele',
                     expertise: 'Pasjonaci edukacji i technologii',
-                    image: '/dog-6.png'
+                    image: '/team-2.jpg'
                   },
                   {
-                    name: 'Rodzina Nowaków',
-                    role: 'Współtwórcy',
-                    expertise: 'Eksperci od bezpiecznego internetu',
-                    image: '/dog-7.png'
+                    name: 'Nasze Dzieci',
+                    role: 'Inspiracja',
+                    expertise: 'Przyszłość z AI',
+                    image: '/team-3.jpg'
                   },
                   {
-                    name: 'Rodzina Wiśniewskich',
-                    role: 'Zespół kreatywny',
-                    expertise: 'Twórcy treści edukacyjnych',
-                    image: '/dog-0.png'
+                    name: 'Atos',
+                    role: 'Chief Happiness Officer',
+                    expertise: 'Maskotka zespołu',
+                    image: '/team-atos.jpg'
                   }
                 ].map((member, i) => (
                   <Card key={i} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
