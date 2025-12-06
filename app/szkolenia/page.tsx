@@ -21,6 +21,7 @@ interface Training {
   price: number
   hasAccess: boolean
   expiresAt?: string
+  comingSoon?: boolean
 }
 
 function SzkoleniaContent() {
@@ -183,6 +184,13 @@ function SzkoleniaContent() {
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </Link>
+                    ) : training.comingSoon ? (
+                      <Button 
+                        disabled
+                        className="w-full bg-gray-200 text-gray-400 cursor-not-allowed"
+                      >
+                        Wkrótce
+                      </Button>
                     ) : (
                       <Button 
                         onClick={() => handlePurchase(training.id)}

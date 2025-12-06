@@ -37,7 +37,8 @@ export async function GET() {
     const trainingsWithAccess = trainings.map(training => ({
       ...training,
       hasAccess: userTrainingsIds.includes(training.id),
-      price: Number(training.price) // Convert Decimal to number for JSON
+      price: Number(training.price), // Convert Decimal to number for JSON
+      comingSoon: training.title === 'Młody Influencer'
     }));
 
     return NextResponse.json(trainingsWithAccess);

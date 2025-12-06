@@ -42,7 +42,8 @@ const trainings = [
     description: 'Budowanie marki osobistej i tworzenie contentu z AI.',
     color: 'from-orange-400 to-orange-600',
     image: '/dog-5.png',
-    href: '/szkolenia/mlody-influencer'
+    href: '/szkolenia/mlody-influencer',
+    comingSoon: true
   }
 ]
 
@@ -225,15 +226,24 @@ export function TrainingSlider() {
                       </div>
 
                       {/* CTA Button */}
-                      <Button
-                        asChild
-                        className={`w-full bg-gradient-to-r ${training.color} text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50`}
-                        disabled={!isCurrent}
-                      >
-                        <Link href={isCurrent ? training.href : '#'}>
-                          {isCurrent ? 'Zobacz szczegóły' : 'Kliknij aby wybrać'}
-                        </Link>
-                      </Button>
+                      {training.comingSoon ? (
+                        <Button
+                          disabled
+                          className="w-full bg-gray-200 text-gray-400 cursor-not-allowed shadow-none"
+                        >
+                          Wkrótce
+                        </Button>
+                      ) : (
+                        <Button
+                          asChild
+                          className={`w-full bg-gradient-to-r ${training.color} text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50`}
+                          disabled={!isCurrent}
+                        >
+                          <Link href={isCurrent ? training.href : '#'}>
+                            {isCurrent ? 'Zobacz szczegóły' : 'Kliknij aby wybrać'}
+                          </Link>
+                        </Button>
+                      )}
                     </div>
                   </motion.div>
                 </motion.div>
