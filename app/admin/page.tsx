@@ -33,7 +33,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Badge } from '@/components/ui/badge'
-import { Search, Shield, Key, Ban, CheckCircle, XCircle, Loader2, Gift, Trash2, Info, ShoppingCart } from 'lucide-react'
+import { Search, Shield, Key, Ban, CheckCircle, XCircle, Loader2, Gift, Trash2, Info, ShoppingCart, Edit, Eye, EyeOff } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
@@ -70,7 +70,9 @@ export default function AdminDashboard() {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false)
   const [isAccessModalOpen, setIsAccessModalOpen] = useState(false)
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false)
+  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [showPassword, setShowPassword] = useState(false) // For toggling visibility
   const [newPassword, setNewPassword] = useState('')
   const [selectedTrainingId, setSelectedTrainingId] = useState<string>('')
   const [newUserData, setNewUserData] = useState({
@@ -78,6 +80,11 @@ export default function AdminDashboard() {
     lastName: '',
     email: '',
     password: ''
+  })
+  const [editUserData, setEditUserData] = useState({
+    firstName: '',
+    lastName: '',
+    email: ''
   })
 
   useEffect(() => {
@@ -230,6 +237,50 @@ export default function AdminDashboard() {
         fetchData() // Refresh user list
       } else {
         toast.error(data.error || 'Błąd tworzenia użytkownika')
+      }
+    } catch (error) {
+      toast.error('Wystąpił błąd')
+    }
+  }
+
+  const openEditModal = (user: User) => {
+    setSelectedUser(user)
+    const [firstName, ...lastNameParts] = (user.name || '').split(' ')
+    setEditUserData({
+      firstName: firstName || '',
+      lastName: lastNameParts.join(' ') || '',
+      email: user.email
+    })
+    setIsEditUserModalOpen(true)
+  }
+
+  const handleEditUser = async () => {
+    if (!selectedUser || !editUserData.firstName || !editUserData.lastName || !editUserData.email) {
+      toast.error('Wszystkie pola są wymagane')
+      return
+    }
+
+    try {
+      const res = await fetch('/api/admin/users', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: selectedUser.id,
+          firstName: editUserData.firstName,
+          lastName: editUserData.lastName,
+          email: editUserData.email
+        })
+      })
+
+      const data = await res.json()
+
+      if (res.ok) {
+        toast.success('Użytkownik zaktualizowany pomyślnie')
+        setIsEditUserModalOpen(false)
+        fetchData()
+        setSelectedUser(null)
+      } else {
+        toast.error(data.error || 'Błąd aktualizacji użytkownika')
       }
     } catch (error) {
       toast.error('Wystąpił błąd')
@@ -423,6 +474,14 @@ export default function AdminDashboard() {
                         <Button
                           variant="ghost"
                           size="icon"
+                          onClick={() => openEditModal(user)}
+                          title="Edytuj dane"
+                        >
+                          <Edit className="w-4 h-4 text-gray-600" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="icon"
                           onClick={() => {
                             setSelectedUser(user)
                             setIsDeleteModalOpen(true)
@@ -451,13 +510,20 @@ export default function AdminDashboard() {
               Wprowadź nowe hasło dla {selectedUser?.email}.
             </DialogDescription>
           </DialogHeader>
-          <div className="py-4">
+          <div className="py-4 relative">
             <Input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Nowe hasło"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+            >
+              {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+            </button>
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsPasswordModalOpen(false)}>Anuluj</Button>
@@ -533,17 +599,69 @@ export default function AdminDashboard() {
             </div>
             <div>
               <label className="text-sm font-medium">Hasło</label>
-              <Input
-                type="password"
-                placeholder="Minimum 6 znaków"
-                value={newUserData.password}
-                onChange={(e) => setNewUserData({ ...newUserData, password: e.target.value })}
-              />
+              <div className="relative">
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Minimum 6 znaków"
+                  value={newUserData.password}
+                  onChange={(e) => setNewUserData({ ...newUserData, password: e.target.value })}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
             </div>
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsAddUserModalOpen(false)}>Anuluj</Button>
             <Button onClick={handleAddUser}>Dodaj użytkownika</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Edit User Modal */}
+      <Dialog open={isEditUserModalOpen} onOpenChange={setIsEditUserModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Edytuj użytkownika</DialogTitle>
+            <DialogDescription>
+              Wprowadź nowe dane dla {selectedUser?.email}.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
+            <div>
+              <label className="text-sm font-medium">Imię</label>
+              <Input
+                placeholder="Jan"
+                value={editUserData.firstName}
+                onChange={(e) => setEditUserData({ ...editUserData, firstName: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Nazwisko</label>
+              <Input
+                placeholder="Kowalski"
+                value={editUserData.lastName}
+                onChange={(e) => setEditUserData({ ...editUserData, lastName: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Email</label>
+              <Input
+                type="email"
+                placeholder="email@example.com"
+                value={editUserData.email}
+                onChange={(e) => setEditUserData({ ...editUserData, email: e.target.value })}
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsEditUserModalOpen(false)}>Anuluj</Button>
+            <Button onClick={handleEditUser}>Zapisz zmiany</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

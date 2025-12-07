@@ -133,6 +133,63 @@ export async function POST(request: Request) {
   }
 }
 
+export async function PATCH(request: Request) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user?.isAdmin && session?.user?.email !== 'michal@mayiai.pl') {
+      return new NextResponse('Unauthorized', { status: 401 })
+    }
+
+    const body = await request.json()
+    const { id, firstName, lastName, email } = body
+
+    if (!id || !firstName || !lastName || !email) {
+      return NextResponse.json(
+        { error: 'Wszystkie pola (id, imię, nazwisko, email) są wymagane' },
+        { status: 400 }
+      )
+    }
+
+    // Check if email is taken by another user
+    const existingUser = await prisma.user.findFirst({
+      where: { 
+        email: email.toLowerCase(),
+        NOT: { id: id }
+      }
+    })
+
+    if (existingUser) {
+      return NextResponse.json(
+        { error: 'Ten adres email jest już zajęty przez innego użytkownika' },
+        { status: 409 }
+      )
+    }
+
+    const updatedUser = await prisma.user.update({
+      where: { id },
+      data: {
+        firstName,
+        lastName,
+        name: `${firstName} ${lastName}`,
+        email: email.toLowerCase()
+      }
+    })
+
+    return NextResponse.json({
+      message: 'Użytkownik zaktualizowany pomyślnie',
+      user: updatedUser
+    })
+
+  } catch (error) {
+    console.error('Error updating user:', error)
+    return NextResponse.json(
+      { error: 'Wystąpił błąd podczas aktualizacji użytkownika' },
+      { status: 500 }
+    )
+  }
+}
+
 export async function DELETE(request: Request) {
   try {
     const session = await getServerSession(authOptions)
