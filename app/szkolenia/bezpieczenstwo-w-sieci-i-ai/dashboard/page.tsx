@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { authOptions } from '@/lib/auth';
 import { checkUserAccess } from '@/lib/access';
 import { courseParts, slides } from '../lib/course-data';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -51,10 +52,21 @@ export default async function BezpieczenstwoAIDashboard() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <CardTitle className="text-2xl mb-2">
-                          <span className="mr-2">{part.icon}</span>
-                          {part.title}
-                        </CardTitle>
+                          <CardTitle className="text-2xl mb-2 flex items-center gap-3">
+                             {typeof part.icon === 'string' && part.icon.startsWith('/') ? (
+                                <div className="relative w-8 h-8 flex-shrink-0">
+                                  <Image 
+                                    src={part.icon} 
+                                    alt="" 
+                                    fill 
+                                    className="object-contain"
+                                  />
+                                </div>
+                              ) : (
+                                <span className="text-2xl">{part.icon}</span>
+                              )}
+                            <span>{part.title}</span>
+                          </CardTitle>
                         <CardDescription className="flex items-center gap-4">
                           <span className="flex items-center gap-1">
                             <Clock className="w-4 h-4" />
@@ -76,8 +88,19 @@ export default async function BezpieczenstwoAIDashboard() {
                         >
                           <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
                             <CardHeader>
-                              <CardTitle className="text-base flex items-start gap-2">
-                                <span className="text-2xl">{slide.icon}</span>
+                              <CardTitle className="text-base flex items-start gap-3">
+                                {typeof slide.icon === 'string' && slide.icon.startsWith('/') ? (
+                                  <div className="relative w-8 h-8 flex-shrink-0">
+                                    <Image 
+                                      src={slide.icon} 
+                                      alt="" 
+                                      fill 
+                                      className="object-contain"
+                                    />
+                                  </div>
+                                ) : (
+                                  <span className="text-2xl">{slide.icon}</span>
+                                )}
                                 <div className="flex-1">
                                   <div className="font-semibold">{slide.title}</div>
                                   <div className="text-xs text-gray-500 mt-1">
