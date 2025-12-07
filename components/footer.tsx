@@ -90,7 +90,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {currentYear} MZ Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+          <p>&copy; {currentYear} MayIAI. Wszelkie prawa zastrzeżone.</p>
         </div>
       </div>
     </footer>
