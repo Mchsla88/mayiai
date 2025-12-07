@@ -33,7 +33,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Badge } from '@/components/ui/badge'
-import { Search, Shield, Key, Ban, CheckCircle, XCircle, Loader2, Gift, Trash2, Info } from 'lucide-react'
+import { Search, Shield, Key, Ban, CheckCircle, XCircle, Loader2, Gift, Trash2, Info, ShoppingCart } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
