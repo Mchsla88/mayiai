@@ -238,7 +238,7 @@ export default function HomePage() {
                         Wprowadzenie: AI w Edukacji
                       </h3>
                       <p className="text-slate-300 text-xs mt-1">
-                          Zobacz krótki film wprowadzający
+                          Zobacz krótki film wprowadzający do świata sztucznej inteligencji w szkole
                       </p>
                     </div>
                   </motion.div>
