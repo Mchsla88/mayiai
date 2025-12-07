@@ -24,14 +24,18 @@ import {
 } from "lucide-react";
 import { trainingModules } from "./training-modules-data-v2";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
-// Training Content Component
+  // Training Content Component
 function TrainingContent() {
   const { data: session } = useSession();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeModule, setActiveModule] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  
+  // Derive category from URL
+  const selectedCategory = searchParams.get('category');
+  
   const moduleRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const scrollToModule = (moduleId: string) => {
@@ -47,6 +51,20 @@ function TrainingContent() {
       setActiveModule(moduleId);
     }
   };
+  
+  const handleCategorySelect = (categoryId: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('category', categoryId);
+      // scroll to top when category changes
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      router.push(`/szkolenia/dzieci?${params.toString()}`);
+  }
+
+  const handleReturnToCategories = () => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete('category');
+      router.push(`/szkolenia/dzieci?${params.toString()}`);
+  }
 
   // Define categories and their module indices
   const categories = [
@@ -171,7 +189,7 @@ function TrainingContent() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ y: -5 }}
-                      onClick={() => setSelectedCategory(category.id)}
+                      onClick={() => handleCategorySelect(category.id)}
                       className="cursor-pointer group"
                     >
                       <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white relative">
@@ -207,7 +225,7 @@ function TrainingContent() {
                   <div className="mb-8">
                     <Button
                       variant="ghost"
-                      onClick={() => setSelectedCategory(null)}
+                      onClick={handleReturnToCategories}
                       className="group text-slate-600 hover:text-purple-600 hover:bg-purple-50 pl-0"
                     >
                       <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />

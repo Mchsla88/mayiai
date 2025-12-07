@@ -49,7 +49,8 @@ export async function GET() {
     const descriptionMap: Record<string, string> = {
       'nauczyciele': 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły. Certyfikowany poradnik dla nauczycieli.',
       'mlody-influencer': 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.',
-      'kodowanie': 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!'
+      'kodowanie': 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!',
+      'dzieci': 'Interaktywne szkolenie uczące dzieci podstaw AI oraz zastosowania go w pomocy przy nauce do sprawdzianów'
     };
 
     // Trainings that are coming soon (blocked from purchase)
