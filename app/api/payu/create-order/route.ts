@@ -234,6 +234,15 @@ export async function POST(req: NextRequest) {
       console.log(`Created new user: ${normalizedEmail}`);
     }
 
+    // Determine base URL securely
+    const baseUrl = process.env.NEXTAUTH_URL 
+      ? process.env.NEXTAUTH_URL 
+      : process.env.VERCEL_URL 
+        ? `https://${process.env.VERCEL_URL}` 
+        : 'http://localhost:3000';
+
+    console.log(`[CREATE-ORDER] Using base URL for redirects: ${baseUrl}`);
+
     const orderData = {
       customerIp: clientIp.split(',')[0].trim(),
       merchantPosId: process.env.PAYU_POS_ID!,
@@ -252,8 +261,8 @@ export async function POST(req: NextRequest) {
         unitPrice: (item.finalPrice * 100).toString(),
         quantity: '1',
       })),
-      continueUrl: `${process.env.NEXTAUTH_URL}/oferta?status=success`,
-      notifyUrl: `${process.env.NEXTAUTH_URL}/api/payu/notify`,
+      continueUrl: `${baseUrl}/oferta?status=success`,
+      notifyUrl: `${baseUrl}/api/payu/notify`,
     };
 
     const result = await client.createOrder(orderData);
