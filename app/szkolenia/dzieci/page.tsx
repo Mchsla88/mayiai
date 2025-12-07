@@ -114,35 +114,6 @@ function TrainingContent() {
                 Wybierz ścieżkę poniżej, aby rozpocząć.
               </p>
               </motion.div>
-
-            {/* Introduction Video */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="max-w-4xl mx-auto mt-12 mb-8"
-            >
-              <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group border border-white/10">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
-                <video
-                  controls
-                  className="w-full h-full object-cover"
-                  poster="/teachers-hero.png"
-                >
-                  <source src="/ai-w-edukacji.mp4" type="video/mp4" />
-                  Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-                </video>
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                  <h3 className="text-white text-lg font-bold flex items-center gap-2 drop-shadow-md">
-                    <Play className="w-5 h-5 fill-white text-white" />
-                    Wprowadzenie: AI w Edukacji
-                  </h3>
-                   <p className="text-slate-200 text-sm mt-1 drop-shadow-md opacity-90">
-                      Zobacz krótki film wprowadzający do świata sztucznej inteligencji w szkole
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
 
