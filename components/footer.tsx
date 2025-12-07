@@ -82,9 +82,9 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Kontakt</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>Email: hello@mayiai.pl</li>
-              <li className="text-gray-400">MZ Sp. z o.o.</li>
-              <li className="text-gray-400">ul. Starowiejska 16/2</li>
-              <li className="text-gray-400">81-356 Gdynia</li>
+              <li className="text-gray-900">MZ Sp. z o.o.</li>
+              <li className="text-gray-900">ul. Starowiejska 16/2</li>
+              <li className="text-gray-900">81-356 Gdynia</li>
             </ul>
           </div>
         </div>
