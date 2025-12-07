@@ -618,6 +618,99 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Testimonials Section - Social Proof */}
+        <section className="py-20 bg-white">
+          <div className="w-full px-4 md:px-12">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Co mówią nasi kursanci?
+              </h2>
+              <p className="text-xl text-gray-600">
+                Dołącz do setek zadowolonych rodzin, które już uczą się z nami
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {[
+                {
+                  name: 'Anna Kowalska',
+                  role: 'Mama 9-latka',
+                  avatar: '👩',
+                  rating: 5,
+                  text: 'Mój syn był zafascynowany AI, ale bałam się, że nie wiem jak go bezpiecznie nauczyć. Dzięki May I AI razem odkrywamy ten świat - bez obaw! Materiały są przystępne i świetnie wytłumaczone.',
+                  highlight: 'Razem odkrywamy AI bez obaw!'
+                },
+                {
+                  name: 'Marek Nowicki',
+                  role: 'Nauczyciel informatyki',
+                  avatar: '👨‍🏫',
+                  rating: 5,
+                  text: 'Szukałem materiałów, które mogę polecić rodzicom moich uczniów. Szkolenia May I AI to dokładnie to, czego brakowało - praktyczne, bezpieczne i po polsku. Polecam każdemu nauczycielowi.',
+                  highlight: 'Polecam każdemu nauczycielowi!'
+                },
+                {
+                  name: 'Katarzyna Wiśniewska',
+                  role: 'Mama 7 i 12-latka',
+                  avatar: '👩‍👧‍👦',
+                  rating: 5,
+                  text: 'Mam dwójkę dzieci w różnym wieku i obie znalazły coś dla siebie. Starszy syn używa AI do nauki, a młodsza córka uwielbia kreatywne zabawy. Świetna inwestycja w przyszłość!',
+                  highlight: 'Coś dla każdego wieku!'
+                }
+              ].map((testimonial, i) => (
+                <motion.div
+                  key={i}
+                  className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, j) => (
+                      <Star key={j} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  
+                  <p className="text-gray-700 leading-relaxed mb-4 italic">
+                    "{testimonial.text}"
+                  </p>
+                  
+                  <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-6">
+                    ✨ {testimonial.highlight}
+                  </div>
+                  
+                  <div className="flex items-center gap-4 pt-4 border-t border-purple-200">
+                    <div className="text-4xl">{testimonial.avatar}</div>
+                    <div>
+                      <div className="font-bold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <div className="inline-flex items-center gap-8 px-8 py-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-600">500+</div>
+                  <div className="text-sm text-gray-600">Zadowolonych rodzin</div>
+                </div>
+                <div className="h-8 w-px bg-purple-300"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-600">4.9/5</div>
+                  <div className="text-sm text-gray-600">Średnia ocena</div>
+                </div>
+                <div className="h-8 w-px bg-purple-300"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-600">12 msc</div>
+                  <div className="text-sm text-gray-600">Dostępu</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Blog Preview Section - zamiast newslettera */}
         <section className="py-20 bg-white">
           <div className="w-full px-4 md:px-12">
