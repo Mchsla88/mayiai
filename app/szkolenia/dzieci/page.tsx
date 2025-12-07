@@ -94,60 +94,26 @@ function TrainingContent() {
         <section className="relative overflow-hidden bg-slate-900 py-16 lg:py-24">
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Column: Text */}
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-left text-white"
-                >
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/20">
-                    <Sparkles className="w-4 h-4 text-purple-400" />
-                    <span className="text-purple-100">Szkolenie Online</span>
-                  </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-4xl mx-auto text-center text-white"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/20">
+                <Sparkles className="w-4 h-4 text-purple-400" />
+                <span className="text-purple-100">Szkolenie Online</span>
+              </div>
 
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-                    Wykorzystanie AI do <br/>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Efektywnej Nauki</span>
-                  </h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                Wykorzystanie AI do <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Efektywnej Nauki</span>
+              </h1>
 
-                  <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-lg">
-                    Kompleksowe szkolenie z wykorzystania Claude i Gemini w edukacji.
-                    Wybierz ścieżkę poniżej, aby rozpocząć.
-                  </p>
-                </motion.div>
-
-                {/* Right Column: Video (The 'Screen') */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="relative"
-                >
-                  <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group transform md:rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
-                    <video
-                      controls
-                      className="w-full h-full object-cover"
-                      poster="/teachers-hero.png"
-                    >
-                      <source src="/ai-w-edukacji.mp4" type="video/mp4" />
-                      Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-                    </video>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-left">
-                      <h3 className="text-white text-lg font-bold flex items-center gap-2 drop-shadow-md">
-                        <Play className="w-5 h-5 fill-white text-white" />
-                        Wprowadzenie: AI w Edukacji
-                      </h3>
-                       <p className="text-slate-200 text-xs mt-1 drop-shadow-md opacity-90">
-                          Zobacz krótki film wprowadzający do świata sztucznej inteligencji w szkole
-                      </p>
-                    </div>
-                  </div>
-                  {/* Decorative element behind video */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-20 blur-2xl -z-10"></div>
-                </motion.div>
-            </div>
+              <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Kompleksowe szkolenie z wykorzystania Claude i Gemini w edukacji.
+                Wybierz ścieżkę poniżej, aby rozpocząć.
+              </p>
+            </motion.div>
           </div>
         </section>
 

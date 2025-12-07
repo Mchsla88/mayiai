@@ -219,25 +219,28 @@ export default function HomePage() {
               >
                 <FloatingElement duration={4}>
                   <motion.div 
-                    className="relative w-full aspect-square max-w-lg mx-auto"
-                    whileHover={{ scale: 1.05, rotate: 5 }}
+                    className="relative w-full aspect-video max-w-lg mx-auto bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group"
+                    whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-tr from-purple-500/40 to-pink-500/40 rounded-full blur-3xl"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.5, 0.8, 0.5]
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    />
-                    <Image
-                      src="/dog-mascot-office.png"
-                      alt="AI Family Expert - Pies przy komputerach"
-                      fill
-                      className="object-contain drop-shadow-2xl relative z-10"
-                      priority
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
+                    <video
+                      controls
+                      className="w-full h-full object-cover"
+                      poster="/teachers-hero.png"
+                    >
+                      <source src="/ai-w-edukacji.mp4" type="video/mp4" />
+                      Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+                    </video>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-left">
+                      <h3 className="text-white text-lg font-bold flex items-center gap-2">
+                        <Play className="w-5 h-5 fill-white text-white" />
+                        Wprowadzenie: AI w Edukacji
+                      </h3>
+                      <p className="text-slate-300 text-xs mt-1">
+                          Zobacz krótki film wprowadzający do świata sztucznej inteligencji w szkole
+                      </p>
+                    </div>
                   </motion.div>
                 </FloatingElement>
               </motion.div>
