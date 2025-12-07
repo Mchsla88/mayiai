@@ -44,13 +44,14 @@ export async function GET() {
 
     const titleMap: Record<string, string> = {
       'nauczyciele': 'Poradnik AI dla Nauczycieli: Wykorzystanie AI w Edukacji',
+      'dzieci': 'Łatwa Szkoła z AI: Twój osobisty asystent w nauce'
     };
 
     const descriptionMap: Record<string, string> = {
       'nauczyciele': 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły. Certyfikowany poradnik dla nauczycieli.',
       'mlody-influencer': 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.',
       'kodowanie': 'Twórz gry w Roblox, Minecraft, Symulatory i własne gry na Android - graj z kolegami we własne gry!',
-      'dzieci': 'Interaktywne szkolenie uczące dzieci podstaw AI oraz zastosowania go w pomocy przy nauce do sprawdzianów'
+      'dzieci': 'Interaktywne szkolenie uczące dzieci i młodzież, jak wykorzystać sztuczną inteligencję do szybszej i skuteczniejszej nauki. Twórz notatki, przygotowuj się do sprawdzianów i rozwijaj pasje z pomocą AI.'
     };
 
     // Trainings that are coming soon (blocked from purchase)

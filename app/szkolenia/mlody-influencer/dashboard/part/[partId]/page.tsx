@@ -49,7 +49,7 @@ export default function PartPage() {
         >
           <Button
             variant="ghost"
-            onClick={() => router.push('/dashboard')}
+            onClick={() => router.push('/szkolenia/mlody-influencer/dashboard')}
             className="mb-6 hover:bg-orange-100"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />

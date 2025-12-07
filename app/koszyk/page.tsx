@@ -108,8 +108,8 @@ export default function CartPage() {
     }
 
     if (invoiceType === 'company') {
-        if (!invoiceData.nip || !invoiceData.companyName || !invoiceData.address || !invoiceData.city || !invoiceData.postalCode) {
-            toast.error('Wypełnij wszystkie dane firmy')
+        if (!invoiceData.nip || !invoiceData.companyName || !invoiceData.address || !invoiceData.city || !invoiceData.postalCode || !formData.firstName || !formData.lastName) {
+            toast.error('Wypełnij wszystkie dane firmy oraz dane kontaktowe')
             return
         }
     } else {
@@ -134,8 +134,8 @@ export default function CartPage() {
         body: JSON.stringify({
           items: items.map(item => item.id),
           email: formData.email,
-          firstName: invoiceType === 'company' ? '' : formData.firstName,
-          lastName: invoiceType === 'company' ? '' : formData.lastName,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           discountCode: appliedDiscount?.code,
           invoiceData: {
             type: invoiceType,
@@ -316,30 +316,28 @@ export default function CartPage() {
                         </div>
                     )}
                     
-                    {invoiceType === 'private' && (
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label htmlFor="firstName">Imię *</Label>
-                                <Input
-                                id="firstName"
-                                value={formData.firstName}
-                                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                                required
-                                disabled={isProcessing}
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <Label htmlFor="lastName">Nazwisko *</Label>
-                                <Input
-                                id="lastName"
-                                value={formData.lastName}
-                                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                                required
-                                disabled={isProcessing}
-                                />
-                            </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                            <Label htmlFor="firstName">Imię *</Label>
+                            <Input
+                            id="firstName"
+                            value={formData.firstName}
+                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                            required
+                            disabled={isProcessing}
+                            />
                         </div>
-                    )}
+                        <div className="space-y-2">
+                            <Label htmlFor="lastName">Nazwisko *</Label>
+                            <Input
+                            id="lastName"
+                            value={formData.lastName}
+                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                            required
+                            disabled={isProcessing}
+                            />
+                        </div>
+                    </div>
 
                     {/* Address Fields (Required for Invoice) */}
                      <div className="space-y-2">

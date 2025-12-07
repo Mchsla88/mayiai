@@ -177,10 +177,10 @@ export function ChapterView({ chapter, slides }: ChapterViewProps) {
         {/* Breadcrumbs */}
         <Breadcrumbs
           items={[
-            { label: 'Strona główna', href: '/dashboard', icon: <Home className="w-4 h-4" /> },
+            { label: 'Strona główna', href: '/szkolenia/mlody-influencer/dashboard', icon: <Home className="w-4 h-4" /> },
             { 
               label: `${currentPart?.icon || '📚'} ${currentPart?.title || 'Kurs'}`, 
-              href: currentPart ? `/dashboard/part/${currentPart.id}` : '/dashboard'
+              href: currentPart ? `/szkolenia/mlody-influencer/dashboard/part/${currentPart.id}` : '/szkolenia/mlody-influencer/dashboard'
             },
             { label: chapter?.title || 'Rozdział' },
           ]}
@@ -194,7 +194,7 @@ export function ChapterView({ chapter, slides }: ChapterViewProps) {
         >
           <Button
             variant="ghost"
-            onClick={() => router.back()}
+            onClick={() => currentPart ? router.push(`/szkolenia/mlody-influencer/dashboard/part/${currentPart.id}`) : router.push('/szkolenia/mlody-influencer/dashboard')}
             className="rounded-2xl gap-2"
           >
             <ArrowLeft className="w-4 h-4" />

@@ -112,12 +112,11 @@ function TrainingContent() {
         <section className="relative overflow-hidden bg-slate-900 py-16 lg:py-24">
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Column: Text */}
+                {/* Content - Text Only */}
                 <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-left text-white"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center text-white max-w-4xl mx-auto"
                 >
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/20">
                     <Sparkles className="w-4 h-4 text-purple-400" />
@@ -129,44 +128,13 @@ function TrainingContent() {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Efektywnej Nauki</span>
                   </h1>
 
-                  <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-lg">
+                  <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
                     Kompleksowe szkolenie z wykorzystania Claude i Gemini w edukacji.
                     Wybierz ścieżkę poniżej, aby rozpocząć.
                   </p>
                 </motion.div>
-
-                {/* Right Column: Video (The 'Screen') */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="relative"
-                >
-                  <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group transform md:rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
-                    <video
-                      controls
-                      className="w-full h-full object-cover"
-                      poster="/teachers-hero.png"
-                    >
-                      <source src="/ai-w-edukacji.mp4" type="video/mp4" />
-                      Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-                    </video>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-left">
-                      <h3 className="text-white text-lg font-bold flex items-center gap-2 drop-shadow-md">
-                        <Play className="w-5 h-5 fill-white text-white" />
-                        Wprowadzenie: AI w Edukacji
-                      </h3>
-                       <p className="text-slate-200 text-xs mt-1 drop-shadow-md opacity-90">
-                          Zobacz krótki film wprowadzający do świata sztucznej inteligencji w szkole
-                      </p>
-                    </div>
-                  </div>
-                  {/* Decorative element behind video */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-20 blur-2xl -z-10"></div>
-                </motion.div>
             </div>
-          </div>
+
         </section>
 
         {/* Main Content */}
@@ -255,7 +223,9 @@ function TrainingContent() {
                             </div>
 
                             <nav className="space-y-2 max-h-[60vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-purple-200 scrollbar-track-transparent">
-                              {filteredModules.map((module, index) => (
+                              {filteredModules.map((module, index) => {
+                                const globalIndex = trainingModules.findIndex(m => m.id === module.id) + 1;
+                                return (
                                 <button
                                   key={module.id}
                                   onClick={() => scrollToModule(module.id)}
@@ -271,7 +241,7 @@ function TrainingContent() {
                                         ? "bg-white/20 text-white" 
                                         : "bg-slate-100 text-slate-500"
                                     }`}>
-                                        {index + 1}
+                                        {globalIndex}
                                     </span>
                                     <div className="flex-1 min-w-0">
                                       <div className="text-sm font-medium leading-snug mb-1">
@@ -286,7 +256,7 @@ function TrainingContent() {
                                     </div>
                                   </div>
                                 </button>
-                              ))}
+                              )})}
                             </nav>
                           </CardContent>
                         </Card>
@@ -295,7 +265,9 @@ function TrainingContent() {
 
                     {/* Content */}
                     <div className="lg:col-span-9 space-y-8">
-                      {filteredModules.map((module, index) => (
+                      {filteredModules.map((module, index) => {
+                         const globalIndex = trainingModules.findIndex(m => m.id === module.id) + 1;
+                         return (
                         <motion.div
                           key={module.id}
                           ref={(el) => {
@@ -313,7 +285,7 @@ function TrainingContent() {
                               <div className={`bg-gradient-to-r ${currentCategoryData?.color} px-8 py-6 text-white`}>
                                 <div className="flex items-center gap-4">
                                   <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center font-bold text-xl shadow-inner border border-white/30">
-                                    {index + 1}
+                                    {globalIndex}
                                   </div>
                                   <div>
                                     <h2 className="text-2xl font-bold text-white shadow-sm">
@@ -360,7 +332,7 @@ function TrainingContent() {
                                           </div>
                                           <h4 className="text-lg font-bold text-white mb-1">{audio.title}</h4>
                                           <p className="text-slate-400 text-sm mb-4">{audio.sub}</p>
-                                          <audio controls className="w-full h-8" style={{ filter: "invert(1) hue-rotate(180deg)" }}>
+                                          <audio controls className="w-full h-8 invert hue-rotate-180">
                                             <source src={audio.src} type="audio/mpeg" />
                                           </audio>
                                         </div>
@@ -379,7 +351,7 @@ function TrainingContent() {
                                                 <p className="text-slate-400 text-sm">Posłuchaj nagrania</p>
                                             </div>
                                         </div>
-                                        <audio controls className="w-full h-8" style={{ filter: "invert(1) hue-rotate(180deg)" }}>
+                                        <audio controls className="w-full h-8 invert hue-rotate-180">
                                             <source src={(module as any).audio} type="audio/mpeg" />
                                         </audio>
                                     </div>
@@ -398,7 +370,7 @@ function TrainingContent() {
                               <div className="bg-slate-50 px-8 py-4 border-t border-slate-100 flex justify-between items-center">
                                 <div className="text-sm text-slate-500 font-medium flex items-center gap-2">
                                     <GraduationCap className="w-4 h-4" />
-                                    Moduł {index + 1} z {filteredModules.length}
+                                    Moduł {globalIndex}
                                 </div>
                                 {index < filteredModules.length - 1 && (
                                     <button 
@@ -415,7 +387,7 @@ function TrainingContent() {
                             </CardContent>
                           </Card>
                         </motion.div>
-                      ))}
+                      )})}
                     </div>
                   </div>
                 </motion.div>

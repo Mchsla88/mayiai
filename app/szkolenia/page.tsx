@@ -145,28 +145,7 @@ function SzkoleniaContent() {
           </motion.div>
 
           {/* Introduction Video */}
-          <motion.div 
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             className="max-w-4xl mx-auto mb-16"
-          >
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-              <div className="aspect-video w-full bg-black">
-                <video 
-                   controls 
-                   className="w-full h-full"
-                   poster="/training-nauczyciele.jpg"
-                >
-                  <source src="/ai-w-edukacji.mp4" type="video/mp4" />
-                  Twoja przeglądarka nie obsługuje odtwarzacza wideo.
-                </video>
-              </div>
-              <div className="p-6">
-                 <h3 className="text-2xl font-bold mb-2 text-gray-900">Wprowadzenie: AI w Edukacji</h3>
-                 <p className="text-gray-600">Zobacz krótki film wprowadzający do świata sztucznej inteligencji w szkole.</p>
-              </div>
-            </div>
-          </motion.div>
+
 
           {trainings.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
