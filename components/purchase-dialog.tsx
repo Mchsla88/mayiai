@@ -36,11 +36,19 @@ export function PurchaseDialog({
     email: '',
     firstName: '',
     lastName: '',
+    // Invoice data
+    isCompany: false,
+    nip: '',
+    invoiceName: '', // Company Name or Full Name for invoice
+    invoiceAddress: '',
+    invoiceCity: '',
+    invoicePostalCode: '',
   })
   const [discountCode, setDiscountCode] = useState('')
   const [appliedDiscount, setAppliedDiscount] = useState<DiscountData | null>(null)
   const [regulationsAccepted, setRegulationsAccepted] = useState(false)
   const [privacyAccepted, setPrivacyAccepted] = useState(false)
+  const [invoiceRequested, setInvoiceRequested] = useState(false) // Whether user wants invoice
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   // Reset state when dialog opens/closes
@@ -51,6 +59,17 @@ export function PurchaseDialog({
       setRegulationsAccepted(false)
       setPrivacyAccepted(false)
       setErrorMessage(null)
+      // Reset form but keep simple defaults
+      setInvoiceRequested(false)
+      setFormData(prev => ({
+        ...prev,
+        isCompany: false,
+        nip: '',
+        invoiceName: '',
+        invoiceAddress: '',
+        invoiceCity: '',
+        invoicePostalCode: '',
+      }))
     }
   }, [isOpen])
 
@@ -102,6 +121,17 @@ export function PurchaseDialog({
       return
     }
 
+    if (invoiceRequested) {
+        if (!formData.invoiceName || !formData.invoiceAddress || !formData.invoiceCity || !formData.invoicePostalCode) {
+            toast.error('Wypełnij wszystkie dane do faktury')
+            return
+        }
+        if (formData.isCompany && !formData.nip) {
+            toast.error('Podaj numer NIP dla firmy')
+            return
+        }
+    }
+
     if (!regulationsAccepted || !privacyAccepted) {
       toast.error('Musisz zaakceptować regulamin i politykę prywatności')
       return
@@ -120,6 +150,14 @@ export function PurchaseDialog({
           firstName: formData.firstName,
           lastName: formData.lastName,
           discountCode: appliedDiscount?.code,
+          invoiceData: invoiceRequested ? {
+            type: formData.isCompany ? 'company' : 'private',
+            name: formData.invoiceName,
+            nip: formData.isCompany ? formData.nip : undefined,
+            address: formData.invoiceAddress,
+            city: formData.invoiceCity,
+            postalCode: formData.invoicePostalCode,
+          } : undefined,
         }),
       })
 
@@ -226,6 +264,102 @@ export function PurchaseDialog({
                 disabled={isProcessing}
               />
             </div>
+          </div>
+
+          <div className="space-y-4 pt-4 border-t">
+              <div className="flex items-center space-x-2">
+                  <Checkbox 
+                      id="invoiceRequested" 
+                      checked={invoiceRequested}
+                      onCheckedChange={(checked) => setInvoiceRequested(checked as boolean)}
+                  />
+                  <Label htmlFor="invoiceRequested" className="font-medium">Chcę otrzymać fakturę VAT</Label>
+              </div>
+
+              {invoiceRequested && (
+                  <div className="space-y-4 pl-6 border-l-2 border-primary/20 animate-in fade-in slide-in-from-top-2">
+                      <div className="flex gap-4">
+                          <Button
+                              type="button"
+                              variant={!formData.isCompany ? 'default' : 'outline'}
+                              size="sm"
+                              onClick={() => setFormData({ ...formData, isCompany: false })}
+                              className="w-1/2"
+                          >
+                              Osoba prywatna
+                          </Button>
+                          <Button
+                              type="button"
+                              variant={formData.isCompany ? 'default' : 'outline'}
+                              size="sm"
+                              onClick={() => setFormData({ ...formData, isCompany: true })}
+                              className="w-1/2"
+                          >
+                              Firma
+                          </Button>
+                      </div>
+
+                      {formData.isCompany && (
+                          <div className="space-y-2">
+                              <Label htmlFor="nip">NIP *</Label>
+                              <Input
+                                  id="nip"
+                                  placeholder="0000000000"
+                                  value={formData.nip}
+                                  onChange={(e) => setFormData({ ...formData, nip: e.target.value })}
+                                  required={formData.isCompany}
+                                  disabled={isProcessing}
+                              />
+                          </div>
+                      )}
+
+                      <div className="space-y-2">
+                          <Label htmlFor="invoiceName">{formData.isCompany ? 'Nazwa firmy *' : 'Imie i Nazwisko nabywcy *'}</Label>
+                          <Input
+                              id="invoiceName"
+                              value={formData.invoiceName}
+                              onChange={(e) => setFormData({ ...formData, invoiceName: e.target.value })}
+                              required
+                              disabled={isProcessing}
+                          />
+                      </div>
+
+                      <div className="space-y-2">
+                          <Label htmlFor="invoiceAddress">Ulica i numer *</Label>
+                          <Input
+                              id="invoiceAddress"
+                              value={formData.invoiceAddress}
+                              onChange={(e) => setFormData({ ...formData, invoiceAddress: e.target.value })}
+                              required
+                              disabled={isProcessing}
+                          />
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                              <Label htmlFor="invoicePostalCode">Kod pocztowy *</Label>
+                              <Input
+                                  id="invoicePostalCode"
+                                  placeholder="00-000"
+                                  value={formData.invoicePostalCode}
+                                  onChange={(e) => setFormData({ ...formData, invoicePostalCode: e.target.value })}
+                                  required
+                                  disabled={isProcessing}
+                              />
+                          </div>
+                          <div className="space-y-2">
+                              <Label htmlFor="invoiceCity">Miasto *</Label>
+                              <Input
+                                  id="invoiceCity"
+                                  value={formData.invoiceCity}
+                                  onChange={(e) => setFormData({ ...formData, invoiceCity: e.target.value })}
+                                  required
+                                  disabled={isProcessing}
+                              />
+                          </div>
+                      </div>
+                  </div>
+              )}
           </div>
 
           <div className="space-y-2">

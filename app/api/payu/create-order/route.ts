@@ -12,6 +12,7 @@ export async function POST(req: NextRequest) {
       firstName,
       lastName,
       discountCode,
+      invoiceData, // New field for invoice details
     } = body;
 
     // Support both trainingId and items for backward compatibility
@@ -280,7 +281,8 @@ export async function POST(req: NextRequest) {
           customerEmail: user.email,
           description: `Zamówienie: ${trainings.map(t => t.title).join(', ')}`,
           // Use the first training ID as a reference if required, or null if optional
-          trainingId: trainings[0].id, 
+          trainingId: trainings[0].id,
+          invoiceData: invoiceData || undefined, // Save invoice data if present
         }
       });
       

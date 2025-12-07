@@ -274,6 +274,7 @@ model Order {
   trainingId    String?
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+  invoiceData   Json? // Stores { type: 'private'|'company', nip, name, address, city, postalCode }
 
   user     User?     @relation(fields: [userId], references: [id])
   training Training? @relation(fields: [trainingId], references: [id])
