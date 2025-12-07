@@ -161,31 +161,10 @@ export default function LoginPage() {
               </Button>
             </form>
 
-            <div className="relative my-8">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-slate-200"></span>
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white/80 px-2 text-slate-400 font-medium backdrop-blur-xl">
-                  lub
-                </span>
-              </div>
-            </div>
-
-            <div className="text-center space-y-4">
-              <p className="text-slate-600">
-                Nie masz jeszcze konta?{' '}
-                <Link 
-                  href="/auth/register" 
-                  className="text-purple-600 hover:text-purple-700 font-bold hover:underline"
-                >
-                  Załóż darmowe konto
-                </Link>
-              </p>
-              
+            <div className="text-center space-y-4 mt-8">
               <Link 
                 href="/" 
-                className="inline-flex items-center text-sm text-slate-400 hover:text-slate-600 transition-colors mt-4"
+                className="inline-flex items-center text-sm text-slate-400 hover:text-slate-600 transition-colors"
               >
                 ← Wróć do strony głównej
               </Link>
