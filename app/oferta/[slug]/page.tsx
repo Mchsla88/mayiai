@@ -27,6 +27,11 @@ const priceMap: Record<string, number> = {
   'bezpieczenstwo-w-sieci-i-ai': 50
 };
 
+const comingSoonMap: Record<string, boolean> = {
+  'mlody-influencer': true,
+  'kodowanie': true
+};
+
 export default async function TrainingPage({ params }: { params: { slug: string } }) {
   const training = await prisma.training.findUnique({
     where: { slug: params.slug }
@@ -44,7 +49,8 @@ export default async function TrainingPage({ params }: { params: { slug: string 
     imageUrl: imageMap[params.slug] || training.imageUrl,
     title: titleMap[params.slug] || training.title,
     shortDescription: descriptionMap[params.slug] || training.shortDescription,
-    price: priceMap[params.slug] || training.price
+    price: priceMap[params.slug] || training.price,
+    comingSoon: comingSoonMap[params.slug] || false
   }
 
   return <TrainingDetails training={extendedTraining as any} />

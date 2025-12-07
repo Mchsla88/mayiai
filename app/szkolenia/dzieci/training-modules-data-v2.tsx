@@ -3,7 +3,7 @@ import {
   BookOpen, Play, CheckCircle, Lock, Unlock, Eye, EyeOff, Sparkles, 
   GraduationCap, Award, Clock, Users, LogOut, Zap, Target, Shield, 
   MessageSquare, Search, Palette, Lightbulb, Scale, FileText, Rocket, 
-  TrendingUp, Check
+  TrendingUp, Check, Brain, Cpu, Layers, Image as ImageIcon, Video, AlertTriangle, Globe, Fingerprint, Leaf, HelpCircle, Terminal
 } from 'lucide-react'
 import { ModernContent, SectionCard, InfoBox } from '../nauczyciele/components/ModernContent'
 
@@ -20,7 +20,7 @@ export interface TrainingModule {
 export const trainingModules: TrainingModule[] = [
   {
     id: 'wstep',
-    title: 'Wstęp',
+    title: 'Moduł 1: Wstęp - Jak uczyć się z AI?',
     duration: '5 min',
     video: '/wstep.mp4',
     content: (
@@ -70,7 +70,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul1-krok1',
-    title: 'Moduł 1 - Krok 1: Rejestracja i pierwsze kroki',
+    title: 'Moduł 2: Tworzenie materiałów - Rejestracja',
     duration: '8 min',
     video: '/1-film.mp4',
     content: (
@@ -105,7 +105,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul1-krok2',
-    title: 'Moduł 1 - Krok 2: Generowanie zagadnień',
+    title: 'Moduł 3: Tworzenie materiałów - Generowanie zagadnień',
     duration: '10 min',
     video: '/2-film.mp4',
     content: (
@@ -152,7 +152,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul1-krok3',
-    title: 'Moduł 1 - Krok 3: Przekształcanie w materiał edukacyjny',
+    title: 'Moduł 4: Tworzenie materiałów - Przekształcanie wiedzy',
     duration: '12 min',
     video: '/3-film.mp4',
     content: (
@@ -186,7 +186,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul1-krok4',
-    title: 'Moduł 1 - Krok 4: Zapisywanie materiału',
+    title: 'Moduł 5: Tworzenie materiałów - Zapisywanie (PDF)',
     duration: '6 min',
     video: '/4-film.mp4',
     content: (
@@ -231,7 +231,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul2-krok1',
-    title: 'Moduł 2 - Krok 1: Przygotowanie narzędzi',
+    title: 'Moduł 6: Testowanie wiedzy - Przygotowanie narzędzi',
     duration: '7 min',
     video: '/5-film.mp4',
     content: (
@@ -276,7 +276,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul2-krok2',
-    title: 'Moduł 2 - Krok 2: Przygotowanie sesji testowej',
+    title: 'Moduł 7: Testowanie wiedzy - Konfiguracja Gemini',
     duration: '8 min',
     video: '/6-film.mp4',
     content: (
@@ -332,7 +332,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul2-krok3',
-    title: 'Moduł 2 - Krok 3: Uruchomienie asystenta głosowego',
+    title: 'Moduł 8: Testowanie wiedzy - Asystent głosowy',
     duration: '9 min',
     video: '/7-film.mp4',
     content: (
@@ -375,7 +375,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'modul2-krok4',
-    title: 'Moduł 2 - Krok 4: Rozpoczęcie testu',
+    title: 'Moduł 9: Testowanie wiedzy - Symulacja egzaminu',
     duration: '8 min',
     video: '/8-film.mp4',
     content: (
@@ -419,7 +419,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'wazne-wskazowki',
-    title: 'Moduł 9: Ważne Wskazówki i Dobre Praktyki',
+    title: 'Moduł 10: Dobre praktyki i wskazówki',
     duration: '17 min',
     video: null,
     audio1: '/9-slajd.mp3',
@@ -500,7 +500,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'lektury-szkolne',
-    title: 'Moduł 10: Lektury szkolne 📚',
+    title: 'Moduł 11: Język Polski - Lektury szkolne 📚',
     duration: '10 min',
     video: null,
     content: (
@@ -571,7 +571,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'gramatyka-ortografia',
-    title: 'Moduł 11: Gramatyka i Ortografia ✍️',
+    title: 'Moduł 12: Język Polski - Gramatyka i Ortografia ✍️',
     duration: '10 min',
     video: null,
     content: (
@@ -665,6 +665,409 @@ export const trainingModules: TrainingModule[] = [
         <InfoBox icon={<GraduationCap />}>
           <strong>Rezultat:</strong> Dzięki tej metodzie dziecko otrzyma jasne wyjaśnienie, praktyczne przykłady 
           oraz możliwość natychmiastowego przetestowania swojej wiedzy. To idealne połączenie teorii z praktyką!
+        </InfoBox>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'akademia-poziom-1',
+    title: 'Moduł 13: Akademia Przyszłości - Poziom 1 (Architektura Umysłu)',
+    duration: '15 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Poziom 1: Architektura Umysłu"
+        icon={<Brain />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Architektura Umysłu: Jak to działa "pod maską"? 🧠</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Wcześniej dowiedziałeś się, że AI to "naczytana papuga". Teraz zajrzyjmy głębiej i zobaczmy, co sprawia, że ta papuga jest tak niesamowicie mądra!
+        </p>
+
+        <SectionCard title="1.1. Sieci Neuronowe – Mózg z Matematyki" color="purple">
+          <div className="flex items-start gap-4 mb-4">
+            <div className="bg-purple-100 p-3 rounded-xl">
+              <Brain className="w-8 h-8 text-purple-600" />
+            </div>
+            <div>
+              <p className="text-gray-700 mb-3">
+                Twój mózg składa się z neuronów, które przesyłają sobie sygnały. Komputerowa sieć neuronowa to próba naśladowania tego procesu za pomocą liczb.
+              </p>
+              <ul className="space-y-3">
+                <li className="bg-white p-3 rounded-lg border border-purple-100 shadow-sm">
+                  <strong className="text-purple-700">Warstwy (Layers):</strong> Wyobraź sobie sito. Wrzucasz zdjęcie psa. 
+                  Pierwsze sito widzi tylko krawędzie. Drugie widzi kształty (koła, trójkąty). 
+                  Trzecie składa to w "oko" i "ucho". Ostatnia warstwa krzyczy: "To jest pies!".
+                </li>
+                <li className="bg-white p-3 rounded-lg border border-purple-100 shadow-sm">
+                  <strong className="text-purple-700">Wagi (Weights):</strong> To siła połączenia. 
+                  Jeśli AI często widzi, że słowo "Harry" stoi obok "Potter", połączenie między nimi staje się bardzo grube i silne.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="1.2. LLM – Wielki Model Językowy" color="blue">
+          <div className="flex items-start gap-4">
+            <div className="bg-blue-100 p-3 rounded-xl">
+              <Cpu className="w-8 h-8 text-blue-600" />
+            </div>
+            <div>
+              <p className="text-gray-700 mb-3">
+                To oficjalna nazwa narzędzi takich jak ChatGPT. LLM to skrót od <em>Large Language Model</em>.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-3 rounded-lg border border-blue-100">
+                  <h5 className="font-bold text-blue-700 mb-1">Trening</h5>
+                  <p className="text-sm text-gray-600">Trwa miesiącami i zużywa tyle prądu, co małe miasto! Komputer czyta wtedy prawie cały internet.</p>
+                </div>
+                <div className="bg-white p-3 rounded-lg border border-blue-100">
+                  <h5 className="font-bold text-blue-700 mb-1">Parametry</h5>
+                  <p className="text-sm text-gray-600">To "pokrętła" wewnątrz modelu. GPT-4 ma ich biliony. Im więcej parametrów, tym model mądrzejszy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SectionCard>
+
+        <InfoBox icon={<Sparkles />}>
+          <h4 className="font-bold text-lg mb-2">🧪 Zadanie praktyczne: Zabawa w "Autouzupełnianie"</h4>
+          <p className="mb-2">Weź kartkę. Napisz początek zdania: <strong>"Wielki smok wylądował na..."</strong>.</p>
+          <p className="mb-2">Poproś 3 kolegów lub domowników, by dokończyli zdanie. Każdy poda co innego (np. wieży, łące, kanapce).</p>
+          <p><strong>Wniosek:</strong> AI robi to samo – oblicza, które zakończenie jest najbardziej prawdopodobne w danej sytuacji!</p>
+        </InfoBox>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'akademia-poziom-2',
+    title: 'Moduł 14: Akademia Przyszłości - Poziom 2 (Zbrojownia)',
+    duration: '20 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Poziom 2: Zbrojownia"
+        icon={<Rocket />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Zbrojownia: Zaawansowana obsługa narzędzi 🛠️</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Poznaj szczegółowe instrukcje do Twoich narzędzi. To Twój ekwipunek na cyfrową przygodę!
+        </p>
+
+        <SectionCard title="2.1. Narzędzia Tekstowe (Twoi Asystenci)" color="blue">
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded-xl border-l-4 border-green-500 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <MessageSquare className="w-5 h-5 text-green-600" />
+                <h4 className="font-bold text-lg">ChatGPT</h4>
+              </div>
+              <p className="text-gray-600 mb-2"><strong>Najlepsze do:</strong> Kreatywności, burzy mózgów, wyjaśniania pojęć.</p>
+              <p className="text-sm bg-green-50 p-2 rounded text-green-800">
+                <strong>🌟 Tajna funkcja:</strong> "Custom Instructions" - Możesz mu kazać zawsze zwracać się do Ciebie po imieniu i tłumaczyć wszystko na przykładach z Twojej ulubionej gry!
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border-l-4 border-orange-500 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Brain className="w-5 h-5 text-orange-600" />
+                <h4 className="font-bold text-lg">Claude</h4>
+              </div>
+              <p className="text-gray-600 mb-2"><strong>Najlepsze do:</strong> Analizy długich lektur, bezpiecznej rozmowy, kodowania.</p>
+              <p className="text-sm bg-orange-50 p-2 rounded text-orange-800">
+                <strong>🌟 Tajna funkcja:</strong> Wklejanie plików - Możesz wkleić mu PDF z regulaminem gry planszowej i zapytać: "Czy ten ruch jest legalny?".
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border-l-4 border-blue-500 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Globe className="w-5 h-5 text-blue-600" />
+                <h4 className="font-bold text-lg">Gemini</h4>
+              </div>
+              <p className="text-gray-600 mb-2"><strong>Najlepsze do:</strong> Aktualnej wiedzy, współpracy z Google Maps i YouTube.</p>
+              <p className="text-sm bg-blue-50 p-2 rounded text-blue-800">
+                <strong>🌟 Tajna funkcja:</strong> Sprawdzanie faktów - Często ma przycisk "G" pod odpowiedzią, który pozwala sprawdzić w Google, czy nie kłamie.
+              </p>
+            </div>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="2.2. Narzędzia Wizualne (Studio Filmowe i Graficzne)" color="purple">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <ImageIcon className="w-6 h-6 text-pink-600" />
+                <h4 className="font-bold text-xl text-pink-700">🍌 NanoBanana</h4>
+              </div>
+              <p className="text-gray-700 mb-3 text-sm">Twój "Błyskawiczny Grafik". Służy do natychmiastowych zmian.</p>
+              <ul className="space-y-2 text-sm">
+                <li className="bg-white p-2 rounded border border-pink-100">
+                  <strong>Inpainting:</strong> Zaznaczasz obszar (np. nudne niebo) i wpisujesz "fajerwerki".
+                </li>
+                <li className="bg-white p-2 rounded border border-pink-100">
+                  <strong>Outpainting:</strong> Dorysowywanie brakującej reszty zdjęcia.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <Video className="w-6 h-6 text-purple-600" />
+                <h4 className="font-bold text-xl text-purple-700">🎥 Veo</h4>
+              </div>
+              <p className="text-gray-700 mb-3 text-sm">Reżyser filmowy w Twoim komputerze.</p>
+              <ul className="space-y-2 text-sm">
+                <li className="bg-white p-2 rounded border border-purple-100">
+                  <strong>Fizyka świata:</strong> Rozumie, jak ciecz wylewa się ze szklanki.
+                </li>
+                <li className="bg-white p-2 rounded border border-purple-100">
+                  <strong>Styl filmowy:</strong> Możesz wpisać "cinematic", "drone shot".
+                </li>
+              </ul>
+            </div>
+          </div>
+        </SectionCard>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'akademia-poziom-3',
+    title: 'Moduł 15: Akademia Przyszłości - Poziom 3 (Inżynieria Promptu)',
+    duration: '25 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Poziom 3: Inżynieria Promptu"
+        icon={<Terminal />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Inżynieria Promptu: Poziom Ekspert 🧙‍♂️</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Wcześniej poznałeś zasadę K-Z-F. Teraz wchodzimy na poziom mistrzowski. Poznaj zaklęcia, które sprawią, że AI zrobi dokładnie to, co chcesz!
+        </p>
+
+        <SectionCard title="3.1. Magiczne zaklęcie: Chain of Thought" color="purple">
+          <div className="flex items-start gap-4">
+            <TrendingUp className="w-8 h-8 text-purple-600 flex-shrink-0" />
+            <div>
+              <h4 className="font-bold text-lg mb-2">Łańcuch Myśli</h4>
+              <p className="text-gray-700 mb-3">
+                AI czasem "strzela" odpowiedziami. Aby zmusić ją do myślenia, dodaj na końcu promptu zdanie:
+              </p>
+              <div className="bg-purple-900 text-white p-3 rounded-lg font-mono text-sm shadow-lg">
+                "Pomyśl krok po kroku, zanim udzielisz odpowiedzi."
+              </div>
+              <p className="text-gray-600 text-sm mt-2">
+                Dzięki temu AI najpierw przeanalizuje problem, a potem poda wynik. To drastycznie zmniejsza liczbę błędów w zadaniach logicznych!
+              </p>
+            </div>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="3.2. Few-Shot Prompting" color="blue">
+          <div className="flex items-start gap-4">
+            <Layers className="w-8 h-8 text-blue-600 flex-shrink-0" />
+            <div>
+              <h4 className="font-bold text-lg mb-2">Dawanie Przykładów</h4>
+              <p className="text-gray-700 mb-3">
+                Zamiast tylko prosić, pokaż AI, o co Ci chodzi. Zobacz różnicę:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-red-50 p-3 rounded border border-red-200">
+                  <strong className="text-red-700">🚫 Zły prompt:</strong>
+                  <p className="text-sm">"Wymyśl nazwy dla planet."</p>
+                </div>
+                <div className="bg-green-50 p-3 rounded border border-green-200">
+                  <strong className="text-green-700">✅ Mistrzowski prompt:</strong>
+                  <p className="text-sm font-mono mt-1">
+                    "Wymyśl nazwy dla planet w stylu science-fiction.<br/>
+                    Przykład 1: Czerwona planeta -&gt; Marsus Prime<br/>
+                    Przykład 2: Lodowa planeta -&gt; Cryogenia X<br/>
+                    Twój przykład: Gazowa planeta -&gt; ..."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="3.3. Mega-Prompt: Nauczyciel Sokratyczny" color="green">
+          <div className="flex items-start gap-4">
+            <GraduationCap className="w-8 h-8 text-green-600 flex-shrink-0" />
+            <div>
+              <h4 className="font-bold text-lg mb-2">Ucz się, nie ściągaj!</h4>
+              <p className="text-gray-700 mb-3">
+                Wklej to do ChatGPT, jeśli chcesz się czegoś nauczyć, a nie dostać gotowca:
+              </p>
+              <div className="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm shadow-inner">
+                "Chcę, żebyś nauczył mnie o [temat, np. II wojnie światowej]. Nie dawaj mi gotowych odpowiedzi. Zadawaj mi pytania, które naprowadzą mnie na wiedzę. Jeśli odpowiem źle, daj mi podpowiedź, ale nie rozwiązanie. Bądź cierpliwy."
+              </div>
+            </div>
+          </div>
+        </SectionCard>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'akademia-poziom-4',
+    title: 'Moduł 16: Akademia Przyszłości - Poziom 4 (Detektyw Prawda)',
+    duration: '15 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Poziom 4: Detektyw Prawda"
+        icon={<Search />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Detektyw Prawda: Walka z halucynacjami 🕵️‍♂️</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          AI potrafi być najbardziej przekonującym kłamcą na świecie. Musisz być czujny jak detektyw!
+        </p>
+
+        <SectionCard title="4.1. Dlaczego AI halucynuje?" color="orange">
+          <div className="flex items-center gap-4">
+            <HelpCircle className="w-10 h-10 text-orange-500" />
+            <p className="text-gray-700">
+              Model nie ma dostępu do "prawdy". Ma dostęp do "prawdopodobieństwa". Jeśli zapytasz o nieistniejącą książkę, AI może wymyślić jej fabułę, bo słowa "książka" i "fabuła" często występują razem.
+            </p>
+          </div>
+        </SectionCard>
+
+        <SectionCard title="4.2. Procedura Bezpieczeństwa: Zasada Trzech Źródeł" color="green">
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 bg-white p-3 rounded-lg border border-green-100">
+              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">1</div>
+              <p><strong>Zapytaj:</strong> "Czy jesteś pewien na 100%? Podaj źródło."</p>
+            </div>
+            <div className="flex items-center gap-3 bg-white p-3 rounded-lg border border-green-100">
+              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">2</div>
+              <p><strong>Sprawdź:</strong> Skopiuj fakt do Google.</p>
+            </div>
+            <div className="flex items-center gap-3 bg-white p-3 rounded-lg border border-green-100">
+              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">3</div>
+              <p><strong>Potwierdź:</strong> Znajdź tę informację na innej stronie (Wikipedia, encyklopedia PWN, strona naukowa).</p>
+            </div>
+          </div>
+        </SectionCard>
+
+        <InfoBox icon={<AlertTriangle />}>
+          <h4 className="font-bold text-red-600 mb-2">🚩 Lista Czerwonych Flag (Kiedy AI prawdopodobnie kłamie?)</h4>
+          <ul className="list-disc list-inside space-y-1 text-gray-700">
+            <li>Kiedy podaje bardzo konkretne adresy stron WWW (często nie działają).</li>
+            <li>Kiedy cytuje konkretne strony w książkach (np. "na stronie 45").</li>
+            <li>Kiedy pytasz o wydarzenia bardzo lokalne (np. "kto wygrał konkurs recytatorski w szkole w Pcimiu").</li>
+          </ul>
+        </InfoBox>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'akademia-poziom-5',
+    title: 'Moduł 17: Akademia Przyszłości - Poziom 5 (Etyka Cyfrowa)',
+    duration: '20 min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Poziom 5: Etyka Cyfrowa i Prawo"
+        icon={<Scale />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Etyka Cyfrowa: Zasady przetrwania 🛡️</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          To nie jest nudny wykład, to zasady przetrwania w cyfrowej dżungli. Z wielką mocą wiąże się wielka odpowiedzialność!
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <SectionCard title="5.1. Prawo Autorskie" color="blue">
+            <Scale className="w-8 h-8 text-blue-600 mb-3" />
+            <p className="text-gray-700 text-sm mb-3">
+              Czy obrazek z NanoBanana jest Twój?
+            </p>
+            <div className="bg-white p-3 rounded border border-blue-100 text-sm">
+              <strong>Zasada:</strong> Prace stworzone w 100% przez AI zazwyczaj nie są chronione prawem autorskim.
+              <br/><br/>
+              <strong>Fair Play:</strong> Podpisuj: "Grafika wygenerowana przy użyciu AI". To oznaka profesjonalizmu.
+            </div>
+          </SectionCard>
+
+          <SectionCard title="5.2. Deepfakes i Głos" color="red">
+            <Fingerprint className="w-8 h-8 text-red-600 mb-3" />
+            <p className="text-gray-700 text-sm mb-3">
+              Klonowanie głosu kolegi dla żartu? <strong>STOP.</strong>
+            </p>
+            <div className="bg-white p-3 rounded border border-red-100 text-sm">
+              To może być nielegalne. Wyobraź sobie, że ktoś dzwoni do Twojej babci Twoim głosem i prosi o pieniądze.
+              <br/><br/>
+              <strong>Rada:</strong> Ustal z rodziną "tajne hasło", którego AI nie będzie znało.
+            </div>
+          </SectionCard>
+        </div>
+
+        <div className="mt-6">
+          <SectionCard title="5.3. Ślad Węglowy" color="green">
+            <div className="flex items-center gap-4">
+              <Leaf className="w-10 h-10 text-green-600" />
+              <div>
+                <p className="text-gray-700 mb-2">
+                  Każde zapytanie do AI zużywa wodę (do chłodzenia serwerów) i prąd. Wygenerowanie jednego obrazka zużywa tyle energii, co naładowanie telefonu.
+                </p>
+                <p className="font-bold text-green-700">
+                  Eko-Rada: Nie generuj 50 obrazków "dla zabawy". Myśl przed kliknięciem "Generuj". 🌍
+                </p>
+              </div>
+            </div>
+          </SectionCard>
+        </div>
+      </ModernContent>
+    )
+  },
+  {
+    id: 'akademia-projekt',
+    title: 'Moduł 18: Akademia Przyszłości - Projekt Końcowy',
+    duration: '30+ min',
+    video: null,
+    content: (
+      <ModernContent 
+        title="Projekt Końcowy"
+        icon={<Award />}
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">Projekt Końcowy: AI w Służbie Ludzkości 🚀</h3>
+        
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Aby ukończyć kurs i stać się certyfikowanym Pilotem AI, wykonaj jedno z poniższych zadań. Wybierz to, które najbardziej Cię kręci!
+        </p>
+
+        <div className="space-y-6">
+          <SectionCard title="Opcja A: Historyczny Wywiad" color="orange">
+            <p className="text-gray-700 mb-3">
+              Użyj promptu, by "ożywić" postać historyczną (np. Mikołaja Kopernika). Przeprowadź z nim wywiad o tym, co myśli o dzisiejszych podróżach w kosmos.
+            </p>
+            <div className="bg-white p-3 rounded border border-orange-100 text-sm">
+              <strong>Zadanie dodatkowe:</strong> Sprawdź w książkach, czy AI dobrze oddało jego poglądy!
+            </div>
+          </SectionCard>
+
+          <SectionCard title="Opcja B: Twój Własny Asystent Nauki" color="blue">
+            <p className="text-gray-700 mb-3">
+              Stwórz w ChatGPT "Nauczyciela Języka Angielskiego", który poprawia Twoje błędy i tłumaczy dlaczego coś jest źle, ale tylko w temacie "Zwierzęta".
+            </p>
+          </SectionCard>
+
+          <SectionCard title="Opcja C: Detektyw Fake Newsów" color="red">
+            <p className="text-gray-700 mb-3">
+              Poproś AI o napisanie 3 ciekawostek o delfinach, z czego jedna ma być zmyślona. Spróbuj zgadnąć która, a potem zweryfikuj to w Google.
+            </p>
+          </SectionCard>
+        </div>
+
+        <InfoBox icon={<Zap />}>
+          <h4 className="font-bold text-lg mb-2 text-purple-700">Pamiętaj!</h4>
+          <p className="text-lg">
+            AI to rower dla umysłu. Pozwala Ci zajechać dalej i szybciej, ale to <strong>Ty</strong> musisz pedałować i kierować. 🚲💨
+          </p>
+          <p className="mt-2 font-bold">Powodzenia w świecie przyszłości!</p>
         </InfoBox>
       </ModernContent>
     )

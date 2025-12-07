@@ -37,6 +37,7 @@ interface Training {
     description: string;
     duration?: string;
   }[]
+  comingSoon?: boolean
 }
 
 export function TrainingDetails({ training }: { training: Training }) {
@@ -158,18 +159,24 @@ export function TrainingDetails({ training }: { training: Training }) {
                 <div className="flex flex-col gap-3">
                   <Button 
                     onClick={handleBuyNow}
-                    className="w-full h-14 text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg shadow-purple-200"
+                    disabled={training.comingSoon}
+                    className={`w-full h-14 text-lg font-bold shadow-lg ${
+                      training.comingSoon 
+                        ? 'bg-gray-400 cursor-not-allowed shadow-none' 
+                        : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-purple-200'
+                    }`}
                   >
-                    Kup teraz
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    {training.comingSoon ? 'Wkrótce' : 'Kup teraz'}
+                    {!training.comingSoon && <ArrowRight className="ml-2 w-5 h-5" />}
                   </Button>
                   <Button 
                     onClick={handleAddToCart}
                     variant="outline"
-                    className="w-full h-12 text-lg border-purple-200 text-purple-700 hover:bg-purple-50"
+                    disabled={training.comingSoon}
+                    className="w-full h-12 text-lg border-purple-200 text-purple-700 hover:bg-purple-50 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <ShoppingCart className="mr-2 w-5 h-5" />
-                    {isAdding ? 'Dodano!' : 'Dodaj do koszyka'}
+                    {training.comingSoon ? 'Niedostępne' : (isAdding ? 'Dodano!' : 'Dodaj do koszyka')}
                   </Button>
                 </div>
 
