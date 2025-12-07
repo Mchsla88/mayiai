@@ -137,10 +137,10 @@ export default function HomePage() {
                     }}
                     transition={{ duration: 5, repeat: Infinity }}
                   >
-                    Bezpieczna Nauka AI
+                    Kursy AI dla Dzieci
                   </motion.span>
                   <br />
-                  <span className="text-gray-800">dla Twojego Dziecka</span>
+                  <span className="text-gray-800">Bezpieczna Nauka Online</span>
                 </motion.h1>
                 
                 <motion.p 
@@ -261,7 +261,7 @@ export default function HomePage() {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-gradient">Dlaczego AI Family Expert?</span>
+                  <span className="text-gradient">Dlaczego warto wybrać kursy AI dla dzieci May I AI?</span>
                 </motion.h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   <strong className="text-red-600">69% rodziców</strong> obawia się negatywnego wpływu AI na dzieci, 
@@ -354,7 +354,7 @@ export default function HomePage() {
           <div className="w-full px-4 md:px-12">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Co Zyskasz Dzięki Nam?
+                Korzyści z nauki sztucznej inteligencji dla Twojego dziecka
               </h2>
               <p className="text-xl text-gray-600">
                 Kompleksowe wsparcie w edukacji AI dla całej rodziny
@@ -434,7 +434,7 @@ export default function HomePage() {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-gradient">Nasza Oferta</span>
+                  <span className="text-gradient">Szkolenia online z AI dla dzieci i rodziców</span>
                 </motion.h2>
                 <p className="text-xl text-gray-600">
                   12-miesięczny dostęp do szkoleń z AI dla Twojej rodziny
@@ -454,8 +454,8 @@ export default function HomePage() {
             <div className="">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                  Konsekwencje Ignorowania Edukacji AI
-                </h2>
+                Dlaczego edukacja AI jest niezbędna dla dzieci w 2025 roku?
+              </h2>
                 <p className="text-xl text-gray-600">
                   Czy wiesz, jakie skutki może mieć brak przygotowania dziecka na świat sztucznej inteligencji?
                 </p>
@@ -535,8 +535,8 @@ export default function HomePage() {
             <div className="">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                  Najczęstsze Obawy Rodziców o AI
-                </h2>
+                Bezpieczne korzystanie z AI przez dzieci – obalamy mity
+              </h2>
                 <p className="text-xl text-gray-600">
                   I dlaczego są one błędne, gdy masz odpowiednie wsparcie
                 </p>
@@ -623,7 +623,7 @@ export default function HomePage() {
           <div className="w-full px-4 md:px-12">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Najnowsze Wpisy z Bloga
+                Poradniki: jak nauczyć dziecko korzystać z AI
               </h2>
               <p className="text-xl text-gray-600">
                 Praktyczne porady, wskazówki i najnowsze informacje o AI dla rodzin
@@ -739,7 +739,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  Zacznij Przygodę z AI Już Dziś!
+                  Zapisz dziecko na kurs AI online – zacznij już dziś!
                 </motion.h2>
                 
                 <motion.p 
