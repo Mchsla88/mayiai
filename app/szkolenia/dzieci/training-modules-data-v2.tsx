@@ -502,7 +502,7 @@ export const trainingModules: TrainingModule[] = [
     id: 'lektury-szkolne',
     title: 'Moduł 11: Język Polski - Lektury szkolne 📚',
     duration: '10 min',
-    video: null,
+    video: '/ai-w-nauce-praktyczny-przewodnik.mp4',
     content: (
       <ModernContent 
         title="Lektury szkolne"
@@ -673,7 +673,7 @@ export const trainingModules: TrainingModule[] = [
     id: 'akademia-poziom-1',
     title: 'Moduł 13: Akademia Przyszłości - Poziom 1 (Architektura Umysłu)',
     duration: '15 min',
-    video: null,
+    video: '/ai-masterclass-przewodnik.mp4',
     content: (
       <ModernContent 
         title="Poziom 1: Architektura Umysłu"

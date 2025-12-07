@@ -9,6 +9,7 @@ import {
   motion,
   AnimatePresence,
 } from "framer-motion";
+import Image from "next/image";
 import {
   BookOpen,
   Play,
@@ -52,7 +53,7 @@ function TrainingContent() {
     {
       id: "nauka",
       title: "Nauka Szkoła Przedmioty",
-      icon: <Sparkles className="w-12 h-12 text-white" />,
+      icon: <Image src="/kids-icon-science.png" alt="Nauka" width={80} height={80}className="drop-shadow-md" />,
       description: "Jak wykorzystać AI do nauki przedmiotów szkolnych",
       color: "from-purple-500 to-indigo-600",
       modules: trainingModules.slice(0, 10),
@@ -60,7 +61,7 @@ function TrainingContent() {
     {
       id: "polski",
       title: "Język Polski",
-      icon: <BookOpen className="w-12 h-12 text-white" />,
+      icon: <Image src="/kids-icon-polish.png" alt="Język Polski" width={80} height={80} className="drop-shadow-md" />,
       description: "Lektury, gramatyka i ortografia z pomocą AI",
       color: "from-pink-500 to-rose-600",
       modules: trainingModules.slice(10, 12),
@@ -68,7 +69,7 @@ function TrainingContent() {
     {
       id: "akademia",
       title: "Akademia Przyszłości",
-      icon: <Rocket className="w-12 h-12 text-white" />,
+      icon: <Image src="/kids-icon-future.png" alt="Akademia" width={80} height={80} className="drop-shadow-md" />,
       description: "Zaawansowane techniki, etyka i bezpieczeństwo",
       color: "from-blue-500 to-cyan-600",
       modules: trainingModules.slice(12),

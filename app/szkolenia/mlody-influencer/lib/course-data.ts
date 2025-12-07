@@ -25,13 +25,13 @@ export interface Project {
 }
 
 export const courseParts = [
-  { id: 1, title: 'Twoje Bezpieczne Cyfrowe Miejsce', icon: '🏰', chapters: [1, 2, 3] },
-  { id: 2, title: 'Twój Arsenał - Narzędzia AI', icon: '🛠️', chapters: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] },
-  { id: 3, title: 'Maszyna do Pomysłów', icon: '💡', chapters: [19, 20, 21, 22, 23, 24, 25, 26, 27, 28] },
-  { id: 4, title: 'Twój Plan - Kalendarz Treści', icon: '📅', chapters: [29, 30, 31, 32, 33] },
-  { id: 5, title: 'Sekcja dla Rodziców', icon: '👪', chapters: [34, 35, 36, 37, 38] },
-  { id: 6, title: 'Rozwijanie Umiejętności', icon: '🌱', chapters: [39, 40, 41, 42, 43, 44] },
-  { id: 7, title: '52 Gotowe Projekty', icon: '🎨', chapters: [45] },
+  { id: 1, title: 'Twoje Bezpieczne Cyfrowe Miejsce', icon: '/icon-shield-3d.png', chapters: [1, 2, 3] },
+  { id: 2, title: 'Twój Arsenał - Narzędzia AI', icon: '/icon-tools-3d.png', chapters: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] },
+  { id: 3, title: 'Maszyna do Pomysłów', icon: '/icon-bulb-3d.png', chapters: [19, 20, 21, 22, 23, 24, 25, 26, 27, 28] },
+  { id: 4, title: 'Twój Plan - Kalendarz Treści', icon: '/icon-calendar-3d.png', chapters: [29, 30, 31, 32, 33] },
+  { id: 5, title: 'Sekcja dla Rodziców', icon: '/icon-chat-3d.png', chapters: [34, 35, 36, 37, 38] },
+  { id: 6, title: 'Rozwijanie Umiejętności', icon: '/icon-rocket-3d.png', chapters: [39, 40, 41, 42, 43, 44] },
+  { id: 7, title: '52 Gotowe Projekty', icon: '/icon-camera-3d.png', chapters: [45] },
 ];
 
 export const chapters: Chapter[] = [

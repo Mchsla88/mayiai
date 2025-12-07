@@ -3,6 +3,7 @@ import {
   GraduationCap, Users, CheckCircle, Clock, Award, TrendingUp,
   Lightbulb, Scale, FileText, Rocket, Zap, BookOpen
 } from 'lucide-react'
+import Image from 'next/image'
 import { LessonSlides } from './components/LessonSlides'
 import { ModernContent, SectionCard, InfoBox } from './components/ModernContent'
 
@@ -20,13 +21,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'wstep-1',
     title: 'Wstęp: Kryzys Zaufania – Zrozumieć Obawy Nauczycieli',
-    icon: <Target className="w-5 h-5" />,
+    icon: <Image src="/icon-rocket-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '10 min',
     category: 'Wstęp',
     content: (
       <ModernContent 
         title="Wstęp: Kryzys Zaufania – Zrozumieć Obawy"
-        icon={<Target />}
+        icon={<Image src="/icon-rocket-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h2 className="text-3xl font-bold mb-6 text-purple-700">Sztuczna Inteligencja w Edukacji: Kompleksowy Przewodnik 2024-2026</h2>
         
@@ -57,13 +58,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'wstep-2',
     title: 'Wstęp: Kluczowa Motywacja – Odzyskiwanie Czasu',
-    icon: <Clock className="w-5 h-5" />,
+    icon: <Image src="/icon-calendar-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '10 min',
     category: 'Wstęp',
     content: (
       <ModernContent 
         title="Wstęp: Kluczowa Motywacja – Odzyskiwanie Czasu"
-        icon={<Clock />}
+        icon={<Image src="/icon-calendar-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-2xl font-bold text-purple-700 mb-4">Sekcja 2: Kluczowa Motywacja – Odzyskiwanie Czasu</h3>
         
@@ -139,13 +140,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-1-1',
     title: 'Rozdział 1.1: Demistyfikacja – Czym jest AI, GSI, LLM?',
-    icon: <Brain className="w-5 h-5" />,
+    icon: <Image src="/icon-tools-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 1',
     content: (
       <ModernContent 
         title="Rozdział 1. Fundamenty: Czym Jest AI"
-        icon={<Brain />}
+        icon={<Image src="/icon-tools-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h2 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 1. Fundamenty: Czym Jest AI i Jak Działa (Bez Żargonu)</h2>
         
@@ -199,13 +200,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-1-2',
     title: 'Rozdział 1.2: Pierwszy Kontakt – Bezpieczne "Celowe Granie"',
-    icon: <Lightbulb className="w-5 h-5" />,
+    icon: <Image src="/icon-bulb-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 1',
     content: (
       <ModernContent 
         title="Rozdział 1.2: Pierwszy Kontakt"
-        icon={<Lightbulb />}
+        icon={<Image src="/icon-bulb-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Sekcja 1.2: Pierwszy Kontakt – Bezpieczne "Celowe Granie" (Purposeful Play)</h4>
         
@@ -264,13 +265,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-1-3',
     title: 'Rozdział 1.3: Przegląd 10 Narzędzi dla Nauczyciela (PEŁNA LISTA)',
-    icon: <Rocket className="w-5 h-5" />,
+    icon: <Image src="/icon-rocket-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '25 min',
     category: 'Rozdział 1',
     content: (
       <ModernContent 
         title="Rozdział 1.3: Przegląd Narzędzi"
-        icon={<Rocket />}
+        icon={<Image src="/icon-rocket-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 1.3: Przegląd Narzędzi Nauczyciela</h4>
         
@@ -396,13 +397,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-2-1',
     title: 'Rozdział 2.1: Wprowadzenie do Etyki AI w Szkole',
-    icon: <Shield className="w-5 h-5" />,
+    icon: <Image src="/icon-shield-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '10 min',
     category: 'Rozdział 2',
     content: (
       <ModernContent 
         title="Rozdział 2.1: Etyka AI"
-        icon={<Shield />}
+        icon={<Image src="/icon-shield-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 2. Etyczny Kompas Nauczyciela w Erze AI</h3>
         
@@ -432,13 +433,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-2-2',
     title: 'Rozdział 2.2: Warsztat Etyczny – 4 Kluczowe Scenariusze',
-    icon: <Scale className="w-5 h-5" />,
+    icon: <Image src="/icon-shield-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '25 min',
     category: 'Rozdział 2',
     content: (
       <ModernContent 
         title="Rozdział 2.2: Warsztat Etyczny"
-        icon={<Scale />}
+        icon={<Image src="/icon-shield-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 2.2: Warsztat Etyczny (Praktyczne Scenariusze)</h4>
         
@@ -524,13 +525,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-3-1',
     title: 'Rozdział 3.1: Wprowadzenie – "Śmieci na Wejściu, Śmieci na Wyjściu"',
-    icon: <MessageSquare className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '10 min',
     category: 'Rozdział 3',
     content: (
       <ModernContent 
         title="Rozdział 3.1: Wprowadzenie"
-        icon={<MessageSquare />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 3. Sztuka Dialogu z AI: Mistrzostwo w Prompt Engineeringu</h3>
         
@@ -560,13 +561,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-3-2',
     title: 'Rozdział 3.2: Framework 5S – Przepis na Idealny Prompt',
-    icon: <CheckCircle className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 3',
     content: (
       <ModernContent 
         title="Rozdział 3.2: Framework 5S"
-        icon={<CheckCircle />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 3.2: Framework 5S (Set, Specify, Structure, Supply, Assess)</h4>
         
@@ -603,13 +604,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-3-3',
     title: 'Rozdział 3.3: Warsztat – Transformacja Słabych Promptów',
-    icon: <TrendingUp className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '20 min',
     category: 'Rozdział 3',
     content: (
       <ModernContent 
         title="Rozdział 3.3: Warsztat"
-        icon={<TrendingUp />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 3.3: Stół Warsztatowy – Transformacja Promptów</h4>
         
@@ -665,13 +666,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-4-1',
     title: 'Rozdział 4.1: Problem "Halucynacji" AI',
-    icon: <Search className="w-5 h-5" />,
+    icon: <Image src="/icon-shield-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '10 min',
     category: 'Rozdział 4',
     content: (
       <ModernContent 
         title="Rozdział 4.1: Problem 'Halucynacji' AI"
-        icon={<Search />}
+        icon={<Image src="/icon-shield-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 4. Krytyczna Ocena Treści: Jak Ufać, Ale Sprawdzać</h3>
         
@@ -695,13 +696,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-4-2',
     title: 'Rozdział 4.2: Checklista F.L.O.B.',
-    icon: <Shield className="w-5 h-5" />,
+    icon: <Image src="/icon-shield-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 4',
     content: (
       <ModernContent 
         title="Rozdział 4.2: Checklista F.L.O.B."
-        icon={<Shield />}
+        icon={<Image src="/icon-shield-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 4.2: Checklista Weryfikacji Treści (F.L.O.B.)</h4>
         
@@ -786,13 +787,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-5-1',
     title: 'Rozdział 5.1: Scenariusz 1 - "Opowiadania i Komiksy"',
-    icon: <BookOpen className="w-5 h-5" />,
+    icon: <Image src="/icon-bulb-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 5',
     content: (
       <ModernContent 
         title="Rozdział 5.1: Scenariusz 1"
-        icon={<BookOpen />}
+        icon={<Image src="/icon-bulb-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 5. Kreatywny Bank Lekcji</h3>
         
@@ -827,13 +828,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-5-2',
     title: 'Rozdział 5.2: Scenariusz 2 - "Analiza Danych i Eksperymenty"',
-    icon: <BookOpen className="w-5 h-5" />,
+    icon: <Image src="/icon-bulb-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 5',
     content: (
       <ModernContent 
         title="Rozdział 5.2: Scenariusz 2"
-        icon={<BookOpen />}
+        icon={<Image src="/icon-bulb-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Scenariusz 2: Analiza Danych i Eksperymenty</h4>
         <p className="text-gray-600 mb-4"><strong>Przedmioty:</strong> Matematyka, Fizyka, Geografia</p>
@@ -860,13 +861,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-5-3',
     title: 'Rozdział 5.3: Scenariusz 3 - "Projektowanie Gier Edukacyjnych"',
-    icon: <BookOpen className="w-5 h-5" />,
+    icon: <Image src="/icon-bulb-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 5',
     content: (
       <ModernContent 
         title="Rozdział 5.3: Scenariusz 3"
-        icon={<BookOpen />}
+        icon={<Image src="/icon-bulb-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Scenariusz 3: Projektowanie Gier Edukacyjnych</h4>
         <p className="text-gray-600 mb-4"><strong>Przedmioty:</strong> Informatyka, Historia, J. Obce</p>
@@ -893,13 +894,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-5-4',
     title: 'Rozdział 5.4: Scenariusz 4 - "Technika SCAMPER"',
-    icon: <BookOpen className="w-5 h-5" />,
+    icon: <Image src="/icon-bulb-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 5',
     content: (
       <ModernContent 
         title="Rozdział 5.4: Scenariusz 4"
-        icon={<BookOpen />}
+        icon={<Image src="/icon-bulb-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Scenariusz 4: Kreatywne Myślenie – Technika SCAMPER</h4>
         <p className="text-gray-600 mb-4"><strong>Przedmioty:</strong> Przedsiębiorczość, Godz. Wychowawcza</p>
@@ -925,13 +926,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-5-5',
     title: 'Rozdział 5.5: Scenariusz 5 - "Mój Wymarzony Wynalazek"',
-    icon: <BookOpen className="w-5 h-5" />,
+    icon: <Image src="/icon-rocket-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 5',
     content: (
       <ModernContent 
         title="Rozdział 5.5: Scenariusz 5"
-        icon={<BookOpen />}
+        icon={<Image src="/icon-rocket-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Scenariusz 5: Mój Wymarzony Wynalazek</h4>
         <p className="text-gray-600 mb-4"><strong>Przedmioty:</strong> Technika, Fizyka, Informatyka</p>
@@ -963,10 +964,10 @@ export const trainingModules: TrainingModule[] = [
   // ROZDZIAŁ 6
   {
     id: 'rozdzial-6-klasa-4',
-    title: 'Klasa IV: "Głuchy Telefon z AI" - Pierwsze Spotkanie',
-    icon: <GraduationCap className="w-5 h-5" />,
+    title: 'Rozdział 6.1: Klasa IV - "Głuchy Telefon z AI" - Pierwsze Spotkanie',
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '45 min',
-    category: 'Rozdział 6 - Klasa IV',
+    category: 'Rozdział 6',
     content: (
       <LessonSlides 
         title='Klasa IV: "Pierwsze Spotkanie z Magicznym Ołówkiem"'
@@ -1068,10 +1069,10 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'rozdzial-6-klasa-5',
-    title: 'Klasa V: "Sorter 1.0" - Mój Pierwszy Trening AI',
+    title: 'Rozdział 6.2: Klasa V - "Sorter 1.0" - Mój Pierwszy Trening AI',
     icon: <Brain className="w-5 h-5" />,
     duration: '45 min',
-    category: 'Rozdział 6 - Klasa V',
+    category: 'Rozdział 6',
     content: (
       <LessonSlides 
         title='Klasa V: "Mój Pierwszy Trening AI"'
@@ -1186,10 +1187,10 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'rozdzial-6-klasa-6',
-    title: 'Klasa VI: "Detektywi AI" + "Ukryte Koszty Technologii"',
+    title: 'Rozdział 6.3: Klasa VI - "Detektywi AI" + "Ukryte Koszty Technologii"',
     icon: <Search className="w-5 h-5" />,
     duration: '90 min (2 lekcje)',
-    category: 'Rozdział 6 - Klasa VI',
+    category: 'Rozdział 6',
     content: (
       <LessonSlides 
         title='Klasa VI: "Detektywi AI i Ukryte Koszty"'
@@ -1346,10 +1347,10 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'rozdzial-6-klasa-7',
-    title: 'Klasa VII: "AI to Mój Asystent" - Polityka 80/20 i F.L.O.B.',
+    title: 'Rozdział 6.4: Klasa VII - "AI to Mój Asystent" - Polityka 80/20 i F.L.O.B.',
     icon: <FileText className="w-5 h-5" />,
     duration: '45 min',
-    category: 'Rozdział 6 - Klasa VII',
+    category: 'Rozdział 6',
     content: (
       <LessonSlides 
         title='Klasa VII: "AI to Mój Asystent, a Nie Zastępca"'
@@ -1463,10 +1464,10 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'rozdzial-6-klasa-8',
-    title: 'Klasa VIII: "Świadomy Obywatel AI" - Bias i Etyka',
+    title: 'Rozdział 6.5: Klasa VIII - "Świadomy Obywatel AI" - Bias i Etyka',
     icon: <Users className="w-5 h-5" />,
     duration: '90 min (2 lekcje)',
-    category: 'Rozdział 6 - Klasa VIII',
+    category: 'Rozdział 6',
     content: (
       <LessonSlides 
         title='Klasa VIII: "Świadomy Obywatel AI"'
@@ -1641,13 +1642,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-7-1',
     title: 'Rozdział 7.1: Komunikacja z Rodzicami',
-    icon: <Users className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 7',
     content: (
       <ModernContent 
         title="Rozdział 7.1: Komunikacja z Rodzicami"
-        icon={<Users />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 7. AI Poza Klasą: Budowanie Społeczności</h3>
         
@@ -1664,13 +1665,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-7-2',
     title: 'Rozdział 7.2: Gotowa Prezentacja dla Rodziców',
-    icon: <FileText className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 7',
     content: (
       <ModernContent 
         title="Rozdział 7.2: Prezentacja dla Rodziców"
-        icon={<FileText />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-6">Sekcja 7.2: Gotowa Prezentacja dla Rodziców (5 Slajdów)</h4>
         
@@ -1706,13 +1707,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-7-3',
     title: 'Rozdział 7.3: Budowanie Społeczności',
-    icon: <Users className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 7',
     content: (
       <ModernContent 
         title="Rozdział 7.3: Budowanie Społeczności"
-        icon={<Users />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Sekcja 7.3: Budowanie Społeczności Nauczycielskiej</h4>
         
@@ -1739,13 +1740,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-8-1',
     title: 'Rozdział 8: Twój Plan Rozwoju (Nauczyciel 2.0)',
-    icon: <TrendingUp className="w-5 h-5" />,
+    icon: <Image src="/icon-rocket-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 8',
     content: (
       <ModernContent 
         title="Rozdział 8.1: Przyszłość Edukacji"
-        icon={<Rocket />}
+        icon={<Image src="/icon-rocket-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Rozdział 8. Przyszłość Edukacji z AI</h3>
         
@@ -1777,13 +1778,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'rozdzial-8-2',
     title: 'Rozdział 8.2: Twój Plan Rozwoju',
-    icon: <TrendingUp className="w-5 h-5" />,
+    icon: <Image src="/icon-calendar-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '15 min',
     category: 'Rozdział 8',
     content: (
       <ModernContent 
         title="Rozdział 8.2: Twoja Droga"
-        icon={<TrendingUp />}
+        icon={<Image src="/icon-calendar-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Sekcja 8.2: Twój Plan Rozwoju</h4>
         <p className="text-gray-600 mb-4">Nie musisz umieć wszystkiego od razu. Zacznij małymi krokami.</p>
@@ -1821,13 +1822,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'zakonczenie-1',
     title: 'Zakończenie: Podsumowanie Kursu',
-    icon: <Award className="w-5 h-5" />,
+    icon: <Image src="/icon-rocket-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '5 min',
     category: 'Zakończenie',
     content: (
       <ModernContent 
         title="Zakończenie: Podsumowanie Kursu"
-        icon={<Award />}
+        icon={<Image src="/icon-rocket-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Zakończenie Szkolenia</h3>
         
@@ -1849,13 +1850,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'zakonczenie-2',
     title: 'Zakończenie: Certyfikat',
-    icon: <Award className="w-5 h-5" />,
+    icon: <Image src="/icon-shield-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '5 min',
     category: 'Zakończenie',
     content: (
       <ModernContent 
         title="Zakończenie"
-        icon={<CheckCircle />}
+        icon={<Image src="/icon-shield-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h3 className="text-3xl font-bold mb-6 text-purple-700">Gratulacje! Ukończyłeś Kurs!</h3>
         
@@ -1884,13 +1885,13 @@ export const trainingModules: TrainingModule[] = [
   {
     id: 'zakonczenie-3',
     title: 'Zakończenie: Co Dalej? (Społeczność)',
-    icon: <Users className="w-5 h-5" />,
+    icon: <Image src="/icon-chat-3d.png" alt="Icon" width={32} height={32} className="object-contain" />,
     duration: '5 min',
     category: 'Zakończenie',
     content: (
       <ModernContent 
         title="Zakończenie: Społeczność"
-        icon={<Users />}
+        icon={<Image src="/icon-chat-3d.png" alt="Icon" width={40} height={40} className="object-contain" />}
       >
         <h4 className="text-2xl font-bold text-gray-800 mb-4">Co Dalej? Dołącz do Nas!</h4>
         

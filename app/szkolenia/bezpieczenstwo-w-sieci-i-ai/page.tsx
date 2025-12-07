@@ -11,43 +11,76 @@ export const metadata: Metadata = {
 };
 
 import { Navbar } from '@/components/navbar';
+import { courseParts } from './lib/course-data';
+import Image from 'next/image';
+
+// ... existing imports
 
 export default function BezpieczenstwoAILanding() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Navbar />
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16 pt-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <Badge className="mb-4 bg-blue-600 text-white">Szkolenie Online</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Bezpieczeństwo w sieci i w świecie AI
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Kompleksowy przewodnik online dla dzieci 9–16 lat i ich rodziców
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm">
-              <Clock className="w-5 h-5 text-blue-600" />
-              <span className="text-sm font-medium">90-120 minut</span>
+      <div className="container mx-auto px-4 py-16 pt-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-left animate-in slide-in-from-left duration-700">
+            <Badge className="mb-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 text-sm rounded-full transition-colors">
+              Szkolenie Online
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
+              Bezpieczeństwo<br />
+              w sieci i w świecie <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">AI</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
+              Kompleksowy przewodnik online dla dzieci 9–16 lat i ich rodziców. Naucz się rozpoznawać zagrożenia i korzystać z technologii mądrze.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-blue-100">
+                <Clock className="w-5 h-5 text-blue-600" />
+                <span className="text-sm font-medium text-slate-700">90-120 min</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-purple-100">
+                <Users className="w-5 h-5 text-purple-600" />
+                <span className="text-sm font-medium text-slate-700">Dla rodzin</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-green-100">
+                <Shield className="w-5 h-5 text-green-600" />
+                <span className="text-sm font-medium text-slate-700">24 lekcje</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm">
-              <Users className="w-5 h-5 text-purple-600" />
-              <span className="text-sm font-medium">Dla dzieci i rodziców</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm">
-              <Shield className="w-5 h-5 text-green-600" />
-              <span className="text-sm font-medium">24 praktyczne lekcje</span>
-            </div>
+
+            <Link href="/szkolenia/bezpieczenstwo-w-sieci-i-ai/dashboard">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg rounded-2xl shadow-lg shadow-blue-200 transition-all hover:scale-105">
+                <BookOpen className="w-5 h-5 mr-2" />
+                Rozpocznij szkolenie
+              </Button>
+            </Link>
           </div>
 
-          <Link href="/szkolenia/bezpieczenstwo-w-sieci-i-ai/dashboard">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
-              <BookOpen className="w-5 h-5 mr-2" />
-              Rozpocznij szkolenie
-            </Button>
-          </Link>
+          <div className="relative h-[400px] md:h-[500px] w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 animate-in slide-in-from-right duration-700 delay-200">
+            <Image 
+              src="/safety-hero.png" 
+              alt="Cyber Safety Shield" 
+              fill 
+              className="object-cover hover:scale-105 transition-transform duration-700"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent pointer-events-none" />
+            
+            {/* Floating Cards / Decorative Elements */}
+            <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl text-white">
+                <div className="flex items-center gap-3">
+                    <div className="p-2 bg-green-500 rounded-full">
+                        <Shield className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                        <p className="font-bold text-sm">Status Ochrony</p>
+                        <p className="text-xs text-green-200">Aktywny</p>
+                    </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -125,55 +158,33 @@ export default function BezpieczenstwoAILanding() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Program Szkolenia</h2>
           
-          <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Część I: Wprowadzenie (10-12 min)</CardTitle>
-                <CardDescription>Witamy w cyfrowym świecie!</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Część II: Zagrożenia w sieci (25-30 min)</CardTitle>
-                <CardDescription>Nieznajomi, phishing, cyberprzemoc, treści nieodpowiednie</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Część III: Bezpieczne korzystanie z internetu (25-30 min)</CardTitle>
-                <CardDescription>Hasła, dane osobowe, zasady rodzinne</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Część IV: Świat AI (25-30 min)</CardTitle>
-                <CardDescription>Czym jest AI, deepfake'i, prywatność, AI w szkole</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Część V: Co robić, gdy coś się stanie? (15-20 min)</CardTitle>
-                <CardDescription>Kroki ratunkowe, jak reagować, gdzie szukać pomocy</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Część VI: Tworzymy rodzinne zasady (15-20 min)</CardTitle>
-                <CardDescription>Rodzinna umowa cyfrowa, checklist</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Część VII: Podsumowanie i Q&A (10-15 min)</CardTitle>
-                <CardDescription>Najważniejsze rzeczy, następne kroki, pytania i odpowiedzi</CardDescription>
-              </CardHeader>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-6">
+            {courseParts.map((part) => (
+              <Card key={part.id} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 flex items-start gap-4">
+                  <div className="relative w-16 h-16 shrink-0 bg-white rounded-2xl shadow-sm flex items-center justify-center">
+                     <Image 
+                        src={part.icon} 
+                        alt={part.title}
+                        width={40}
+                        height={40}
+                        className="object-contain"
+                      />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                       <Badge variant="secondary" className="bg-white/80 backdrop-blur text-xs">
+                          {part.duration}
+                       </Badge>
+                    </div>
+                    <CardTitle className="text-lg leading-tight mb-2">{part.title}</CardTitle>
+                    <CardDescription>
+                       Zawiera {part.slides.length} {part.slides.length === 1 ? 'lekcję' : part.slides.length < 5 ? 'lekcje' : 'lekcji'}
+                    </CardDescription>
+                  </div>
+                </div>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center mt-12">

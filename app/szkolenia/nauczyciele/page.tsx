@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import Image from 'next/image'
 import { 
   Target, Brain, Shield, MessageSquare, Search, Palette, 
   GraduationCap, Users, CheckCircle, BookOpen, Clock, Award,
@@ -13,17 +14,26 @@ import { SimpleLoginForm } from '@/components/simple-login-form'
 import { CertificateGenerator } from '@/components/certificate-generator'
 import toast from 'react-hot-toast'
 import { useSession, signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { Navbar } from '@/components/navbar'
 
 // Import modules from separate file
 import { trainingModules } from './training-modules-data'
 
-export default function TeachersTrainingPage() {
+import { Suspense } from 'react'
+
+// ... imports remain the same
+
+function TeachersContent() {
   const { data: session, status } = useSession()
   const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [activeModule, setActiveModule] = useState('wstep-1')
+  
+  // Derived state from URL to support browser history
+  const moduleParam = searchParams.get('module')
+  const activeModule = trainingModules.find(m => m.id === moduleParam) ? moduleParam! : 'wstep-1'
   
   // Redirect unauthenticated users to login (unless locally authenticated)
   useEffect(() => {
@@ -76,6 +86,12 @@ export default function TeachersTrainingPage() {
     }
   }
 
+  const handleModuleSelect = (id: string) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('module', id)
+    router.push(`${pathname}?${params.toString()}`, { scroll: false })
+  }
+
   // Show loading while checking auth
   if (status === 'loading' || (session && !isAuthenticated)) {
     return null // NextAuth will redirect
@@ -111,18 +127,44 @@ export default function TeachersTrainingPage() {
           </Button>
         </div>
 
-        {/* Header */}
+        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className="relative rounded-3xl overflow-hidden shadow-2xl mb-12 border border-white/20"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Poradnik AI dla Nauczycieli
-          </h1>
-          <p className="text-xl text-gray-600 mb-4">
-            Kompleksowy Przewodnik 2024-2026
-          </p>
+          <div className="relative h-[300px] md:h-[400px]">
+            <Image
+              src="/teachers-hero.png"
+              alt="AI dla Nauczycieli"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                  <div className="flex items-start gap-2 mb-4">
+                      <div className="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-medium text-purple-200">
+                          Edycja 2024-2026
+                      </div>
+                  </div>
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight tracking-tight">
+                  Poradnik AI<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    dla Nauczycieli
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-lg shadow-black drop-shadow-md">
+                  Kompleksowy przewodnik po świecie sztucznej inteligencji w edukacji. Odkryj nowoczesne metody nauczania.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-4 gap-6">
@@ -134,7 +176,7 @@ export default function TeachersTrainingPage() {
                 {trainingModules.map((module) => (
                   <button
                     key={module.id}
-                    onClick={() => setActiveModule(module.id)}
+                    onClick={() => handleModuleSelect(module.id)}
                     className={`w-full text-left p-3 rounded-lg transition-all text-sm ${
                       activeModule === module.id
                         ? 'bg-purple-100 border-2 border-purple-500 text-purple-900'
@@ -210,7 +252,7 @@ export default function TeachersTrainingPage() {
                         onClick={() => {
                           const currentIndex = trainingModules.findIndex(m => m.id === activeModule)
                           if (currentIndex > 0) {
-                            setActiveModule(trainingModules[currentIndex - 1].id)
+                            handleModuleSelect(trainingModules[currentIndex - 1].id)
                           }
                         }}
                         disabled={trainingModules.findIndex(m => m.id === activeModule) === 0}
@@ -222,7 +264,7 @@ export default function TeachersTrainingPage() {
                         onClick={() => {
                           const currentIndex = trainingModules.findIndex(m => m.id === activeModule)
                           if (currentIndex < trainingModules.length - 1) {
-                            setActiveModule(trainingModules[currentIndex + 1].id)
+                            handleModuleSelect(trainingModules[currentIndex + 1].id)
                           }
                         }}
                         disabled={trainingModules.findIndex(m => m.id === activeModule) === trainingModules.length - 1}
@@ -238,5 +280,13 @@ export default function TeachersTrainingPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function TeachersTrainingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Ładowanie szkolenia...</div>}>
+      <TeachersContent />
+    </Suspense>
   )
 }

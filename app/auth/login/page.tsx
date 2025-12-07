@@ -50,76 +50,134 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center">
-            <div className="text-6xl">
-              🤖
+    <div className="min-h-screen grid lg:grid-cols-2">
+      {/* Decorative Side */}
+      <div className="hidden lg:block relative bg-slate-900">
+        <Image
+          src="/login-hero.png"
+          alt="Future of Education"
+          fill
+          className="object-cover opacity-90"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+        <div className="absolute bottom-12 left-12 right-12 text-white">
+          <h2 className="text-4xl font-bold mb-4 leading-tight">
+            Witaj w przyszłości<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+              Twojej Edukacji
+            </span>
+          </h2>
+          <p className="text-lg text-slate-300">
+            Zaloguj się, aby uzyskać dostęp do świata wiedzy wspieranego przez Sztuczną Inteligencję.
+          </p>
+        </div>
+      </div>
+
+      {/* Login Form Side */}
+      <div className="flex items-center justify-center p-8 bg-gradient-to-br from-white via-purple-50 to-blue-50">
+        <Card className="w-full max-w-md border-0 shadow-2xl bg-white/80 backdrop-blur-xl">
+          <CardHeader className="text-center space-y-2 pb-6">
+            <div className="mx-auto w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg transform rotate-3 hover:rotate-6 transition-transform">
+              <span className="text-3xl">🤖</span>
             </div>
-          </div>
-          <div>
-            <CardTitle className="text-2xl">Zaloguj się</CardTitle>
-            <CardDescription>Witaj ponownie w AI Family Expert!</CardDescription>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
-              />
+            <CardTitle className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700">
+              Witaj ponownie
+            </CardTitle>
+            <CardDescription className="text-base text-slate-500">
+              Wpisz swoje dane, aby kontynuować
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">
+                  Email
+                </label>
+                <div className="relative">
+                  <input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full pl-4 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none"
+                    placeholder="twoj@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center justify-between ml-1">
+                  <label htmlFor="password" className="text-sm font-semibold text-slate-700">
+                    Hasło
+                  </label>
+                  <Link 
+                    href="/auth/forgot-password" 
+                    className="text-xs text-purple-600 hover:text-purple-700 font-medium hover:underline"
+                  >
+                    Zapomniałeś hasła?
+                  </Link>
+                </div>
+                <input
+                  id="password"
+                  type="password"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+
+              <Button 
+                type="submit" 
+                className="w-full py-6 text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-200 transition-all hover:scale-[1.02] rounded-xl"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <span>Logowanie...</span>
+                  </div>
+                ) : (
+                  'Zaloguj się'
+                )}
+              </Button>
+            </form>
+
+            <div className="relative my-8">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-slate-200"></span>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-white/80 px-2 text-slate-400 font-medium backdrop-blur-xl">
+                  lub
+                </span>
+              </div>
             </div>
 
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium mb-2">
-                Hasło
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
-              />
-            </div>
-
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Logowanie...' : 'Zaloguj się'}
-            </Button>
-          </form>
-
-          <div className="mt-4 text-center">
-            <Link href="/auth/forgot-password" className="text-sm text-blue-600 hover:underline">
-              Nie pamiętam hasła
-            </Link>
-          </div>
-
-          <div className="mt-6 text-center text-sm">
-            <p className="text-gray-600">
-              Nie masz jeszcze konta?{' '}
-              <Link href="/auth/register" className="text-blue-600 hover:underline font-medium">
-                Zarejestruj się
+            <div className="text-center space-y-4">
+              <p className="text-slate-600">
+                Nie masz jeszcze konta?{' '}
+                <Link 
+                  href="/auth/register" 
+                  className="text-purple-600 hover:text-purple-700 font-bold hover:underline"
+                >
+                  Załóż darmowe konto
+                </Link>
+              </p>
+              
+              <Link 
+                href="/" 
+                className="inline-flex items-center text-sm text-slate-400 hover:text-slate-600 transition-colors mt-4"
+              >
+                ← Wróć do strony głównej
               </Link>
-            </p>
-          </div>
-
-          <div className="mt-4 text-center">
-            <Link href="/" className="text-sm text-gray-500 hover:text-gray-700">
-              ← Powrót do strony głównej
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

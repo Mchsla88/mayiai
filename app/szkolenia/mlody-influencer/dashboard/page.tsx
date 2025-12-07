@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { DashboardNavbar } from '@/components/dashboard/navbar';
 import { ProgressCard } from '@/components/dashboard/progress-card';
 import { chapters, courseParts } from '@/lib/course-data';
@@ -61,18 +62,28 @@ export default function DashboardPage() {
       <DashboardNavbar />
 
       <main className="container mx-auto px-4 py-8">
-        {/* Welcome Section */}
+        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 h-[200px] md:h-[300px]"
         >
-          <h1 className="text-4xl font-bold text-foreground mb-2">
-            Witaj, młody twórco! 🎉
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Gotowy na kolejną przygodę w świecie kreatywności?
-          </p>
+          <Image
+            src="/influencer-hero.png"
+            alt="Młody Influencer Studio"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 p-8 text-white">
+            <h1 className="text-3xl md:text-5xl font-bold mb-2 text-white">
+              Witaj, młody twórco! 🎉
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 font-medium">
+              Gotowy na kolejną przygodę w świecie kreatywności?
+            </p>
+          </div>
         </motion.div>
 
         {/* Progress Card */}
@@ -135,8 +146,14 @@ export default function DashboardPage() {
                   whileHover={{ y: -8, transition: { duration: 0.2 } }}
                   className="bg-white rounded-3xl p-6 shadow-warm hover:shadow-warm-lg transition-smooth cursor-pointer h-full"
                 >
-                  <div className="w-12 h-12 bg-gradient-warm rounded-2xl flex items-center justify-center mb-4 shadow-warm">
-                    <span className="text-2xl">{part.icon}</span>
+                  <div className="w-16 h-16 bg-gradient-warm rounded-2xl flex items-center justify-center mb-4 shadow-warm relative">
+                    <Image 
+                      src={part.icon} 
+                      alt={part.title}
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
                   </div>
                   <div className="mb-2">
                     <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-2 py-1 rounded-full">

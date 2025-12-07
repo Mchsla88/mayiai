@@ -17,13 +17,13 @@ export interface Part {
 }
 
 export const courseParts: Part[] = [
-  { id: 1, title: 'Wprowadzenie – Witamy w cyfrowym świecie!', icon: '👋', duration: '10–12 min', slides: [1, 2, 3] },
-  { id: 2, title: 'Zagrożenia w sieci – o czym musicie wiedzieć', icon: '⚠️', duration: '25–30 min', slides: [4, 5, 6, 7] },
-  { id: 3, title: 'Bezpieczne korzystanie z internetu', icon: '🔐', duration: '25–30 min', slides: [8, 9, 10, 11] },
-  { id: 4, title: 'Świat AI – nowy gracz w grze', icon: '🤖', duration: '25–30 min', slides: [12, 13, 14, 15] },
-  { id: 5, title: 'Co robić, gdy coś się stanie?', icon: '🆘', duration: '15–20 min', slides: [16, 17, 18] },
-  { id: 6, title: 'Tworzymy rodzinne zasady', icon: '📝', duration: '15–20 min', slides: [19, 20] },
-  { id: 7, title: 'Podsumowanie i Q&A', icon: '🎓', duration: '10–15 min', slides: [21, 22, 23, 24] },
+  { id: 1, title: 'Wprowadzenie – Witamy w cyfrowym świecie!', icon: '/icon-rocket-3d.png', duration: '10–12 min', slides: [1, 2, 3] },
+  { id: 2, title: 'Zagrożenia w sieci – o czym musicie wiedzieć', icon: '/icon-shield-3d.png', duration: '25–30 min', slides: [4, 5, 6, 7] },
+  { id: 3, title: 'Bezpieczne korzystanie z internetu', icon: '/icon-tools-3d.png', duration: '25–30 min', slides: [8, 9, 10, 11] },
+  { id: 4, title: 'Świat AI – nowy gracz w grze', icon: '/icon-bulb-3d.png', duration: '25–30 min', slides: [12, 13, 14, 15] },
+  { id: 5, title: 'Co robić, gdy coś się stanie?', icon: '/icon-chat-3d.png', duration: '15–20 min', slides: [16, 17, 18] },
+  { id: 6, title: 'Tworzymy rodzinne zasady', icon: '/icon-calendar-3d.png', duration: '15–20 min', slides: [19, 20] },
+  { id: 7, title: 'Podsumowanie i Q&A', icon: '/icon-camera-3d.png', duration: '10–15 min', slides: [21, 22, 23, 24] },
 ];
 
 export const slides: Slide[] = [
