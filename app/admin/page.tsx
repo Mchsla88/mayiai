@@ -344,99 +344,101 @@ export default function AdminDashboard() {
           </div>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Użytkownik</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Dostępne szkolenia</TableHead>
-                <TableHead>Data rejestracji</TableHead>
-                <TableHead className="text-right">Akcje</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredUsers.map((user) => (
-                <TableRow key={user.id}>
-                  <TableCell>
-                    <div>
-                      <div className="font-medium">{user.name || 'Bez nazwy'}</div>
-                      <div className="text-sm text-gray-500">{user.email}</div>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    {user.isAdmin ? (
-                      <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100">Admin</Badge>
-                    ) : (
-                      <Badge variant="secondary">Użytkownik</Badge>
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex flex-wrap gap-1">
-                      {user.trainings.length > 0 ? (
-                        <TooltipProvider>
-                          {user.trainings.map((t, i) => (
-                            <Tooltip key={i}>
-                              <TooltipTrigger>
-                                <Badge variant="outline" className="text-xs cursor-help">
-                                  {t.title}
-                                </Badge>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>Dostęp od: {new Date(t.grantedAt).toLocaleDateString('pl-PL')}</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          ))}
-                        </TooltipProvider>
-                      ) : (
-                        <span className="text-sm text-gray-400">-</span>
-                      )}
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    {new Date(user.createdAt).toLocaleDateString('pl-PL')}
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <div className="flex justify-end gap-2">
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => {
-                          setSelectedUser(user)
-                          setIsAccessModalOpen(true)
-                        }}
-                        title="Zarządzaj dostępem"
-                      >
-                        <Shield className="w-4 h-4 text-blue-600" />
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => {
-                          setSelectedUser(user)
-                          setIsPasswordModalOpen(true)
-                        }}
-                        title="Zmień hasło"
-                      >
-                        <Key className="w-4 h-4 text-orange-600" />
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => {
-                          setSelectedUser(user)
-                          setIsDeleteModalOpen(true)
-                        }}
-                        title="Usuń użytkownika"
-                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </Button>
-                    </div>
-                  </TableCell>
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Użytkownik</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Dostępne szkolenia</TableHead>
+                  <TableHead>Data rejestracji</TableHead>
+                  <TableHead className="text-right">Akcje</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {filteredUsers.map((user) => (
+                  <TableRow key={user.id}>
+                    <TableCell>
+                      <div>
+                        <div className="font-medium">{user.name || 'Bez nazwy'}</div>
+                        <div className="text-sm text-gray-500">{user.email}</div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      {user.isAdmin ? (
+                        <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100">Admin</Badge>
+                      ) : (
+                        <Badge variant="secondary">Użytkownik</Badge>
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex flex-wrap gap-1">
+                        {user.trainings.length > 0 ? (
+                          <TooltipProvider>
+                            {user.trainings.map((t, i) => (
+                              <Tooltip key={i}>
+                                <TooltipTrigger>
+                                  <Badge variant="outline" className="text-xs cursor-help">
+                                    {t.title}
+                                  </Badge>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <p>Dostęp od: {new Date(t.grantedAt).toLocaleDateString('pl-PL')}</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            ))}
+                          </TooltipProvider>
+                        ) : (
+                          <span className="text-sm text-gray-400">-</span>
+                        )}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      {new Date(user.createdAt).toLocaleDateString('pl-PL')}
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <div className="flex justify-end gap-2">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => {
+                            setSelectedUser(user)
+                            setIsAccessModalOpen(true)
+                          }}
+                          title="Zarządzaj dostępem"
+                        >
+                          <Shield className="w-4 h-4 text-blue-600" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => {
+                            setSelectedUser(user)
+                            setIsPasswordModalOpen(true)
+                          }}
+                          title="Zmień hasło"
+                        >
+                          <Key className="w-4 h-4 text-orange-600" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => {
+                            setSelectedUser(user)
+                            setIsDeleteModalOpen(true)
+                          }}
+                          title="Usuń użytkownika"
+                          className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
 

@@ -96,7 +96,7 @@ export default function HomePage() {
             <div className="absolute -bottom-8 left-40 w-96 h-96 bg-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
           </motion.div>
 
-          <div className="w-full max-w-[1800px] mx-auto px-12 relative z-10">
+          <div className="w-full max-w-[1800px] mx-auto px-4 md:px-12 relative z-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <motion.div 
                 className="space-y-8"
@@ -125,7 +125,7 @@ export default function HomePage() {
                 </motion.div>
                 
                 <motion.h1 
-                  className="text-5xl md:text-7xl font-bold leading-tight"
+                  className="text-4xl md:text-7xl font-bold leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -252,7 +252,7 @@ export default function HomePage() {
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100"></div>
           
-          <div className="w-full px-12 relative z-10">
+          <div className="w-full px-4 md:px-12 relative z-10">
             <ScrollReveal direction="up">
               <div className="text-center mb-16">
                 <motion.h2 
@@ -351,7 +351,7 @@ export default function HomePage() {
 
         {/* Benefits Section - Rozbudowany z grafikami */}
         <section className="py-20 bg-white">
-          <div className="w-full px-12">
+          <div className="w-full px-4 md:px-12">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Co Zyskasz Dzięki Nam?
@@ -425,7 +425,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
           <ParticlesBackground />
           
-          <div className="w-full px-12 relative z-10">
+          <div className="w-full px-4 md:px-12 relative z-10">
             <ScrollReveal direction="up">
               <div className="text-center mb-16">
                 <motion.h2 
@@ -450,7 +450,7 @@ export default function HomePage() {
 
         {/* Consequences Section - Nowa sekcja o konsekwencjach */}
         <section className="py-20 bg-white">
-          <div className="w-full px-12">
+          <div className="w-full px-4 md:px-12">
             <div className="">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
@@ -531,7 +531,7 @@ export default function HomePage() {
 
         {/* Parent Concerns Section - Nowa sekcja o obawach rodziców */}
         <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-          <div className="w-full px-12">
+          <div className="w-full px-4 md:px-12">
             <div className="">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
@@ -620,7 +620,7 @@ export default function HomePage() {
 
         {/* Blog Preview Section - zamiast newslettera */}
         <section className="py-20 bg-white">
-          <div className="w-full px-12">
+          <div className="w-full px-4 md:px-12">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Najnowsze Wpisy z Bloga
@@ -716,7 +716,7 @@ export default function HomePage() {
             <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white/20 rounded-full blur-3xl animate-pulse-glow animation-delay-2000"></div>
           </div>
           
-          <div className="w-full px-12 text-center relative z-10">
+          <div className="w-full px-4 md:px-12 text-center relative z-10">
             <ScrollReveal direction="up">
               <div className="space-y-8">
                 <motion.div 
