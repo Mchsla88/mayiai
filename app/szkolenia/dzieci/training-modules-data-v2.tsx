@@ -500,7 +500,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'lektury-szkolne',
-    title: 'Moduł 11: Język Polski - Lektury szkolne 📚',
+    title: 'Moduł 1: Język Polski - Lektury szkolne 📚',
     duration: '10 min',
     video: '/ai-w-nauce-praktyczny-przewodnik.mp4',
     content: (
@@ -571,7 +571,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'gramatyka-ortografia',
-    title: 'Moduł 12: Język Polski - Gramatyka i Ortografia ✍️',
+    title: 'Moduł 2: Język Polski - Gramatyka i Ortografia ✍️',
     duration: '10 min',
     video: null,
     content: (
@@ -671,7 +671,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'akademia-poziom-1',
-    title: 'Moduł 13: Akademia Przyszłości - Poziom 1 (Architektura Umysłu)',
+    title: 'Moduł 1: Akademia Przyszłości - Poziom 1 (Architektura Umysłu)',
     duration: '15 min',
     video: '/ai-masterclass-przewodnik.mp4',
     content: (
@@ -743,7 +743,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'akademia-poziom-2',
-    title: 'Moduł 14: Akademia Przyszłości - Poziom 2 (Zbrojownia)',
+    title: 'Moduł 2: Akademia Przyszłości - Poziom 2 (Zbrojownia)',
     duration: '20 min',
     video: null,
     content: (
@@ -834,7 +834,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'akademia-poziom-3',
-    title: 'Moduł 15: Akademia Przyszłości - Poziom 3 (Inżynieria Promptu)',
+    title: 'Moduł 3: Akademia Przyszłości - Poziom 3 (Inżynieria Promptu)',
     duration: '25 min',
     video: null,
     content: (
@@ -912,7 +912,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'akademia-poziom-4',
-    title: 'Moduł 16: Akademia Przyszłości - Poziom 4 (Detektyw Prawda)',
+    title: 'Moduł 4: Akademia Przyszłości - Poziom 4 (Detektyw Prawda)',
     duration: '15 min',
     video: null,
     content: (
@@ -965,7 +965,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'akademia-poziom-5',
-    title: 'Moduł 17: Akademia Przyszłości - Poziom 5 (Etyka Cyfrowa)',
+    title: 'Moduł 5: Akademia Przyszłości - Poziom 5 (Etyka Cyfrowa)',
     duration: '20 min',
     video: null,
     content: (
@@ -1025,7 +1025,7 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     id: 'akademia-projekt',
-    title: 'Moduł 18: Akademia Przyszłości - Projekt Końcowy',
+    title: 'Moduł 6: Akademia Przyszłości - Projekt Końcowy',
     duration: '30+ min',
     video: null,
     content: (

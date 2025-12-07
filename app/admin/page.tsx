@@ -301,6 +301,12 @@ export default function AdminDashboard() {
               Kody Rabatowe
             </Button>
           </Link>
+          <Link href="/admin/orders">
+            <Button variant="outline" className="gap-2">
+              <ShoppingCart className="w-4 h-4" />
+              Zamówienia
+            </Button>
+          </Link>
           <Link href="/admin/deleted-users">
             <Button variant="outline" className="gap-2">
               <Trash2 className="w-4 h-4" />

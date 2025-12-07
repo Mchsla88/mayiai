@@ -1,0 +1,40 @@
+import { NextResponse } from 'next/server'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import { prisma } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
+
+export async function GET() {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user?.isAdmin && session?.user?.email !== 'michal@mayiai.pl') {
+      return new NextResponse('Unauthorized', { status: 401 })
+    }
+
+    const orders = await prisma.order.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      },
+      include: {
+        user: {
+          select: {
+            name: true,
+            email: true
+          }
+        },
+        training: {
+          select: {
+            title: true
+          }
+        }
+      }
+    })
+
+    return NextResponse.json(orders)
+  } catch (error) {
+    console.error('Error fetching orders:', error)
+    return new NextResponse('Internal Server Error', { status: 500 })
+  }
+}

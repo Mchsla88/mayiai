@@ -69,6 +69,14 @@ function TrainingContent() {
   // Define categories and their module indices
   const categories = [
     {
+      id: "podstawy",
+      title: "Podstawy z AI",
+      icon: <Image src="/kids-icon-future.png" alt="Podstawy z AI" width={80} height={80} className="drop-shadow-md" />,
+      description: "Zrozum jak działa AI: sieci neuronowe, promptowanie i bezpieczeństwo",
+      color: "from-blue-500 to-cyan-600",
+      modules: trainingModules.slice(12),
+    },
+    {
       id: "nauka",
       title: "Nauka Szkoła Przedmioty",
       icon: <Image src="/kids-icon-science.png" alt="Nauka" width={80} height={80}className="drop-shadow-md" />,
@@ -83,14 +91,6 @@ function TrainingContent() {
       description: "Lektury, gramatyka i ortografia z pomocą AI",
       color: "from-pink-500 to-rose-600",
       modules: trainingModules.slice(10, 12),
-    },
-    {
-      id: "akademia",
-      title: "Akademia Przyszłości",
-      icon: <Image src="/kids-icon-future.png" alt="Akademia" width={80} height={80} className="drop-shadow-md" />,
-      description: "Zaawansowane techniki, etyka i bezpieczeństwo",
-      color: "from-blue-500 to-cyan-600",
-      modules: trainingModules.slice(12),
     },
   ];
 
@@ -132,6 +132,23 @@ function TrainingContent() {
                     Kompleksowe szkolenie z wykorzystania Claude i Gemini w edukacji.
                     Wybierz ścieżkę poniżej, aby rozpocząć.
                   </p>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="mt-12 relative max-w-4xl mx-auto"
+                  >
+                    <div className="relative aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group">
+                      <video
+                        controls
+                        className="w-full h-full object-cover"
+                      >
+                        <source src="/ai-w-nauce-praktyczny-przewodnik.mp4" type="video/mp4" />
+                        Twoja przeglądarka nie obsługuje wideo.
+                      </video>
+                    </div>
+                  </motion.div>
                 </motion.div>
             </div>
 
@@ -215,7 +232,7 @@ function TrainingContent() {
                                 <div className={`p-2 rounded-lg bg-gradient-to-br ${currentCategoryData?.color}`}>
                                     {currentCategoryData?.id === 'nauka' && <Sparkles className="w-5 h-5 text-white" />}
                                     {currentCategoryData?.id === 'polski' && <BookOpen className="w-5 h-5 text-white" />}
-                                    {currentCategoryData?.id === 'akademia' && <Rocket className="w-5 h-5 text-white" />}
+                                    {currentCategoryData?.id === 'podstawy' && <Rocket className="w-5 h-5 text-white" />}
                                 </div>
                               <h3 className="font-bold text-slate-800 leading-tight">
                                 {currentCategoryData?.title}
