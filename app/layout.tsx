@@ -139,6 +139,20 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-PW3756XX');
           `}
         </Script>
+        {/* Google Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F0SQBY4B8X"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-F0SQBY4B8X');
+          `}
+        </Script>
         <OrganizationStructuredData />
         <EducationalOrganizationStructuredData />
         <WebsiteStructuredData />
