@@ -46,9 +46,16 @@ function TeachersContent() {
       return
     }
 
-    // If session exists, we are authenticated
-    if (session) {
-      setIsAuthenticated(true)
+    // If session exists, check for specific permission
+    if (session?.user) {
+      const hasAccess = 
+        session.user.isAdmin || 
+        session.user.role === 'ADMIN' || 
+        session.user.allowedTrainings?.includes('nauczyciele');
+        
+      if (hasAccess) {
+        setIsAuthenticated(true)
+      }
     }
   }, [session, status])
 

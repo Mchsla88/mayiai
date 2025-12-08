@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { DashboardNavbar } from '@/components/dashboard/navbar';
@@ -15,8 +17,46 @@ interface ChapterProgress {
 }
 
 export default function DashboardPage() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [progressData, setProgressData] = useState<ChapterProgress[]>([]);
   const [achievementsData, setAchievementsData] = useState<string[]>([]);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  useEffect(() => {
+    if (status === 'loading') return;
+
+    const checkAuth = async () => {
+      // 1. Check local storage backdoor/legacy
+      const localAuth = localStorage.getItem('mlodyInfluencerAuth') === 'true' || 
+                        localStorage.getItem('main_training_auth') === 'true';
+      
+      if (localAuth) {
+        setIsAuthorized(true);
+        return;
+      }
+
+      // 2. Check session access
+      if (status === 'unauthenticated') {
+        router.push('/auth/login?callbackUrl=/szkolenia/mlody-influencer/dashboard');
+        return;
+      }
+
+      if (session?.user) {
+         const hasAccess = session.user.isAdmin || 
+                           session.user.role === 'ADMIN' || 
+                           session.user.allowedTrainings?.includes('mlody-influencer');
+         
+         if (hasAccess) {
+           setIsAuthorized(true);
+         } else {
+           router.push('/oferta');
+         }
+      }
+    };
+
+    checkAuth();
+  }, [status, session, router]);
 
   useEffect(() => {
     // Load progress from localStorage
@@ -41,6 +81,14 @@ export default function DashboardPage() {
       }
     }
   }, []);
+
+  if (status === 'loading' || !isAuthorized) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   const completedChapters = progressData.filter(p => p.completed).length;
   const totalChapters = chapters.length;

@@ -53,6 +53,8 @@ model User {
   isAdmin       Boolean   @default(false)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  lastLogin     DateTime? // Track last login time
+  tokenVersion  Int       @default(0) // Safe counter for session invalidation
 
   // Relations
   accounts        Account[]

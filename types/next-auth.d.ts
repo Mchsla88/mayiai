@@ -13,6 +13,8 @@ declare module 'next-auth' {
       isAdmin: boolean;
       role: string;
       sessionId?: string; // For single-session enforcement
+      tokenVersion: number;
+      allowedTrainings: string[];
     } & DefaultSession['user'];
   }
 
@@ -23,6 +25,8 @@ declare module 'next-auth' {
     lastName?: string;
     companyName?: string;
     sessionId?: string; // For single-session enforcement
+    tokenVersion: number;
+    allowedTrainings: string[];
   }
 }
 
@@ -34,5 +38,7 @@ declare module 'next-auth/jwt' {
     lastName?: string;
     companyName?: string;
     sessionId?: string; // For single-session enforcement
+    tokenVersion: number;
+    allowedTrainings: string[];
   }
 }
