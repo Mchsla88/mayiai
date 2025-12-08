@@ -40,7 +40,7 @@ W tym szkoleniu nie będziemy zarzucać Cię technicznym żargonem. Skupimy się
 - Pozwoli Ci odzyskać czas dla siebie i dla uczniów
 
 Dołącz do tysięcy nauczycieli, którzy już korzystają z AI i uczą (się) mądrzej, a nie ciężej.`,
-        price: 100,
+        price: 200,
         level: 'BEGINNER',
         duration: '4h 30m',
         imageUrl: '/training-nauczyciele.jpg',
@@ -52,7 +52,7 @@ Dołącz do tysięcy nauczycieli, którzy już korzystają z AI i uczą (się) m
         title: 'Poradnik AI dla Nauczycieli: Wykorzystanie AI w Edukacji',
         shortDescription: 'Opanuj narzędzia AI, zaoszczędź 5h tygodniowo i wprowadź nowoczesną edukację do swojej szkoły.',
         fullDescription: 'Pełny opis szkolenia dla nauczycieli...',
-        price: 100,
+        price: 200,
         level: 'BEGINNER',
         duration: '4h 30m',
         imageUrl: '/training-nauczyciele.jpg',
@@ -77,7 +77,7 @@ Nauczymy Was:
 - Jak krytycznie oceniać odpowiedzi AI
 
 Daj swojemu dziecku przewagę w szkole i w życiu, ucząc je kompetencji przyszłości.`,
-        price: 100,
+        price: 200,
         level: 'BEGINNER',
         duration: '2h 15m',
         imageUrl: '/training-dzieci.jpg',
@@ -89,7 +89,7 @@ Daj swojemu dziecku przewagę w szkole i w życiu, ucząc je kompetencji przysz�
         title: 'Nauka z AI: Twój Osobisty Korepetytor',
         shortDescription: 'Naucz swoje dziecko, jak wykorzystać AI do efektywnej nauki.',
         fullDescription: 'Pełny opis szkolenia dla dzieci...',
-        price: 100,
+        price: 200,
         level: 'BEGINNER',
         duration: '2h 15m',
         imageUrl: '/training-dzieci.jpg',
@@ -116,7 +116,7 @@ W programie:
 - Współpraca z markami i zarabianie
 
 To nie jest kurs "jak szybko zdobyć lajki". To kurs "jak zbudować trwałą i wartościową markę osobistą".`,
-        price: 100,
+        price: 150,
         level: 'INTERMEDIATE',
         duration: '6h 00m',
         imageUrl: '/training-influencer.jpg',
@@ -128,7 +128,7 @@ To nie jest kurs "jak szybko zdobyć lajki". To kurs "jak zbudować trwałą i w
         title: 'Młody Influencer: Budowanie Marki Osobistej',
         shortDescription: 'Poradnik dla przyszłych twórców internetowych.',
         fullDescription: 'Pełny opis szkolenia Młody Influencer...',
-        price: 100,
+        price: 150,
         level: 'INTERMEDIATE',
         duration: '6h 00m',
         imageUrl: '/training-influencer.jpg',
