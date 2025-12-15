@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { TrainingDetails } from './training-details'
 import { trainingDetailsData } from '@/lib/training-details-data'
 
+export const dynamic = 'force-dynamic';
+
 const imageMap: Record<string, string> = {
   'nauczyciele': '/training-nauczyciele.jpg',
   'dzieci': '/training-dzieci.jpg',
