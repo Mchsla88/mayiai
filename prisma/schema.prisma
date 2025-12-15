@@ -399,3 +399,70 @@ model DeletedUser {
 
   @@map("deleted_users")
 }
+
+model InstagramConfig {
+  id                String   @id @default(cuid())
+  pageId            String   @unique
+  accessToken       String   @db.Text
+  verifyToken       String?
+  isActive          Boolean  @default(true)
+  openaiApiKey      String?
+  geminiApiKey      String?
+  activeAiProvider  String   @default("OPENAI") // "OPENAI" or "GEMINI"
+  systemPrompt      String?  @db.Text
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("instagram_configs")
+}
+
+model AutomationRule {
+  id             String   @id @default(cuid())
+  keyword        String   @unique
+  actionType     String   // "DM_AND_REPLY" or "REPLY_ONLY" or "DM_ONLY"
+  replyContent   String?  @db.Text // If static, or system prompt override for AI
+  dmContent      String?  @db.Text
+  discountCode   String?
+  isActive       Boolean  @default(true)
+  useAi          Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("automation_rules")
+}
+
+model InstagramLog {
+  id              String   @id @default(cuid())
+  mediaId         String?
+  commentId       String?
+  username        String?
+  userMessage     String?
+  actionTaken     String   // "SENT_DM", "REPLIED_COMMENT", "ERROR"
+  responseContent String?  @db.Text
+  status          String   // "SUCCESS", "FAILED"
+  error           String?
+  createdAt       DateTime @default(now())
+
+  @@map("instagram_logs")
+}
+model ContentProject {
+    id        String  @id @default(cuid())
+    title     String
+    type      String // "VIDEO_CLIP", "SOCIAL_POST"
+    sourceUrl String?
+    localPath String? // Path to file on disk (for large files)
+
+    // AI Data
+    aiSummary String? @db.Text
+    clips     Json? // Array of generated clips { start, end, path, score, description }
+    isSilent  Boolean @default(false)
+    status    String  @default("DRAFT") // DRAFT, PROCESSING, COMPLETED, FAILED
+
+    // Text Content
+    content String? @db.Text
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("content_projects")
+}

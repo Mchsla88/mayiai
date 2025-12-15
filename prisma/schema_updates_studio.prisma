@@ -1,0 +1,21 @@
+model ContentProject {
+    id        String  @id @default(cuid())
+    title     String
+    type      String // "VIDEO_CLIP", "SOCIAL_POST"
+    sourceUrl String?
+    localPath String? // Path to file on disk (for large files)
+
+    // AI Data
+    aiSummary String? @db.Text
+    clips     Json? // Array of generated clips { start, end, path, score, description }
+    isSilent  Boolean @default(false)
+    status    String  @default("DRAFT") // DRAFT, PROCESSING, COMPLETED, FAILED
+
+    // Text Content
+    content String? @db.Text
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("content_projects")
+}

@@ -20,12 +20,7 @@ const descriptionMap: Record<string, string> = {
   'mlody-influencer': 'Poradnik dla przyszłych twórców internetowych. Od pomysłu, przez montaż, aż po bezpieczne zarabianie i etykę w sieci.'
 };
 
-const priceMap: Record<string, number> = {
-  'nauczyciele': 100,
-  'dzieci': 100,
-  'mlody-influencer': 100,
-  'bezpieczenstwo-w-sieci-i-ai': 50
-};
+
 
 const comingSoonMap: Record<string, boolean> = {
   'mlody-influencer': true,
@@ -49,7 +44,7 @@ export default async function TrainingPage({ params }: { params: { slug: string 
     imageUrl: imageMap[params.slug] || training.imageUrl,
     title: titleMap[params.slug] || training.title,
     shortDescription: descriptionMap[params.slug] || training.shortDescription,
-    price: priceMap[params.slug] || training.price,
+    price: Number(training.price),
     comingSoon: comingSoonMap[params.slug] || false
   }
 

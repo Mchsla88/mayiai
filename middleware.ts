@@ -16,7 +16,9 @@ export async function middleware(request: NextRequest) {
     '/szkolenia/mlody-influencer/dashboard',
     '/szkolenia/bezpieczenstwo-w-sieci-i-ai/dashboard'
   ]
-  const isProtectedPath = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path))
+  // Check if protected (Exclude /admin/studio which has its own auth)
+  const isProtectedPath = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path)) && 
+                          !request.nextUrl.pathname.startsWith('/studio')
 
   if (isProtectedPath) {
     const token = await getToken({ 
